@@ -3,14 +3,14 @@ site_name: Joker's Blog
 pages:
     - 'Profile': 'index.md'
     - 'Me':
-        - 'me/Configure Git Server With Ubuntn and Apache 2.md'
         - 'me/English Personal Resume.md'
-        - 'me/Installation of Ubuntu 16.04 On UDisk.md'
-        - 'me/Learn STL In 30 Minutes.md'
         - 'me/My plan for finding job.md'
-        - 'me/Network Simulator 2 Installation Guide for Ubuntu.md'
         - 'me/Personal Pre-Work Record.md'
     - 'Tech': 
+        - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
+        - 'tech/Learn STL In 30 Minutes.md'
+        - 'tech/Installation of Ubuntu 16.04 On UDisk.md'
+        - 'tech/Configure Git Server With Ubuntn and Apache 2.md'
         - 'tech/Add Watermark on Video with OpenCV and FFmpeg.md'
         - 'tech/Develop DLNA Using Platinum Library.md'
         - 'tech/FFmpeg and SDL tutorial 1.md'
