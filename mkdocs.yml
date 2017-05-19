@@ -1,0 +1,28 @@
+site_name: Joker's Blog
+
+pages:
+    - 'profile': 'index.md'
+    - 'me':
+        - 'english resume': 'me/en-personal-resume.md'
+        - 'pre work record': 'me/personal-pre-work-record.md'
+        - 'git server': 'me/configure-git-server-with-ubuntu-and-apache2.md'
+        - 'ns2 install': 'me/NS2-Installation-Ubuntu.md'
+        - 'ubuntu on udisk': 'me/Installation of Ubuntu16.04 On UDisk.md'
+        - 'find job record': 'me/My Plan for finding Job.md'
+        - 'learn stl in 30min': 'me/Learn-STL-In-30-Minutes.md'
+    - 'work': 'index.md'
+    - 'tech': 
+        - 'Add Watermark on Video': 'tech/add-watermark-on-video-with-opencv-and-ffmpeg.md'
+        - 'FFmpeg and SDL Tutorial 1': 'tech/an-ffmpeg-and-sdl-tutorial-1.md'
+        - 'FFmpeg on MacOS': 'tech/ffmpeg-compile-on-macos.md'
+        - 'FFmpeg example for 3.1.4': 'tech/ffmpeg-example-code-for-version-314.md'
+        - 'Nmap Basics': 'tech/nmap-basics.md'
+        - 'FFmpeg 2.8.6 transcoding': 'tech/refine-the-ffmpeg-286-offical-example-code-transcoding.md'
+        - 'Use GDB to Debug': 'tech/use-gdb-to-debug-program.md'
+        - 'Add Watermark On a Video': 'tech/use-opencv-to-add-watermark-in-a-video.md'
+        - 'Platinum Library to develop DLNA': 'tech/use-platinum-library-to-develop-dlna.md'
+        - 'Wireshark Basics': 'tech/wireshark-basics.md'
+    - 'life':
+        - 'Ali Fu': 'life/alipay-scan-fu-icon.md'
+
+theme: readthedocs
