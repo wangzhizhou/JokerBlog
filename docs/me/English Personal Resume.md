@@ -1,9 +1,9 @@
 
-# Personal Resume
+# English Personal Resume
 
 ### English Self Introduction
 
-Good morning sir/madam:
+Good morning Sir/Madam:
 
 My name is WangZhizhou. And I am 24 years old. My hometown is ShanXi province. My parents are all teachers.
 Thanks to the cultivation of them.
@@ -15,11 +15,11 @@ I studied in Nanchang University which locate in JiangXi province for my bechlor
   IP Cameras, Laser ranging finder and radar speed measuring instrument. I also eliminated a bug in the first 
   project about memory leak. The process is tough, eventually, I make it fixed!.
   
-After those two projects, I mastered some skills about c/c++ programming technologies. I can use MFC to create
-  samll desktop application on windows platform. I also learned some knowledge about OpenCV image processing library.
-  This is an open source library written by c++ programming language. I use it to do my graduation project.
+After those two projects, I mastered some skills about C/C++ programming technologies. I can use MFC to create
+  small desktop application on windows platform. I also learned some knowledge about OpenCV image processing library.
+  This is an open source library written by C++ programming language. I use it to do my graduation project.
   
-  That's All. Thanks for your attention. Thank you! 
+  That's all. Thanks for your attention. Thank you! 
 
 ### Reference Material
 

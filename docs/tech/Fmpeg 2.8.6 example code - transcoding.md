@@ -1,3 +1,5 @@
+# FFmpeg 2.8.6 example code - transcoding
+
 最近学习ffmpeg，官网提供的示例代码[transcoding.c](https://ffmpeg.org/doxygen/trunk/transcoding_8c-example.html)演示了编解码和滤波器的使用，不过第一步的编译运行测试就卡了好久，今天终于找到了原因了，赶紧记录一下，我相信和我遇到同样问题的人不在少数，所以希望能为大家提供一篇有效的解决方案，减轻入门时的痛苦。
 
 把官网示例拷一份在本地，以相同的名字命名为`transcoding.c`, 因为官网的这个示例，用的是ffmpeg2.x的API，因为我也不太熟悉ffmpeg，用ffmpeg3.x编译时，提示了我几个API过时的问题，所以我装回了ffmpeg2.8.6来编译这个示例。下面是我的编译命令：
@@ -46,7 +48,7 @@ Error occurred: Generic error in an external library
 
 在`transcoding.c`中的`open_output_file`函数中，修改的部分如下(只增加了`13-17行`)：
 
-{% highlight cpp linenos%}
+```cpp
 if (dec_ctx->codec_type == AVMEDIA_TYPE_VIDEO) {
                 enc_ctx->height = dec_ctx->height;
                 enc_ctx->width = dec_ctx->width;
@@ -74,7 +76,7 @@ if (dec_ctx->codec_type == AVMEDIA_TYPE_VIDEO) {
                 enc_ctx->time_base = (AVRational){1, enc_ctx->sample_rate};
             }   
 
-{% endhighlight %}
+```
 
 之后，我们保存编译再次运行结果如下：
 
@@ -123,7 +125,7 @@ if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
 
 提前到`for循环`中整个`if判断结构`的前面就行了，因为我们在打开编码器前，没有设置编码器上下文中enc_ctx->flags这个参数，所以把这句提前了就解决问题了。如下：
 
-{% highlight cpp linenos %}
+```cpp
             if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
                 enc_ctx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 
@@ -153,7 +155,7 @@ if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
                 enc_ctx->sample_fmt = encoder->sample_fmts[0];
                 enc_ctx->time_base = (AVRational){1, enc_ctx->sample_rate};
             }
-{% endhighlight %}
+```
 
 # \#issue3 - 处理后的结果比原视频模糊
 
@@ -175,7 +177,7 @@ if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
 
 *filename: transcoding.c*
 
-{% highlight cpp linenos %}
+```cpp
 /*
  * Copyright (c) 2010 Nicolas George
  * Copyright (c) 2011 Stefano Sabatini
@@ -699,5 +701,5 @@ end:
         av_log(NULL, AV_LOG_ERROR, "Error occurred: %s\n", av_err2str(ret));
     return ret ? 1 : 0;
 }
-{% endhighlight %}
+```
 

@@ -1,3 +1,5 @@
+# Add Watermark on Video with OpenCV and FFmpeg
+
 之前写过一篇`use opencv to add watermark in a video`，但是发现有个问题：
 
 - 处理后的视频无法保留原来视频中的音频信息
@@ -13,7 +15,7 @@
 
 # 源代码
 
-{% highlight cpp linenos %}
+```cpp
 /**
  * Copyright (c) 2010 Nicolas George
  * Copyright (c) 2011 Stefano Sabatini
@@ -426,7 +428,7 @@ end:
         av_log(NULL, AV_LOG_ERROR, "Error occurred: %s\n", av_err2str(ret));
     return ret ? 1 : 0;
 }
-{% endhighlight %}
+```
 
 **本程序运行调用了`ffmpeg-2.8.6`和`opencv-3.0.1`版的库(库的安装读者还是自己搞定吧，有事联系: 824219521@qq.com)**
 

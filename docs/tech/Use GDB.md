@@ -1,3 +1,5 @@
+# Use GDB
+
 用了几天GDB，觉得挺好用的，特别是写示例程序的时候，由于源文件也不是很复杂，调试工作还是使用轻量级的GDB来的方便、直接，同时GDB还可以远程调试，功能上也是很强大的。
 
 下面整理一下使用GDB调试过程中经常使用的一些命令和组合键：
@@ -77,7 +79,7 @@ insert_sort.c:29:10: note: use '==' to turn this assignment into an equality com
 
 下面是有问题的程序源代码：
 
-{% highlight cpp linenos %}
+```cpp
 
 /* filename: insert_sort.c */
 
@@ -149,7 +151,7 @@ int main(int argc, char **argv)
 	print_results();
 	return 0;
 }
-{% endhighlight %}
+```
 
 
 我们先运行一下：

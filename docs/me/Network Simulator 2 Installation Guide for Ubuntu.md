@@ -1,4 +1,4 @@
-#Network Simulator 2 Installation Guide for Ubuntu
+# Network Simulator 2 Installation Guide for Ubuntu
 
 
 You can checkout my **[repo](https://github.com/wangzhizhou2014GitHub/Network-Simulator-Installation-Guideline-For-Ubuntu)** for this document, and get related files.
@@ -309,6 +309,6 @@ sudo apt-get install libghc-x11-dev
 
 After apply the patch file **mptcp.patch-for-ns2.35-20130810** under `/ns-allinone-2.35/ns-2.35/`, then use command:`sudo ./configure --with-tcl-ver=8.5` to configure the project, after that, use command: `sudo make` the make the project, then change directory to the parent directory of ns-2.35 and run the command: sudo ./install to complete!
 
-*Written By Joker, 2016-05-07, copy right*
+**Written By Joker, 2016-05-07, copy left**
 
 

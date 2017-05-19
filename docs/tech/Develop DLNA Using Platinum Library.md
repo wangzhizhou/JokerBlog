@@ -1,3 +1,5 @@
+# Develop DLNA Using Platinum Library
+
 这几天公司的应用(iOS端)上要加一个`dlna`的功能，就是局域网内设备投屏控制的一个功能，并提供移动端控制。因为三方库Platinum是使用C++写的，所以我被分配去做库的Objective-C封装的工作。第一次接手这种事，对一个非计算机专业的学生来说还是蛮有挑战性的。组长说要先写一个接口设计文档来描述将要封装的接口和调用方式。只能网上查看各种资料喽！
 
 这里是我一顿狂搜、看各种博客后搜集到的有用资料，列表如下：
@@ -117,7 +119,7 @@ lipo -info Release-iphoneos/Platinum.framework/Platinum
 
 ### 修改前
 *PltCtrlPoint.cpp* 
-{% highlight cpp linenos %}
+```cpp
 class PLT_DeviceReadyIterator
 {
 public:
@@ -143,11 +145,11 @@ public:
         return NPT_SUCCESS;
     }
 };
-{% endhighlight %}
+```
 
 ### 修改后
 *PltCtrlPoint.cpp* 
-{% highlight cpp linenos %}
+```cpp
 class PLT_DeviceReadyIterator
 {
 public:
@@ -176,14 +178,14 @@ public:
         return NPT_SUCCESS;
     }
 };
-{% endhighlight %}
+```
 
 ### 修改原因
 
 我发现对于搜索到的小米盒子，代码过不了下面这个函数的第`53`行：
 
 *PltCtrlPoint.cpp*
-{% highlight cpp linenos %}
+```cpp
 NPT_Result
 PLT_CtrlPoint::ProcessGetSCPDResponse(NPT_Result                    res, 
                                       const NPT_HttpRequest&        request,
@@ -236,7 +238,7 @@ PLT_CtrlPoint::ProcessGetSCPDResponse(NPT_Result                    res,
     
     // if root device is ready, notify listeners about it and embedded devices
     if (NPT_SUCCEEDED(device_tester(root_device))) {
-        AddDevice(root_device);
+        AddDevice(root_device);  //第53行
     }
     
     return NPT_SUCCESS;
@@ -249,7 +251,7 @@ bad_response:
     if (!root_device.IsNull()) RemoveDevice(root_device);
     return res;
 }
-{% endhighlight %}
+```
 
 # \#issue2
 

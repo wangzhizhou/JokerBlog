@@ -1,9 +1,9 @@
-# Configure Git Server With Ubuntn and Apache 2
+# Configure Git Server With Ubuntu and Apache 2
 
 I always wanted to establish a local git server that I can push my code or other material on it. But there is no enough time for me to take it into practice. And This weekend, I make it working. So, I want to record this process for review.
 
 
-I have a respberry pi 3 Model B Card Computer, and Ubuntu System is hosted on it. So, I can manipulate it through the ssh protocol by my Mac Book Pro terminal.
+I have a **Raspberry pi 3 Model B** card computer, and Ubuntu system is hosted on it. So, I can manipulate it through the **ssh** protocol by my Mac Book Pro terminal.
 
 So, Let's start working!
 
@@ -11,7 +11,7 @@ So, Let's start working!
 First, we should install the `git` and `Apache Http Server`, using command as follow:
 
 ```
-sudo apt-get install git apache2
+sudo apt-get -y install git apache2
 ```
 
 With `git` installed, we can create our repositories on local disk.
@@ -87,7 +87,7 @@ pi@raspberrypi:~ $ sudo /etc/init.d/apache2 restart
 
 if you use your browser with url: `http://192.168.0.121` and see some web page with title `Apache2 Debian Default Page`, congratulation! you web server is working.
 
-**Note:**  The `ip: 192.168.0.121` may be not the same as you, or you can use the `127.0.0.1` if you work in the same one computer)
+> **Note:**  The `ip: 192.168.0.121` may be not the same as you, because I installed the `Apache` on my RPi3 and access from my notebook. Or you can use the `127.0.0.1` if you work in the same one computer)
 
 Then you can clone you repository from the apache http server with the command on another computer in the same network:
 

@@ -3,12 +3,12 @@
 
 ### 安装Ubuntu 16.04
 
-我是在Mac电脑下工作的，首先需要制作一个U盘安装盘
-因为Mac电脑是通过UEFI引导的，所以需要将U盘分区为GUID格式的，当然如果你不是在Mac下工作，就不必分区为GUID了，这样分区只是为了让UEFI可以在引导菜单中显示制作好的U盘安装盘。
+我是在Mac电脑下工作的，首先需要制作一个U盘安装盘。因为Mac电脑是通过UEFI引导的，所以需要将U盘分区为GUID格式的，当然如果你不是在Mac下工作，就不必分区为GUID了，这样分区只是为了让UEFI可以在引导菜单中显示制作好的U盘安装盘。
 
-在Mac下制U盘安装盘，首先要将下载好的IOS镜像文件转化成为IMG格式，假设我的Ubuntu系统IOS文件名为：*ubuntu-16.04-desktop-i386.iso*, 使用如下命令进行格式转化:
+在Mac下制U盘安装盘，首先要将下载好的IOS镜像文件转化成为IMG格式，假设我的Ubuntu系统IOS文件名为：**ubuntu-16.04-desktop-i386.iso**, 使用如下命令进行格式转化:
 
-```localhost:Downloads wangzhizhou$  hdiutil convert -format UDRW -o ubuntu-16.04-desktop-i386.img ubuntu-16.04-desktop-i386.iso
+```
+localhost:Downloads wangzhizhou$  hdiutil convert -format UDRW -o ubuntu-16.04-desktop-i386.img ubuntu-16.04-desktop-i386.iso
 ```
 
 转化后的文件名为：`ubuntu-16.04-desktop-i386.img.dmg`，这个其实名字没什么关系，重要的是镜像的内容按照Mac可识别的格式得到了转化，之后我们就将转化后的文件写入U盘。
@@ -55,7 +55,7 @@ Password:
 1504051200 bytes transferred in 96.270441 secs (15623188 bytes/sec)
 ```
 
-注意，我们使用了`/dev/rdisk2`作为写入的目标磁盘，rdisk2对应于disk2，通常使用它能够以更快的速度写入U盘，r代表removeable,即可移动磁盘的意思。
+注意，我们使用了`/dev/rdisk2`作为写入的目标磁盘，rdisk2对应于disk2，通常使用它能够以更快的速度写入U盘，r代表removeable，即可移动磁盘的意思。
 
 现在我们重启Mac，并在重启过程中按下`option`不放直到启动菜单出现我们的U盘安装盘，如果没有出现，说明没有制作成功，一定是哪个环节没有按步骤来，需要重头来一遍。注意U盘要插在电脑上。
 
@@ -138,7 +138,8 @@ localhost:ubuntu wangzhizhou$ diskutil list
    2:        Bios Boot Partition                         127.9 MB   disk2s2
    3:                 Linux Swap                         4.1 GB     disk2s3
    4:           Linux Filesystem                         57.9 GB    disk2s4
-   ```
+```
+
 我们将EFI分区：`/dev/disk0s1`和`/dev/disk2s1`都挂载到路径`/Volumes`下，使用下面的命令：
 
 ```
@@ -153,6 +154,7 @@ EFI
 
 /Volumes/NO NAME/:
 ```
+
 `/Volumes`下`EFI`和`NO NAME`目录就是两个EFI分区的挂载点，你发现`/Volumes/NO NAME/`目录下面什么也没有，这就是为什么U盘系统盘已经安装成功了却没法引导。因为它们错误的安装在了`/dev/disk0s1`下了,也就是挂载点`/Volumes/EFI`下了,我们需要把这些文件复制到`/Volumes/NO NAME/`,下，并作一些调整，用命令行说明吧，文字有点不太清楚了：
 
 ```

@@ -38,11 +38,11 @@ STL另一个重要特性是它不是面向对象的。为了具有足够通用�
 
 为了避免和其他头文件冲突，STL的头文件不再使用常规的.h扩展。为了包含标准的string类，迭代器和算法，用下面的指示符：
 
-{% highlight cpp %}
+```cpp
 #include <string>
 #include <iterator>
 #include <algorithm>
-{% endhighlight %}
+```
 
 如果你查看STL的头文件，你可以看到像iterator.h和stl_iterator.h这样的头文件。由于这些名字在各种STL实现之间都可能不同，你应该避免使用这些名字来引用这些头文件。为了确保可移植性，使用相应的没有.h后缀的文件名。表1列出了最常使用的各种容器类的头文件。该表并不完整，对于其他头文件，我将在本章和后面的两章中介绍。
 
@@ -63,9 +63,11 @@ STL另一个重要特性是它不是面向对象的。为了具有足够通用�
 你的编译器可能不能识别名字空间。名字空间就好像一个信封，将标志符封装在另一个名字中。标志符只在名字空间中存在，因而避免了和其他标志符冲突。例如，可能有其他库和程序模块定义了sort()函数，为了避免和STL的sort()冲突，STL的sort()算法编译为std::sort()，从而避免了名字冲突。
 
 尽管你的编译器可能没有实现名字空间，你仍然可以使用他们。为了使用STL，可以将下面的指示符插入到你的源代码文件中，典型的是在所有的#include指示符的后面：
-{% highlight cpp %}
+
+```cpp
 using namespace std;
-{% endhighlight %}
+```
+
 ### 迭代器
 
 迭代器提供对一个容器中的对象的访问方法，并且定义了容器中对象的范围。迭代器就如同一个指针。事实上，C++的指针也是一种迭代器。但是，迭代器不仅仅是指针，因此你不能认为他们一定具有地址值。例如，一个数组索引，也可以认为是一种迭代器。
@@ -94,7 +96,7 @@ STL不保证可以从另一个迭代器来抵达一个迭代器。例如，当�
 
 #####  iterdemo.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm>
 
@@ -116,16 +118,17 @@ int main()
 		
     return 0;
 }
-{% endhighlight %}
+```
 
 在引用了I/O流库和STL算法头文件（注意没有.h后缀），该程序告诉编译器使用std名字空间。
 
 程序中定义了尺寸为SIZE的全局变量，所以运行时数组自动初始化为零。下面的语句将在索引20位置处的元素设置为50，并使用find()算法来搜索值50:
 
-{% highlight cpp %}
+```cpp
 iarray[20] = 50;
 int *ip = find(iarray, iarray + SIZE, 50);
-{% endhighlight %}
+```
+
 find()函数接受三个参数。头两个定义了搜索的范围。由于C和C++数组等同于指针，表达式iarray指向数组的第一个元素。而第二个参数iarray+SIZE等同于past-the-end值，也就是数组中最后一个元素的后面位置。第三个参数是待定位置，也就是50.
 
 find()函数返回和前两个参数相同类型的迭代器，这儿是一个指向整数的指针ip。
@@ -136,21 +139,22 @@ find()函数返回和前两个参数相同类型的迭代器，这儿是一个�
 
 为了判断find()是否成功，例子中测试ip和past-the-end值是否相等:
 
-{% highlight cpp %}
+```cpp
 if(ip == iarray + SIZE) ...
-{% endhighlight %}
+```
+
 如果表达式为真，则表示在搜索范围内没有指定的值。否则就是指向一个合法对象的指针，这时可以用下面的语句显示：
 
-{% highlight cpp %}
+```cpp
 cout<<*ip<<" found in array"<<endl;
-{% endhighlight %}
+```
 
 测试函数返回值和NULL是否相等是不正确的。不要像下面这样使用：
 
-{% highlight cpp %}
+```cpp
 int *ip = find(iarray, iarray + SIZE, 50);
 if(ip != NULL) ...//incorrect
-{% endhighlight %}
+```
 
 当使用STL函数时，只能测试ip是否和past-the-end值相等。尽管在本例中ip是一个C++指针，其用法也必须符合STL迭代器的原则。
 
@@ -164,7 +168,7 @@ if(ip != NULL) ...//incorrect
 
 ##### vectdemo.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -183,37 +187,37 @@ void main()
 	else
 	    cout<<"Vector does not contain 50"<<endl;
 }
-{% endhighlight %}
+```
 
 注意用下面的方法显示搜索到的数据：
 
-{% highlight cpp %}
+```cpp
 cout<<"Vector contains value "<<*intIter<<endl;
-{% endhighlight %}
+```
 
 ### 常量迭代器
 
 和指针一样，你可以给一个迭代器赋值。例如，首先声明一个迭代器：
 
-{% highlight cpp %}
+```cpp
 vector<int>::iterator first;
-{% endhighlight %}
+```
 
 该语句创建了一个`vector<int>`类的迭代器。下面的语句将该迭代器设置到intVector的第一个对象，并将它指向的对象值设置为123:
 
-{% highlight cpp %}
+```cpp
 first = intVector.begin();
 *first = 123;
-{% endhighlight %}
+```
 
 这种赋值对于大多数容器类都是允许的，除了只读变量。为了防止错误赋值，可以声明迭代器为：
 
-{% highlight cpp %}
+```cpp
 const vector<int>:: const_iterator result;
 result = find(intVector.begin(), intVector.end(), value);
 if(result != intVector.end())
     *result = 123; //发生错误，不能给常量赋值
-{% endhighlight %}
+```
 
 #### 警告
 
@@ -229,7 +233,7 @@ if(result != intVector.end())
 
 为了理解迭代器以及STL函数是如何使用它们的，现在来看一下find()模板函数的定义:
 
-{% highlight cpp %}
+```cpp
 template <class InputIterator, class T>
 InputIterator find(InputIterator first, InputIterator last, const T& value)
 {
@@ -237,7 +241,7 @@ InputIterator find(InputIterator first, InputIterator last, const T& value)
 	    ++first;
 	return first;
 }
-{% endhighlight %}
+```
 
 #### 注意
 
@@ -249,7 +253,7 @@ InputIterator find(InputIterator first, InputIterator last, const T& value)
 
 ##### outIter.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm> //need copy()
 #include <vector> //need vector
@@ -271,7 +275,7 @@ int main()
 	}
     return 0;
 }
-{% endhighlight %}
+```
 
 #### 注意
 
@@ -281,56 +285,56 @@ int main()
 
 前推迭代器能够读写数据值，并能够向前推进到下一个值。但是没法递减。replace()算法显示了前推迭代器的使用方法。
 
-{% highlight cpp %}
+```cpp
 template <class ForwardIterator, class T>
 void replace(ForwardIterator first, ForwardIterator last, const T& old_value, const T& new_value);
-{% endhighlight %}
+```
 
 #### 使用
 
 replace()将[first, last]范围内的所有值为old_value的对象替换为new_value：
 
-{% highlight cpp %}
+```cpp
 replace(vdouble.begin(),vdouble.end(),1.5,3.1415926);
-{% endhighlight %}
+```
 
 ### 双向迭代器
 
 双向迭代器要求能够增减。如reverse()算法要求两个双向迭代器作为参数：
 
-{% highlight cpp %}
+```cpp
 template <class BidirectionalIterator>
 void reverse(BidirectionalIterator first, BidirectionalIterator last);
-{% endhighlight %}
+```
 
 #### 使用
 
 reverse()函数来对容器进行逆向排序：
 
-{% highlight cpp %}
+```cpp
 reverse(vdoule.begin(), vdouble.end());
-{% endhighlight %}
+```
 
 ### 随机访问迭代器
 
 随机访问迭代器能够以任意顺序访问数据，并能用于读写数据（不是const的C++指针也是随机访问迭代器）。STL的排序和搜索函数使用随机访问迭代器。随机访问迭代器可以使用关系操作符作比较。
 
-{% highlight cpp %}
+```cpp
 random_shuffle()
-{% endhighlight %}
+```
 
 函数随机打乱原先的顺序声明为：
 
-{% highlight cpp %}
+```cpp
 template <class RandomAccessIterator>
 void random_shuffle(RandomAccessIterator first, RandomAccessIterator last);
-{% endhighlight %}
+```
 
 #### 使用方法
 
-{% highlight cpp %}
+```cpp
 random_shuffle(vdouble.begin(), vdouble.end());
-{% endhighlight %}
+```
 
 ### 迭代器技术
 
@@ -339,19 +343,19 @@ random_shuffle(vdouble.begin(), vdouble.end());
 ### 流和迭代器
 本书的很多例子程序使用I/O流语句来读写数据。例如：
 
-{% highlight cpp %}
+```cpp
 int value;
 cout<<"Enter value:";
 cin>>value;
 cout<<"You entered "<<value<<endl;
-{% endhighlight %}
+```
 
 对于迭代器，有另一种方法使用流和标准函数。理解的要点是将输入/输出流作为
 容器看待。因此，任何接受迭代器参数的算法都可以和流一起工作。
 
 ##### outStrm.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <stdlib.h> // need rand(), srand()
 #include <time.h> //need time()
@@ -381,17 +385,17 @@ void Display(vector<int>& v, const char *s)
 	copy(v.begin(), v.end(), ostream_iterator<int>(cout, "\t"));
 	cout<<endl;
 }
-{% endhighlight %}
+```
 
 函数Display()显示了如何使用一个输出流迭代器。下面的语句将容器中的值传输到cout输出流对象中：
 
-{% highlight cpp %}
+```cpp
 copy(v.begin(), v.end(), ostream_iterator<int>(cout, "\t"));
-{% endhighlight %}
+```
 
 第三个参数实例化了`ostream_iterator<int>`类型，并将它作为copy()函数的输出目标迭代器对象。"\t"字符串是作为分隔符。运行结果：
 
-{% highlight bash %}
+```
 $ g++ outstrm.cpp
 $ ./a.out
 
@@ -400,13 +404,13 @@ Before sorting
 
 After sorting
 101     519     2032    2273    2906    4642    5185    7136    8210    8265
-{% endhighlight %}
+```
 
 这是STL神奇的一面。为定义输出流迭代器，STL提供了模板类ostream_iterator。这个类的构造函数有两个参数：一个ostream对象和一个string值。因此可以象下面一样简单地创建一个迭代器对象：
 
-{% highlight cpp %}
+```cpp
 ostream_iterator<int>(cout, "\n")
-{% endhighlight %}
+```
 
 该迭代器可以和任何接受一个输出迭代器的函数一起使用。
 
@@ -414,16 +418,16 @@ ostream_iterator<int>(cout, "\n")
 
 插入迭代器用于将值插入到容器中。它们也叫适配器，因为它们将容器适配或转化为一个迭代器，并用于copy()这样的算法中。例如，一个程序定义了一个链表和一个矢量容器：
 
-{% highlight cpp %}
+```cpp
 list<double> dList;
 vector<double> dVector;
-{% endhighlight %}
+```
 
 通过使用front_inserter迭代器对象，可以只用单个copy()语句就完成将矢量中的对象插入到链表前端的操作：
 
-{% highlight cpp %}
+```cpp
 copy(dVector.begin(), dVector.end(), front_inserter(dList));
-{% endhighlight %}
+```
 
 三种插入迭代器如下：
 
@@ -435,7 +439,7 @@ copy(dVector.begin(), dVector.end(), front_inserter(dList));
 
 ##### insert.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm>
 #include <list>
@@ -462,18 +466,18 @@ void Display(list<int>& v, const char *s)
 	copy(v.begin(), v.end(), ostream_iterator<int>(cout, ""));
 	cout<<endl;
 }
-{% endhighlight %}
+```
 
 运行结果如下：
 
-{% highlight bash %}
+```
 $ g++ insert.cpp
 $ ./a.out
 Before find and copy
 5 4 3 2 1
 After find and copy
 5 4 1 2 3 2 1
-{% endhighlight %}
+```
 
 可以将front_inserter替换为back_inserter试试。
 
@@ -488,7 +492,7 @@ After find and copy
 
 例如：
 
-{% highlight cpp linenos%}
+```cpp
 list<int> iList;
 list<int>::iterator p = find(iList.begin(), iList.end(),2);
 cout<<"before: p == "<<*p <<endl;
@@ -497,7 +501,7 @@ cout<<"after: p == "<<*p<<endl;
 int k = 0;
 distance(p, iList.end(),k);
 cout<<"k == "<<k <<endl;
-{% endhighlight %}
+```
 
 advance()函数接受两个参数。第二个参数是向前推进的数目。对于前推迭代器，该值必须为正，而对于双向迭代器和随机访问迭代器，该值可以为负。
 
@@ -515,7 +519,7 @@ STL中，函数被称为算法，也就是说它们和标准C库函数相比，�
 
 经常需要对容器中的数据进行用户自定义的操作。例如，你可能希望遍历一个容器中所有对象的STL算法能够回调自己的函数。例如：
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -563,19 +567,19 @@ bool isMinus(const long &ri)
 {
     return (ri<0);
 }
-{% endhighlight %}
+```
 
->所谓断言函数，就是返回bool值的函数。
+> 所谓断言函数，就是返回bool值的函数。
 
 ### 函数对象
 
 除了给STL算法传递一个回调函数，你还可能需要传递一个类对象以便执行更复杂的操作。这样一个对象就叫做函数对象。实际上函数对象就是一个类，但它和回调函数一样可以被回调。例如，在函数对象每次被for_each()或find_if()函数调用时可以保留统计信息。函数对象是通过重载operator()()实现的。如果TanyClass定义了operator()()，那么就可以这么使用：
 
-{% highlight cpp %}
+```cpp
 TanyClass object;
 object();
 for_each(v.begin(), v.end(), object);
-{% endhighlight %}
+```
 
 STL定义了几个函数对象。由于它们是模板，所以能够用于任何类型，包括C/C++固有的数据类型，如long。有些函数对象从名字中就可以看出它的用途，如plus()和multiplies()。类似的greater()和less-equal()用于比较两个值。
 
@@ -587,7 +591,7 @@ STL定义了几个函数对象。由于它们是模板，所以能够用于任�
 
 ##### accum.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <numeric> //need accumulate()
 #include <vector> //need vector
@@ -609,19 +613,19 @@ int main()
    cout<<"Product of values =="<<product<<endl;
    return 0;
 }
-{% endhighlight %}
+```
 
 编译输出如下：
-{% highlight bash %}
+```
 $ g++ accum.cpp
 $ ./a.out
 Sum of values == 55
 Product of values == 3628800
-{% endhighlight %}
+```
 
 注意使用了函数对象的accumulate()算法的用法。accumulate()在内部将每个容器中的对象和第三个参数作为multiplies函数对象的参数，multiplies(1,v)计算乘积。VC中的这些模板的源代码如下：
 
-{% highlight cpp %}
+```cpp
 template <class _II, class _Ty>
 inline _Ty accumulate(_II _F, _II _L, _Ty _V)
 {
@@ -655,7 +659,7 @@ binary_function<_Ty, _Ty, _Ty>
 	    return (_X * _Y);
 	}
 };
-{% endhighlight %}
+```
 
 引言：如果你想深入了解STL到底是怎么实现的，最好的办法是写个简单的程序，将程序中涉及到的模板源码给copy下来，稍作整理，就能看懂了。所以没有必要去买什么《STL源码剖析》之类的书籍，那些书可能反而浪费时间。
 
@@ -668,7 +672,7 @@ binary_function<_Ty, _Ty, _Ty>
 
 ##### randfunc.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <stdlib.h> //need rand(), srand()
 #include <time.h> //need random_shuffle()
@@ -707,11 +711,11 @@ unsigned int RandInt(const unsigned int n)
 {
 	return rand() % n;
 }
-{% endhighlight %}
+```
 
 编译运行结果如下：
 
-{% highlight bash %}
+```
 $ g++ randfunc.cpp
 $ ./a.out
 Before shuffle:
@@ -721,13 +725,13 @@ After shuffle:
 
 首先用下面的语句声明一个对象
 pointer_to_unary_function<unsigned int, unsigned int> ptr_RandInt = ptr_fun(RandInt);
-{% endhighlight %}
+```
 
 这儿使用STL的单目函数模板定义了一个变量ptr_RandInt, 并将地址初始化到我们的函数RandInt()。单目函数接受一个参数，并返回一个值。现在random_shuffle()可以如下调用:
 
-{% highlight cpp %}
+```cpp
 random_shuffle(v.begin(), v.end(), ptr_RandInt);
-{% endhighlight %}
+```
 
 在本例子中，发生器只是简单的调用rand()函数。
 
@@ -738,7 +742,7 @@ random_shuffle(v.begin(), v.end(), ptr_RandInt);
 
 ##### fiborand.cpp
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm> //need rand_shuffle()
 #include <vector> //need vector
@@ -800,11 +804,11 @@ Arg FiboRand<Arg>::operator()(const Arg &arg)
 	if(j==0) j=17;
 	return k % arg;
 }
-{% endhighlight %}
+```
 
 编译运行输出如下：
 
-{% highlight bash %}
+```
 $ g++ fiborand.cpp
 $ ./a.out
 Fibonacci random number
@@ -815,16 +819,16 @@ Before shuffle:
 1 2 3 4 5 6 7 8 9 10
 After shuffle:
 6 8 5 4 3 7 10 1 9
-{% endhighlight %}
+```
 
 该程序用完全不同的方法使用rand_shuffle。Fibonacci发生器封装在一个类中，该类能从先前的“使用”中记忆运行结果。在本例中，类FiboRand维护了一个数组和两个索引变量i和j。 
 
 FiboRand类继承自unary_function()模板：
 
-{% highlight cpp %}
+```cpp
 template<class Arg>
 class FiboRand: public unary_function<Arg, Arg>{ ...
-{% endhighlight %}
+```
 
 Arg是用户自定义数据类型。该类还定义了两个成员函数，一个是构造函数，另一个是operator()()函数，该操作符允许random_shuffle()算法像一个函数一样“调用”一个FiboRand对象。
 
@@ -839,7 +843,7 @@ Arg是用户自定义数据类型。该类还定义了两个成员函数，一�
 
 ##### binder.cpp 
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <algorithm>
 #include <functional>
@@ -858,25 +862,25 @@ int main()
 	cout<<"Number elements < 8 == "<<k<<endl;
 	return 0;
 }
-{% endhighlight %}
+```
 
 count_if()计算满足特定条件的元素的数目。
 这是通过将一个函数对象和一个参数捆绑为一个对象，并将该对象作为算法的第三个参数实现的。注意这个表达式：
 
-{% highlight cpp %}
+```cpp
 bind1st(greater<int>(),8)
-{% endhighlight %}
+```
 该表达式将`greater<int>()`和一个参数值8捆绑为一个函数对象。由于使用了bind1st()，所以该函数相当于计算下述表达式：
 
-{% highlight cpp %}
+```cpp
 8 > q
-{% endhighlight %}
+```
 
 表达式中的q是容器中的对象。因此，完整的表达式
 
-{% highlight cpp %}
+```cpp
 k = count_if(aList.begin(), aList.end(), bind1st(greater<int>(),8));
-{% endhighlight %}
+```
 
 计算所有小于或等于8的对象的数目。
 
@@ -886,15 +890,15 @@ k = count_if(aList.begin(), aList.end(), bind1st(greater<int>(),8));
 
 not1()授受单目函数对象，not2()接受双目函数对象。否定函数对象通常和绑定器一起使用。例如，上节中用bind1nd来搜索q<=8的值：
 
-{% highlight cpp %}
+```cpp
 k = count_if(aList.begin(), aList.end(), bind1st(greater<int>(),8));
-{% endhighlight %}
+```
 
 如果要搜索q>8的对象，则用bind2st。而现在可以这样写：
 
-{% highlight cpp %}
+```cpp
 strat = find_if(aList.begin(), aList.end(), not1(bind1st(greater<int>(),8)));
-{% endhighlight %}
+```
 
 你必须使用not1，因为bind1st返回单目函数。
 

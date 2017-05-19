@@ -1,3 +1,5 @@
+# User OpenCV to add watermark on a video
+
 # 安装开发环境
 
 首先，需要`OpenCV`开发环境，就是安装`OpenCV`相关的库。
@@ -16,7 +18,7 @@ sudo make install  //安装编译好的库文件和头文件到系统目录下
 
 因为我的功能也不是很复杂，所以打算只用`g++`编译运行，就不动用各种大型IDE了。下在是我的测试用例：
 
-{% highlight cpp linenos %}
+```cpp
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -30,7 +32,7 @@ int main(int argc, char **argv)
         waitKey(0);
         return 0;
 }
-{% endhighlight %}
+```
 
 编译使用：
 
@@ -48,7 +50,7 @@ sudo g++ opencv_test.cpp -lopencv_core -lopencv_highgui -lopencv_imgcodecs -I/us
 
 废话不多话，直接上代码：
 
-{% highlight cpp linenos %}
+```cpp
 
 #include <iostream>
 #include <sstream>
@@ -167,7 +169,7 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-{% endhighlight %}
+```
 
 编译命令如下：
 

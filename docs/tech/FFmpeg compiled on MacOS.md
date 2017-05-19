@@ -1,3 +1,5 @@
+# FFmpeg compiled on MacOS
+
 最近好像对音视频编解码来了兴趣，就来学习一波吧。在[FFmpeg官网](https://ffmpeg.org/documentation.html)上找到一篇入门教程[An FFmpeg and SDL Tutorial](http://dranger.com/ffmpeg/)，打算先照着这个学习，完成一个简单的视频播放器，并在学习的过程中，将实践的一些细节整理成博客，顺便培养一下技术情怀;-)
 
 那么首先就要搭建开发环境了，需要编译FFmpeg源码。本文参照FFmpeg[官方Wiki](https://trac.ffmpeg.org/wiki/CompilationGuide)提供的编译文档进行。因为是在Mac上进行，所以参照[针对MacOS的教程](https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX)的说明使用`Homebrew`进行自动编译安装.
