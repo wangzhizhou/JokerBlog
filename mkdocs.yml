@@ -4,7 +4,7 @@ pages:
     - 'Profile': 'index.md'
     - 'Me':
         - 'me/English Personal Resume.md'
-        - 'me/My plan for finding job.md'
+        - 'me/My Plan for finding Job.md'
         - 'me/Personal Pre-Work Record.md'
     - 'Tech': 
         - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
