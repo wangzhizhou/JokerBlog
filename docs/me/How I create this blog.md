@@ -1,14 +1,14 @@
 # 前提准备
 
-- 熟悉`Markdown`文档书写的
+- 熟悉`Markdown`文档书写的, 这里有份[语法说明](http://www.appinn.com/markdown/basic.html)
 
-- 熟悉`Git`的基本用法
+- 熟悉`Git`的版本控制的基本用法，这里有个[简明手册](http://www.bootcss.com/p/git-guide/)
 
-- 在`GitHub`上创建一个帐号
+- 在`GitHub`上创建一个帐号, 一个很好的[`Git`和`GitHub`学习资源](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
-- 至少看过一次`MkDocs`的使用文档
+- 至少看过一次[`MkDocs`的使用文档](http://www.mkdocs.org)
 
-- 在`Read the Docs`上开通一个帐号
+- 在`Read the Docs`上[开通](http://readthedocs.org)一个帐号
 
 # 环境搭建
 
