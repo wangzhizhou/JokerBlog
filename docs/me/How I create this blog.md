@@ -139,7 +139,7 @@ theme: readthedocs   //配置文档使用的模板样式
 
 # 调试方法
 
-如果你觉得一边用`vim`写文档，写完后还得手动运行一次`mkdocs serve`才能查看，那简单不能忍，这样的工作流是一定要改变的。
+如果你觉得一边用`vim`写文档，写完后还得手动运行一次`mkdocs serve`才能查看，那么麻烦简直不能忍，这样的工作流是一定要改变的。
 
 ## 1. 使用shell后台命令运行
 
@@ -159,7 +159,7 @@ mkdocs serve &
 screen mkdocs serve
 ```
 
-之后按下`Ctrl+A+D`就可以使调试服务器阻塞shell,这样你就可以继续编辑文档了。浏览器在你每次保存文档后会自动触发一次页面刷新来更新显示内容。
+之后按下`Ctrl+A+D`就可以使调试服务器不阻塞shell，这样你就可以继续编辑文档了。浏览器在你每次保存文档后会自动触发一次页面刷新来更新显示内容。
 
 如果结束调试服务器，使用命令:`screen -r`，并使用`Ctrl+C`来结束。
 
@@ -175,11 +175,11 @@ screen mkdocs serve
 
 在文档本地调试服务器运行的情况下，你手机上访问<http://doc.com:8000>就可以实时预览文档了。而且每次文档保存后会自动触发手机浏览器页面刷新，很方便。
 
-**那么剩下的就是如何配置手机通过电脑来上网了**
+**那么剩下的就是如何配置手机通过电脑来访问Http服务了**
 
-那么需要在当前的WiFi连接中配置一下`http代理`，电脑上需要有代理软件安装，例如`Charles`或者`Fiddler`
+在当前的WiFi连接中配置一下`http代理`，电脑上需要有代理软件安装，例如`Charles`或者`Fiddler`
 
-例如,我电脑MacBook使用`Charles`代理软件我的手机设置如下：
+例如,我电脑MacBook使用`Charles`代理软件，我的手机设置如下：
 
 ![http代理](/assets/pictures/http_proxy.png)
 
@@ -189,8 +189,42 @@ screen mkdocs serve
 
 # 在线托管
 
+在本地开发的差不多时，可以发布到网络上，这就涉及到托管服务了。你的源代码可以通过`GitHub`仓库服务托管，你的文档自动生成和浏览可以通过`Read The Docs`服务来托管，并且当你配置了`GitHub`对`Read The Docs`的Hook后，`GitHub`仓库的每次提交都会自动触发`Read The Docs`上的文档重新生成以保持最新状态，很方便。
 
-# 几个示例
+前面你已经注册了这两个托管服务的帐号。下面我们动手来发布我们的文档到网络上，让更多的人可以看到。
+
+
+1. 登录`GitHub`并创建一个托管仓库
+![create a repo]()
+
+2. 给仓库添加`Read The Docs`的`WebHook`
+![repo add the webhook]()
+
+3. 登录`Read The Docs`并导入文档项目仓库
+![import repo to Red the Docs]()
+
+4. 使用`git`命令初始化文档项目为`git` 仓库, 创建首次提交并上传到`GitHub`的仓库中，触发`Read The Docs`自动构建服务
+```
+//初始化git仓库并创建首次提交记录
+git init && g add * && g c -m 'a demo blog'
+```
+```
+//这里的https://github.com/wangzhizhou/demo.git路径应该是你自己创建的仓库路径
+git remote add origin https://github.com/wangzhizhou/demo.git
+```
+```
+//推送到GitHub仓库中
+git push -u origin master
+```
+
+5. 在线浏览文档
+
+短网址: 
+- <http://my-demo-blog.readthedocs.io>
+- <http://my-demo-blog.rtfd.io>
+
+
+# 我创建的几个文档示例
 
 - **[北上见面会](http://bsmeeting.readthedocs.io/zh/latest/)**
 
