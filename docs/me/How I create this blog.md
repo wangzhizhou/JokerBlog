@@ -206,7 +206,7 @@ screen mkdocs serve
 4. 使用`git`命令初始化文档项目为`git` 仓库, 创建首次提交并上传到`GitHub`的仓库中，触发`Read The Docs`自动构建服务
 ```
 //初始化git仓库并创建首次提交记录
-git init && g add * && g c -m 'a demo blog'
+git init && git add * && git commit -m 'a demo blog'
 ```
 ```
 //这里的https://github.com/wangzhizhou/demo.git路径应该是你自己创建的仓库路径

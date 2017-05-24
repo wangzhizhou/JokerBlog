@@ -96,13 +96,18 @@ Objective-C 是一种动态类型语言，它定义的所有类都在一个全�
 
 ### 优化启动时间的方法
 
-- 把应用引入的动态库合并成一个静态库进行加载。
-- 使用`dlopen`把库的加载时机推迟一些。
+- 把应用引入的动态库合并后进行加载。
+- 使用`dlopen`把库的加载时机推迟一些，但不推荐，因为会引起很多问题。
+- 尽量使用swift，因为swift考虑了这些因素。
+- 减少Objc的类的数量
+- 编译器选项添加`Wglobal-constructors
+- 排除静态初始化
 
 
 
 参考视频：
 
--  WWDC 2012 - iOS App Performance Responsiveness
--  WWDC 2016 - Optimizing App Startup Time
+-  [WWDC 2012 - iOS App Performance Responsiveness](https://developer.apple.com/videos/play/wwdc2012/235/)
+
+-  [WWDC 2016 - Optimizing App Startup Time](https://developer.apple.com/videos/play/wwdc2016/406/)
 
