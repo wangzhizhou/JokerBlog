@@ -195,13 +195,13 @@ screen mkdocs serve
 
 
 1. 登录`GitHub`并创建一个托管仓库
-![create a repo]()
+![create a repo](/assets/pictures/createRepo.gif)
 
 2. 给仓库添加`Read The Docs`的`WebHook`
-![repo add the webhook]()
+![repo add the webhook](/assets/pictures/readthedocswebhook.gif)
 
 3. 登录`Read The Docs`并导入文档项目仓库
-![import repo to Red the Docs]()
+![import repo to Red the Docs](/assets/pictures/deployTheDemoBlog.gif)
 
 4. 使用`git`命令初始化文档项目为`git` 仓库, 创建首次提交并上传到`GitHub`的仓库中，触发`Read The Docs`自动构建服务
 ```
@@ -219,10 +219,7 @@ git push -u origin master
 
 5. 在线浏览文档
 
-短网址: 
-- <http://my-demo-blog.readthedocs.io>
-- <http://my-demo-blog.rtfd.io>
-
+![read the demo blog](/assets/pictures/readthedemoblog.png)
 
 # 我创建的几个文档示例
 
