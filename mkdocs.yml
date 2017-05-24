@@ -23,6 +23,7 @@ pages:
         - 'tech/Use GDB.md'
         - 'tech/User OpenCV to add watermark on a video.md'
         - 'tech/Wireshark Basics.md'
+        - 'tech/Optimizing App Startup Time.md'
     - 'life':
         - 'Ali Fu': 'life/alipay-scan-fu-icon.md'
 
