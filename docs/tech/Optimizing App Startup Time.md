@@ -70,16 +70,39 @@ Objective-C 是一种动态类型语言，它定义的所有类都在一个全�
 
 ### 怎样测量时间
 
-### 优化启动时间
+不同平台的标准不同，但大致上`400ms`以内是一个不错的标准。因为应用被打开时，系统会有一段动画来完成平滑过渡，在这段动画时间内都可以算是不错的启动时间。这个动画的时间大致是`400ms`。应用如果启动时间超过`20s`会被系统杀死。
 
+### 热启动和冷启动
+
+- 热启动 —— 应用已经在内存的情况下被调起
+
+- 冷启动 —— 应用完全不在内存或缓存中的情况下被调起
+
+我们测量启动时间是以冷启动时间为准的。这通常需要重新启动设备。
+
+### 测量main()函数调用前所花费的时间
+
+`Dyld`有内建的测试机制。可以在项目中设置`DYLD_PRINT_STATICTICS`为`1`来开启统计功能。
 
 设置项目的启动时间统计相关的环境变量，如下图：
 
-![statistics](./1.png)
+![statistics](/assets/pictures/launchTimeSetup.png)
 
 需要机器重新启动后，确保测试时长比较准确，即冷启动。
 
 冷启动统计结果如下图:
 
-![refresh launch](./2.png)
+![refresh launch](/assets/pictures/launchTimeStatistics.png)
+
+### 优化启动时间的方法
+
+- 把应用引入的动态库合并成一个静态库进行加载。
+- 使用`dlopen`把库的加载时机推迟一些。
+
+
+
+参考视频：
+
+-  WWDC 2012 - iOS App Performance Responsiveness
+-  WWDC 2016 - Optimizing App Startup Time
 
