@@ -24,7 +24,10 @@ pages:
         - 'tech/User OpenCV to add watermark on a video.md'
         - 'tech/Wireshark Basics.md'
         - 'tech/Optimizing App Startup Time.md'
+        - 'tech/OpenVPN on Raspberry Pi.md'
     - 'life':
         - 'Ali Fu': 'life/alipay-scan-fu-icon.md'
+    - 'music':
+        - 'music/whistle.md'
 
 theme: readthedocs
