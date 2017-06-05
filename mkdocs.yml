@@ -25,6 +25,7 @@ pages:
         - 'tech/Wireshark Basics.md'
         - 'tech/Optimizing App Startup Time.md'
         - 'tech/OpenVPN on Raspberry Pi.md'
+        - 'tech/swift on client and server.md'
     - 'life':
         - 'Ali Fu': 'life/alipay-scan-fu-icon.md'
     - 'music':
