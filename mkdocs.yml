@@ -27,7 +27,8 @@ pages:
         - 'tech/OpenVPN on Raspberry Pi.md'
         - 'tech/swift on client and server.md'
     - 'life':
-        - 'Ali Fu': 'life/alipay-scan-fu-icon.md'
+        - 'life/alipay-scan-fu-icon.md'
+        - 'life/Renting in Beijing.md'
     - 'music':
         - 'music/whistle.md'
 
