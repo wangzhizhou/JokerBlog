@@ -29,3 +29,10 @@
 - Host IP: 192.168.0.203
 	- SSH Port: 22 -> 8005
 
+
+### SSH config file
+
+```
+SG9zdCBtYwogIEhvc3ROYW1lIHd3dy5vb2Jienlvby5jb20KICBVc2VyIGpva2VyCgpIb3N0IGthbGkKCUhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwoJVXNlciByb290CiAgICBQb3J0IDgwMDQKCkhvc3QgcGhvbmUKICAgIEhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwogICAgVXNlciBhbmRyb2lkCiAgICBQb3J0IDgwMDUKCkhvc3QgcGkKICAgIEhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwogICAgVXNlciBwaQo=
+```
+
