@@ -33,5 +33,7 @@ pages:
         - 'life/Renting in Beijing.md'
     - 'music':
         - 'music/whistle.md'
+    - 'minecraft':
+        - 'minecraft/minecraft.md'
 
 theme: readthedocs
