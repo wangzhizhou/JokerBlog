@@ -44,9 +44,10 @@
 - 模式：生存模式
 - 无身份认证(个人维护)
 - 服务器地址: www.oobbzyoo.com:25566
-- [minecraft-1.12版本信息](http://minecraft.gamepedia.com/1.12)
 
 # 游戏攻略说明&官网
+
+- [MC1.12版本信息和操作指南](http://minecraft.gamepedia.com/1.12)
 
 - [MC中文站](http://www.minecraftxz.com/)
 
