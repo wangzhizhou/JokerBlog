@@ -1,18 +1,13 @@
 site_name: Joker's Blog
-site_url: null
 site_description: 'This is my personal blog as document'
 site_author: 'wangzhizhou'
 
 repo_url: 'https://github.com/wangzhizhou/JokerBlog'
 repo_name: 'GitHub'
-#edit_uri: 'edit/master/docs/'
 
 google_analytics: ['UA-36723568-3', 'mkdocs.org']
 
 theme: readthedocs
-
-strict: true
-dev_addr: '0.0.0.0:8000'
 
 copyright: 'created by wangzhizhou'
 
