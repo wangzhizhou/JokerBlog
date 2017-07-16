@@ -5,7 +5,7 @@ site_author: 'wangzhizhou'
 
 repo_url: 'https://github.com/wangzhizhou/JokerBlog'
 repo_name: 'GitHub'
-edit_uri: 'edit/master/docs/'
+#edit_uri: 'edit/master/docs/'
 
 google_analytics: ['UA-36723568-3', 'mkdocs.org']
 
