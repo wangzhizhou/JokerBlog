@@ -11,13 +11,6 @@ google_analytics: ['UA-36723568-3', 'mkdocs.org']
 
 theme: readthedocs
 
-markdown_extensions:
-    - smarty
-    - toc:
-        permalink: True
-        separator: "_"
-    - sane_lists
-
 strict: true
 dev_addr: '0.0.0.0:8000'
 
