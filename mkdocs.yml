@@ -1,14 +1,32 @@
 site_name: Joker's Blog
+site_url: null
+site_description: 'This is my personal blog as document'
+site_author: 'wangzhizhou'
+
+repo_url: 'https://github.com/wangzhizhou/JokerBlog'
+repo_name: 'GitHub'
+edit_uri: edit/master/docs/
+
+google_analytics: ['UA-36723568-3', 'mkdocs.org']
+
+theme: readthedocs
+
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: True
+        separator: "_"
+    - sane_lists
+
+strict: true
+dev_addr: '0.0.0.0:8000'
+
+copyright: 'created by wangzhizhou'
 
 pages:
-    - 'Profile': 'index.md'
-    - 'Me':
-        - 'me/English Personal Resume.md'
-        - 'me/My Plan for finding Job.md'
-        - 'me/Personal Pre-Work Record.md'
-        - 'me/My Financial Planning.md'
-        - 'me/How I create this blog.md'
-    - 'Tech': 
+    - 'About Me': 'index.md'
+    - 'Create your own blog as me': 'How I create this blog.md'
+    - 'Z-turn': 
         - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
         - 'tech/Learn STL In 30 Minutes.md'
         - 'tech/Installation of Ubuntu 16.04 On UDisk.md'
@@ -28,12 +46,15 @@ pages:
         - 'tech/swift on client and server.md'
         - 'tech/my hardware.md'
         - 'tech/kotlin.md'
-    - 'life':
+    - 'etc':
         - 'life/alipay-scan-fu-icon.md'
         - 'life/Renting in Beijing.md'
-    - 'music':
+    - 'Music':
         - 'music/whistle.md'
-    - 'minecraft':
+    - 'Game':
         - 'minecraft/minecraft.md'
-
-theme: readthedocs
+    - 'Me':
+        - 'me/English Personal Resume.md'
+        - 'me/My Plan for finding Job.md'
+        - 'me/Personal Pre-Work Record.md'
+        - 'me/My Financial Planning.md'
