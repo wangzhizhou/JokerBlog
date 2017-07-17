@@ -1,5 +1,5 @@
 
 # Personal Pre-Work Record
 
-[Download the record file(.xlsx)](/assets/excels/preworknote.xlsx)
+[Download the record file(.xls)](/assets/excels/preworknote.xls)
 
