@@ -81,8 +81,8 @@ extra_css: []
 # Set a list of JavaScript files in your docs_dir to be included by the theme. 
 # See the example in extra_css for usage.
 # default: []
-extra_javascript:
-    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML 
+extra_javascript:[]
+#    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML 
 
 
 # Set a list of templates in your docs_dir to be built by MkDocs. 
@@ -148,8 +148,8 @@ dev_addr: '127.0.0.1:8000'
 #    - toc:
 #        permalink: True
 #    - sane_lists
-markdown_extensions:
-    - mdx_math
+markdown_extensions:[]
+#    - mdx_math
 
 
 # This setting is used to determine the set of pages that should be 
