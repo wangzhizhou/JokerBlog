@@ -81,7 +81,7 @@ extra_css: []
 # Set a list of JavaScript files in your docs_dir to be included by the theme. 
 # See the example in extra_css for usage.
 # default: []
-extra_javascript:[]
+extra_javascript: []
 #    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML 
 
 
@@ -148,7 +148,7 @@ dev_addr: '127.0.0.1:8000'
 #    - toc:
 #        permalink: True
 #    - sane_lists
-markdown_extensions:[]
+markdown_extensions: []
 #    - mdx_math
 
 
