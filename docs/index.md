@@ -4,6 +4,24 @@ Hello, I'm Wang Zhizhou, a single dog and a coder. Right now, I'm working on iOS
 
 
  I was born in 1991. Yes, the Linux operation system was born in the same year. And I like computer, though I'm not top experts. I just like it, and want to do something with computer, I enjoy that feeling.
+ 
+# 简介
+
+为了防止世界被破坏 
+
+为了保护世界的和平 
+
+贯彻爱与真实的邪恶 
+
+可爱又迷人的老司机
+
+我是穿梭在QQ群和微信群的肥龙，
+
+白洞,白色的明天等着我
+
+就是这样
+
+汪~~~, 汪汪汪
 
 
 
