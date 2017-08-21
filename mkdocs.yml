@@ -4,7 +4,7 @@
 # project documentation.
 # When rendering the theme this 
 # setting will be passed as the site_name context variable.
-site_name: Joker's Blog
+site_name: "Joker's Blog"
 
 # Set the canonical URL of the site. 
 # This will add a link tag with the canonical URL to the generated HTML header.
@@ -14,34 +14,34 @@ site_url:  null
 
 # Set the site description. This will add a meta tag to the generated HTML header.
 # default: null
-site_description: 'This is my personal blog as document'
+site_description: "This is my personal blog as documentr"
 
 # Set the name of the author. This will add a meta tag to the generated HTML header.
 # default: null
-site_author: 'wangzhizhou'
+site_author: "wangzhizhou"
 
 # When set, provides a link to your GitHub or Bitbucket repository on each page.
 # default: null
-repo_url: 'https://github.com/wangzhizhou/JokerBlog'
+repo_url: "https://github.com/wangzhizhou/JokerBlog"
 
 # When set, provides a link to your GitHub or Bitbucket repository on each page.
 # default: 'GitHub' or 'Bitbucket' if the repo_url matches those domains, 
 # otherwise null
-repo_name: 'GitHub'
+repo_name: "GitHub"
 
 # When set, provides a link directly to the page in your source repository. 
 # This makes it easier to find and edit the source for the page. 
 # If repo_url is not set, this option is ignored.
-edit_uri: edit/master/docs/   
+edit_uri: "edit/master/docs/"
 # edit_uri:  blob/master/docs/
 
 # Set the Google analytics tracking configuration.
 # default: null
-google_analytics: ['UA-36723568-3', 'mkdocs.org']
+google_analytics: ["UA-36723568-3", "mkdocs.org"]
 
 # built-in theme
 # default: mkdocs
-theme: 'readthedocs'
+theme: "readthedocs"
 # theme: 'mkdocs'
 
 
@@ -59,7 +59,7 @@ theme_dir: null
 # containing your configuration file, 
 # or it can be an absolute directory path from the root of your local file system.
 # default: 'docs'
-docs_dir: 'docs'
+docs_dir: "docs"
 
 
 # Lets you set the directory where the output HTML and other files are created. 
@@ -68,7 +68,7 @@ docs_dir: 'docs'
 # configuration file, or it can be an absolute directory path from the root 
 # of your local file system.
 # default: 'site'
-site_dir: 'site'
+site_dir: "site"
 
 
 # Set a list of CSS files in your docs_dir to be included by the theme. 
@@ -102,7 +102,7 @@ extra: {}
 
 # Set the copyright information to be included in the documentation by the theme.
 # default: null
-copyright: 'created by wangzhizhou'
+copyright: "created by wangzhizhou"
 
 
 # Set the remote name to push to when using gh-deploy to deploy to Github Pages. 
