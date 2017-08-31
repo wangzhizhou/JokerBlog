@@ -37,7 +37,7 @@ edit_uri: "edit/master/docs/"
 
 # Set the Google analytics tracking configuration.
 # default: null
-google_analytics: ["UA-36723568-3", "mkdocs.org"]
+#google_analytics: ["UA-36723568-3", "mkdocs.org"]
 
 # built-in theme
 # default: mkdocs
@@ -107,13 +107,13 @@ copyright: "created by wangzhizhou"
 
 # Set the remote name to push to when using gh-deploy to deploy to Github Pages. 
 # This option can be overridden by a command line option in gh-deploy.
-remote_name: origin
+remote_name: "origin"
 
 
 # Set the remote branch to commit to when using gh-deploy to deploy to Github Pages. 
 # This option can be overridden by a command line option in gh-deploy.
 # default: gh-pages
-remote_branch: gh-pages
+remote_branch: "gh-pages"
 
 
 # This setting controls the style used for linking to pages within the documentation.# The default style of use_directory_urls=true creates more user friendly URLs, 
