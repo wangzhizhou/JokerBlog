@@ -75,13 +75,13 @@ site_dir: "site"
 # For example, the following example will include the extra.css file 
 # within the css subdirectory in your docs_dir.
 # default: []
-extra_css: []
+# extra_css: []
 
 
 # Set a list of JavaScript files in your docs_dir to be included by the theme. 
 # See the example in extra_css for usage.
 # default: []
-extra_javascript: []
+# extra_javascript: []
 #    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML 
 
 
@@ -90,7 +90,7 @@ extra_javascript: []
 # about custom themes and specifically the section about the variables 
 # that are available to templates.
 # default: []
-extra_templates: []
+# extra_templates: []
 
 # A set of key value pairs, where the values can be any valid YAML construct, 
 # that will be passed to the template. 
@@ -98,7 +98,7 @@ extra_templates: []
 # example:
 #   extra: 
 #       version: 1.0:w
-extra: {} 
+# extra: {} 
 
 # Set the copyright information to be included in the documentation by the theme.
 # default: null
@@ -134,7 +134,7 @@ strict: true
 # As with all settings, 
 # you can set this from the command line, which can be useful, for example:
 #   mkdocs serve --dev-addr=0.0.0.0:80
-dev_addr: '127.0.0.1:8000'
+# dev_addr: '127.0.0.1:8000'
 
 
 # MkDocs uses the Python Markdown library to translate Markdown files into HTML. 
@@ -148,7 +148,7 @@ dev_addr: '127.0.0.1:8000'
 #    - toc:
 #        permalink: True
 #    - sane_lists
-markdown_extensions: []
+# markdown_extensions: []
 #    - mdx_math
 
 
@@ -194,3 +194,4 @@ pages:
         - 'me/Personal Pre-Work Record.md'
         - 'me/My Financial Planning.md'
         - 'me/Life in Beijing.md'
+
