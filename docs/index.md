@@ -23,5 +23,11 @@ Hello, I'm Wang Zhizhou, a single dog and a coder. Right now, I'm working on iOS
 
 汪~~~, 汪汪汪
 
+# 联系我
+
+- 邮箱: <824219521@qq.com>
+- 微信: `w_z_z_1991`
+
+	![wechat](/assets/pictures/wechat.jpg)
 
 
