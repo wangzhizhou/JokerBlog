@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="wangzhizhou">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>User OpenCV to add watermark on a video - Joker's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Joker's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">About Me</a>
+                    </li>
+                    <li >
+                        <a href="../../How I create this blog/">Create your own blog as me</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Z-turn <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/">Network Simulator 2 Installation Guide for Ubuntu</a>
+</li>
+                            
+<li >
+    <a href="../Learn STL In 30 Minutes/">Learn STL In 30 Minutes</a>
+</li>
+                            
+<li >
+    <a href="../Installation of Ubuntu 16.04 On UDisk/">Installation of Ubuntu 16.04 On UDisk</a>
+</li>
+                            
+<li >
+    <a href="../Configure Git Server With Ubuntn and Apache 2/">Configure Git Server With Ubuntn and Apache 2</a>
+</li>
+                            
+<li >
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/">Add Watermark on Video with OpenCV and FFmpeg</a>
+</li>
+                            
+<li >
+    <a href="../Develop DLNA Using Platinum Library/">Develop DLNA Using Platinum Library</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg and SDL tutorial 1/">FFmpeg and SDL tutorial 1</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg compiled on MacOS/">FFmpeg compiled on MacOS</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg version 3.1.4 example code/">FFmpeg version 3.1.4 example code</a>
+</li>
+                            
+<li >
+    <a href="../Fmpeg 2.8.6 example code - transcoding/">Fmpeg 2.8.6 example code   transcoding</a>
+</li>
+                            
+<li >
+    <a href="../Nmap Basics/">Nmap Basics</a>
+</li>
+                            
+<li >
+    <a href="../Use GDB/">Use GDB</a>
+</li>
+                            
+<li class="active">
+    <a href="./">User OpenCV to add watermark on a video</a>
+</li>
+                            
+<li >
+    <a href="../Wireshark Basics/">Wireshark Basics</a>
+</li>
+                            
+<li >
+    <a href="../Optimizing App Startup Time/">Optimizing App Startup Time</a>
+</li>
+                            
+<li >
+    <a href="../OpenVPN on Raspberry Pi/">OpenVPN on Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../swift on client and server/">Swift on client and server</a>
+</li>
+                            
+<li >
+    <a href="../my hardware/">My hardware</a>
+</li>
+                            
+<li >
+    <a href="../kotlin/">Kotlin</a>
+</li>
+                            
+<li >
+    <a href="../Convert MP4 to GIF With FFmpeg/">Convert MP4 to GIF With FFmpeg</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">etc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../life/alipay-scan-fu-icon/">Alipay scan fu icon</a>
+</li>
+                            
+<li >
+    <a href="../../life/Renting in Beijing/">Renting in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../life/Gu Bei Shui Zhen/">Gu Bei Shui Zhen</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../music/whistle/">Whistle</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Game <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../minecraft/minecraft/">Minecraft</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../me/English Personal Resume/">English Personal Resume</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Plan for finding Job/">My Plan for finding Job</a>
+</li>
+                            
+<li >
+    <a href="../../me/Personal Pre-Work Record/">Personal Pre Work Record</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Financial Planning/">My Financial Planning</a>
+</li>
+                            
+<li >
+    <a href="../../me/Life in Beijing/">Life in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../me/jokerhub/">Jokerhub</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Use GDB/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Wireshark Basics/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wangzhizhou/JokerBlog">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#user-opencv-to-add-watermark-on-a-video">User OpenCV to add watermark on a video</a></li>
+        <li class="main "><a href="#_1">安装开发环境</a></li>
+        <li class="main "><a href="#_2">测试开发环境是否安装成功</a></li>
+        <li class="main "><a href="#_3">读视频</a></li>
+        <li class="main "><a href="#_4">加水印</a></li>
+        <li class="main "><a href="#_5">后记</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="user-opencv-to-add-watermark-on-a-video">User OpenCV to add watermark on a video</h1>
+<h1 id="_1">安装开发环境</h1>
+<p>首先，需要<code>OpenCV</code>开发环境，就是安装<code>OpenCV</code>相关的库。</p>
+<p>直接到<code>GitHub</code>上拉下<a href="https://github.com/opencv/opencv">OpenCV源代码</a>，然后进入<a href="http://docs.opencv.org/master/">项目文档</a>中寻找从源代码编译的方法。我的平台是<code>MacOS</code>，所以找到的是Linux/Mac平台下的安装方法: <a href="http://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html">http://docs.opencv.org/master/d7/d9f/tutorial_linux_install.html</a></p>
+<p>但是参考了另一篇文章，下载了源代码并进入目录(<code>opencv-master/</code>)下，使以下命令编译:</p>
+<pre><code>sudo cmake -G &quot;Unix Makefiles&quot; //检查相关配置选项
+sudo make -j8  //八线程编译
+sudo make install  //安装编译好的库文件和头文件到系统目录下
+</code></pre>
+
+<h1 id="_2">测试开发环境是否安装成功</h1>
+<p>因为我的功能也不是很复杂，所以打算只用<code>g++</code>编译运行，就不动用各种大型IDE了。下在是我的测试用例：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace std;
+using namespace cv;
+
+int main(int argc, char **argv)
+{
+        Mat img = imread(argv[1]);
+        imshow(&quot;test&quot;,img);
+        waitKey(0);
+        return 0;
+}
+</code></pre>
+
+<p>编译使用：</p>
+<pre><code>sudo g++ opencv_test.cpp -lopencv_core -lopencv_highgui -lopencv_imgcodecs -I/usr/local/include -L/usr/local/lib
+</code></pre>
+
+<p>使用下面命令显示一幅图片:</p>
+<pre><code>./a.out test.jpg # test.jpg is your own picture file
+</code></pre>
+
+<p>如果能够显示出图片，说明开发环境已经安装成功;-)</p>
+<h1 id="_3">读视频</h1>
+<p>废话不多话，直接上代码：</p>
+<pre><code class="cpp">
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;opencv2/opencv.hpp&gt;
+
+using namespace std;
+using namespace cv;
+
+VideoWriter output;
+
+Mat addWatermarkInFrame(Mat frame, int frameNum)
+{
+    cout &lt;&lt; &quot;processing &quot; &lt;&lt;frameNum &lt;&lt; &quot; frame&quot; &lt;&lt;endl; 
+
+    Mat redSquare = Mat(Size(20,20),CV_8UC3,Scalar(0,0,255));
+
+    Mat imageROI = frame(Rect(10,10,redSquare.cols, redSquare.rows));
+
+    addWeighted(imageROI, 1.0, redSquare, 1.0,0,imageROI);  
+
+    return frame;
+}
+
+void Stop(int signal)
+{   
+    output.~VideoWriter();
+    cout &lt;&lt; &quot;process been interrupted!&quot; &lt;&lt; endl;
+    exit(0);
+}
+
+void help()
+{
+    cout
+    &lt;&lt; &quot;-----------------------------------------------------&quot; &lt;&lt; endl
+    &lt;&lt; &quot;This program shows how to read a video file with OpenCV.&quot; &lt;&lt; endl
+    &lt;&lt; &quot;In addition, it show the process of add watermark in a video&quot; &lt;&lt; endl
+    &lt;&lt; &quot;Usage:&quot; &lt;&lt; endl
+    &lt;&lt; &quot;./a.out &lt;input_video_file or video_stream_url&gt;&quot; &lt;&lt; endl;
+}
+
+int main(int argc, char **argv)
+{
+    if(argc &lt; 2)
+    {
+        help();
+    }
+    else if(argc &gt; 2)
+    {
+        cout &lt;&lt; &quot;Too many parameters&quot; &lt;&lt; endl;
+    }
+
+    const string cameraOrFile= argv[1];
+
+    stringstream ss;
+    ss &lt;&lt; cameraOrFile;
+
+    int deviceID;
+    ss &gt;&gt; deviceID;
+
+    VideoCapture video;
+    if(ss.good())
+    {
+        video.open(deviceID);
+    }
+    else
+    {
+        video.open(cameraOrFile);
+    }
+
+    if(!video.isOpened())
+    {
+        cout&lt;&lt; &quot;Could not open the video file!&quot; &lt;&lt; endl;
+        return -1;
+    }
+
+    Size videoSize = Size((int)video.get(CAP_PROP_FRAME_WIDTH),
+                        (int)video.get(CAP_PROP_FRAME_HEIGHT));
+    int frameRate = video.get(CAP_PROP_FPS);
+
+    cout &lt;&lt; &quot;The size of video frame is: &quot;&lt;&lt; videoSize &lt;&lt; endl;
+    cout &lt;&lt; &quot;The frame rate is: &quot; &lt;&lt; frameRate &lt;&lt; endl; 
+
+    int frameNum = -1;
+    Mat frame;
+    namedWindow(&quot;frame&quot;,WINDOW_AUTOSIZE);
+
+    remove(&quot;output.mp4&quot;);
+    output.open(&quot;output.mp4&quot;, -1, frameRate,videoSize,true);
+    if(!output.isOpened())
+    {
+        cout &lt;&lt; &quot;Could not open the output video for write!&quot; &lt;&lt; endl;
+        return -1;
+    }
+
+    signal(SIGINT,Stop);
+
+    while(1)
+    {
+        video &gt;&gt; frame;
+        if(frame.empty())
+        {
+            cout &lt;&lt; &quot;The video had been processed!&quot; &lt;&lt; endl;
+            break;
+        }
+
+        Mat ret = addWatermarkInFrame(frame, ++frameNum);
+
+        imshow(&quot;frame&quot;,ret);
+        waitKey(1.0/frameRate * 1000);
+
+        output &lt;&lt; ret;
+    }
+
+    cout &lt;&lt; &quot;Finished writing video&quot; &lt;&lt; endl;
+
+    return 0;
+}
+
+</code></pre>
+
+<p>编译命令如下：</p>
+<pre><code>sudo g++ opencv_test.cpp -lopencv_core -lopencv_highgui -lopencv_imgcodecs -I/usr/local/include -L/usr/local/lib -lopencv_videoio
+</code></pre>
+
+<p>编译出的可执行文件是<code>a.out</code>, 使用方法可以是：</p>
+<pre><code>./a.out test.mp4 # process the video file
+
+</code></pre>
+
+<p>或者</p>
+<pre><code>./a.out &quot;http://zhulongyixian.vicp.cc:30236/?action=stream&quot; # &lt;video_stream_url&gt; process the video stream
+</code></pre>
+
+<p>不过如果原来的视频有声音的话，由于OpenCV处理后只有视频数据被写入了文件，这样造成处理结果文件中丢失了音频通道的数据。下一步需要考虑使用FFmpeg来改写视频编解码部分了。</p>
+<h1 id="_4">加水印</h1>
+<p>加水印部分可以在上面程序的第<code>10</code>行开始的函数里面进行，为了简化处理，只给视频左上角加了一个红色小方块。</p>
+<h1 id="_5">后记</h1>
+<p>最近学习linux相关知识，发现命令行越来越好用了，当然只是针对简单点的开发任务。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>created by wangzhizhou</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

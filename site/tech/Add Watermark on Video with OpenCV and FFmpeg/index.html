@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="wangzhizhou">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Add Watermark on Video with OpenCV and FFmpeg - Joker's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Joker's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">About Me</a>
+                    </li>
+                    <li >
+                        <a href="../../How I create this blog/">Create your own blog as me</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Z-turn <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/">Network Simulator 2 Installation Guide for Ubuntu</a>
+</li>
+                            
+<li >
+    <a href="../Learn STL In 30 Minutes/">Learn STL In 30 Minutes</a>
+</li>
+                            
+<li >
+    <a href="../Installation of Ubuntu 16.04 On UDisk/">Installation of Ubuntu 16.04 On UDisk</a>
+</li>
+                            
+<li >
+    <a href="../Configure Git Server With Ubuntn and Apache 2/">Configure Git Server With Ubuntn and Apache 2</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Add Watermark on Video with OpenCV and FFmpeg</a>
+</li>
+                            
+<li >
+    <a href="../Develop DLNA Using Platinum Library/">Develop DLNA Using Platinum Library</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg and SDL tutorial 1/">FFmpeg and SDL tutorial 1</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg compiled on MacOS/">FFmpeg compiled on MacOS</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg version 3.1.4 example code/">FFmpeg version 3.1.4 example code</a>
+</li>
+                            
+<li >
+    <a href="../Fmpeg 2.8.6 example code - transcoding/">Fmpeg 2.8.6 example code   transcoding</a>
+</li>
+                            
+<li >
+    <a href="../Nmap Basics/">Nmap Basics</a>
+</li>
+                            
+<li >
+    <a href="../Use GDB/">Use GDB</a>
+</li>
+                            
+<li >
+    <a href="../User OpenCV to add watermark on a video/">User OpenCV to add watermark on a video</a>
+</li>
+                            
+<li >
+    <a href="../Wireshark Basics/">Wireshark Basics</a>
+</li>
+                            
+<li >
+    <a href="../Optimizing App Startup Time/">Optimizing App Startup Time</a>
+</li>
+                            
+<li >
+    <a href="../OpenVPN on Raspberry Pi/">OpenVPN on Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../swift on client and server/">Swift on client and server</a>
+</li>
+                            
+<li >
+    <a href="../my hardware/">My hardware</a>
+</li>
+                            
+<li >
+    <a href="../kotlin/">Kotlin</a>
+</li>
+                            
+<li >
+    <a href="../Convert MP4 to GIF With FFmpeg/">Convert MP4 to GIF With FFmpeg</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">etc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../life/alipay-scan-fu-icon/">Alipay scan fu icon</a>
+</li>
+                            
+<li >
+    <a href="../../life/Renting in Beijing/">Renting in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../life/Gu Bei Shui Zhen/">Gu Bei Shui Zhen</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../music/whistle/">Whistle</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Game <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../minecraft/minecraft/">Minecraft</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../me/English Personal Resume/">English Personal Resume</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Plan for finding Job/">My Plan for finding Job</a>
+</li>
+                            
+<li >
+    <a href="../../me/Personal Pre-Work Record/">Personal Pre Work Record</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Financial Planning/">My Financial Planning</a>
+</li>
+                            
+<li >
+    <a href="../../me/Life in Beijing/">Life in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../me/jokerhub/">Jokerhub</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Configure Git Server With Ubuntn and Apache 2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Develop DLNA Using Platinum Library/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wangzhizhou/JokerBlog">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#add-watermark-on-video-with-opencv-and-ffmpeg">Add Watermark on Video with OpenCV and FFmpeg</a></li>
+        <li class="main "><a href="#_1">源代码</a></li>
+        <li class="main "><a href="#_2">编译</a></li>
+        <li class="main "><a href="#_3">使用</a></li>
+        <li class="main "><a href="#_4">测试视频</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="add-watermark-on-video-with-opencv-and-ffmpeg">Add Watermark on Video with OpenCV and FFmpeg</h1>
+<p>之前写过一篇<code>use opencv to add watermark in a video</code>，但是发现有个问题：</p>
+<ul>
+<li>处理后的视频无法保留原来视频中的音频信息</li>
+</ul>
+<p>所以决定再探究一下。</p>
+<p>经过调查发现<code>FFmpeg</code>应用相当广泛，几乎是音视频领域的瑞士军刀，所以我也试一下水，经过三个星期的摸索，终于初步解决了上面提到的那个问题。觉得相当的欣慰，对自己感到非常满意 ;-)</p>
+<p>程序的主要功能是，读入一个视频(其中包含音频)，给视频图像左上角添加一个黄色方块后，输出成相同格式的视频文件，并保留原文件中的音频信息。</p>
+<p>代码文件: <a href="../../assets/ffmpeg-code/experiment-code/ffmpeg-opencv-transcode.cpp">ffmpeg-opencv-transcode.cpp</a></p>
+<h1 id="_1">源代码</h1>
+<pre><code class="cpp">/**
+ * Copyright (c) 2010 Nicolas George
+ * Copyright (c) 2011 Stefano Sabatini
+ * Copyright (c) 2014 Andrey Utkin
+
+ * Copyright (c) 2016 Wang Zhizhou  email: 824219521@qq.com
+ *      modified from ffmpeg offical example named: transcoding.c
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+extern &quot;C&quot;
+{
+#include &lt;libavcodec/avcodec.h&gt;
+#include &lt;libavformat/avformat.h&gt;
+#include &lt;libavfilter/avfiltergraph.h&gt;
+#include &lt;libavfilter/buffersink.h&gt;
+#include &lt;libavfilter/buffersrc.h&gt;
+#include &lt;libavutil/opt.h&gt;
+#include &lt;libavutil/pixdesc.h&gt;
+#include &lt;libswscale/swscale.h&gt;
+}
+
+static AVFormatContext *ifmt_ctx;
+static AVFormatContext *ofmt_ctx;
+
+static int open_input_file(const char *filename){
+    int ret;
+    unsigned int i;
+    ifmt_ctx = NULL;
+    if ((ret = avformat_open_input(&amp;ifmt_ctx, filename, NULL, NULL)) &lt; 0) {
+        av_log(NULL, AV_LOG_ERROR, &quot;Cannot open input file\n&quot;);
+        return ret;
+    }
+    if ((ret = avformat_find_stream_info(ifmt_ctx, NULL)) &lt; 0) {
+        av_log(NULL, AV_LOG_ERROR, &quot;Cannot find stream information\n&quot;);
+        return ret;
+    }
+    for (i = 0; i &lt; ifmt_ctx-&gt;nb_streams; i++) {
+        AVStream *stream;
+        AVCodecContext *codec_ctx;
+        stream = ifmt_ctx-&gt;streams[i];
+        codec_ctx = stream-&gt;codec;
+        /* Reencode video &amp; audio and remux subtitles etc. */
+        if (codec_ctx-&gt;codec_type == AVMEDIA_TYPE_VIDEO) {
+            /* Open decoder */
+            ret = avcodec_open2(codec_ctx,
+                                avcodec_find_decoder(codec_ctx-&gt;codec_id), NULL);
+            if (ret &lt; 0) {
+                av_log(NULL, AV_LOG_ERROR, &quot;Failed to open decoder for stream #%u\n&quot;, i);
+                return ret;
+            }
+        }
+    }
+    av_dump_format(ifmt_ctx, 0, filename, 0);
+    return 0;
+}
+static int open_output_file(const char *filename){
+    AVStream *out_stream;
+    AVStream *in_stream;
+    AVCodecContext *dec_ctx, *enc_ctx;
+    AVCodec *encoder;
+    int ret;
+    unsigned int i;
+    ofmt_ctx = NULL;
+    avformat_alloc_output_context2(&amp;ofmt_ctx, NULL, NULL, filename);
+    if (!ofmt_ctx) {
+        av_log(NULL, AV_LOG_ERROR, &quot;Could not create output context\n&quot;);
+        return AVERROR_UNKNOWN;
+    }
+    for (i = 0; i &lt; ifmt_ctx-&gt;nb_streams; i++) {
+        out_stream = avformat_new_stream(ofmt_ctx, NULL);
+        if (!out_stream) {
+            av_log(NULL, AV_LOG_ERROR, &quot;Failed allocating output stream\n&quot;);
+            return AVERROR_UNKNOWN;
+        }
+        in_stream = ifmt_ctx-&gt;streams[i];
+        dec_ctx = in_stream-&gt;codec;
+        enc_ctx = out_stream-&gt;codec;
+        if (dec_ctx-&gt;codec_type == AVMEDIA_TYPE_VIDEO) {
+            /* in this example, we choose transcoding to same codec */
+            encoder = avcodec_find_encoder(dec_ctx-&gt;codec_id);
+            if (!encoder) {
+                av_log(NULL, AV_LOG_FATAL, &quot;Necessary encoder not found\n&quot;);
+                return AVERROR_INVALIDDATA;
+            }
+            /* In this example, we transcode to same properties (picture size,
+             * sample rate etc.). These properties can be changed for output
+             * streams easily using filters */
+
+            if (ofmt_ctx-&gt;oformat-&gt;flags &amp; AVFMT_GLOBALHEADER)
+                enc_ctx-&gt;flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+
+
+            enc_ctx-&gt;height = dec_ctx-&gt;height;
+            enc_ctx-&gt;width = dec_ctx-&gt;width;
+            enc_ctx-&gt;sample_aspect_ratio = dec_ctx-&gt;sample_aspect_ratio;
+            /* take first format from list of supported formats */
+            if (encoder-&gt;pix_fmts)
+                enc_ctx-&gt;pix_fmt = encoder-&gt;pix_fmts[0];
+            else
+                enc_ctx-&gt;pix_fmt = dec_ctx-&gt;pix_fmt;
+            /* video time_base can be set to whatever is handy and supported by encoder */
+            enc_ctx-&gt;time_base = dec_ctx-&gt;time_base;
+            out_stream-&gt;time_base = enc_ctx-&gt;time_base;
+
+            if(dec_ctx-&gt;codec_id == AV_CODEC_ID_H264)
+            {
+                enc_ctx-&gt;me_range = 16;
+                enc_ctx-&gt;max_qdiff = 4;
+                enc_ctx-&gt;qmin = 11;
+                enc_ctx-&gt;qmax =30;
+                enc_ctx-&gt;qcompress = 0.7;
+            }
+
+            /* Third parameter can be used to pass settings to encoder */
+            ret = avcodec_open2(enc_ctx, encoder, NULL);
+            if (ret &lt; 0) {
+                av_log(NULL, AV_LOG_ERROR, &quot;Cannot open video encoder for stream #%u\n&quot;, i);
+                return ret;
+            }
+        } else if (dec_ctx-&gt;codec_type == AVMEDIA_TYPE_UNKNOWN) {
+            av_log(NULL, AV_LOG_FATAL, &quot;Elementary stream #%d is of unknown type, cannot proceed\n&quot;, i);
+            return AVERROR_INVALIDDATA;
+        } else {
+            /* if this stream must be remuxed */
+            ret = avcodec_copy_context(ofmt_ctx-&gt;streams[i]-&gt;codec,
+                                       ifmt_ctx-&gt;streams[i]-&gt;codec);
+
+            if(AVMEDIA_TYPE_AUDIO == ofmt_ctx-&gt;streams[i]-&gt;codec-&gt;codec_type)
+            {
+                ofmt_ctx-&gt;streams[i]-&gt;codec-&gt;codec_tag = 0;
+            }
+
+            if (ret &lt; 0) {
+                av_log(NULL, AV_LOG_ERROR, &quot;Copying stream context failed\n&quot;);
+                return ret;
+            }
+        }
+    }
+    av_dump_format(ofmt_ctx, 0, filename, 1);
+    if (!(ofmt_ctx-&gt;oformat-&gt;flags &amp; AVFMT_NOFILE)) {
+        ret = avio_open(&amp;ofmt_ctx-&gt;pb, filename, AVIO_FLAG_WRITE);
+        if (ret &lt; 0) {
+            av_log(NULL, AV_LOG_ERROR, &quot;Could not open output file '%s'&quot;, filename);
+            return ret;
+        }
+    }
+    /* init muxer, write output file header */
+    ret = avformat_write_header(ofmt_ctx, NULL);
+    if (ret &lt; 0) {
+        av_log(NULL, AV_LOG_ERROR, &quot;Error occurred when opening output file\n&quot;);
+        return ret;
+    }
+    return 0;
+}
+static int encode_write_frame(AVFrame *filt_frame, unsigned int stream_index, int *got_frame) {
+    int ret;
+    int got_frame_local;
+    AVPacket enc_pkt;
+    if (!got_frame)
+        got_frame = &amp;got_frame_local;
+    av_log(NULL, AV_LOG_INFO, &quot;Encoding frame\n&quot;);
+    /* encode filtered frame */
+    enc_pkt.data = NULL;
+    enc_pkt.size = 0;
+    av_init_packet(&amp;enc_pkt);
+    ret = avcodec_encode_video2(ofmt_ctx-&gt;streams[stream_index]-&gt;codec, &amp;enc_pkt,
+                   filt_frame, got_frame);
+    av_frame_free(&amp;filt_frame);
+    if (ret &lt; 0)
+        return ret;
+    if (!(*got_frame))
+        return 0;
+    /* prepare packet for muxing */
+    enc_pkt.stream_index = stream_index;
+    av_packet_rescale_ts(&amp;enc_pkt,
+                         ofmt_ctx-&gt;streams[stream_index]-&gt;codec-&gt;time_base,
+                         ofmt_ctx-&gt;streams[stream_index]-&gt;time_base);
+    av_log(NULL, AV_LOG_DEBUG, &quot;Muxing frame\n&quot;);
+    /* mux encoded frame */
+    ret = av_interleaved_write_frame(ofmt_ctx, &amp;enc_pkt);
+    return ret;
+}
+static int flush_encoder(unsigned int stream_index){
+    int ret;
+    int got_frame;
+    if (!(ofmt_ctx-&gt;streams[stream_index]-&gt;codec-&gt;codec-&gt;capabilities &amp;
+          AV_CODEC_CAP_DELAY))
+        return 0;
+    while (1) {
+        av_log(NULL, AV_LOG_INFO, &quot;Flushing stream #%u encoder\n&quot;, stream_index);
+        ret = encode_write_frame(NULL, stream_index, &amp;got_frame);
+        if (ret &lt; 0)
+            break;
+        if (!got_frame)
+            return 0;
+    }
+    return ret;
+}
+
+//#define USE_OPENCV //注释这一句后运行，对应不加水印的输出视频
+
+#ifdef USE_OPENCV
+#include &lt;opencv2/opencv.hpp&gt;
+using namespace std;
+using namespace cv;
+
+
+
+/** 这个函数里使用OpenCV处理图像 **/
+void addWaterMarkOnTheImage(Mat &amp;imageFrame)
+{
+    Mat waterMark = Mat(100,100,CV_8UC3,Scalar(0,255,255)); //模拟水印图像
+
+    Mat imageROI = imageFrame(Rect(10,10,waterMark.cols,waterMark.rows));
+
+    cv::addWeighted(imageROI, 0, waterMark, 1, 0, imageROI); //添加水印到视频图像帧上
+}
+/** ------ **/
+
+
+
+
+AVFrame* useOpenCVProcessFrame(AVFrame *frame, int stream_index)
+{
+    AVStream *in_stream = ifmt_ctx-&gt;streams[stream_index];
+    AVCodecContext *pCodecCtx = in_stream-&gt;codec;
+
+    AVFrame  *pFrameRGB = NULL;
+
+    /* 源图像格式向BGR24转换 */
+    struct SwsContext * img_convert_ctx = NULL;
+    if(img_convert_ctx == NULL){
+        img_convert_ctx = sws_getContext(pCodecCtx-&gt;width, pCodecCtx-&gt;height,
+                                         pCodecCtx-&gt;pix_fmt, pCodecCtx-&gt;width, pCodecCtx-&gt;height,
+                                         AV_PIX_FMT_BGR24, SWS_BICUBIC, NULL, NULL, NULL);
+    }
+    pFrameRGB = av_frame_alloc();
+    int size = avpicture_get_size(AV_PIX_FMT_BGR24, pCodecCtx-&gt;width, pCodecCtx-&gt;height);
+    uint8_t  *out_bufferRGB = new uint8_t[size];
+
+    avpicture_fill((AVPicture *)pFrameRGB, out_bufferRGB, AV_PIX_FMT_BGR24, pCodecCtx-&gt;width, pCodecCtx-&gt;height);
+
+    sws_scale(img_convert_ctx, frame-&gt;data, frame-&gt;linesize, 0, pCodecCtx-&gt;height, pFrameRGB-&gt;data, pFrameRGB-&gt;linesize);
+
+    Mat imageFrame = Mat(pCodecCtx-&gt;height, pCodecCtx-&gt;width, CV_8UC3);
+
+    memcpy(imageFrame.data, out_bufferRGB, size);
+    delete[] out_bufferRGB;
+    /*** 源图像格式向BGR24转换结束 ***/
+
+
+    addWaterMarkOnTheImage(imageFrame);//使用OpenCV向图像添加水印
+
+
+    imshow(&quot;image&quot;,imageFrame);
+    waitKey(1);
+
+
+    //OpenCV Mat图像数据转为FFmpeg AVFrame图像帧数据
+    avpicture_fill((AVPicture *)pFrameRGB, imageFrame.data,AV_PIX_FMT_BGR24, pCodecCtx-&gt;width, pCodecCtx-&gt;height);
+
+    /* BGR24向源图像格式转换 */
+    struct SwsContext * convert_ctx = NULL;
+    if(convert_ctx == NULL){
+        convert_ctx = sws_getContext(pCodecCtx-&gt;width, pCodecCtx-&gt;height,
+                                         AV_PIX_FMT_BGR24, pCodecCtx-&gt;width, pCodecCtx-&gt;height,
+                                         pCodecCtx-&gt;pix_fmt, SWS_BICUBIC, NULL, NULL, NULL);
+    }
+
+    AVFrame *srcFrame = av_frame_alloc();
+    size = avpicture_get_size(pCodecCtx-&gt;pix_fmt, pCodecCtx-&gt;width, pCodecCtx-&gt;height);
+    uint8_t  *out_buffer = new uint8_t[size];
+
+    avpicture_fill((AVPicture *)srcFrame, out_buffer, pCodecCtx-&gt;pix_fmt, pCodecCtx-&gt;width, pCodecCtx-&gt;height);
+
+    sws_scale(convert_ctx, pFrameRGB-&gt;data, pFrameRGB-&gt;linesize, 0, pCodecCtx-&gt;height, srcFrame-&gt;data, srcFrame-&gt;linesize);
+
+    delete[] out_buffer;
+    /*** BGR24向源图像格式转换结束 ***/
+    av_free(pFrameRGB);
+
+    srcFrame-&gt;width = frame-&gt;width;
+    srcFrame-&gt;height = frame-&gt;height;
+    srcFrame-&gt;format = frame-&gt;format;
+
+    av_frame_copy_props(srcFrame, frame);
+
+    return srcFrame;
+}
+
+#endif
+
+
+int main(int argc, char **argv){
+    int ret;
+    AVPacket packet = { .data = NULL, .size = 0 };
+    AVFrame *frame = NULL;
+    enum AVMediaType type;
+    unsigned int stream_index;
+    unsigned int i;
+    int got_frame;
+    if (argc != 3) {
+        av_log(NULL, AV_LOG_ERROR, &quot;Usage: %s &lt;input file&gt; &lt;output file&gt;\n&quot;, argv[0]);
+        return 1;
+    }
+    av_register_all();
+    avfilter_register_all();
+    if ((ret = open_input_file(argv[1])) &lt; 0)
+        goto end;
+    if ((ret = open_output_file(argv[2])) &lt; 0)
+        goto end;
+    /* read all packets */
+    while (1) {
+        if ((ret = av_read_frame(ifmt_ctx, &amp;packet)) &lt; 0)
+            break;
+        stream_index = packet.stream_index;
+        type = ifmt_ctx-&gt;streams[packet.stream_index]-&gt;codec-&gt;codec_type;
+        av_log(NULL, AV_LOG_DEBUG, &quot;Demuxer gave frame of stream_index %u\n&quot;,
+               stream_index);
+        if (type == AVMEDIA_TYPE_VIDEO) {
+            av_log(NULL, AV_LOG_DEBUG, &quot;Going to reencode&amp;filter the frame\n&quot;);
+            frame = av_frame_alloc();
+            if (!frame) {
+                ret = AVERROR(ENOMEM);
+                break;
+            }
+            av_packet_rescale_ts(&amp;packet,
+                                 ifmt_ctx-&gt;streams[stream_index]-&gt;time_base,
+                                 ifmt_ctx-&gt;streams[stream_index]-&gt;codec-&gt;time_base);
+
+            ret = avcodec_decode_video2(ifmt_ctx-&gt;streams[stream_index]-&gt;codec, frame,
+                           &amp;got_frame, &amp;packet);
+            if (ret &lt; 0) {
+                av_frame_free(&amp;frame);
+                av_log(NULL, AV_LOG_ERROR, &quot;Decoding failed\n&quot;);
+                break;
+            }
+            if (got_frame) {
+
+#ifdef USE_OPENCV
+                AVFrame *convertFrame = useOpenCVProcessFrame(frame,stream_index);
+                convertFrame-&gt;pts = av_frame_get_best_effort_timestamp(frame);
+                convertFrame-&gt;pict_type =  AV_PICTURE_TYPE_NONE;
+                ret = encode_write_frame(convertFrame, stream_index, NULL);
+#else
+                frame-&gt;pts = av_frame_get_best_effort_timestamp(frame);
+                frame-&gt;pict_type =  AV_PICTURE_TYPE_NONE;
+                ret = encode_write_frame(frame, stream_index, NULL);
+#endif
+
+                if (ret &lt; 0)
+                    goto end;
+            } else {
+                av_frame_free(&amp;frame);
+            }
+        } else {
+            /* remux this frame without reencoding */
+            av_packet_rescale_ts(&amp;packet,
+                                 ifmt_ctx-&gt;streams[stream_index]-&gt;time_base,
+                                 ofmt_ctx-&gt;streams[stream_index]-&gt;time_base);
+            ret = av_interleaved_write_frame(ofmt_ctx, &amp;packet);
+            if (ret &lt; 0)
+                goto end;
+        }
+        av_packet_unref(&amp;packet);
+    }
+    /* flush filters and encoders */
+    for (i = 0; i &lt; ifmt_ctx-&gt;nb_streams; i++) {
+        /* flush encoder */
+        if(ifmt_ctx-&gt;streams[i]-&gt;codec-&gt;codec_type == AVMEDIA_TYPE_VIDEO)
+        {
+            ret = flush_encoder(i);
+            if (ret &lt; 0) {
+                av_log(NULL, AV_LOG_ERROR, &quot;Flushing encoder failed\n&quot;);
+                goto end;
+            }
+        }
+    }
+    av_write_trailer(ofmt_ctx);
+end:
+    av_packet_unref(&amp;packet);
+    for (i = 0; i &lt; ifmt_ctx-&gt;nb_streams; i++) {
+        avcodec_close(ifmt_ctx-&gt;streams[i]-&gt;codec);
+        if (ofmt_ctx &amp;&amp; ofmt_ctx-&gt;nb_streams &gt; i &amp;&amp; ofmt_ctx-&gt;streams[i] &amp;&amp; ofmt_ctx-&gt;streams[i]-&gt;codec)
+            avcodec_close(ofmt_ctx-&gt;streams[i]-&gt;codec);
+    }
+    avformat_close_input(&amp;ifmt_ctx);
+    if (ofmt_ctx &amp;&amp; !(ofmt_ctx-&gt;oformat-&gt;flags &amp; AVFMT_NOFILE))
+        avio_closep(&amp;ofmt_ctx-&gt;pb);
+    avformat_free_context(ofmt_ctx);
+    if (ret &lt; 0)
+        av_log(NULL, AV_LOG_ERROR, &quot;Error occurred: %s\n&quot;, av_err2str(ret));
+    return ret ? 1 : 0;
+}
+</code></pre>
+
+<p><strong>本程序运行调用了<code>ffmpeg-2.8.6</code>和<code>opencv-3.0.1</code>版的库(库的安装读者还是自己搞定吧，有事联系: 824219521@qq.com)</strong></p>
+<h1 id="_2">编译</h1>
+<p>使用g++编译，编译命令如下：</p>
+<pre><code>g++ ffmpeg-opencv-transcode.cpp -I/usr/local/include -L/usr/local/lib -lavcodec -lavformat -lswscale -lavfilter -lavutil -lx264 -lz -lm -lopencv_imgproc -lopencv_highgui -lopencv_core
+</code></pre>
+
+<h1 id="_3">使用</h1>
+<p>使用方法：</p>
+<pre><code>./a.out input.mp4 output.mp4
+</code></pre>
+
+<h1 id="_4">测试视频</h1>
+<p>这里有几个测试视频可供使用：</p>
+<ul>
+<li>
+<p><a href="../../assets/ffmpeg-code/test-files/1.mp4">1.mp4</a></p>
+</li>
+<li>
+<p><a href="../../assets/ffmpeg-code/test-files/2.mp4">2.mp4</a></p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>created by wangzhizhou</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

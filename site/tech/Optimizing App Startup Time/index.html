@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="wangzhizhou">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Optimizing App Startup Time - Joker's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Joker's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">About Me</a>
+                    </li>
+                    <li >
+                        <a href="../../How I create this blog/">Create your own blog as me</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Z-turn <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/">Network Simulator 2 Installation Guide for Ubuntu</a>
+</li>
+                            
+<li >
+    <a href="../Learn STL In 30 Minutes/">Learn STL In 30 Minutes</a>
+</li>
+                            
+<li >
+    <a href="../Installation of Ubuntu 16.04 On UDisk/">Installation of Ubuntu 16.04 On UDisk</a>
+</li>
+                            
+<li >
+    <a href="../Configure Git Server With Ubuntn and Apache 2/">Configure Git Server With Ubuntn and Apache 2</a>
+</li>
+                            
+<li >
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/">Add Watermark on Video with OpenCV and FFmpeg</a>
+</li>
+                            
+<li >
+    <a href="../Develop DLNA Using Platinum Library/">Develop DLNA Using Platinum Library</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg and SDL tutorial 1/">FFmpeg and SDL tutorial 1</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg compiled on MacOS/">FFmpeg compiled on MacOS</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg version 3.1.4 example code/">FFmpeg version 3.1.4 example code</a>
+</li>
+                            
+<li >
+    <a href="../Fmpeg 2.8.6 example code - transcoding/">Fmpeg 2.8.6 example code   transcoding</a>
+</li>
+                            
+<li >
+    <a href="../Nmap Basics/">Nmap Basics</a>
+</li>
+                            
+<li >
+    <a href="../Use GDB/">Use GDB</a>
+</li>
+                            
+<li >
+    <a href="../User OpenCV to add watermark on a video/">User OpenCV to add watermark on a video</a>
+</li>
+                            
+<li >
+    <a href="../Wireshark Basics/">Wireshark Basics</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Optimizing App Startup Time</a>
+</li>
+                            
+<li >
+    <a href="../OpenVPN on Raspberry Pi/">OpenVPN on Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../swift on client and server/">Swift on client and server</a>
+</li>
+                            
+<li >
+    <a href="../my hardware/">My hardware</a>
+</li>
+                            
+<li >
+    <a href="../kotlin/">Kotlin</a>
+</li>
+                            
+<li >
+    <a href="../Convert MP4 to GIF With FFmpeg/">Convert MP4 to GIF With FFmpeg</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">etc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../life/alipay-scan-fu-icon/">Alipay scan fu icon</a>
+</li>
+                            
+<li >
+    <a href="../../life/Renting in Beijing/">Renting in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../life/Gu Bei Shui Zhen/">Gu Bei Shui Zhen</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../music/whistle/">Whistle</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Game <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../minecraft/minecraft/">Minecraft</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../me/English Personal Resume/">English Personal Resume</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Plan for finding Job/">My Plan for finding Job</a>
+</li>
+                            
+<li >
+    <a href="../../me/Personal Pre-Work Record/">Personal Pre Work Record</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Financial Planning/">My Financial Planning</a>
+</li>
+                            
+<li >
+    <a href="../../me/Life in Beijing/">Life in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../me/jokerhub/">Jokerhub</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Wireshark Basics/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../OpenVPN on Raspberry Pi/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wangzhizhou/JokerBlog">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">应用的启动过程</a></li>
+        <li class="main "><a href="#-main">理论 - main()函数执行前发生的事情</a></li>
+            <li><a href="#mach-o">Mach-O格式</a></li>
+            <li><a href="#_3">虚拟内存基础</a></li>
+            <li><a href="#mach-o_2">Mach-O二进制文件如何加载和准备</a></li>
+        <li class="main "><a href="#_4">实践</a></li>
+            <li><a href="#_5">怎样测量时间</a></li>
+            <li><a href="#_6">热启动和冷启动</a></li>
+            <li><a href="#main">测量main()函数调用前所花费的时间</a></li>
+            <li><a href="#_7">优化启动时间的方法</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p># 一次优化App启动速度的体验</p>
+<h2 id="_1">应用的启动过程</h2>
+<ol>
+<li>
+<p>连接和装载</p>
+</li>
+<li>
+<p>UIKit初始化</p>
+</li>
+<li>
+<p>应用程序回调</p>
+</li>
+<li>
+<p>开机动画展现 </p>
+</li>
+</ol>
+<h2 id="-main">理论 - main()函数执行前发生的事情</h2>
+<h3 id="mach-o">Mach-O格式</h3>
+<h4 id="_2">文件类型</h4>
+<ul>
+<li><code>Executable</code> —— 应用对应的二进制文件</li>
+<li><code>Dylib</code> —— 动态库，例如: DSOs/DLLs</li>
+<li><code>Bundle</code> —— 不能被链接的动态库，只能在运行时用dlopen()函数加载，例如：插件</li>
+</ul>
+<p><code>image</code> —— 可以是上面提到的三种类型中的任何一种
+<code>Framework</code> —— 以一定目录结构组织资源和头文件的一种动态库</p>
+<h4 id="mach-o_1">Mach-O镜像文件</h4>
+<p>通常被划分成段(<code>segment</code>)：<code>__TEXT</code>、<code>__DATA</code>、<code>__LINKEDIT</code></p>
+<p>一个段通常由多个页(<code>page</code>)构成，页大小由硬件决定，<code>arm64</code>机器上的页是16KB, 其它机器上的页大小为4KB。</p>
+<p>区域(<code>section</code>)是段(<code>segment</code>)的局部，编译器一般不会考虑这个概念。它们彼此之间不能重叠。</p>
+<p><code>__TEXT</code>段是二进制的头部，用来存放Mach头信息、机器命令或者常量，只读。</p>
+<p><code>__DATA</code>段存放全局变量，可读写。</p>
+<p><code>__LINKEDIT</code>段包含怎么装载程序的<code>元数据</code>, 像函数、变量的名称和地址。</p>
+<h4 id="mach-o-universal">Mach-O Universal文件</h4>
+<p>把针对不同平台的多个Mach-O文件合并到一个文件里面，有一个<code>Fat Header</code>信息区存放所有架构和对就的二进制数据在整个文件中的偏移地址。</p>
+<h3 id="_3">虚拟内存基础</h3>
+<p>软件中的问题都可以通过添加中间层来解决，虚拟内存就是为了解决不同进程的逻辑地址灵活的映射到物理内存地址的问题而存在的。不同进程的逻辑地址可以被虚拟内存系统映射到不同或者相同的物理内存中，从而实现互斥或共享的功能。我们前面所提到的动态库在不同进程间的共享就可以以这种方式进行。每一个页都可以被设置为<code>读</code>、<code>写</code>、<code>执行</code>的任意组合来限制其访问权限。</p>
+<p><code>ASLR</code> —— 地址空间布局随机，镜像被加载进内存空间中的随机位置</p>
+<p><code>代码签名</code> —— 每一页的数据都被哈希算法处理过，当页面加载进内存时会被校验，这些哈希值都被存放在<code>__LINKEDIT</code>段中，这样就可以确保校验每一页数据，保证程序运行的安全性。</p>
+<h3 id="mach-o_2">Mach-O二进制文件如何加载和准备</h3>
+<p><code>Exec()</code> —— 是一个系统调用。
+<code>dyld</code> —— 负责加载动态库。</p>
+<p>系统把应用映射到内存后会加载<code>dyld</code>来负责加载应用依赖的其它动态库。</p>
+<ul>
+<li>分析出应用运行需要依赖的动态库。从已经加载的应用程序的头部信息中获取。</li>
+<li>查找所有依赖的动态库的位置，找到对应的Mach-O文件，打开并校验代码签名。</li>
+<li>注册依赖库的代码签名到内核中，之后调用<code>mmap</code>映射动态库的每一个段到物理内存中。</li>
+<li>在这个加载依赖库的过程中，依赖库本身也会依赖其它的库，所以这个过程会递归执行。在加载的过程中，一些已经加载的库不会被重新加载，大部分都是系统库。</li>
+</ul>
+<h4 id="rebasng-and-binding">Rebasng And Binding</h4>
+<p><code>Rebasing</code> —— 由于应用是被随机加载到物理地址里的，所以一些内部地址需要重新计算一下对应的偏移量来调整正确指向。</p>
+<p><code>binding</code> —— 应用内的指针指向应用外部的符号，找到这个外部符号后，需要将这个指针与这个符号的对应地址进行绑定。</p>
+<p>Objective-C 是一种动态类型语言，它定义的所有类都在一个全局表中注册后使用。</p>
+<h4 id="unique-selector">Unique Selector</h4>
+<p>感觉和类方法是等价的。 +load() 或者 +initialize()</p>
+<h2 id="_4">实践</h2>
+<h3 id="_5">怎样测量时间</h3>
+<p>不同平台的标准不同，但大致上<code>iPhone(400ms)</code>、<code>iPad(500ms)</code>以内是一个不错的标准。因为应用被打开时，系统会有一段动画来完成平滑过渡，在这段动画时间内都可以算是不错的启动时间。这个动画的时间大致是<code>400ms</code>。应用如果启动时间超过<code>20s</code>会被系统杀死。</p>
+<p>如果应用启动太慢，系统看门狗会结束应用，XCode调试时不启用系统看门狗。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>看门狗定时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动</td>
+<td>20秒</td>
+</tr>
+<tr>
+<td>后台恢复</td>
+<td>10秒</td>
+</tr>
+<tr>
+<td>挂起</td>
+<td>10秒</td>
+</tr>
+<tr>
+<td>退出</td>
+<td>6秒</td>
+</tr>
+<tr>
+<td>背景任务</td>
+<td>10分钟</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">热启动和冷启动</h3>
+<ul>
+<li>
+<p>热启动 —— 应用已经在内存的情况下被调起</p>
+</li>
+<li>
+<p>冷启动 —— 应用完全不在内存或缓存中的情况下被调起</p>
+</li>
+</ul>
+<p>我们测量启动时间是以冷启动时间为准的。这通常需要重新启动设备。</p>
+<h3 id="main">测量main()函数调用前所花费的时间</h3>
+<p><code>Dyld</code>有内建的测试机制。可以在项目中设置<code>DYLD_PRINT_STATICTICS</code>为<code>1</code>来开启统计功能。</p>
+<p>设置项目的启动时间统计相关的环境变量，如下图：</p>
+<p><img alt="statistics" src="../../assets/pictures/launchTimeSetup.png" /></p>
+<p>需要机器重新启动后，确保测试时长比较准确，即冷启动。</p>
+<p>冷启动统计结果如下图:</p>
+<p><img alt="refresh launch" src="../../assets/pictures/launchTimeStatistics.png" /></p>
+<h3 id="_7">优化启动时间的方法</h3>
+<ul>
+<li>避免链接不必要的framework</li>
+<li>Optional类型的framework会使链接器有一些额外的消耗，尽量少用</li>
+<li>避免创建全局C++对象，避免在<code>+load()</code>方法中运行代码(类加载时)，而放到<code>+initialize()</code>中(类被首次初始化时会被调用)</li>
+<li>把应用引入的动态库合并后进行加载。</li>
+<li>使用<code>dlopen</code>把库的加载时机推迟一些，但不推荐，因为会引起很多问题。</li>
+<li>尽量使用swift，因为swift考虑了这些因素。</li>
+<li>减少Objc的类的数量</li>
+<li>编译器选项添加`Wglobal-constructors</li>
+<li>排除静态初始化</li>
+</ul>
+<p>参考视频：</p>
+<ul>
+<li>
+<p><a href="https://developer.apple.com/videos/play/wwdc2012/235/">WWDC 2012 - iOS App Performance Responsiveness</a></p>
+</li>
+<li>
+<p><a href="https://developer.apple.com/videos/play/wwdc2016/406/">WWDC 2016 - Optimizing App Startup Time</a></p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>created by wangzhizhou</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

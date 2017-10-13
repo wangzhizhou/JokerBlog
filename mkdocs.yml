@@ -41,8 +41,8 @@ edit_uri: "edit/master/docs/"
 
 # built-in theme
 # default: mkdocs
-#theme: "readthedocs"
-theme: 'mkdocs'
+theme: "readthedocs"
+#theme: 'mkdocs'
 
 
 # Lets you set a directory to a custom theme. 

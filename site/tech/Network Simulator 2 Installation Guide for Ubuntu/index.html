@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="wangzhizhou">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Network Simulator 2 Installation Guide for Ubuntu - Joker's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Joker's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">About Me</a>
+                    </li>
+                    <li >
+                        <a href="../../How I create this blog/">Create your own blog as me</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Z-turn <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Network Simulator 2 Installation Guide for Ubuntu</a>
+</li>
+                            
+<li >
+    <a href="../Learn STL In 30 Minutes/">Learn STL In 30 Minutes</a>
+</li>
+                            
+<li >
+    <a href="../Installation of Ubuntu 16.04 On UDisk/">Installation of Ubuntu 16.04 On UDisk</a>
+</li>
+                            
+<li >
+    <a href="../Configure Git Server With Ubuntn and Apache 2/">Configure Git Server With Ubuntn and Apache 2</a>
+</li>
+                            
+<li >
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/">Add Watermark on Video with OpenCV and FFmpeg</a>
+</li>
+                            
+<li >
+    <a href="../Develop DLNA Using Platinum Library/">Develop DLNA Using Platinum Library</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg and SDL tutorial 1/">FFmpeg and SDL tutorial 1</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg compiled on MacOS/">FFmpeg compiled on MacOS</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg version 3.1.4 example code/">FFmpeg version 3.1.4 example code</a>
+</li>
+                            
+<li >
+    <a href="../Fmpeg 2.8.6 example code - transcoding/">Fmpeg 2.8.6 example code   transcoding</a>
+</li>
+                            
+<li >
+    <a href="../Nmap Basics/">Nmap Basics</a>
+</li>
+                            
+<li >
+    <a href="../Use GDB/">Use GDB</a>
+</li>
+                            
+<li >
+    <a href="../User OpenCV to add watermark on a video/">User OpenCV to add watermark on a video</a>
+</li>
+                            
+<li >
+    <a href="../Wireshark Basics/">Wireshark Basics</a>
+</li>
+                            
+<li >
+    <a href="../Optimizing App Startup Time/">Optimizing App Startup Time</a>
+</li>
+                            
+<li >
+    <a href="../OpenVPN on Raspberry Pi/">OpenVPN on Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../swift on client and server/">Swift on client and server</a>
+</li>
+                            
+<li >
+    <a href="../my hardware/">My hardware</a>
+</li>
+                            
+<li >
+    <a href="../kotlin/">Kotlin</a>
+</li>
+                            
+<li >
+    <a href="../Convert MP4 to GIF With FFmpeg/">Convert MP4 to GIF With FFmpeg</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">etc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../life/alipay-scan-fu-icon/">Alipay scan fu icon</a>
+</li>
+                            
+<li >
+    <a href="../../life/Renting in Beijing/">Renting in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../life/Gu Bei Shui Zhen/">Gu Bei Shui Zhen</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../music/whistle/">Whistle</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Game <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../minecraft/minecraft/">Minecraft</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../me/English Personal Resume/">English Personal Resume</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Plan for finding Job/">My Plan for finding Job</a>
+</li>
+                            
+<li >
+    <a href="../../me/Personal Pre-Work Record/">Personal Pre Work Record</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Financial Planning/">My Financial Planning</a>
+</li>
+                            
+<li >
+    <a href="../../me/Life in Beijing/">Life in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../me/jokerhub/">Jokerhub</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../../How I create this blog/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Learn STL In 30 Minutes/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wangzhizhou/JokerBlog">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#network-simulator-2-installation-guide-for-ubuntu">Network Simulator 2 Installation Guide for Ubuntu</a></li>
+            <li><a href="#this-installation-of-network-simulator-2-on-the-ubuntu-1604-live-cd-udisk">This Installation of Network Simulator 2 on the Ubuntu 16.04 Live CD UDisk</a></li>
+            <li><a href="#add-mptcp-module-into-the-ns2">Add MPTCP module into the NS2</a></li>
+            <li><a href="#configuration-of-eclipse-debug-environment">Configuration of Eclipse Debug Environment</a></li>
+            <li><a href="#the-process-is-on-ubuntu-1404-simple-record-the-hack-process-mostly-same-as-ubuntu-1604">The process is on Ubuntu 14.04 (simple record the hack process, mostly same as Ubuntu 16.04)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="network-simulator-2-installation-guide-for-ubuntu">Network Simulator 2 Installation Guide for Ubuntu</h1>
+<p>You can checkout my <strong><a href="https://github.com/wangzhizhou2014GitHub/Network-Simulator-Installation-Guideline-For-Ubuntu">repo</a></strong> for this document, and get related files.</p>
+<pre><code>sudo apt-get install git-core
+git clone https://github.com/wangzhizhou2014GitHub/Network-Simulator-Installation-Guideline-For-Ubuntu
+</code></pre>
+
+<p>You also can download the pdf edition of this document <strong><a href="../../assets/pdfs/NS2_Install_For_Ubuntu.pdf">here</a></strong></p>
+<h3 id="this-installation-of-network-simulator-2-on-the-ubuntu-1604-live-cd-udisk">This Installation of Network Simulator 2 on the Ubuntu 16.04 Live CD UDisk</h3>
+<p>After you intall your Ubuntu System, you should use command: 
+<strong><code>sudo apt-get update</code></strong>  to update your system software repos sites.
+Then you can use <strong>apt-get</strong> command to install the software that you want on your system.</p>
+<p>Firstly, you should download the <strong>ns2 all-in-one file package</strong> from it's offical website <strong><a href="http://www.isi.edu/nsnam/ns/">NS2-Network simulator</a></strong>, and the link
+of download file is: <strong><a href="http://sourceforge.net/projects/nsnam/files/allinone/ns-allinone-2.35/ns-allinone-2.35.tar.gz/download">NS 2.35 released Nov 4 2011</a></strong>.</p>
+<pre><code>You can use the web browser or download tools such as XunLei.
+</code></pre>
+<p>After that, you should get a file named: <strong><code>ns-allinone-2.35.tar.gz</code></strong>.
+You can use the command line to decompress the downloaded file:</p>
+<pre><code>tar zxvf ns-allinone-2.35.tar.gz 
+</code></pre>
+
+<p>Now, you get a directory which contain the Network Simulator 2 source files, then you should compile these files manually.</p>
+<p>Enter the uncompressed directory with command line: 
+<strong><code>cd ns-allinone-2.35/</code></strong> and run the compile script: <strong><code>sudo ./install</code></strong>, you will find there are some error exist: </p>
+<pre><code>/ns-allinone-2.35/tk8.5.10/unix/../generic/tk.h:76:23: fatal error: X11/Xlib.h: No such file or directory, this is because your system
+has no X11 dev-lib, so we should install them firstly
+</code></pre>
+
+<p>You can use command to search related libs should be installed: </p>
+<pre><code>sudo apt-cache search x11-dev
+libx11-dev - X11 client-side library (development headers)
+libxkbcommon-x11-dev - library to create keymaps with the XKB X11 protocol - development files
+</code></pre>
+
+<p>so, we should install the <strong>libx11-dev(headers)</strong> and <strong>libxkbcommon-x11-dev</strong> as follow:</p>
+<pre><code>sudo apt-get install libx11-dev libxkbcommon-x11-dev
+</code></pre>
+
+<p>Then you run the <strong><code>sudo ./install</code></strong> command again. </p>
+<p>And You may find there appear another configuration fails as follow:</p>
+<pre><code>can't find X includes
+otcl-1.14 configuration failed! Exiting ...
+Please check http://www.isi.edu/nsnam/ns/ns-problems.html
+for common problems and bug fixes.
+</code></pre>
+
+<p>You should install another software to suppress this fail: </p>
+<pre><code>sudo apt-get install libxt-dev
+</code></pre>
+
+<p>Again, run <strong><code>sudo run ./intall</code></strong>.</p>
+<p>Ops~, you run into the third problem when compile the source file:</p>
+<pre><code>linkstate/ls.h:137:25: error: ‘erase’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+  void eraseAll() { erase(baseMap::begin(), baseMap::end()); }
+
+linkstate/ls.h:137:25: note: declarations in dependent base ‘std::map&lt;int, LsIdSeq, std::less&lt;int&gt;, std::allocator&lt;std::pair&lt;const int, LsIdSeq&gt; &gt; &gt;’ are not found by unqualified lookup
+linkstate/ls.h:137:25: note: use ‘this-&gt;erase’ instead
+Makefile:93: recipe for target 'linkstate/ls.o' failed
+make: *** [linkstate/ls.o] Error 1
+Ns make failed!
+See http://www.isi.edu/nsnam/ns/ns-problems.html for problems
+</code></pre>
+
+<p>After search on the internet a while, I find the solution. We should change a file located in the ns2 directory: <strong><code>ns-allinone-2.35/ns-2.35/linkstate/ls.h</code></strong>, in the <strong>line 137</strong>, we should change the line frome</p>
+<pre><code>void eraseAll() { erase(baseMap::begin(), baseMap::end()); } 
+</code></pre>
+
+<p>to</p>
+<pre><code>void eraseAll() { this-&gt;erase(baseMap::begin(), baseMap::end()); }
+</code></pre>
+
+<blockquote>
+<p>You can use vim or other plain text editor to do this task. </p>
+</blockquote>
+<p>After that, run the command <strong><code>sudo ./install</code></strong> again under the directory : <strong><code>ns-allinone-2.35/</code></strong>.</p>
+<p>This time, we compile the NS2 source file successfully! You can get these message on the screen to demostrate the compile process is completed:</p>
+<pre><code>Please put /home/ubuntu/Downloads/ns-allinone-2.35/bin:/home/ubuntu/Downloads/ns-allinone-2.35/tcl8.5.10/unix:/home/ubuntu/Downloads/ns-allinone-2.35/tk8.5.10/unix
+into your PATH environment; so that you'll be able to run itm/tclsh/wish/xgraph.
+
+IMPORTANT NOTICES:
+
+(1) You MUST put /home/ubuntu/Downloads/ns-allinone-2.35/otcl-1.14, /home/ubuntu/Downloads/ns-allinone-2.35/lib, 
+    into your LD_LIBRARY_PATH environment variable.
+    If it complains about X libraries, add path to your X libraries 
+    into LD_LIBRARY_PATH.
+    If you are using csh, you can set it like:
+        setenv LD_LIBRARY_PATH &lt;paths&gt;
+    If you are using sh, you can set it like:
+        export LD_LIBRARY_PATH=&lt;paths&gt;
+
+(2) You MUST put /home/ubuntu/Downloads/ns-allinone-2.35/tcl8.5.10/library into your TCL_LIBRARY environmental
+    variable. Otherwise ns/nam will complain during startup.
+
+
+After these steps, you can now run the ns validation suite with
+cd ns-2.35; ./validate
+
+For trouble shooting, please first read ns problems page 
+http://www.isi.edu/nsnam/ns/ns-problems.html. Also search the ns mailing list archive
+for related posts.
+</code></pre>
+
+<p>As above message said, we should add some environment variables into the end of your user configure file: <strong><code>.bashrc</code></strong>, which is under the directory: <strong><code>~/.bashrc</code></strong></p>
+<pre><code>export NS2_HOME=/home/ubuntu/Downloads/ns-allinone-2.35
+export PATH=$PATH:$NS2_HOME/bin:$NS2_HOME/tcl8.5.10/unix:$NS2_HOME/tk8.5.10/unix
+export LD_LIBRARY_PATH=$NS2_HOME/otcl-1.14:$NS_HOME/lib
+export TCL_LIBRARY=$NS2_HOME/tcl8.5.10/library
+</code></pre>
+
+<p>And you should use the command to make the change take effect: </p>
+<pre><code>source ~/.bashrc 
+</code></pre>
+
+<p>Then you can validate the NS2 as the compile successful message said, buy run <strong><code>./invalidate</code></strong> in the <strong><code>ns-allinone-2.35/ns-2.35</code></strong> directory.</p>
+<blockquote>
+<p>This step may take a long time, because there are so many test examples should been passed. Of course, you can skip this validate step to continue.</p>
+</blockquote>
+<p>After run these test examples, those failed examples will been listed out in bash as follow:</p>
+<pre><code>validate overall report: some tests failed:
+     ./test-all-tcp ./test-all-testReno ./test-all-newreno ./test-all-sack ./test-all-tcpOptions ./test-all-tcpReset ./test-all-testReno-full ./test-all-testReno-bayfull ./test-all-sack-full ./test-all-tcp-init-win ./test-all-tcpVariants ./test-all-LimTransmit ./test-all-aimd ./test-all-rfc793edu ./test-all-rfc2581 ./test-all-rbp ./test-all-frto ./test-all-ecn ./test-all-ecn-ack ./test-all-ecn-full ./test-all-quickstart ./test-all-manual-routing ./test-all-red ./test-all-adaptive-red ./test-all-red-pd ./test-all-rio ./test-all-vq ./test-all-rem ./test-all-gk ./test-all-pi ./test-all-cbq ./test-all-schedule ./test-all-links ./test-all-oddBehaviors
+to re-run a specific test, cd tcl/test; ./test-all-TEST-NAME
+</code></pre>
+
+<h3 id="add-mptcp-module-into-the-ns2">Add MPTCP module into the NS2</h3>
+<p>In this project, there is a patch file named <strong><code>mptcp.patch-for-ns2.35-20130810</code></strong>, you should copy the <strong><code>mptcp.patch-for-ns2.35-20130810</code></strong> under directory: <strong><code>ns-allinone-2.35/ns-2.35/</code></strong>, then change directory into <strong><code>/ns-allinone-2.35/ns-2.35/</code></strong> and apply this patch file with command:</p>
+<pre><code>patch -p1 &lt; mptcp.patch-for-ns2.35-20130810
+</code></pre>
+
+<p>the bash ouput as follow, demostrate we added the mptcp source file into directory <strong><code>/ns-allinone-2.35/ns-2.35/tcp/</code></strong>:</p>
+<pre><code>patch -p1 &lt; mptcp.patch-for-ns2.35-20130810 
+patching file Makefile.in
+patching file tcp/mptcp.cc
+patching file tcp/mptcp-full.cc
+patching file tcp/mptcp-full.h
+patching file tcp/mptcp.h
+patching file tcp/tcp.h
+patching file trace/trace.cc
+</code></pre>
+
+<p>Then, you run configure command as follow:</p>
+<pre><code>sudo ./configure --with-tcl-ver=8.5
+</code></pre>
+
+<p>Lastly, you should make the ns-2.35 with command:</p>
+<pre><code>sudo make
+</code></pre>
+
+<p>the last output of command is as follow:</p>
+<pre><code>for i in indep-utils/cmu-scen-gen/setdest indep-utils/webtrace-conv/dec indep-utils/webtrace-conv/epa indep-utils/webtrace-conv/nlanr indep-utils/webtrace-conv/ucb; do ( cd $i; make all; ) done
+make[1]: Entering directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/cmu-scen-gen/setdest'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/cmu-scen-gen/setdest'
+make[1]: Entering directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/dec'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/dec'
+make[1]: Entering directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/epa'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/epa'
+make[1]: Entering directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/nlanr'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/nlanr'
+make[1]: Entering directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/ucb'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/ubuntu/Downloads/ns-allinone-2.35/ns-2.35/indep-utils/webtrace-conv/ucb'
+</code></pre>
+
+<p>This means there is not fatal errors occurred. Then you can think your MPTCP installed successfully!</p>
+<h4 id="and-we-can-run-a-mptcp-sample-script-file-to-valide-this-installation">And we can run a mptcp sample script file to valide this installation.</h4>
+<p>This project contained a test tcl script file <strong><code>mptcp-sample.tcl</code></strong>, you can run with ns command as follow:</p>
+<pre><code>ns mptcp-sample.tcl
+</code></pre>
+
+<p>After run this script as above, there will be a xgraph plot pop out, that demonstrate the addition of <strong>MPTCP</strong> is successful.</p>
+<h3 id="configuration-of-eclipse-debug-environment">Configuration of Eclipse Debug Environment</h3>
+<p>Firstly, if you want debug ns2, you should make it support debug. Change directory into: <strong><code>/ns-allinone-2.35/ns-2.35/</code></strong>,and using vim open the <strong>Makefile</strong>, change the <strong>56 line</strong> from</p>
+<pre><code>CCOPT   =  -Wall -Wno-write-strings
+</code></pre>
+
+<p>to</p>
+<pre><code>CCOPT   =  -g -Wall -Wno-write-strings
+</code></pre>
+
+<p>save and exit the Makefile, then run: </p>
+<pre><code>sudo make
+</code></pre>
+
+<p>to recompile the ns2. Now the ns2 can support debug.</p>
+<p>Then, you should Download the Eclipse IDE for C/C++ Developers on the Web Site: <a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></p>
+<p>Because eclipse don't need to install, after we decompress the tar.gz file, we can use is directly under it's directory. But if we want use it anywhere in our ubuntu file system, we should add the eclipse binary path to the environment variable <strong>PATH</strong> to tell our system where to locate elipse and startup it.</p>
+<p>Use command decompress *.tar.gz file: </p>
+<pre><code>tar zxvf eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
+</code></pre>
+
+<p>Then there will be a directory named : <strong><code>eclipse</code></strong> under current directory, we add one line in the ~/.bashrc file as we done early:</p>
+<pre><code>export PATH=$PATH:/home/ubuntu/Downloads/eclipse
+</code></pre>
+
+<p>and use: <strong><code>source ~/.bashrc</code></strong> to make the change take effect.</p>
+<h5 id="ok-you-can-run-eclipse-anywhere-in-your-file-system">Ok, you can run eclipse anywhere in your file system.</h5>
+<p>If you run eclipse in bash, you will find that, there is a problem said that eclipse need the <strong>java run environment</strong> to startup, because this 
+software is developed by java. we should do more thing to make it work:</p>
+<p>You can download the <strong>JRE</strong> from website: <a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html">http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html</a></p>
+<blockquote>
+<p>Make sure download the correct edition JRE corresponding to your system. </p>
+<p>Linux 64 Edition for my condition.</p>
+</blockquote>
+<p>use command: 
+<code>tar zxvf jre-8u91-linux-x64.tar.gz</code>decompress the file and move the decompressed directory under directory: <strong><code>eclipse/</code></strong>, and rename it to <code>**jre**</code>, now you can start eclipse without error about JRE.</p>
+<p>From there, we start configure the debug environment of ns2 with Eclipse</p>
+<p>Because there are so many issues should been care, and I recommend you to learn from this blog: <a href="http://blog.sina.com.cn/s/blog_5d2054d90100za8e.html">http://blog.sina.com.cn/s/blog_5d2054d90100za8e.html</a>, there are detail description, but images can also demostrate the operation about eclipse. Enjoy It!</p>
+<h3 id="the-process-is-on-ubuntu-1404-simple-record-the-hack-process-mostly-same-as-ubuntu-1604">The process is on Ubuntu 14.04 (simple record the hack process, mostly same as Ubuntu 16.04)</h3>
+<p>You should first update ubuntu to get the latest software with command :</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install g++
+</code></pre>
+
+<p>After install Ubuntu14.04, I downloaded the <strong>ns-allinone2.35</strong> from it's offical website and use the <code>tar zxvf ns-allinone2.35.tar.gz</code> decompress the file.</p>
+<p>Then I use the vim to edit the file <strong><code>ns-allinone2.35/ns-2.35/linkstate/ls.h</code></strong>, change the <strong>line 137</strong>, added a <code>this</code> pointer.</p>
+<p>Use the command: <code>sudo ./install</code> to compile the ns2, but there are some error, there are hints say that there is no X11.h header file.</p>
+<blockquote>
+<p>If you upgrade you ubuntu firstly, you may not encount this error. But who know it.</p>
+</blockquote>
+<p>So, I should install relate program with command:</p>
+<pre><code>sudo apt-get install libx11-dev
+sudo apt-get install libxkbcommon-x11-deud 
+sudo apt-get install libghc-x11-dev
+</code></pre>
+
+<p>After apply the patch file <strong>mptcp.patch-for-ns2.35-20130810</strong> under <code>/ns-allinone-2.35/ns-2.35/</code>, then use command:<code>sudo ./configure --with-tcl-ver=8.5</code> to configure the project, after that, use command: <code>sudo make</code> the make the project, then change directory to the parent directory of ns-2.35 and run the command: sudo ./install to complete!</p>
+<p><strong>Written By Joker, 2016-05-07, copy left</strong></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>created by wangzhizhou</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="wangzhizhou">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Learn STL In 30 Minutes - Joker's Blog</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Joker's Blog</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">About Me</a>
+                    </li>
+                    <li >
+                        <a href="../../How I create this blog/">Create your own blog as me</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Z-turn <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/">Network Simulator 2 Installation Guide for Ubuntu</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Learn STL In 30 Minutes</a>
+</li>
+                            
+<li >
+    <a href="../Installation of Ubuntu 16.04 On UDisk/">Installation of Ubuntu 16.04 On UDisk</a>
+</li>
+                            
+<li >
+    <a href="../Configure Git Server With Ubuntn and Apache 2/">Configure Git Server With Ubuntn and Apache 2</a>
+</li>
+                            
+<li >
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/">Add Watermark on Video with OpenCV and FFmpeg</a>
+</li>
+                            
+<li >
+    <a href="../Develop DLNA Using Platinum Library/">Develop DLNA Using Platinum Library</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg and SDL tutorial 1/">FFmpeg and SDL tutorial 1</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg compiled on MacOS/">FFmpeg compiled on MacOS</a>
+</li>
+                            
+<li >
+    <a href="../FFmpeg version 3.1.4 example code/">FFmpeg version 3.1.4 example code</a>
+</li>
+                            
+<li >
+    <a href="../Fmpeg 2.8.6 example code - transcoding/">Fmpeg 2.8.6 example code   transcoding</a>
+</li>
+                            
+<li >
+    <a href="../Nmap Basics/">Nmap Basics</a>
+</li>
+                            
+<li >
+    <a href="../Use GDB/">Use GDB</a>
+</li>
+                            
+<li >
+    <a href="../User OpenCV to add watermark on a video/">User OpenCV to add watermark on a video</a>
+</li>
+                            
+<li >
+    <a href="../Wireshark Basics/">Wireshark Basics</a>
+</li>
+                            
+<li >
+    <a href="../Optimizing App Startup Time/">Optimizing App Startup Time</a>
+</li>
+                            
+<li >
+    <a href="../OpenVPN on Raspberry Pi/">OpenVPN on Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../swift on client and server/">Swift on client and server</a>
+</li>
+                            
+<li >
+    <a href="../my hardware/">My hardware</a>
+</li>
+                            
+<li >
+    <a href="../kotlin/">Kotlin</a>
+</li>
+                            
+<li >
+    <a href="../Convert MP4 to GIF With FFmpeg/">Convert MP4 to GIF With FFmpeg</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">etc <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../life/alipay-scan-fu-icon/">Alipay scan fu icon</a>
+</li>
+                            
+<li >
+    <a href="../../life/Renting in Beijing/">Renting in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../life/Gu Bei Shui Zhen/">Gu Bei Shui Zhen</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Music <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../music/whistle/">Whistle</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Game <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../minecraft/minecraft/">Minecraft</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Me <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../me/English Personal Resume/">English Personal Resume</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Plan for finding Job/">My Plan for finding Job</a>
+</li>
+                            
+<li >
+    <a href="../../me/Personal Pre-Work Record/">Personal Pre Work Record</a>
+</li>
+                            
+<li >
+    <a href="../../me/My Financial Planning/">My Financial Planning</a>
+</li>
+                            
+<li >
+    <a href="../../me/Life in Beijing/">Life in Beijing</a>
+</li>
+                            
+<li >
+    <a href="../../me/jokerhub/">Jokerhub</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Network Simulator 2 Installation Guide for Ubuntu/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Installation of Ubuntu 16.04 On UDisk/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/wangzhizhou/JokerBlog">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#learn-stl-in-30-minutes">Learn STL In 30 Minutes</a></li>
+        <li class="main "><a href="#stl">三十分钟掌握 STL</a></li>
+            <li><a href="#stl_1">STL 概述</a></li>
+            <li><a href="#_13">使用迭代器编程</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="learn-stl-in-30-minutes">Learn STL In 30 Minutes</h1>
+<h1 id="stl">三十分钟掌握 STL</h1>
+<p><strong>这篇文章是我从北大BBS上转来的，因为BBS上的格式很乱，就自己用Markdown重新写了一遍，一来加深记忆，二来作为个人收藏，如果你觉得很有用，那就足够了。以下为正文。</strong></p>
+<p>这是本小人书。原名是<code>《Using STL》</code>，不知道是谁写的。不过我倒觉得很有趣，所以花了两个晚上把它翻译出来。我没有对翻译出的内容校验过。如果你没法在三十分钟内觉得有所收获，那么赶紧扔了它。文中我省略了很多东西。心疼呐！浪费我两个晚上。</p>
+<p>译者：kary
+contact: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#97;&#114;&#121;&#109;&#97;&#121;&#64;&#49;&#54;&#51;&#46;&#110;&#101;&#116;">&#107;&#97;&#114;&#121;&#109;&#97;&#121;&#64;&#49;&#54;&#51;&#46;&#110;&#101;&#116;</a></p>
+<h2 id="stl_1">STL 概述</h2>
+<p>STL 的一个重要特点是数据结构和算法的分离。尽管这是个简单的概念，但这种分离确实使得STL变得非常通用。例如，由于STL的sort()函数是完全通用的，你可以用它来操作几乎任何数据集合，包括链表，容器和数组。</p>
+<h3 id="_1">要点</h3>
+<h4 id="stl_2">STL算法作为模板函数提供。</h4>
+<p>为了和其他组件相区别，在本书中STL算法用后接一对圆括弧的方式表示，例如sort()。</p>
+<p>STL另一个重要特性是它不是面向对象的。为了具有足够通用性，STL主要依赖于模板而不是封装、继承和虚函数（多态性）—— OOP的三个要素。你在STL中找不到任何明显的类继承关系。这好像是一种倒退，但这正好是使得STL的组件具有广泛通用性的底层特征。另外，由于STL是基于模板，内联函数的使用使得生成的代码短小高效。</p>
+<h4 id="_2">提示</h4>
+<p>确保在编译使用了STL的程序中至少要使用 <code>-O</code> 优化来保证内联扩展。STL提供大量的模板类和函数，可以在OOP和常规编程中使用。所有的STL的大约50个算法都是完全通用的，而且不依赖于任何特定的数据类型。</p>
+<p>下面的小节说明了三个基本的STL组件：</p>
+<ol>
+<li>
+<p>迭代器提供了访问容器中对象的方法。例如，可以使用一对迭代器指定list或vector中的一定范围的对象。迭代器就如同一个指针。事实上，C++的指针也是一种迭代器。但是，迭代器也可以是那些定义了operator*()以及其他类似于指针的操作符的方法的类对象。</p>
+</li>
+<li>
+<p>容器是一种数据结构，如list，vector和deques，以模板类的方法提供。为了访问容器中的数据，可以使用由容器类输出的迭代器。</p>
+</li>
+<li>
+<p>算法是用来操作容器中的数据的模板函数。例如，STL用sort()来对一个vector中的数据进行排序，用find()来搜索一个list中的对象。函数本身与他们操作的数据的结构和类型无关，因此他们可以在从简单数组到高度复杂容器的任何数据结构上使用。</p>
+</li>
+</ol>
+<h3 id="_3">头文件</h3>
+<p>为了避免和其他头文件冲突，STL的头文件不再使用常规的.h扩展。为了包含标准的string类，迭代器和算法，用下面的指示符：</p>
+<pre><code class="cpp">#include &lt;string&gt;
+#include &lt;iterator&gt;
+#include &lt;algorithm&gt;
+</code></pre>
+
+<p>如果你查看STL的头文件，你可以看到像iterator.h和stl_iterator.h这样的头文件。由于这些名字在各种STL实现之间都可能不同，你应该避免使用这些名字来引用这些头文件。为了确保可移植性，使用相应的没有.h后缀的文件名。表1列出了最常使用的各种容器类的头文件。该表并不完整，对于其他头文件，我将在本章和后面的两章中介绍。</p>
+<h4 id="1-stl">表1 STL头文件和容器类</h4>
+<table>
+<thead>
+<tr>
+<th align="left">#include</th>
+<th align="left">Container Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;deque&gt;</code></td>
+<td align="left">deque</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;list&gt;</code></td>
+<td align="left">list</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;map&gt;</code></td>
+<td align="left">map, multimap</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;queue&gt;</code></td>
+<td align="left">queue, priority_queue</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;set&gt;</code></td>
+<td align="left">set, multiset</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;stack&gt;</code></td>
+<td align="left">stack</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;vector&gt;</code></td>
+<td align="left">vector, <code>vector&lt;bool&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">名字空间</h3>
+<p>你的编译器可能不能识别名字空间。名字空间就好像一个信封，将标志符封装在另一个名字中。标志符只在名字空间中存在，因而避免了和其他标志符冲突。例如，可能有其他库和程序模块定义了sort()函数，为了避免和STL的sort()冲突，STL的sort()算法编译为std::sort()，从而避免了名字冲突。</p>
+<p>尽管你的编译器可能没有实现名字空间，你仍然可以使用他们。为了使用STL，可以将下面的指示符插入到你的源代码文件中，典型的是在所有的#include指示符的后面：</p>
+<pre><code class="cpp">using namespace std;
+</code></pre>
+
+<h3 id="_5">迭代器</h3>
+<p>迭代器提供对一个容器中的对象的访问方法，并且定义了容器中对象的范围。迭代器就如同一个指针。事实上，C++的指针也是一种迭代器。但是，迭代器不仅仅是指针，因此你不能认为他们一定具有地址值。例如，一个数组索引，也可以认为是一种迭代器。</p>
+<p>迭代器有各种不同的创建方法。程序可能把迭代器作为一个变量创建。一个STL容器类可能为了使用一个特定类型的数据而创建一个迭代器。作为指针，必须能够使用<code>*</code>操作符获取数据。你还可以使用其他数学操作符如<code>++</code>。典型的，++操作符用来递增迭代器，以访问容器中的下一个对象。如果迭代器到达了容器中的最后一个元素的后面，则迭代器变成past-the-end值。使用一个past-the-end值的指针来访问对象是非法的，就好像使用NULL或未初始化的指针一样。</p>
+<h4 id="_6">提示</h4>
+<p>STL不保证可以从另一个迭代器来抵达一个迭代器。例如，当对一个集合中的对象排序时，如果你在不同的结构中指定了两个迭代器，第二个迭代器无法从第一个迭代器抵达，此时程序注定要失败。这是STL灵活性的一个代价。STL不保证检测毫无道理的错误。</p>
+<h3 id="_7">迭代器的类型</h3>
+<p>对于STL数据结构和算法，你可以使用五种迭代器。下面简要说明了这五种类型：</p>
+<ul>
+<li>Input iterators 提供对数据的只读访问。</li>
+<li>Output iterators 提供对数据的只写访问。</li>
+<li>Forward iterators 提供读写操作，并能向前推进迭代器</li>
+<li>Bidirectional iterators 提供读写操作，并能向前和向后操作。</li>
+<li>Random access iterators 提供读写操作，并能在数据中随机移动。</li>
+</ul>
+<p>尽管各种不同的STL实现细节方面有所不同，还是可以将上面的迭代器想像为一种类继承关系。从这个意义上说我，下面的迭代器继承自上面的迭代器。由于这种继承关系，你可以将一个Forward迭代器作为一个output或input迭代器使用。同样，如果一个算法要求是一个bidirectional迭代器，那么只能使用该种类型和随机访问迭代器。</p>
+<h3 id="_8">指针迭代器</h3>
+<p>正如下面的小程序显示的，一个指针也是一种迭代器。该程序同样显示了STL的一个主要特征——它不只是能够用于它自己的类类型，而且也能用于任何C或C++类型。iterdemo.cpp显示了如何把指针作为迭代器用于STL的find()算法来搜索普通的数组。</p>
+<h5 id="iterdemocpp">iterdemo.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+#define SIZE 100
+int iarray[SIZE];
+
+int main()
+{
+    iarray[20] = 50;
+
+    int *ip = find(iarray, iarray + SIZE, 50);
+
+    if(ip == iarray + SIZE)
+        cout&lt;&lt;&quot;50 not found in array&quot;&lt;&lt;endl;
+    else
+        cout&lt;&lt;*ip&lt;&lt;&quot; found in array&quot;&lt;&lt;endl;
+
+    return 0;
+}
+</code></pre>
+
+<p>在引用了I/O流库和STL算法头文件（注意没有.h后缀），该程序告诉编译器使用std名字空间。</p>
+<p>程序中定义了尺寸为SIZE的全局变量，所以运行时数组自动初始化为零。下面的语句将在索引20位置处的元素设置为50，并使用find()算法来搜索值50:</p>
+<pre><code class="cpp">iarray[20] = 50;
+int *ip = find(iarray, iarray + SIZE, 50);
+</code></pre>
+
+<p>find()函数接受三个参数。头两个定义了搜索的范围。由于C和C++数组等同于指针，表达式iarray指向数组的第一个元素。而第二个参数iarray+SIZE等同于past-the-end值，也就是数组中最后一个元素的后面位置。第三个参数是待定位置，也就是50.</p>
+<p>find()函数返回和前两个参数相同类型的迭代器，这儿是一个指向整数的指针ip。</p>
+<h4 id="_9">提示</h4>
+<p>必须记住STL使用模板。因此，STL函数自动根据它们使用数据类型来构造。</p>
+<p>为了判断find()是否成功，例子中测试ip和past-the-end值是否相等:</p>
+<pre><code class="cpp">if(ip == iarray + SIZE) ...
+</code></pre>
+
+<p>如果表达式为真，则表示在搜索范围内没有指定的值。否则就是指向一个合法对象的指针，这时可以用下面的语句显示：</p>
+<pre><code class="cpp">cout&lt;&lt;*ip&lt;&lt;&quot; found in array&quot;&lt;&lt;endl;
+</code></pre>
+
+<p>测试函数返回值和NULL是否相等是不正确的。不要像下面这样使用：</p>
+<pre><code class="cpp">int *ip = find(iarray, iarray + SIZE, 50);
+if(ip != NULL) ...//incorrect
+</code></pre>
+
+<p>当使用STL函数时，只能测试ip是否和past-the-end值相等。尽管在本例中ip是一个C++指针，其用法也必须符合STL迭代器的原则。</p>
+<h3 id="_10">容器迭代器</h3>
+<p>尽管C++指针也是迭代器，但用的更多的是容器迭代器。容器迭代器用法和iterdemo.cpp一样，但和将迭代器声明为指针变量不同的是，你可以使用容器类方法来获取迭代器对象。</p>
+<p>两个典型的容器类方法是begin()和end()。它们在大多数容器中表示整个容器范围。其他一些容器还使用rbegin()和rend()方法提供反向迭代器，以按反向顺序指定对象范围。</p>
+<p>下面的程序创建了一个矢量容器（STL中和数组等价的对象），使用迭代器在其中搜索。该程序和前一章中的程序相同。</p>
+<h5 id="vectdemocpp">vectdemo.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+vector&lt;int&gt; intVector(100);
+
+void main()
+{
+    intVector[20] = 50;
+    vector&lt;int&gt;::iterator intIter = find(intVector.begin(), intVector.end(), 50);
+
+    if(intIter != intVector.end())
+        cout&lt;&lt;&quot;Vector contains value &quot;&lt;&lt;*intIter&lt;&lt;endl;
+    else
+        cout&lt;&lt;&quot;Vector does not contain 50&quot;&lt;&lt;endl;
+}
+</code></pre>
+
+<p>注意用下面的方法显示搜索到的数据：</p>
+<pre><code class="cpp">cout&lt;&lt;&quot;Vector contains value &quot;&lt;&lt;*intIter&lt;&lt;endl;
+</code></pre>
+
+<h3 id="_11">常量迭代器</h3>
+<p>和指针一样，你可以给一个迭代器赋值。例如，首先声明一个迭代器：</p>
+<pre><code class="cpp">vector&lt;int&gt;::iterator first;
+</code></pre>
+
+<p>该语句创建了一个<code>vector&lt;int&gt;</code>类的迭代器。下面的语句将该迭代器设置到intVector的第一个对象，并将它指向的对象值设置为123:</p>
+<pre><code class="cpp">first = intVector.begin();
+*first = 123;
+</code></pre>
+
+<p>这种赋值对于大多数容器类都是允许的，除了只读变量。为了防止错误赋值，可以声明迭代器为：</p>
+<pre><code class="cpp">const vector&lt;int&gt;:: const_iterator result;
+result = find(intVector.begin(), intVector.end(), value);
+if(result != intVector.end())
+    *result = 123; //发生错误，不能给常量赋值
+</code></pre>
+
+<h4 id="_12">警告</h4>
+<p>另一种防止数据被改变的方法是将容器声明为const类型.</p>
+<h2 id="_13">使用迭代器编程</h2>
+<p>你已经见到了迭代器的一些例子，现在我们将关注每种特定的迭代器如何使用。由于使用迭代器需要关于STL容器类和算法的知识，在阅读了后面的两章后你可能需要重新复习一下本章内容。</p>
+<h3 id="_14">输入迭代器</h3>
+<p>输入迭代器是最普通的类型。输入迭代器至少能够使用==和!=测试是否相等;使用*来访问数据；使用++操作来递推迭代器到下一个元素或到达past-the-end值。</p>
+<p>为了理解迭代器以及STL函数是如何使用它们的，现在来看一下find()模板函数的定义:</p>
+<pre><code class="cpp">template &lt;class InputIterator, class T&gt;
+InputIterator find(InputIterator first, InputIterator last, const T&amp; value)
+{
+    while(first != last &amp;&amp; *first != value)
+        ++first;
+    return first;
+}
+</code></pre>
+
+<h4 id="_15">注意</h4>
+<p>在find()算法中，注意如果first和last指向不同的容器，该算法可能陷入死循环。</p>
+<h3 id="_16">输出迭代器</h3>
+<p>输出迭代器缺省只写，通常用于将数据从一个位置拷贝到另一个位置。由于输出迭代器无法读取对象，因些你不会在任何搜索和其他算法中使用它。要想读取一个拷贝的值，必须使用另一个输入迭代器（或它的继承迭代器）。</p>
+<h5 id="outitercpp">outIter.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt; //need copy()
+#include &lt;vector&gt; //need vector
+
+using namespace std;
+
+double darray[10] = { 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 };
+
+vector&lt;double&gt; vdouble(10);
+
+int main()
+{
+    vector&lt;double&gt;:: iterator outputIterator = vdouble.begin();
+    copy(darray, darray + 10, outputIterator);
+    while(outputIterator != vdouble.end())
+    {
+        cout&lt;&lt;*outputIterator&lt;&lt;endl;
+        outputIterator++;
+    }
+    return 0;
+}
+</code></pre>
+
+<h4 id="_17">注意</h4>
+<p>当使用copy()算法的时候，你必须确保目标容器有足够大的空间，或者容器本身是自动扩展的。</p>
+<h3 id="_18">前推迭代器</h3>
+<p>前推迭代器能够读写数据值，并能够向前推进到下一个值。但是没法递减。replace()算法显示了前推迭代器的使用方法。</p>
+<pre><code class="cpp">template &lt;class ForwardIterator, class T&gt;
+void replace(ForwardIterator first, ForwardIterator last, const T&amp; old_value, const T&amp; new_value);
+</code></pre>
+
+<h4 id="_19">使用</h4>
+<p>replace()将[first, last]范围内的所有值为old_value的对象替换为new_value：</p>
+<pre><code class="cpp">replace(vdouble.begin(),vdouble.end(),1.5,3.1415926);
+</code></pre>
+
+<h3 id="_20">双向迭代器</h3>
+<p>双向迭代器要求能够增减。如reverse()算法要求两个双向迭代器作为参数：</p>
+<pre><code class="cpp">template &lt;class BidirectionalIterator&gt;
+void reverse(BidirectionalIterator first, BidirectionalIterator last);
+</code></pre>
+
+<h4 id="_21">使用</h4>
+<p>reverse()函数来对容器进行逆向排序：</p>
+<pre><code class="cpp">reverse(vdoule.begin(), vdouble.end());
+</code></pre>
+
+<h3 id="_22">随机访问迭代器</h3>
+<p>随机访问迭代器能够以任意顺序访问数据，并能用于读写数据（不是const的C++指针也是随机访问迭代器）。STL的排序和搜索函数使用随机访问迭代器。随机访问迭代器可以使用关系操作符作比较。</p>
+<pre><code class="cpp">random_shuffle()
+</code></pre>
+
+<p>函数随机打乱原先的顺序声明为：</p>
+<pre><code class="cpp">template &lt;class RandomAccessIterator&gt;
+void random_shuffle(RandomAccessIterator first, RandomAccessIterator last);
+</code></pre>
+
+<h4 id="_23">使用方法</h4>
+<pre><code class="cpp">random_shuffle(vdouble.begin(), vdouble.end());
+</code></pre>
+
+<h3 id="_24">迭代器技术</h3>
+<p>要学会使用迭代器和容器以及算法，需要学习下面的新技术。</p>
+<h3 id="_25">流和迭代器</h3>
+<p>本书的很多例子程序使用I/O流语句来读写数据。例如：</p>
+<pre><code class="cpp">int value;
+cout&lt;&lt;&quot;Enter value:&quot;;
+cin&gt;&gt;value;
+cout&lt;&lt;&quot;You entered &quot;&lt;&lt;value&lt;&lt;endl;
+</code></pre>
+
+<p>对于迭代器，有另一种方法使用流和标准函数。理解的要点是将输入/输出流作为
+容器看待。因此，任何接受迭代器参数的算法都可以和流一起工作。</p>
+<h5 id="outstrmcpp">outStrm.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt; // need rand(), srand()
+#include &lt;time.h&gt; //need time()
+#include &lt;algorithm&gt; //need sort(),copy()
+#include &lt;vector&gt; //need vector
+#include &lt;iterator&gt;
+
+using namespace std;
+
+void Display(vector&lt;int&gt;&amp; v, const char *s);
+
+int main()
+{
+    srand(time(NULL));
+    vector&lt;int&gt; collection(10);
+    for(int i = 0; i &lt; 10; i++)
+        collection[i]=rand()%10000;
+    Display(collection, &quot;Before sorting&quot;);
+    sort(collection.begin(), collection.end());
+    Display(collection, &quot;After sorting&quot;);
+    return 0;
+}
+
+void Display(vector&lt;int&gt;&amp; v, const char *s)
+{
+    cout&lt;&lt;endl&lt;&lt;s&lt;&lt;endl;
+    copy(v.begin(), v.end(), ostream_iterator&lt;int&gt;(cout, &quot;\t&quot;));
+    cout&lt;&lt;endl;
+}
+</code></pre>
+
+<p>函数Display()显示了如何使用一个输出流迭代器。下面的语句将容器中的值传输到cout输出流对象中：</p>
+<pre><code class="cpp">copy(v.begin(), v.end(), ostream_iterator&lt;int&gt;(cout, &quot;\t&quot;));
+</code></pre>
+
+<p>第三个参数实例化了<code>ostream_iterator&lt;int&gt;</code>类型，并将它作为copy()函数的输出目标迭代器对象。"\t"字符串是作为分隔符。运行结果：</p>
+<pre><code>$ g++ outstrm.cpp
+$ ./a.out
+
+Before sorting
+7136    8210    8265    5185    519     2906    2032    2273    101     4642
+
+After sorting
+101     519     2032    2273    2906    4642    5185    7136    8210    8265
+</code></pre>
+
+<p>这是STL神奇的一面。为定义输出流迭代器，STL提供了模板类ostream_iterator。这个类的构造函数有两个参数：一个ostream对象和一个string值。因此可以象下面一样简单地创建一个迭代器对象：</p>
+<pre><code class="cpp">ostream_iterator&lt;int&gt;(cout, &quot;\n&quot;)
+</code></pre>
+
+<p>该迭代器可以和任何接受一个输出迭代器的函数一起使用。</p>
+<h3 id="_26">插入迭代器</h3>
+<p>插入迭代器用于将值插入到容器中。它们也叫适配器，因为它们将容器适配或转化为一个迭代器，并用于copy()这样的算法中。例如，一个程序定义了一个链表和一个矢量容器：</p>
+<pre><code class="cpp">list&lt;double&gt; dList;
+vector&lt;double&gt; dVector;
+</code></pre>
+
+<p>通过使用front_inserter迭代器对象，可以只用单个copy()语句就完成将矢量中的对象插入到链表前端的操作：</p>
+<pre><code class="cpp">copy(dVector.begin(), dVector.end(), front_inserter(dList));
+</code></pre>
+
+<p>三种插入迭代器如下：</p>
+<ul>
+<li>普通插入迭代器将对象插入到容器指定对象的前面</li>
+<li>Front inserters将对象插入到数据集的前面——例如，链表表头。</li>
+<li>Back inserters将对象插入到集合的尾部——例如，矢量的尾部，导致矢量容器扩展。</li>
+</ul>
+<p>使用插入迭代器可能导致容器中的其他对象移动位置，因而使得现存的迭代器非法。例如，将一个对象插入到矢量容器将导致其他值移动位置以腾出空间。一般来说，插入到像链表这样的结构中更为有效，因为它们不会导致其他对象移动。</p>
+<h5 id="insertcpp">insert.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;list&gt;
+#include &lt;iterator&gt;
+
+using namespace std;
+
+int iArray[5] = {1,2,3,4,5};
+void Display(list&lt;int&gt;&amp; v, const char *s);
+
+int main()
+{
+    list&lt;int&gt; iList;
+    copy(iArray, iArray+5, front_inserter(iList));
+    Display(iList, &quot;Before find and copy&quot;);
+    list&lt;int&gt;::iterator p = find(iList.begin(), iList.end(), 3);
+    copy(iArray, iArray + 2, inserter(iList,p));
+    Display(iList, &quot;After find and copy&quot;);
+    return 0;
+}
+void Display(list&lt;int&gt;&amp; v, const char *s)
+{
+    cout&lt;&lt;s&lt;&lt;endl;
+    copy(v.begin(), v.end(), ostream_iterator&lt;int&gt;(cout, &quot;&quot;));
+    cout&lt;&lt;endl;
+}
+</code></pre>
+
+<p>运行结果如下：</p>
+<pre><code>$ g++ insert.cpp
+$ ./a.out
+Before find and copy
+5 4 3 2 1
+After find and copy
+5 4 1 2 3 2 1
+</code></pre>
+
+<p>可以将front_inserter替换为back_inserter试试。</p>
+<p>如果用find()去查找在列表中不存在的值，例如99。由于这时p将被设置为past-the-end值，最后的copy()函数将iArray的值附加到链表的后部。</p>
+<h3 id="_27">混合迭代器函数</h3>
+<p>在涉及到容器和算法的操作中，还有两个迭代器函数非常有用：</p>
+<ul>
+<li>advance() 按指定的数目增减迭代器</li>
+<li>distance() 返回到达一个迭代器所需（递增）操作的数目。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="cpp">list&lt;int&gt; iList;
+list&lt;int&gt;::iterator p = find(iList.begin(), iList.end(),2);
+cout&lt;&lt;&quot;before: p == &quot;&lt;&lt;*p &lt;&lt;endl;
+advance(p,2);
+cout&lt;&lt;&quot;after: p == &quot;&lt;&lt;*p&lt;&lt;endl;
+int k = 0;
+distance(p, iList.end(),k);
+cout&lt;&lt;&quot;k == &quot;&lt;&lt;k &lt;&lt;endl;
+</code></pre>
+
+<p>advance()函数接受两个参数。第二个参数是向前推进的数目。对于前推迭代器，该值必须为正，而对于双向迭代器和随机访问迭代器，该值可以为负。</p>
+<p>使用distance()函数返回到达另一个迭代器所需要的步数。</p>
+<h4 id="_28">注意</h4>
+<p>distance()函数是迭代的，也就是说，它递增第三个参数。因此，你必须初始化参数。未初始化该参数几乎注定要失败。</p>
+<h3 id="_29">函数和函数对象</h3>
+<p>STL中，函数被称为算法，也就是说它们和标准C库函数相比，它们更为通用。STL算法通过重载operator()函数实现为模板类或模板函数。这些类用于创建函数对象，对容器中的数据进行各种各样的操作。下面的几节解释如何使用函数和函数对象。</p>
+<h3 id="_30">函数和断言</h3>
+<p>经常需要对容器中的数据进行用户自定义的操作。例如，你可能希望遍历一个容器中所有对象的STL算法能够回调自己的函数。例如：</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+#define VSIZE  24
+vector&lt;long&gt; v(VSIZE);
+
+void initialize(long &amp;ri);
+void show(const long &amp;ri);
+bool isMinus(const long &amp;ri);
+
+int main()
+{
+    srand(time(NULL));
+    for_each(v.begin(), v.end(), initialize);
+    cout&lt;&lt;&quot;Vector of signed long integers&quot;&lt;&lt;endl;
+    for_each(v. begin(), v.end(), show);
+    cout&lt;&lt;endl;
+
+    int count = 0;
+    vector&lt;long&gt;::iterator p;
+    p = find_if(v.begin(), v.end(), isMinus);
+    while(p != v.end())
+    {
+        count++;
+        p = find_if(p+1, v.end(), isMinus);
+    }
+    cout&lt;&lt;&quot;Number of values:&quot;&lt;&lt;VSIZE&lt;&lt;endl;
+    cout&lt;&lt;&quot;Negative values:&quot;&lt;&lt;count&lt;&lt;endl;
+    return 0;
+}
+void initialize(long &amp;ri)
+{
+    ri = (rand() - (RAND_MAX/2));
+}
+void show(const long &amp;ri)
+{
+    cout&lt;&lt;ri&lt;&lt;&quot;&quot;;
+}
+bool isMinus(const long &amp;ri)
+{
+    return (ri&lt;0);
+}
+</code></pre>
+
+<blockquote>
+<p>所谓断言函数，就是返回bool值的函数。</p>
+</blockquote>
+<h3 id="_31">函数对象</h3>
+<p>除了给STL算法传递一个回调函数，你还可能需要传递一个类对象以便执行更复杂的操作。这样一个对象就叫做函数对象。实际上函数对象就是一个类，但它和回调函数一样可以被回调。例如，在函数对象每次被for_each()或find_if()函数调用时可以保留统计信息。函数对象是通过重载operator()()实现的。如果TanyClass定义了operator()()，那么就可以这么使用：</p>
+<pre><code class="cpp">TanyClass object;
+object();
+for_each(v.begin(), v.end(), object);
+</code></pre>
+
+<p>STL定义了几个函数对象。由于它们是模板，所以能够用于任何类型，包括C/C++固有的数据类型，如long。有些函数对象从名字中就可以看出它的用途，如plus()和multiplies()。类似的greater()和less-equal()用于比较两个值。</p>
+<h4 id="_32">注意</h4>
+<p>有些版本的ANSI C++ 定义了times()函数对象，而GNU C++把它命名为multiplies()。使用时必须包含头文件<code>&lt;functional&gt;</code>。</p>
+<p>一个有用的函数对象的应用是accumulate()算法。该函数计算容器中所有值的总和。记住这样的值不一定是简单的类型，通过重载operator+()，也可以是类对象。</p>
+<h5 id="accumcpp">accum.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;numeric&gt; //need accumulate()
+#include &lt;vector&gt; //need vector
+#include &lt;functional&gt; //need multiplies() or times()
+
+using namespace std;
+
+#define MAX 10
+vector&lt;long&gt; v(MAX);
+
+int main()
+{
+   for(int i = 0; i &lt; MAX; i++)
+       v[i] = i + 1;
+   long sum = accumulate(v.begin(), v.end(), 0);
+   cout&lt;&lt;&quot;Sum of values ==&quot;&lt;&lt;sum&lt;&lt;endl;
+
+   long product = accumulate(v.begin(), v.end(), 1, multiplies&lt;long&gt;());
+   cout&lt;&lt;&quot;Product of values ==&quot;&lt;&lt;product&lt;&lt;endl;
+   return 0;
+}
+</code></pre>
+
+<p>编译输出如下：</p>
+<pre><code>$ g++ accum.cpp
+$ ./a.out
+Sum of values == 55
+Product of values == 3628800
+</code></pre>
+
+<p>注意使用了函数对象的accumulate()算法的用法。accumulate()在内部将每个容器中的对象和第三个参数作为multiplies函数对象的参数，multiplies(1,v)计算乘积。VC中的这些模板的源代码如下：</p>
+<pre><code class="cpp">template &lt;class _II, class _Ty&gt;
+inline _Ty accumulate(_II _F, _II _L, _Ty _V)
+{
+    for(; _F != _L; ++_F)
+        _V = _V + *_F;
+    return (_V);
+}
+
+
+template &lt;class _II, class _Ty, class _Bop&gt;
+inline _Ty accumulate(_II _F, _II _L, _Ty _V, _Bop _B)
+{
+    for(; _F != _L; ++_F)
+        _V = _B(_V, *_F);
+    return (_V);
+}
+
+template &lt;class _A1, class _A2, class _R&gt;
+struct binary_function{
+    typedef _A1 first_argument_type;
+    typedef _A2 second_argument_type;
+    typedef _R result_type;
+};
+
+template &lt;class _Ty&gt;
+struct multiplies:
+binary_function&lt;_Ty, _Ty, _Ty&gt;
+{
+    _Ty operator()(const _Ty &amp;_X, const _Ty &amp;_Y) const
+    {
+        return (_X * _Y);
+    }
+};
+</code></pre>
+
+<p>引言：如果你想深入了解STL到底是怎么实现的，最好的办法是写个简单的程序，将程序中涉及到的模板源码给copy下来，稍作整理，就能看懂了。所以没有必要去买什么《STL源码剖析》之类的书籍，那些书可能反而浪费时间。</p>
+<h3 id="_33">发生器函数对象</h3>
+<p>有一类有用的函数对象是“发生器”(generator)。这类函数有自己的内存，也就是说它能够从先前的调用中记住一个值。例如随机数发生器函数。</p>
+<p>普通的C程序员使用静态或全局变量“记忆”上次调用的结果。但这样做的缺点是该函数无法和它的数据相分离，还有个缺点是要用TLS才能线程安全。显然，使用类来封装一块:“内存”更安全可靠。先看一下例子：</p>
+<h5 id="randfunccpp">randfunc.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt; //need rand(), srand()
+#include &lt;time.h&gt; //need random_shuffle()
+#include &lt;vector&gt; //need vector
+#include &lt;functional&gt; //need ptr_fun()
+#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+
+using namespace std;
+
+int iarray[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+vector&lt;int&gt; v(iarray, iarray + 10);
+
+void Display(vector&lt;int&gt;&amp; vr, const char *s);
+
+unsigned int RandInt(const unsigned int n);
+
+int main()
+{
+    srand(time(NULL));
+    Display(v, &quot;Before shuffle:&quot;);
+    pointer_to_unary_function&lt;unsigned int, unsigned int&gt; ptr_RandInt = ptr_fun(RandInt);
+    random_shuffle(v.begin(), v.end(), ptr_RandInt);
+    Display(v, &quot;After shuffle:&quot;);
+    return 0;
+}
+void Display(vector&lt;int&gt;&amp; vr, const char *s)
+{
+    cout &lt;&lt; endl &lt;&lt; s &lt;&lt; endl;
+    copy(vr.begin(), vr.end(), ostream_iterator&lt;int&gt;(cout, &quot;&quot;));
+    cout &lt;&lt; endl;
+}
+
+unsigned int RandInt(const unsigned int n)
+{
+    return rand() % n;
+}
+</code></pre>
+
+<p>编译运行结果如下：</p>
+<pre><code>$ g++ randfunc.cpp
+$ ./a.out
+Before shuffle:
+1 2 3 4 5 6 7 8 9 10
+After shuffle:
+6 7 2 8 3 5 10 1 9 4
+
+首先用下面的语句声明一个对象
+pointer_to_unary_function&lt;unsigned int, unsigned int&gt; ptr_RandInt = ptr_fun(RandInt);
+</code></pre>
+
+<p>这儿使用STL的单目函数模板定义了一个变量ptr_RandInt, 并将地址初始化到我们的函数RandInt()。单目函数接受一个参数，并返回一个值。现在random_shuffle()可以如下调用:</p>
+<pre><code class="cpp">random_shuffle(v.begin(), v.end(), ptr_RandInt);
+</code></pre>
+
+<p>在本例子中，发生器只是简单的调用rand()函数。</p>
+<h3 id="_34">发生器函数类对象</h3>
+<p>下面的例子说明发生器函数类对象的使用。</p>
+<h5 id="fiborandcpp">fiborand.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt; //need rand_shuffle()
+#include &lt;vector&gt; //need vector
+#include &lt;functional&gt; //need unary_function
+#include &lt;iterator&gt;
+
+using namespace std;
+
+int iarray[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+vector&lt;int&gt; v(iarray, iarray + 10);
+void Display(vector&lt;int&gt; &amp;vr, const char *s);
+
+template&lt;class Arg&gt;
+class FiboRand:public unary_function&lt;Arg, Arg&gt;
+{
+    int i, j;
+    Arg sequence[18];
+public:
+    FiboRand();
+    Arg operator()(const Arg &amp;arg);
+};
+
+void main()
+{
+    FiboRand&lt;int&gt; fibogen;
+    cout&lt;&lt;&quot;Fibonacci random number generator&quot;&lt;&lt;endl;
+    cout&lt;&lt;&quot;using random_shuffle and a function object&quot;&lt;&lt;endl;
+    Display(v,&quot;Before shuffle:&quot;);
+    random_shuffle(v.begin(), v.end(), fibogen);
+    Display(v, &quot;After shuffle:&quot;);
+}
+
+void Display(vector&lt;int&gt; &amp;vr, const char *s)
+{
+    cout&lt;&lt;endl&lt;&lt;s&lt;&lt;endl;
+    copy(vr.begin(), vr.end(), ostream_iterator&lt;int&gt;(cout,&quot;&quot;));
+    cout&lt;&lt;endl;
+}
+
+template&lt;class Arg&gt;
+FiboRand&lt;Arg&gt;::FiboRand()
+{
+    sequence[17]=1;
+    sequence[16]=2;
+    for(int n=15; n&gt;0; n--)
+        sequence[n]=sequence[n+1]+sequence[n+2];
+    i=17;
+    j = 5;
+}
+
+template&lt;class Arg&gt;
+Arg FiboRand&lt;Arg&gt;::operator()(const Arg &amp;arg)
+{
+    Arg k=sequence[i]+sequence[j];
+    sequence[i]=k;
+    i--;
+    j--;
+    if(i==0) i=17;
+    if(j==0) j=17;
+    return k % arg;
+}
+</code></pre>
+
+<p>编译运行输出如下：</p>
+<pre><code>$ g++ fiborand.cpp
+$ ./a.out
+Fibonacci random number
+generator
+using random_shuffle and a
+function object
+Before shuffle:
+1 2 3 4 5 6 7 8 9 10
+After shuffle:
+6 8 5 4 3 7 10 1 9
+</code></pre>
+
+<p>该程序用完全不同的方法使用rand_shuffle。Fibonacci发生器封装在一个类中，该类能从先前的“使用”中记忆运行结果。在本例中，类FiboRand维护了一个数组和两个索引变量i和j。 </p>
+<p>FiboRand类继承自unary_function()模板：</p>
+<pre><code class="cpp">template&lt;class Arg&gt;
+class FiboRand: public unary_function&lt;Arg, Arg&gt;{ ...
+</code></pre>
+
+<p>Arg是用户自定义数据类型。该类还定义了两个成员函数，一个是构造函数，另一个是operator()()函数，该操作符允许random_shuffle()算法像一个函数一样“调用”一个FiboRand对象。</p>
+<h3 id="_35">绑定器函数对象</h3>
+<p>一个绑定器使用另一个函数对象f()和参数值V创建一个函数对象。被绑定函数对象必须为双目函数，也就是说有两个参数，A和B。STL中的绑定器有：</p>
+<ul>
+<li>bind1st() 创建一个函数对象，该函数对象将值V作为第一个参数A。</li>
+<li>bind2nd() 创建一个函数对象，该函数对象将值V作为第二个参数B。</li>
+</ul>
+<p>举例如下:</p>
+<h5 id="bindercpp">binder.cpp</h5>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#include &lt;list&gt;
+
+using namespace std;
+
+int iarray[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+list&lt;int&gt; aList(iarray, iarray+10);
+
+int main()
+{
+    int k = 0;
+    k = count_if(aList.begin(), aList.end(), bind1st(greater&lt;int&gt;(),8));
+    cout&lt;&lt;&quot;Number elements &lt; 8 == &quot;&lt;&lt;k&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+
+<p>count_if()计算满足特定条件的元素的数目。
+这是通过将一个函数对象和一个参数捆绑为一个对象，并将该对象作为算法的第三个参数实现的。注意这个表达式：</p>
+<pre><code class="cpp">bind1st(greater&lt;int&gt;(),8)
+</code></pre>
+
+<p>该表达式将<code>greater&lt;int&gt;()</code>和一个参数值8捆绑为一个函数对象。由于使用了bind1st()，所以该函数相当于计算下述表达式：</p>
+<pre><code class="cpp">8 &gt; q
+</code></pre>
+
+<p>表达式中的q是容器中的对象。因此，完整的表达式</p>
+<pre><code class="cpp">k = count_if(aList.begin(), aList.end(), bind1st(greater&lt;int&gt;(),8));
+</code></pre>
+
+<p>计算所有小于或等于8的对象的数目。</p>
+<h3 id="_36">否定函数对象</h3>
+<p>所谓否定(negator)函数对象，就是它从另一个函数对象创建而来，如果原先的函数返回真，则否定函数对象返回假。有两个否定函数对象：not1()和not2()。</p>
+<p>not1()授受单目函数对象，not2()接受双目函数对象。否定函数对象通常和绑定器一起使用。例如，上节中用bind1nd来搜索q&lt;=8的值：</p>
+<pre><code class="cpp">k = count_if(aList.begin(), aList.end(), bind1st(greater&lt;int&gt;(),8));
+</code></pre>
+
+<p>如果要搜索q&gt;8的对象，则用bind2st。而现在可以这样写：</p>
+<pre><code class="cpp">strat = find_if(aList.begin(), aList.end(), not1(bind1st(greater&lt;int&gt;(),8)));
+</code></pre>
+
+<p>你必须使用not1，因为bind1st返回单目函数。</p>
+<h3 id="stl_3">总结：使用标准模板库（STL）</h3>
+<p>尽管很多程序员仍然在使用标准C函数，但是这就好像骑着毛驴寻找Mercedes一样。你当然最终也会到达目标，但是你浪费了很多时间。</p>
+<p>尽管有时候使用标准C函数确实方便（如使用sprintf()进行格式化输出）。但是C函数不使用异常机制来报告错误，也不适合处理新的数据类型。而且标准C函数经常使用内存分配技术，没有经验的程序员很容易写出bug来。</p>
+<p>C++标准库则提供了更为安全，更为灵活的数据集处理方式。STL最初由HP实验室的Alexander Stepanov和Meng Lee开发。最近，C++标准委员会采纳了STL，尽管在不同的实现之间仍有细节差别。</p>
+<p>STL的最主要的两个特点：数据结构和算法分离，非面向对象本质。访问对象是通过像指针一样的迭代器实现的，容器是像链表、矢量之类的数据结构，并按模板方式提供。算法是函数模板，用于操作容器中的数据。由于STL以模板为基础，所以能用于任何数据类型和结构。</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>created by wangzhizhou</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
