@@ -41,7 +41,7 @@ edit_uri: "edit/master/docs/"
 
 # built-in theme
 # default: mkdocs
-theme: "readthedocs"
+#theme: "readthedocs"
 # theme: 'mkdocs'
 
 
@@ -51,7 +51,10 @@ theme: "readthedocs"
 # directory containing your configuration file, 
 # or it can be an absolute directory path.
 # default: null
-theme_dir: null
+theme_dir: 'mkdocs_docskimmer'
+#theme_dir: 'mkdocs_alabaster'
+#theme_dir: 'psinder'
+#theme_dir: 'mkdocs_windmill_dark'
 
 # Lets you set the directory containing the documentation source markdown files. 
 # This can either be a relative directory, 
