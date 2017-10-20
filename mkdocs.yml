@@ -55,6 +55,7 @@ theme: "readthedocs"
 #theme_dir: 'mkdocs_alabaster'
 #theme_dir: 'psinder'
 #theme_dir: 'mkdocs_windmill_dark'
+theme_dir: 'joker_theme'
 
 # Lets you set the directory containing the documentation source markdown files. 
 # This can either be a relative directory, 
