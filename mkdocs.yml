@@ -41,21 +41,18 @@ edit_uri: "edit/master/docs/"
 
 # built-in theme
 # default: mkdocs
-theme: "readthedocs"
-#theme: 'mkdocs'
+theme: 
+    name: "readthedocs"
+    custom_dir: 'joker_theme'
+    
+    #name: null
+    #custom_dir: 'mkdocs_docskimmer'
+    #custom_dir: 'mkdocs_alabaster'
+    #custom_dir: 'psinder'
+    #custom_dir: 'mkdocs_windmill_dark'
+    #custom_dir: 'joker_theme'
 
 
-# Lets you set a directory to a custom theme. 
-# This can either be a relative directory, 
-# in which case it is resolved relative to the 
-# directory containing your configuration file, 
-# or it can be an absolute directory path.
-# default: null
-#theme_dir: 'mkdocs_docskimmer'
-#theme_dir: 'mkdocs_alabaster'
-#theme_dir: 'psinder'
-#theme_dir: 'mkdocs_windmill_dark'
-theme_dir: 'joker_theme'
 
 # Lets you set the directory containing the documentation source markdown files. 
 # This can either be a relative directory, 
@@ -152,12 +149,11 @@ strict: true
 #    - toc:
 #        permalink: True
 #    - sane_lists
-markdown_extensions:
-    - mdx_math:
-        config: ["MMLorHTML.js"]
-        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"]
-        extensions: ["MathMenu.js", "MathZoom.js"]
+#markdown_extensions:
+  #  - mdx_math
 
+plugins:
+    - search
 
 # This setting is used to determine the set of pages that should be 
 # built for the documentation.
