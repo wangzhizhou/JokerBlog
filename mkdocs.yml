@@ -86,8 +86,7 @@ site_dir: "site"
 # See the example in extra_css for usage.
 # default: []
 extra_javascript:
-    - https://cdn.mathjax.org/mathjax/latest/MathJax.js
-
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Set a list of templates in your docs_dir to be built by MkDocs. 
 # To see more about writing templates for MkDocs read the documentation 
@@ -153,10 +152,7 @@ strict: true
 #        permalink: True
 #    - sane_lists
 markdown_extensions:
-    - mdx_math:
-        config: ["MMLorHTML.js"]
-        jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"]
-        extensions: ["MathMenu.js", "MathZoom.js"]
+    - mdx_math
 
 
 # This setting is used to determine the set of pages that should be 
