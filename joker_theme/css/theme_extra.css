@@ -93,13 +93,12 @@ pre code {
     word-wrap: normal;
     display: block;
     padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
     line-height: 120%;
     background-color: rgba(100, 95, 95, 0.151);
     color: #fff;
     border-radius: 10px;
-    font-family: Courier New, Courier, monospace;
+    font-family: Courier, monospace;
 }
 
 
@@ -226,4 +225,38 @@ th {
     border: 1px solid #e1e4e5 !important;
     /* csslint allow: important */
     border-collapse: collapse;
+}
+
+
+/* 
+ * Change the h1,h2,h3,h4,h5,h6 color like the theme:
+ * mkdocs_docskimmer
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #1b6a3e
+}
+
+.wy-nav-top {
+    background: #1b6a3e;
+    color: rgb(221, 182, 8);
+    font-size: 24px;
+}
+
+.wy-nav-top i {
+    margin-top: 10px;
+}
+
+.wy-side-nav-search {
+    background-color: #1b6a3e;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: rgb(0, 0, 0);
+    border-width: 1px;
 }
