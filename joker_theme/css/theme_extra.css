@@ -35,13 +35,10 @@
     min-height: 0;
 }
 
-
-/*
 .rst-versions {
     border-top: 0;
     height: 45px;
 }
-*/
 
 @media screen and (max-width: 768px) {
     .wy-nav-side {
