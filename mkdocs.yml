@@ -84,7 +84,7 @@ site_dir: "site"
 # See the example in extra_css for usage.
 # default: []
 extra_javascript:
-    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - http://cdn.mathjax.org/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # Set a list of templates in your docs_dir to be built by MkDocs. 
 # To see more about writing templates for MkDocs read the documentation 
