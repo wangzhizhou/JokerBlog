@@ -44,13 +44,6 @@ edit_uri: "edit/master/docs/"
 #theme: 
     #name: "readthedocs"
     #custom_dir: "joker_theme"
-    
-    #name: null
-    #custom_dir: 'mkdocs_docskimmer'
-    #custom_dir: 'mkdocs_alabaster'
-    #custom_dir: 'psinder'
-    #custom_dir: 'mkdocs_windmill_dark'
-    #custom_dir: 'joker_theme'
 
 theme: "readthedocs"
 theme_dir: "joker_theme"
