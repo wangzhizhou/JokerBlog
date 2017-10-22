@@ -199,3 +199,5 @@ pages:
         - 'me/Life in Beijing.md'
         - 'me/jokerhub.md'
 
+python: 
+    verions: 3.5
