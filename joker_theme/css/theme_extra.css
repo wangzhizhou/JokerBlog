@@ -30,14 +30,13 @@
  */
 
 .wy-nav-side {
-    height: calc(100% - 45px);
+    height: calc(100% - 2.5em);
     overflow-y: auto;
     min-height: 0;
 }
 
 .rst-versions {
     border-top: 0;
-    height: 45px;
 }
 
 @media screen and (max-width: 768px) {
