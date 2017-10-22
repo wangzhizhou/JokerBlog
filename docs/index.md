@@ -30,6 +30,5 @@ Hello, I'm Wang Zhizhou, a single dog and a coder. Right now, I'm working on iOS
 
 	![wechat](/assets/pictures/wechat.jpg)
 
-[toc]
 
-$$e^{i\pi}+0=1$$
+$$e^{i\pi}+1=0$$
