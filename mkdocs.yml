@@ -41,9 +41,9 @@ edit_uri: "edit/master/docs/"
 
 # built-in theme
 # default: mkdocs
-theme: 
-    name: "readthedocs"
-    custom_dir: 'joker_theme'
+#theme: 
+    #name: "readthedocs"
+    #custom_dir: "joker_theme"
     
     #name: null
     #custom_dir: 'mkdocs_docskimmer'
@@ -52,7 +52,8 @@ theme:
     #custom_dir: 'mkdocs_windmill_dark'
     #custom_dir: 'joker_theme'
 
-
+theme: "readthedocs"
+theme_dir: "joker_theme"
 
 # Lets you set the directory containing the documentation source markdown files. 
 # This can either be a relative directory, 
@@ -124,7 +125,7 @@ use_directory_urls: true
 # Determines if a broken link to a page within the documentation is 
 # considered a warning or an error (link to a page not listed in the pages setting). 
 # Set to true to halt processing when a broken link is found, false prints a warning.
-strict: true
+#strict: true
 
 
 # Determines the address used when running mkdocs serve. 
