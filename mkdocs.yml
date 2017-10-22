@@ -83,6 +83,7 @@ site_dir: "site"
 # Set a list of JavaScript files in your docs_dir to be included by the theme. 
 # See the example in extra_css for usage.
 # default: []
+# http://www.bootcdn.cn/mathjax/readme/ 用来加速js的CDN
 extra_javascript:
     - https://cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML
 
