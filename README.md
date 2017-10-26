@@ -1,6 +1,6 @@
 # Joker's Blog
 
-[![http://jokerblog.readthedocs.io/zh/latest/?badge=latest](http://jokerblog.readthedocs.io/zh/latest/?badge=latest)](http://jokerblog.readthedocs.io/zh/latest/?badge=latest)
+[![Documentation Status](http://readthedocs.org/projects/jokerblog/badge/?version=latest)](http://jokerblog.readthedocs.io/zh/latest/?badge=latest)
 
 This is my personal blog. It's be used for sharing my options and life trivia. 
 
