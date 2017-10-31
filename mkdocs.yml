@@ -32,7 +32,7 @@ repo_name: "GitHub"
 # When set, provides a link directly to the page in your source repository. 
 # This makes it easier to find and edit the source for the page. 
 # If repo_url is not set, this option is ignored.
-edit_uri: "edit/master/docs/"
+# edit_uri: "edit/master/docs/"
 # edit_uri:  blob/master/docs/
 
 # Set the Google analytics tracking configuration.
