@@ -146,8 +146,8 @@ use_directory_urls: true
 markdown_extensions:
     - mdx_math
 
-plugins:
-    - search
+# plugins:
+#     - search
 
 # This setting is used to determine the set of pages that should be 
 # built for the documentation.
