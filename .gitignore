@@ -3,3 +3,6 @@
 /site
 /build
 vblogenv
+/.build
+/Packages
+/*.xcodeproj

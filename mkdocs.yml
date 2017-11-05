@@ -32,7 +32,7 @@ repo_name: "GitHub"
 # When set, provides a link directly to the page in your source repository. 
 # This makes it easier to find and edit the source for the page. 
 # If repo_url is not set, this option is ignored.
-edit_uri: "edit/master/docs/"
+# edit_uri: "edit/master/docs/"
 # edit_uri:  blob/master/docs/
 
 # Set the Google analytics tracking configuration.
@@ -146,8 +146,8 @@ use_directory_urls: true
 markdown_extensions:
     - mdx_math
 
-plugins:
-    - search
+# plugins:
+#     - search
 
 # This setting is used to determine the set of pages that should be 
 # built for the documentation.
@@ -193,3 +193,49 @@ pages:
         - 'me/My Financial Planning.md'
         - 'me/Life in Beijing.md'
         - 'me/jokerhub.md'
+    - 'Guide': 'guide/index.md'
+    - Jenkins:
+        - 导览: jenkins/guide/index.md
+        - 第一个管道: jenkins/guide/first-pipeline.md
+        - 多步管道: jenkins/guide/multiple-steps-pipeline.md
+        - 定义执行环境: jenkins/guide/define-execution-environments.md
+        - 使用环境变量: jenkins/guide/using-environment-variables.md
+        - 记录测试结果: jenkins/guide/recording-test-results-and-artifacts.md
+        - 清理和通知: jenkins/guide/cleaning-up-and-notification.md
+        - 布署: jenkins/guide/deployment.md
+    - ReactiveX:
+        - 介绍: reactiveX/introduction.md
+        - 可观察的: reactiveX/Observable.md
+        - 运算符: reactiveX/Operators.md
+        - 单事件可观察对象: reactiveX/Single.md
+        - 主题: reactiveX/Subject.md
+        - 调度器: reactiveX/Scheduler.md
+    - Docker:
+        - 简介: docker/start-learn.md
+        - 定位: docker/Orientation.md
+        - 容器: docker/Container.md
+        - 服务: docker/Service.md
+        - 机群: docker/Swarm.md
+        - 栈: docker/Stack.md
+        - 部署应用: docker/Deploy.md
+    - Nginx:
+        - 新手教程: nginx/beginner-guide.md
+    - Swift:
+        - 服务端Swift:
+            - 第四章Swfit包管理器: "swift/swift-on-server/[4]Swift-Package-Manager.md"
+            - 第五章使用Kitura写ToDoList: "swift/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
+    - 乐理基础: 
+        - 乐音:
+            - "music/theory/tones/Pitches and Clefs.md"
+        - 节拍:
+            - "music/theory/rhythms/Note Values and Basic Notation.md"
+        - 曲调:
+            - "music/theory/tunes/Melodies.md"
+        - 伴奏:
+            - "music/theory/accompanying/Transcribing What You Hear.md"
+        - 修饰:
+            - "music/theory/embellishing/Harmony and Counterpoint.md"
+        - 编曲:
+            - "music/theory/arranging/composing and arranging for voices and instruments.md"
+        - 附录:
+            - "music/theory/appendixes/A.md"
