@@ -1,0 +1,9 @@
+applications:
+ - name: todolist
+   memory: 256M
+   instances: 1
+   random-route: true
+   buildpack: swift_buildpack
+
+
+
