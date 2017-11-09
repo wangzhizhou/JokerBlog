@@ -9,7 +9,7 @@ site_name: "Joker's Blog"
 # Set the canonical URL of the site. 
 # This will add a link tag with the canonical URL to the generated HTML header.
 # default: null
-site_url:  null
+site_url:  "http://jokerblog.readthedocs.io/"
 
 
 # Set the site description. This will add a meta tag to the generated HTML header.
