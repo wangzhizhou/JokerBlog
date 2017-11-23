@@ -1,5 +1,7 @@
 # Swift 4 语言笔记
 
+## 快速开始
+
 - 版本判断
 
 ```
@@ -129,5 +131,7 @@ var Name: Type {
 - 泛型`<TypeName:TypeProtocol>` `where TypeRequirement`在执行体前面使用：`<T: Equatable>`和`<T> ... where T: Equatable`等价
 
 
+
+## 语言细节
 
 
