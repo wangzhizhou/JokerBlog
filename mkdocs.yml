@@ -221,6 +221,8 @@ pages:
     - Nginx:
         - 新手教程: nginx/beginner-guide.md
     - Swift:
+        - Swift语言:
+            - Swift4: "swift/swift4-notes.md"
         - 服务端Swift:
             - 第四章Swfit包管理器: "swift/swift-on-server/[4]Swift-Package-Manager.md"
             - 第五章使用Kitura写ToDoList: "swift/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
