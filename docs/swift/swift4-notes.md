@@ -110,9 +110,24 @@ var Name: Type {
 
     }
 }
+```
 
 - 链式操作中经常使用`?`符号
 
 - `enum`定义枚举，`rawValue`可以指定，不仅限定于Int
 
 - `struct`定义结构体，和类的主要区别是结构体是值类型
+
+- `protocol`定义协议，类、结构体和枚举都可以使用协议，`mutating`修饰结构体和枚举中的协议方法实现，可以修改值类型成员
+
+-  可以使用扩展`extension`来使用协议，可以把协议名作为一种类型来调用所有遵循该协议类型对象，只限于协议定义的内容
+
+- `throw`可以抛出一个异常，`throws`指明一个函数可以抛出异常，使用`do-try[?]-catch...`来处理异常, `try?`把结果转化为`Optional`类型，抛出错误时返回nil, 否则返回包含结果的`Optional`
+
+- `defer`描述的代码块会在函数返回前一刻执行，不论函数执行是否抛出错误
+
+- 泛型`<TypeName:TypeProtocol>` `where TypeRequirement`在执行体前面使用：`<T: Equatable>`和`<T> ... where T: Equatable`等价
+
+
+
+
