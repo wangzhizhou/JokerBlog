@@ -142,3 +142,44 @@ var Name: Type {
 
 - 句尾分号可以省略
 
+- `0b`、`0o`、`0x`表示二进制、八进制、十六进制
+
+- 指数表示：`1e3 = 10 * 10 * 10`、`1p2 = 2 * 2`
+
+- 易读数字格式：`1_000_000 = 1000000`
+
+- `typealias NewTypeName = existedTypeName`类型别名定义
+
+- 元组`(name: ele1, ele2, _)`,元组可以通过下标或元素来访问单个元素，不适合复杂数据结构
+
+- `Optionals`类型的变量可以有值也可以没有值，统一可以表示各种类型变量没有值的情况
+
+- `nil`不能给非`optionals`变量赋值，OC中的nil是指向一个不存在对象的指针，只对对象类型有效，而swift中的nil不是一个指针，它只是表示一种不存在值的状态，对所有类型有效。
+
+- `!`强制解包，如果一个`Optional`变更确定有值， 就可以使用`!`来使用其值
+
+- `Optionals 绑定`，用于从`Optional`变量中提取值并赋于局部变量使用，在单个if语句中可以使用多个Optional绑定，只要有一个为假，则整个判断为假
+
+- 隐式解绑`Optional！`，确保它声明后一直有值且不为nil, 但它本身还是一个`Optional`，只是在访问时会自动解包
+
+- 函数能抛出错误用`throws`指明，当调用一个可以抛出错误的函数时，前面要加上`try`
+
+- `Assertions`只在调试期间起作用，`precondition`可调试和生产环境中都起作用。`Assertions`在单元测试中经常用到,如果编译器开了`-Ounchecked`选项，`precondition`会被一直认为成功。
+
+```
+assert(exp, msg) 失败时显示msg，成功时继续执行
+
+assertionFailure(msg)直接表示失败时的msg显示
+
+precondition(exp, msg)调试和生产环境都起作用
+preconditionFailure(:file:line)
+fatalError(_:file:line:)严重错误，不会被编译器优化
+```
+
+
+
+
+
+
+
+
