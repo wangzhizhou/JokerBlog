@@ -209,6 +209,18 @@ fatalError(_:file:line:)严重错误，不会被编译器优化
 
 - `Character`每一个实例都是一个扩展图像簇，每一个扩展图像簇都可以包含多个Unicode标量，用来生成单个可读字符，可以用来显示一些组合字符，使用`count`发生获取字符串长度，也是由于这个原因，swift的字符串中的字符不能使用索引来直接引用，`endIndex`不是一个有效的字符索引，String的`indices`是所有字符元素的索引数组
 
+- 子字符串类型`Substring`, 只是临时使用
+
+- `Character`有`utf8`、`utf16`和`unicodeScalars`三种Unicode兼容的编码数组
+
+- 集合类型：`Array`、`Set`、`Dictionary`
+
+- `Array(repeating:count:)`可以在定义时初始化，
+
+- `enumerated()`方法会返回以(index, emelemt)为元素的数组 
+
+- 集合中元素的类型必须是能hash的，以确保唯一性，集合没有简短写法
+
 
 
 
