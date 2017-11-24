@@ -219,7 +219,21 @@ fatalError(_:file:line:)严重错误，不会被编译器优化
 
 - `enumerated()`方法会返回以(index, emelemt)为元素的数组 
 
-- 集合中元素的类型必须是能hash的，以确保唯一性，集合没有简短写法
+- 集合中元素的类型必须是能hash的，以确保唯一性，集合没有简短写法，声明集合必须显式指明类型，不能类型推断
+
+- switch中的case 后面可以跟`where`
+
+- 控制转移关键字: `continue`、`break`、`fallthrough`、`return`、`throw`
+
+- 语句标签`label: `可以和`break`、`continue`一起使用，可以实现与C语言中goto相同的效果 
+
+- `guard - else`如果guard的条件不成立，就执行else块儿的语句
+
+- `#available(iOS 10, macOS 10.12, *)`API有效性判断
+
+
+
+
 
 
 
