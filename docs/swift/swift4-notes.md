@@ -402,12 +402,13 @@ var a = { return 0 }()
 
 - 协议部分前有`optional`修饰的被遵循后可以不必实现，`@objc`修饰的协议部分只能被继承自Objective-C的类遵循
 
-- 协议扩展可以定义默认实现，可以使用`where`定义限制
+- 协议扩展可以定义默认实现，可以使用`where`定义约束
 
+- 泛型类型也可以添加约束
 
+- 协议可以定义`associatedtype`类型，使用时可以`typealias associatedType = Int`，也可以给附加类型加约束
 
-
-
+- 
 
 
 
