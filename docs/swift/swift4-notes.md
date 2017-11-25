@@ -271,6 +271,48 @@ fatalError(_:file:line:)严重错误，不会被编译器优化
 
 - 计算属性也必须使用`var`来声明，属性观察器`willSet(newValue)`、`didSet(newValue/oldValue)`
 
+- 全局常量和变量都是计算懒惰的，只是不需要`lazy`修饰
+
+- 使用`static`关键字定义类型属性，使用`class`修饰的计算属性可以被子类重新实现
+
+- `Struct`和`Enumeration`是值类型，默认不能从这们的实例方法修改属性
+，如果修改修改，需要在实例方法前面加`mutaing`关键字，甚至可以修改self为另一个实例
+
+- 类型方法使用`static`关键词放在函数前面定义，使用`class`定义的类型方法允许子类覆盖其实现
+
+- `@discardableResult`属性修改指时时数调用时可以忽略考虑返回值
+
+- 类、结构体、枚举都可以定义下标操作，使用关键字`subscript`定义
+
+```
+subscript(index: Int) -> {
+    get {
+        // return an appropriate subscript value here
+    }
+
+    set(newValue){
+        // perform a suitable setting action here
+    }
+}
+```
+
+- `Dictionry`的元素赋`nil`相当于删除这个键值对
+
+- `subscript`不能使用`inout`修改参数，也不能给参数提供默认值 
+
+- 继承过来的属性不管是存储还是计算类型的都可以添加属性观察器
+
+- 使用关键字`final`来阻止属性、类型、下标或方法被子类覆盖或继承
+
+
+
+
+
+
+
+
+
+
 
 
 
