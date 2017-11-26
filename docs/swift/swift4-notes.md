@@ -408,7 +408,30 @@ var a = { return 0 }()
 
 - 协议可以定义`associatedtype`类型，使用时可以`typealias associatedType = Int`，也可以给附加类型加约束
 
-- 
+- `weak`和`unowned`修改变量或属性可以用来解决循环引用问题，`weak`修改的一定是`optional`的变量，因为它会在运行时变为nil
+`unowned`修改的变量一定要有值，它不会是nil, `unowned(unsafe)`需要自己确保运行时安全
+
+- 闭包引起的循环引用可以使用捕获列表(capture list)解决：`[weak self, unowned delegate]`放在闭我的参数列表前面
+
+- 重叠访问可能会造成不一致问题，通常与`inout`和`mutating`有关，造成访问冲突，如果编译器不能保证安全访问，就不会允许访问
+
+- swift访问控制模型基于模块和源文件，模块是代码分发单位，可以是框架或者应用，每一个`target`都是一个模块
+
+- `open`和`public`可以在同一个模块的任何源文件中访问，也可以在被导入的另一个模块的源文件中被访问,`open`的范围比`public`更大点，包括了被导入的另一个模块的范围
+
+- `internel`只能在本模块中的源文件中被访问
+
+- `fileprivate`只在文件内部可被访问
+
+- `private`只在一个声明的范围内部访问
+
+-`@testable`修饰导入声明时，单元测试就可以访问模块的内部实体了
+
+
+
+
+
+
 
 
 
