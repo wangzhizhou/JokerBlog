@@ -6,3 +6,4 @@ vblogenv
 /.build
 /Packages
 /*.xcodeproj
+.vscode/
