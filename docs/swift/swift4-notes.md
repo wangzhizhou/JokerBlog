@@ -439,6 +439,13 @@ static prefix|infix|postfix func
 
 
 
+## 语言参考
+
+- `->`表示由后面的构成
+
+- `|`表示或者
+
+- `opt`下标，表示可有可无
 
 
 
