@@ -427,6 +427,16 @@ var a = { return 0 }()
 
 -`@testable`修饰导入声明时，单元测试就可以访问模块的内部实体了
 
+- swfit默认运算不允许溢出，`&+`、`&-`、`&*`显式的指定允许溢出
+
+- 自定义运算和运算符: 
+
+```
+prefix|infix|postfix operator +++: precedence
+
+static prefix|infix|postfix func 
+```
+
 
 
 
