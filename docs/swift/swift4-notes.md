@@ -437,6 +437,10 @@ prefix|infix|postfix operator +++: precedence
 static prefix|infix|postfix func 
 ```
 
+- `indirect`可以用来定义递归枚举
+
+- `~=`是枚举中表达式匹配时使用的运算符
+
 
 
 ## 语言参考
