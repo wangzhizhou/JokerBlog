@@ -1,5 +1,6 @@
 XCode 9 已经集成了XCode Server, 不用单独安装，这很方便坐持续集成。
 
+[证书和授权文件](http://blog.sina.com.cn/s/blog_a562246f0102vebx.html)
 
 [持续集成环境](https://www.jianshu.com/p/7aed0ef67449)
 
