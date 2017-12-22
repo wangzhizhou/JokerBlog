@@ -193,7 +193,6 @@ pages:
         - 'me/My Financial Planning.md'
         - 'me/Life in Beijing.md'
         - 'me/jokerhub.md'
-    - 'Guide': 'guide/index.md'
     - Jenkins:
         - 导览: jenkins/guide/index.md
         - 第一个管道: jenkins/guide/first-pipeline.md
@@ -220,11 +219,13 @@ pages:
         - 部署应用: docker/Deploy.md
     - Nginx:
         - 新手教程: nginx/beginner-guide.md
-    - Swift:
-        - Swift4: swift/swift4-notes.md
+    - iOS:
+        - 工作流: "iOS/workflow.md"
+        - 持续集成: "iOS/XCode 9 CI.md"
+        - Swift4: "iOS/swift4-notes.md"
         - 服务端Swift:
-            - 第四章Swfit包管理器: "swift/swift-on-server/[4]Swift-Package-Manager.md"
-            - 第五章使用Kitura写ToDoList: "swift/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
+            - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
+            - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
     - 乐理基础: 
         - 乐音:
             - "music/theory/tones/Pitches and Clefs.md"
