@@ -178,6 +178,7 @@ pages:
         - 'tech/my hardware.md'
         - 'tech/kotlin.md'
         - 'tech/Convert MP4 to GIF With FFmpeg.md'
+        - 'tech/jupyterhub.md'
     - 'etc':
         - 'life/alipay-scan-fu-icon.md'
         - 'life/Renting in Beijing.md'
