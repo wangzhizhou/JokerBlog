@@ -220,6 +220,7 @@ pages:
         - 部署应用: docker/Deploy.md
     - Nginx:
         - 新手教程: nginx/beginner-guide.md
+        - 主要用途: nginx/application.md
     - iOS:
         - 工作流: "iOS/workflow.md"
         - 持续集成: "iOS/XCode 9 CI.md"
@@ -227,6 +228,8 @@ pages:
         - 服务端Swift:
             - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
             - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
+        - OC相关: "iOS/objc.md"
+        - 逆向工程: "iOS/reverse.md"
     - 乐理基础: 
         - 乐音:
             - "music/theory/tones/Pitches and Clefs.md"
