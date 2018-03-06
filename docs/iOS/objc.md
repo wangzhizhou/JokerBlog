@@ -53,6 +53,60 @@
 
 # ARC实现
 
+`__weak`修饰的变量不要过多，会影响性能，只在需要解决循环引用的时候使用
+
+
+# Block(匿名函数/lambda/闭包)
+
+## 语法 
+
+`^` `return type` `(arguments list)` `{ expressions }`
+ - 可以省略`return type`，会从return 语句返回值类型推断
+ - 无参数时，参数列表也可以省略
+
+## block变量声明
+
+`return type` `(^var)` `(arguments list)`
+
+定义示例：`typedef int (^blk_t)(int)` 
+
+块内拷贝外部自动变量，叫作变量捕获(只读)
+
+以`__block`修饰的外部自动变量在块内可以被修改
+
+c数组不能被块捕获，需要使用指针
+
+## block的实现
+
+clang使用`-rewrite-objc`编译选项可以将包含块语法的代码转换成标准C++源代码
+
+内在段布局：一个应用对应的内存布局是 `.text区`用来存放代码， `.data`区用来存放和代码相关的数据，`heap`区动态使用内存空间，`stack`区，从低地址到高地址
+
+在数据区的block(全局定义的block)， 在栈中的block和在堆中的block*(函数返回的块会被拷到堆上)
+
+block作为函数参数时，在传递时会被拷贝
+
+block会造成循环引用问题：解决方式有两种：使用`__block`来发生循环引用后手动解除或使用`__weak`预防
+
+# GCD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
