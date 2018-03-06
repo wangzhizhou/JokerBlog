@@ -1,3 +1,6 @@
+
+《Pro Multithreading and Memory Management for iOS and OSX》
+
 # MRC - 手动引用计数(属于Foundation Framework NSObject)
 
 - 创建并持有(alloc/new/copy/mutableCopy)（1）
@@ -287,8 +290,13 @@ dispatch_io_read(pipe_channel, 0, SIZE_MAX, pipe_q, ^(bool done, dispatch_data_t
 
 ## GCD 实现
 
+在应用层使用`GCD`和`NSOperationQueue`比使用`pthreads`和`NSThread`更高效。
 
+GCD由`libdispatch`、`Libc(pthreads)`和`XNU kernel`支撑
 
+#### dispatch_source
+
+可以在应用层处理内核事件，资源消耗很小
 
 
 
