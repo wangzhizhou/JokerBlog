@@ -90,6 +90,105 @@ block会造成循环引用问题：解决方式有两种：使用`__block`来发
 
 # GCD
 
+- performSelectorInBackground:withObject
+- performSelectorOnMainThread
+
+## 常见用法：
+
+```
+dispatch_async(queue_for_background_threads, ^{
+
+    //background task 
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //use the task result on main thread
+    })
+
+})
+```
+
+一个线程就是CPU的一个执行路径，多线程编程中易遇到的问题是：竟争和死锁
+
+多线程编程是为了应用可以高响应
+
+
+## GCD APIs
+
+两种分发队列： 串行队列和并发队列。队列里面只是存放执行任务，然后分发给对应的线程。
+
+### 获取分发队列
+
+#### 串行队列：多个串行队列也可以并发运行，系统为第一个串行队列创建一个线程与之对应。
+
+串行对列可用来解决多线程编程中的竟争问题，但一个串行队列对应一个线程，所以不要创建过多的串行队列。
+
+```
+dispatch_queue_t serialDispatchQueue = dispatch_queue_create("com.joker.serialQueue", NULL);
+//中间步骤
+dispatch_release(serialDispatchQueue);
+```
+
+#### 并发队列
+
+```
+dispatch_queue_t concurrentDispatchQueue = dispatch_queue_create("com.joker.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+//中间使用
+dispatch_release(concurrentDispatchQueue);
+```
+
+一般不要单独创建并发队列，使用系统的全局队列就好，全局队列有四个优先级: 高、默认、低和后台
+
+```
+dispatch_queue_t mainDispatchQueue = dispatch_get_main_queue();
+dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+```
+
+#### 设置对列优先级
+
+优先级设置为与目标队列一致，源队列不能是系统队列，同时也可以设置队列层级
+```
+dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create("com.example.gcd.MySerialDispatchQueue", NULL);
+dispatch_queue_t globalDispatchQueueBackground = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+dispatch_set_target_queue(mySerialDispatchQueue, globalDispatchQueueBackground);
+```
+
+#### dispatch_after 延时分发任务
+
+```
+dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 3ull * NSEC_PER_SEC); dispatch_after(time, dispatch_get_main_queue(), ^{
+    NSLog(@"waited at least three seconds."); 
+});
+```
+
+- dispatch_time用来创建相对时间
+- dispatch_walltime用来创建绝对时间
+
+#### dispatch_group 创建队列组为单位的任务 
+
+```
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_group_t group = dispatch_group_create();
+dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
+dispatch_group_notify(group, dispatch_get_main_queue(), ^{NSLog(@"done");});
+dispatch_release(group);
+```
+
+#### dispatch_group_wait
+
+```
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_group_t group = dispatch_group_create();
+dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
+dispatch_group_wait(group, DISPATCH_TIME_FOREVER); dispatch_release(group);
+```
+
+
+
+
+
 
 
 
