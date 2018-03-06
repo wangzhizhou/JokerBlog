@@ -171,7 +171,9 @@ dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 3ull * NSEC_PER_SEC); di
 ```
 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 dispatch_group_t group = dispatch_group_create();
-dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
+dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); 
+dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); 
+dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
 dispatch_group_notify(group, dispatch_get_main_queue(), ^{NSLog(@"done");});
 dispatch_release(group);
 ```
@@ -181,9 +183,63 @@ dispatch_release(group);
 ```
 dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 dispatch_group_t group = dispatch_group_create();
-dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
+dispatch_group_async(group, queue, ^{NSLog(@"blk0");}); 
+dispatch_group_async(group, queue, ^{NSLog(@"blk1");}); 
+dispatch_group_async(group, queue, ^{NSLog(@"blk2");});
 dispatch_group_wait(group, DISPATCH_TIME_FOREVER); dispatch_release(group);
 ```
+
+#### dispatch_barrier_async
+
+```
+dispatch_queue_t queue = dispatch_queue_create( "com.example.gcd.ForBarrier", DISPATCH_QUEUE_CONCURRENT);
+dispatch_async(queue, blk0_for_reading); 
+dispatch_async(queue, blk1_for_reading); 
+dispatch_async(queue, blk2_for_reading); 
+dispatch_async(queue, blk3_for_reading); 
+dispatch_barrier_async(queue, blk_for_writing);
+dispatch_async(queue, blk4_for_reading); 
+dispatch_async(queue, blk5_for_reading); 
+dispatch_async(queue, blk6_for_reading); dispatch_async(queue, blk7_for_reading);
+dispatch_release(queue);
+```
+
+
+#### dispatch_sync
+
+同步分发，直到分发的任务完成以后才继续
+
+#### dispatch_apply
+
+```
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_apply(10, queue, ^(size_t index) {
+    NSLog(@"%zu", index);
+});
+NSLog(@"done");
+```
+
+#### dispatch_suspend/dispatch_resume
+
+```
+dispatch_suspend(queue);
+dispatch_resume(queue);
+```
+
+不会影响已经开始的任务，只是对未开始的任务有效
+
+
+#### dispatch semaphore
+
+```
+dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+// operations
+dispatch_semaphore_signal(semaphore);
+```
+
+
+#### dispatch_once
 
 
 
