@@ -69,7 +69,7 @@ lldb -n Finder -w
 ```
 
 |调试方式|lldb对应命令|
-|:---:|:---:|
+|:---|:---|
 |Step Over | next   |
 |Step in   |  step  |
 |Step Out  | finish |
@@ -93,6 +93,7 @@ lldb -n Finder -w
 # LLDB 快键
 
 `Command + K` 清屏
+
 `Ctrl + D` 退出
 
 
