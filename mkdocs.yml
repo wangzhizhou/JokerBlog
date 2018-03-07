@@ -230,6 +230,7 @@ pages:
             - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
         - OC相关: "iOS/objc.md"
         - 逆向工程: "iOS/reverse.md"
+        - 面试: "iOS/review.md"
     - 乐理基础: 
         - 乐音:
             - "music/theory/tones/Pitches and Clefs.md"
