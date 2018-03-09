@@ -88,13 +88,73 @@ lldb -n Finder -w
 (lldb)image list
 ```
 
+
+定义快捷命令
+
+```
+command alias -H "Yal Autolayout" -h "quick help text" -- Yay_Autolayout expression -l objc -O -- [[[[[UIApplication sharedApplication] keyWindow] rootViewController] view] recursiveDescription]
+```
+
+高级快捷命令定义
+
+```
+command regex -- tv 's/(.+)/expression -l objc -O -- @import QuartzCore; [%1 setHidden:!(BOOL)[%1 isHidden]]; (void)[CATransaction flush];/'
+
+usage:
+    (lldb) tv [[[UIApp keyWindow] rootViewController] view]
+```
  
+使用脚本桥接
+
 
 # LLDB 快键
 
 `Command + K` 清屏
 
 `Ctrl + D` 退出
+
+# 汇编相关
+
+两种主流汇编：Intel和AT&T(Apple)
+两种主要架构：X86_64(PC)和ARM64(iphone)(uname - m 查看机器硬件名)
+
+iphone 5是最后的32位设备，不支持iOS11
+apple watch 前两代是32位设备
+
+##寄存器调用规范
+
+### X86_64
+
+X64架构16个通用寄存器： RAX、RBX、RCX、RDX、RDI、RSI、RSP、RBP、R8~R15
+函数前6个参数对应:[RDI,RSI,RDX,RCX,R8,R9],超过的参数放在栈中
+rax是存放返回值
+
+列出iPhone X  相关的模拟器
+
+```
+$ xcrun simctl list | grep "iPhone X"
+```
+
+运行模拟踌躇
+
+```
+$ open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/ --args -CurrentDeviceUDID 25A1CE2B-F904-4FE7-A3DE-8EF5A8D49DA7
+```
+
+调试模拟器的主页管理器
+
+```
+$ lldb -n SpringBoard
+```
+
+在断点执行时添加相关的命令
+
+```
+breakpoint command add
+```
+
+Objective-c环境下才可以访问寄存器，swift下不行
+
 
 
 # LLDB常用命令
@@ -113,5 +173,7 @@ lldb -n Finder -w
 - thread backtrace
 - frame info
 - frame select
-
+- command alias -- 在.lldbinit中定义快捷命令
+- command regex
+- register read -f d 以10进制格式显示寄存器内容
 
