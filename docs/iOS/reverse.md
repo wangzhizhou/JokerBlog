@@ -60,6 +60,7 @@ lldb -n Finder -w
 (lldb) p/a              //按地址显示
 (lldb) p/f 1            //按浮点数显示 
 (lldb) p/s              //按字符串显示
+(lldb) p/i              //按汇编指令显示
 ```
 
 重新运行调试程序 
@@ -116,6 +117,21 @@ usage:
 # 汇编相关
 
 两种主流汇编：Intel和AT&T(Apple)
+
+## Intel 风格汇编
+
+```
+opcode destination source
+```
+
+## AT&T 风格汇编
+
+`$`表求常量， `%`表示寄存器引用
+
+```
+opcode source destination
+```
+
 两种主要架构：X86_64(PC)和ARM64(iphone)(uname - m 查看机器硬件名)
 
 iphone 5是最后的32位设备，不支持iOS11
@@ -153,9 +169,59 @@ $ lldb -n SpringBoard
 breakpoint command add
 ```
 
-Objective-c环境下才可以访问寄存器，swift下不行
+Objective-c环境下才可以访问寄存器，swift下不支持寄存器
 
 
+使用x86 Intel风格的汇编
+
+```
+settings set target.x86-disassembly-flavor intel
+```
+
+不省略函数开场
+
+```
+settings set target.skip-prologue false
+```
+
+以指令形式读取指定位置的一条指令
+
+```
+(lldb) memory read -fi -c1 0x100008900
+```
+
+读指定位置指令，指定每次读的大小(size)和读多少个(count)大小
+
+```
+(lldb) memory read -s1 -c20 -fx 0x10000882c
+```
+
+
+查看寄存器指向的地址的内容
+
+```
+(lldb) x/gx $rsp
+```
+
+### 寄存器
+
+`RDX` 64位、`EDX` 低32位、`DX` 低16位、 `DL` 低8位、 `DH DL`组成`DX`16位
+
+`R8-R15`只在64位机器上，以`R9`为例： `R9` 64位、 `R9D` 低32位、`R9W` 低16位、`R9L`低8位
+
+`RIP` 是指令指针寄存器 64位
+
+`RSP` 栈指针
+
+`RBP`栈基指针，用来存放偏移数据用的参考位置
+
+
+XCode选项: `Debug/Debug Flow/Always show Disassembly`，总是以汇编的形式调试
+
+
+### 大端和小端
+
+`x64`和`ARM`体系结构都使用小端，即低地址对应低字节, 两种架构对应的栈都是向下生长的
 
 # LLDB常用命令
 
@@ -176,4 +242,5 @@ Objective-c环境下才可以访问寄存器，swift下不行
 - command alias -- 在.lldbinit中定义快捷命令
 - command regex
 - register read -f d 以10进制格式显示寄存器内容
+- thread step-inst
 
