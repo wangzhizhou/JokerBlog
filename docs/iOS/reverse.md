@@ -203,6 +203,12 @@ settings set target.skip-prologue false
 (lldb) x/gx $rsp
 ```
 
+查看系统调用的个数估计
+
+```
+$ sudo dtrace -ln 'syscall:::entry' | wc -l
+```
+
 ### 寄存器
 
 `RDX` 64位、`EDX` 低32位、`DX` 低16位、 `DL` 低8位、 `DH DL`组成`DX`16位
@@ -222,6 +228,11 @@ XCode选项: `Debug/Debug Flow/Always show Disassembly`，总是以汇编的形�
 ### 大端和小端
 
 `x64`和`ARM`体系结构都使用小端，即低地址对应低字节, 两种架构对应的栈都是向下生长的
+
+### 反调试技术
+
+- `ptrace(PT_DENY_ATTACH, 0, nil, 0)`
+- `sysctl`
 
 # LLDB常用命令
 
