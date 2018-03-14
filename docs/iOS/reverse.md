@@ -203,6 +203,27 @@ settings set target.skip-prologue false
 (lldb) x/gx $rsp
 ```
 
+查看系统调用的个数估计
+
+```
+$ sudo dtrace -ln 'syscall:::entry' | wc -l
+```
+
+查看共享库
+
+```
+$ otool -L program
+$ otool -l program //显示库加载命令 LC_LOAD_DYLIB对应必要库，LC_LOAD_WEAK_DYLIB对应可选库
+```
+
+重新载入`.lldbinit`
+
+```
+(lldb) command source ~/.lldbinit
+```
+
+
+
 ### 寄存器
 
 `RDX` 64位、`EDX` 低32位、`DX` 低16位、 `DL` 低8位、 `DH DL`组成`DX`16位
@@ -222,6 +243,19 @@ XCode选项: `Debug/Debug Flow/Always show Disassembly`，总是以汇编的形�
 ### 大端和小端
 
 `x64`和`ARM`体系结构都使用小端，即低地址对应低字节, 两种架构对应的栈都是向下生长的
+
+### 反调试技术
+
+- `ptrace(PT_DENY_ATTACH, 0, nil, 0)`
+- `sysctl`
+
+### 动态库和静态库
+
+动态库的好处是，可以被多个程序共用，而不需要第一个程序保留一份，也方便库的升级和更新
+动态库是在程序运行时加载的，通过`dyld`，即`dynamic loader`
+
+动态库又分为：必要动态库和可选动态库，必要动态库加载失败会退出程序，可选动态库对程序来说可有可无，不会造成退出
+
 
 # LLDB常用命令
 
