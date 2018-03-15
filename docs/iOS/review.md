@@ -35,8 +35,22 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 # Timer
 
 NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其它线程的runLoop需要手动开启使Timer工作，哪里开启，哪里结束。
+循环引用问题
 
-# 设计内存管理器
+# 内存管理
+<http://www.cocoachina.com/ios/20160303/15498.html>
+
+# 深浅拷贝
+
+copy/mutableCopy/NSCopying/NSMutableCopying 
+
+# OC对象内存布局
+
+<http://blog.csdn.net/xiaolinyeyi/article/details/51393383>
+
+# 运行时和消息转发
+
+<https://www.jianshu.com/p/ea61895be31f>
 
 # JS与Native交互
 
@@ -44,7 +58,17 @@ NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其
 - 使用JS框架如javascriptcore,比较灵活
 - stringByEvaluatingJavaScriptFromString应该在主线程中执行
 
-#
+# pthread、NSThread、GCD、NSOperationQueue
+
+# 锁机制
+
+#事件、响应链、事件传递、事件拦截
+
+# KVC、KVO与runtime
+
+# 线程安全
+
+# Runloop机制
  
 # 设计模式
 

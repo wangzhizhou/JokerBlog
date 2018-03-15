@@ -232,6 +232,7 @@ pages:
         - 逆向工程: "iOS/reverse.md"
         - 应用优化: "iOS/optimization.md"
         - 面试: "iOS/review.md"
+        - 十大排序算法: "iOS/sort.md"
     - 乐理基础: 
         - 乐音:
             - "music/theory/tones/Pitches and Clefs.md"
