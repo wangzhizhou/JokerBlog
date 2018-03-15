@@ -17,5 +17,5 @@ Hello, I'm Wang Zhizhou, a coder. Right now, I'm working on iOS development. I w
 - [社招个人中文简历](/assets/pdfs/(社招)iOS移动开发方向.pdf)
 - [社招个人英文简历]()
 
-- [校招个人中文简历](/assets/Resume/Original Material/(社招)iOS移动开发方向.docx)
+- [校招个人中文简历](/assets/pdfs/(校招)iOS移动开发方向.pdf)
 - [校招个人英文简历](/assets/pdfs/English Resume.pdf)
