@@ -315,3 +315,60 @@ func partition(_ array: inout [Int], left: Int, right:Int) -> Int {
 }
 ```
 
+## 堆排序
+
+利用堆这种数据结构设计的排序算法
+
+- **描述:** 将初始待排序序列构建成大顶堆，此堆为初始的无序区；将堆顶元素与最后一个元素交换，此时得到新的无序区(除最后一个元素之外的其它所有元素)和新的有序区(最后一个，也是最大的一个元素)。由于交换后新的堆顶可能违反堆的性质，因此需要对当前无序区重新调整为最大堆，然后再次将堆顶元素与无序区最后一个元素交换，得到新的无序区和新的有序区(最大的两个元素)。不断重复此过程直到无序区元素个数为1，则整个排序过程完成。
+
+![heap sort](/iOS/images/heap_sort.gif)
+
+```swift
+import Foundation
+
+func heap_sort(_ array: inout [Int]) -> [Int] {
+    
+    buildMaxHeap(&array)
+    
+    for i in (1 ..< array.count).reversed() {
+        array.swapAt(0, i)
+        heapify(&array, index: 0, length: i)
+    }
+    
+    return array
+}
+
+func buildMaxHeap(_ array: inout [Int]) {
+    
+    for i in (0 ... array.count / 2).reversed() {
+        heapify(&array, index: i , length: array.count)
+    }
+    
+}
+
+func heapify(_ array: inout [Int], index: Int, length: Int) {
+    
+    let leftChild = index * 2 + 1;
+    let rightChild = index * 2 + 2;
+    var largest = index
+    
+    if leftChild < length && array[largest] < array[leftChild] {
+        largest = leftChild
+    }
+    
+    if rightChild < length && array[largest] < array[rightChild] {
+        largest = rightChild
+    }
+    
+    if largest != index {
+        array.swapAt(largest, index)
+        heapify(&array, index: largest, length: length)
+    }
+}
+```
+
+## 计数排序
+
+## 桶排序
+
+## 基数排序
