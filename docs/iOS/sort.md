@@ -207,3 +207,111 @@ func shell_sort(_ array: inout [Int]) -> [Int] {
     return array
 }
 ```
+
+## 归并排序
+
+和选择排序一样，不过表现更好，需要额外空间，归并操作上的一种有效排序方法，是一种稳定的排序方法，采
+用分治的思想，将子序列分别进行归并排序，再将有序的子序列合并为有序序列，完成排序任务
+
+- **描述:** 把待排序序列分成两个长度为\\(n/2\\)的子序列，对两个子序列分别进行归并排序，再将两个有序的子序列合并
+成最终的有序序列，关键是归并操作的实现
+
+![merge sort](/iOS/images/merge_sort.gif)
+
+```swift
+import Foundation
+
+func merge_sort(_ array: inout [Int]) -> [Int] {
+    
+    let count = array.count
+    
+    guard count >= 2 else {
+        return array
+    }
+    
+    let mid = count / 2
+    var left =  Array(array[0 ..< mid])
+    var right = Array(array[mid ..< count])
+    
+    return merge(left: merge_sort(&left), right: merge_sort(&right))
+}
+
+func merge(left: [Int], right: [Int]) -> [Int] {
+    
+    var array = [Int]()
+    
+    var leftIndex = 0;
+    var rightIndex = 0;
+    
+    while leftIndex < left.count && rightIndex < right.count {
+        
+        if left[leftIndex] < right[rightIndex] {
+            array.append(left[leftIndex])
+            leftIndex = leftIndex + 1
+        } else {
+            array.append(right[rightIndex])
+            rightIndex = rightIndex + 1
+        }
+        
+    }
+    
+    while leftIndex < left.count {
+        array.append(left[leftIndex])
+        leftIndex = leftIndex + 1
+    }
+    
+    while rightIndex < right.count {
+        array.append(right[rightIndex])
+        rightIndex = rightIndex + 1
+    }
+    
+    return array
+}
+
+```
+
+## 快速排序
+
+将待排序序列按一个基准值分成两个子序列，其中一个子序列中的元素全部小于基准值，另一个子序列中的元素全部大于基准值，然后对两个子序列分别应用快速排序，这样递归的完成排序任务
+
+- **描述:** 从待排序序列中挑一个元素作为基准值，将序列中所有元素比基准值大的放在前面，比基准值下的放在后面，基准值放在中间，进行基准值分区后，前后两部分子序列再分别进行快速排序，递归的完成排序任务,关键是分区函数的实现
+
+![quick sort](/iOS/images/quick_sort.gif)
+
+```swift
+import Foundation
+
+func quick_sort(_ array: inout [Int]) -> [Int] {
+    
+    quick_sort(&array, left: 0, right: array.count - 1)
+    return array
+}
+
+func quick_sort(_ array: inout [Int], left: Int, right: Int) {
+    
+    if left < right {
+        let partionIndex = partition(&array, left: left, right: right)
+        quick_sort(&array, left: left, right: partionIndex - 1)
+        quick_sort(&array, left: partionIndex + 1, right: right)
+    }
+}
+
+func partition(_ array: inout [Int], left: Int, right:Int) -> Int {
+    
+    let pivot = left
+    
+    var index = pivot + 1
+    
+    for i in index ... right {
+        
+        if array[i] < array[pivot] {
+            array.swapAt(i, index)
+            index = index + 1
+        }
+    }
+    
+    array.swapAt(left, index - 1)
+    return index - 1
+}
+```
+
