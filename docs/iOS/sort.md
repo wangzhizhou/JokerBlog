@@ -30,8 +30,50 @@
 
 ![bubble sort](/iOS/images/bubble_sort.gif)
 
-- **算法复杂度**: \\(O(n)\\)
+```swift
+import Foundation
 
+func bubble_sort(_ array: inout [Int]) -> [Int] {
+    
+    let count = array.count
+    for i in 0 ..< count - 1 {
+        for j in 0 ..< count-1-i {
+            if array[j] > array[j+1] {
+                
+                let temp = array[j]
+                array[j] = array[j+1]
+                array[j+1] = temp
+            }
+        }
+    }
+    return array
+}
+```
+## 选择排序
+
+- **描述:** 遍历序列，记录最小元素的下标或索引，每次遍历完将最小元素和序列第一个元素交换位置，再将最小元素排除后看成一个子序列重复遍历过程，直到序列有序。
+
+![select sort](/iOS/images/select_sort.gif)
+
+```swift
+import Foundation
+
+func select_sort(_ array: inout [Int]) -> [Int] {
+    
+    let count = array.count
+    for i in 0 ..< count-1 {
+        var minIndex = i
+        for j in (i+1) ..< count {
+            if array[j] < array[minIndex] {
+                minIndex = j
+            }
+        }
+        let temp = array[i]
+        array[i] = array[minIndex]
+        array[minIndex] = temp
+    }
+    return array
+}
 ```
 
-```
+## 插入排序
