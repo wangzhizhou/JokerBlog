@@ -369,6 +369,40 @@ func heapify(_ array: inout [Int], index: Int, length: Int) {
 
 ## 计数排序
 
+ 将序列元素作为键存入开辟的数组空间中，是一种线性时间复杂度的算法，要求数据的取值有一定的范围，是一种稳定的算法
+
+ - **描述:** 获得序列的最大值、最小值，统计序列中每个元素出现的次数，存入数组，数组的下标对应序列元素的值，对所有计数累加，以累加值作为序列的下标索引，反向填充序列，完成排序任务
+
+![count sort](/iOS/images/count.gif)
+
+```swift
+import Foundation
+
+func count_sort(_ array: inout [Int]) -> [Int] {
+    
+    if let max = array.max() {
+        
+        var bucket = Array(repeating: 0, count: max + 1)
+        
+        for e in array {
+            bucket[e] = bucket[e] + 1
+        }
+        
+        var index = 0
+        for k in 0 ... max {
+            while bucket[k] > 0 {
+                
+                array[index] = k
+                index = index + 1
+                
+                bucket[k] = bucket[k] - 1
+            }
+        }
+    }
+    return array
+}
+```
+
 ## 桶排序
 
 ## 基数排序
