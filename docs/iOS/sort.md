@@ -77,3 +77,31 @@ func select_sort(_ array: inout [Int]) -> [Int] {
 ```
 
 ## 插入排序
+
+- **描述:** 首先把第1个元素看成是一个有序序列，把后面最近一个元素插入这个有序序列，插入过程从有序序列的尾部元素开始，逐个向前比较，如果插入元素比最后一个元素大，那么有序序列就扩大为2个元素，如果插入元素比最后一个元素小，继续向前查找比较，直到找到一个比插入元素大的元素，并将该元素后面所有包含在有序序列中的元素依次向后挪一位给插入元素空出位置(如果要插入的元素比有序序列中的所有元素都小，就把整个有序序列往后挪一个位置)，并放入所插入的元素，从而扩大有序序列的个数，如引循环，直到整个原始序列有序。
+
+![insert sort](/iOS/images/insert_sort.gif)
+
+```swift
+import Foundation
+
+func insert_sort(_ array: inout [Int]) -> [Int] {
+    
+    let count = array.count
+    
+    for i in 1 ..< count {
+        var insertIndex = i
+        for j in (0 ... i-1).reversed() {
+            if array[j] > array[i] {
+                array[j+1] = array[j]
+                insertIndex = j
+            }
+        }
+        array[insertIndex] = array[i]
+    }
+    return array
+}
+```
+
+## 希尔排序
+
