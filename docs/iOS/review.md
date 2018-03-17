@@ -95,36 +95,53 @@ View/Interactor/Presenter/Entity/Router
 
 # 腾讯面试
 
+准备资料: <http://www.cocoachina.com/bbs/read.php?tid=460991>
+
 - **周六 2018.03.17   17:30 知春路希格玛大厦B1篮球场 叶女士 17801077277   腾讯**
 
-准备资料: <http://www.cocoachina.com/bbs/read.php?tid=460991>
+![review tencent](/iOS/images/review_tencent.jpg)
 
 ##面试题
 
 问下面这段代码有什么问题？应该怎么修改？
 
+*ViewController.h*
+
 ```
+#import <UIKit/UIKit.h>
+
+@interface ViewController : UIViewController
+
+@end
+```
+
+*ViewController.m*
+
+```
+#import "ViewController.h"
+
+@interface ViewController ()
+//will crash if not set to atomic, because the setter will be called in concurrent thread, and member will be release incorrect
 @property (nonatomic, strong) NSString *target;
+@end
 
-//...
-dispatch_queue_t queue = dispatch_queue_create("com.joker.current",DISPATCH_QUEUE_CONCURRENT);
+@implementation ViewController
 
-for(int i = 0; i < 100000; i++)
-{
-    dispatch_async(queue, ^{
-        self.target = [NSString stringWithFormat:@"This is a fake string!"];
-    })
-}
-```
-
-由于target是nonatomic,循环中不断往并发队列里在加任务，多线程并发会调用target的setter方法，由于setter方法的实现是下面这样的：
-```
--(void)setTarget:(NSString *)target {
-    if(_target != target) {
-        [_target release];
-        _target = [target retain];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.joker.concurrent", DISPATCH_QUEUE_CONCURRENT);
+    
+    for(int i = 0; i < 100000; i++)
+    {
+        dispatch_async(queue, ^{
+            self.target = [NSString stringWithFormat:@"A Mock String"];
+        });
     }
 }
+@end
 ```
 所以，并发时，调用不当，会多次调用[_target release]造成多次释放，进而崩溃。改成atomic属性。
 
+# 知乎
