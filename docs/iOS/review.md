@@ -15,6 +15,8 @@ KVC本质上是操作方法列表以及在内存中查找实例变量，可以�
 - observeValueForKeyPath
 主要添加和移除，不要重复添加，及时移除
 
+类被第一观察时，会产生一个子类，子类种重写属性的setter方法，并把isa指针指向该子类。重写的setter方法实现通知机制
+
 # Notification
 
 post和转发在同一个线程中进行，与注册观察者所在的线程无关，必要时需要转发到不同线程
@@ -58,6 +60,12 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 - 使用JS框架如javascriptcore,比较灵活
 - stringByEvaluatingJavaScriptFromString应该在主线程中执行
 
+# 索引的缺点
+
+    1. 需要空间储存索引
+    2. 创建和维护索引需要耗费时间
+    3. 当删除，插入和更新数据是，索引也需要进行更新，这样降低了写数据的速度。
+
 # pthread、NSThread、GCD、NSOperationQueue
 
 # 锁机制
@@ -83,3 +91,10 @@ ViewModel是輸入輸出的转换,与绑定机制联合威力更大, 兼容MVC�
 View/Interactor/Presenter/Entity/Router
 
 易测试、理解、维护，可与CoreData联合使用
+
+
+### 腾讯面试
+
+- 周六 2018.03.17   17:30 知春路希格玛大厦B1篮球场 叶女士 17801077277   腾讯
+
+准备资料: <http://www.cocoachina.com/bbs/read.php?tid=460991>
