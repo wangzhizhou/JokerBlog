@@ -11,11 +11,3 @@ Hello, I'm Wang Zhizhou, a coder. Right now, I'm working on iOS development. I w
 - WeChat: `w_z_z_1991`
 
 	![wechat](/assets/pictures/wechat.jpg)
-
-- [一寸免冠照片](/assets/Resume/Original Material/dz1.jpg)
-
-- [社招个人中文简历](/assets/pdfs/(社招)iOS移动开发方向.pdf)
-- [社招个人英文简历]()
-
-- [校招个人中文简历](/assets/pdfs/(校招)iOS移动开发方向.pdf)
-- [校招个人英文简历](/assets/pdfs/English Resume.pdf)

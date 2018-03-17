@@ -8,8 +8,6 @@ sudo apt-get install git-core
 git clone https://github.com/wangzhizhou2014GitHub/Network-Simulator-Installation-Guideline-For-Ubuntu
 ```
 
-You also can download the pdf edition of this document **[here](/assets/pdfs/NS2_Install_For_Ubuntu.pdf)**
-
 ### This Installation of Network Simulator 2 on the Ubuntu 16.04 Live CD UDisk
 
 After you intall your Ubuntu System, you should use command: 
