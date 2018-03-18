@@ -144,4 +144,70 @@ View/Interactor/Presenter/Entity/Router
 ```
 所以，并发时，调用不当，会多次调用[_target release]造成多次释放，进而崩溃。改成atomic属性。
 
+### 总结
+
+- DLNA的协议没有深刻理解
+- 播放器去耦合部分介绍有点苍白
+- 版本展现统计介绍有点笼统
+- 答题时表现的不够沉稳
+
 # 知乎
+
+准备资料：
+
+- **周一 2018.03.19   10:00 海淀区学院路甲 5 号 768 创意园 A 座西区二通道 1002 室   王慧 17611252710   知乎**
+
+![review zhihu]()
+
+
+## 用递归和非递归逆序单向链表
+
+- 递归
+
+```cpp
+node* reverseList(node *head, node** h) {
+    if(head->next == NULL){
+        *h = head;
+        return head;
+    }
+    node *end = reverseList(head->next, h);
+    end->next = head;
+    head->next = NULL;
+    return head;
+}
+
+
+void reverseList(node **head) {
+    node *h = NULL;
+    node *subListEnd =  reverseList((*head)->next, &h);
+    subListEnd-> next = *head;
+    (*head)->next = NULL;
+    *head = h;
+}
+```
+
+- 非递归
+
+```cpp
+void reverseNocur(node **head) {
+    node *pre = *head;
+    node *cur = (*head)->next;
+    if(cur == NULL){
+      *head = pre;
+    } else {
+        (*head)->next = NULL;
+    }
+    
+    node *next = cur->next;
+    cur->next = pre;
+    
+    while(next != NULL) {
+        pre = cur;
+        cur = next;
+        next = cur->next;
+        cur->next = pre;
+    }
+    
+    *head = cur;
+}
+```
