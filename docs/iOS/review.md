@@ -100,6 +100,10 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 
 ## MVC
 
+## MVP
+
+模型和视图完全隔离开，逻辑都放在Presenter里面
+
 ## MVVM
 
 ViewModel是輸入輸出的转换,与绑定机制联合威力更大, 兼容MVC，便于测试。OSX+CocoaBinding, iOS + ReactiveCocoa/RxSwift
@@ -110,6 +114,10 @@ View/Interactor/Presenter/Entity/Router
 
 易测试、理解、维护，可与CoreData联合使用
 
+
+## 算法相关
+
+<https://www.zhihu.com/question/24964987>
 
 # 腾讯面试
 
@@ -175,10 +183,9 @@ View/Interactor/Presenter/Entity/Router
 
 - **周一 2018.03.19   10:00 海淀区学院路甲 5 号 768 创意园 A 座西区二通道 1002 室   王慧 17611252710   知乎**
 
-![review zhihu]()
+![review zhihu](/iOS/images/review_zhihu.jpg)
 
-
-## 用递归和非递归逆序单向链表
+## 准备资料 - 用递归和非递归逆序单向链表
 
 - 递归
 
@@ -229,3 +236,21 @@ void reverseNocur(node **head) {
     *head = cur;
 }
 ```
+
+### 总结
+
+- 问了很多项目的事情，都是顺着项目考查基础知识点，问了组件化，初始化组件应该怎么实现。
+- 如何判断多个并发任务全部完成，及实现原理
+- swift的Optional原理
+- MVC、MVVM、MVP、VIPER
+- 怎样测试一个Model
+
+
+# 阿里文学
+
+- **周二 2018.03.20  10:30 五道口优盛大厦D座16层A 王月琦  15732636310   阿里文学**
+
+![review ali]()
+
+## 准备资料
+
