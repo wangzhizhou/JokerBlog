@@ -34,6 +34,8 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 
 +load先于main()被调用, dyld加载镜像时调用所有类的+load方法，+initialize是懒加载的，只有类被使用时才会被调用。
 
+<https://www.jianshu.com/p/eac6ed137e06>
+
 # Timer
 
 NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其它线程的runLoop需要手动开启使Timer工作，哪里开启，哪里结束。
@@ -66,11 +68,27 @@ copy/mutableCopy/NSCopying/NSMutableCopying
     2. 创建和维护索引需要耗费时间
     3. 当删除，插入和更新数据是，索引也需要进行更新，这样降低了写数据的速度。
 
+# NSString 
+
+常量的字符串直接存在常量里，且内容相等的都指向同一块常量区
+
+用另一个字符串生成的NSString与源字符串同地址
+
+用copy是为了安全,防止NSMutableString赋值给NSString时,前者修改引起后者值变化而用的
+
+
 # pthread、NSThread、GCD、NSOperationQueue
 
 # 锁机制
 
 #事件、响应链、事件传递、事件拦截
+
+- 消息首先会顺着继承结构响应
+- 继承结构中没有被响应会进入resolveInstanceMethod方法，从动态添加的方法里响应
+- 以上都没有响应使用forwardingTargetForSelector，转交响应目标
+- 还不行调用methodSignatureForSelector获得方法签名，调用forwardInvocation
+
+关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。
 
 # KVC、KVO与runtime
 
@@ -142,7 +160,7 @@ View/Interactor/Presenter/Entity/Router
 }
 @end
 ```
-所以，并发时，调用不当，会多次调用[_target release]造成多次释放，进而崩溃。改成atomic属性。
+所以，并发时，调用不当，会多次调用target属性setter方法中的[_target release]，造成多次释放，进而崩溃。改成atomic属性。
 
 ### 总结
 
