@@ -56,6 +56,10 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 
 <https://www.jianshu.com/p/ea61895be31f>
 
+# 类和元类的区别
+
+<https://www.jianshu.com/p/249b705d4fbb>
+
 # JS与Native交互
 
 - 使用webView:shouldStartLoadWithRequest方法对请求进行拦截并分情况调用NativeCode，需要不断拦截过滤
