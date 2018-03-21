@@ -262,6 +262,8 @@ void reverseNocur(node **head) {
 
 # 今日头条
 
+![review daily](/iOS/images/review_daily.jpg)
+
 
 
 
