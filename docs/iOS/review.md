@@ -264,7 +264,21 @@ void reverseNocur(node **head) {
 
 ![review daily](/iOS/images/review_daily.jpg)
 
+## 面试问题
 
+- 全局断点就是异常抛出断点
+
+- 画项目结构图
+- 给定一个视图，视图上有若干UIImageView,写一个统计所有UImageView个数的算法(递归写完了再用循环实现)
+- 快速排序的原理和时间复杂度
+- ARC时，属性delegate用什么关键词修饰(nonatomic,weak)，weak会自动置nil, 及自动置nil的工作原理
+- 如果查找内存泄露，instrument工具leaks
+- ARC下，如何处理循环引用问题(block 捕获了self的情况)
+- block变量捕获的原理是什么？
+- [NSArray addObject:nil]会崩溃吗，为什么？
+- [nil message]这种调用方式会崩溃吗？为什么？
+- 消息调用的原理是怎样的，或者[obj message]这个调用的整个过程是怎样的？
+- 有没有看过第三方库,说说原理
 
 
 
