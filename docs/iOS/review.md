@@ -94,6 +94,22 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 
 关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。
 
+# 变量类型
+
+###程序内存模型
+
+![memeory_layout](/iOS/images/memory_layout.png)
+
+- 自动变量
+- 函数参数
+- 静态变量
+- 静态全局变量
+- 全局变量
+
+block里可以直接修改的是静态变量、静态全局变量和全局变量，默认对自动变量仅捕获其值， 所以不能直接修改，静态变量是以地址被捕获，所以可以修改，静态全局变量是因为在公共区，所以可以被block直接访问
+
+block 有三种，全局block，栈block和堆block，只有堆block会持有对象
+
 # KVC、KVO与runtime
 
 # 线程安全
@@ -278,6 +294,9 @@ void reverseNocur(node **head) {
 - [NSArray addObject:nil]会崩溃吗，为什么？
 - [nil message]这种调用方式会崩溃吗？为什么？
 - 消息调用的原理是怎样的，或者[obj message]这个调用的整个过程是怎样的？
+- 信号量机制使用
+- 哈希表生成原理
+- dispatch_group多个任务同步，每个任务也是异步时怎么处理(开始结束时使用dispatch_group_enter()和dispatch_group_leave()成对，表示一个任务的起止)，group是在线程中
 - 有没有看过第三方库,说说原理
 
 
