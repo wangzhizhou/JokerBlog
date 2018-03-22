@@ -83,6 +83,13 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 
 # pthread、NSThread、GCD、NSOperationQueue
 
+- NSOperationQueue可以往里面添加Operation任务，可以限制最大并发个数
+
+# 信号量
+
+- dispatch_semaphore_create(Init Count)/dispatch_semaphore_wait(-1)/dispatch_semaphore_signal(+1)
+- 信号量为0时，线程阻塞直到信号量大于0
+
 # 锁机制
 
 #事件、响应链、事件传递、事件拦截
@@ -114,6 +121,20 @@ block 有三种，全局block，栈block和堆block，只有堆block会持有对
 
 # 线程安全
 
+### 方式
+
+- **@synchronized(lock) 互斥锁用于线程同步(图方便)**
+- NSLock有trylock/lock和unlock这几个操作
+- NSRecursiveLock实际上定义的是一个递归锁，这个锁可以被同一线程多次请求，而不会引起死锁。这主要是用在循环或递归操作中。
+- NSConditionLock条件锁lock、unlock、lockWhenCondition、unlockWhenCondition
+- **dispatch_semaphore就是信号量create\wait\signal(优先选择)**
+- NSCondition同时具备互斥锁和信号量的功能lock/unlock/wait/signal
+- pthread_mutex是C语言锁接口，不太容易使用
+- OSSpinLock
+
+
+
+
 # Runloop机制
  
 # 设计模式
@@ -133,6 +154,15 @@ ViewModel是輸入輸出的转换,与绑定机制联合威力更大, 兼容MVC�
 View/Interactor/Presenter/Entity/Router
 
 易测试、理解、维护，可与CoreData联合使用
+
+
+# DLNA协议 
+
+- UPnP协议发现网络中的设备(服务、设备(UUID设备标识)、控制点)
+- 
+
+# 组件化方式
+
 
 
 ## 算法相关
@@ -298,6 +328,8 @@ void reverseNocur(node **head) {
 - 哈希表生成原理
 - dispatch_group多个任务同步，每个任务也是异步时怎么处理(开始结束时使用dispatch_group_enter()和dispatch_group_leave()成对，表示一个任务的起止)，group是在线程中
 - 有没有看过第三方库,说说原理
+- SDWebImageCache同时下载两个相同的URl时会重复下载吗？不会，会在Operations中查找是否已经有相同的下载操作了
+
 
 
 
