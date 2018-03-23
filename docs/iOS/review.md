@@ -163,7 +163,21 @@ View/Interactor/Presenter/Entity/Router
 
 # 组件化方式
 
+# category 和 runtime
 
+- category 和 主类中都有+load方法时，会先调用主类的+load后调用category的+load，多个category之间是按照编译顺序调用+load
+- category 中不能添加实例变量，只能添中方法
+- category 中动态添加关联对象是放在一个全局哈希表中，以关联内存地址为键，对象销毁时会检查自己有没有关联对象，有就除去哈希表中的条目
+
+# 性能优化
+
+- 使用ARC
+- View尽量不透明
+- 避免在UIImageView中调整图片大小(本地图片)，图络图片背景线程调整大小
+- 懒加载
+- 缓存数据
+- 适当使用autoreleasepool
+- 尽量避免时期格式转换，创建`NSDateFormatter`很费时间
 
 ## 算法相关
 
@@ -330,6 +344,20 @@ void reverseNocur(node **head) {
 - 有没有看过第三方库,说说原理
 - SDWebImageCache同时下载两个相同的URl时会重复下载吗？不会，会在Operations中查找是否已经有相同的下载操作了
 
+
+# 爱奇艺
+
+![review aqiyi](/iOS/images/review_aqiyi.jpg)
+
+## 过程
+
+- 一个找字符串中第一个只出现过一次的字符(哈希表+两次遍历)
+- 一个业务场景，说明实现思路
+- 问一些性能优化方面的东西
+
+# 陌陌
+
+![review momo]()
 
 
 
