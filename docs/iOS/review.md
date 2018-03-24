@@ -354,10 +354,22 @@ void reverseNocur(node **head) {
 - 一个找字符串中第一个只出现过一次的字符(哈希表+两次遍历)
 - 一个业务场景，说明实现思路
 - 问一些性能优化方面的东西
+- 启动时长优化
+- 崩溃率合理区间
 
 # 陌陌
 
-![review momo]()
+![review momo](/iOS/images/review_momo.jpg)
+
+## 面试内容
+
+- dispatch_sync/dispatch_async和同步队列、异步队列的不同组合时，系统分配线程的各种情况
+- NSTimer的机制和释放时机，如果被retain会怎样
+- dispatch_barrier/dispatch_group的应用方式
+
+# 滴滴
+
+
 
 
 
