@@ -1,7 +1,6 @@
 
 # 属性列表和成员变量
 
-
 # KVC
 
 KVC本质上是操作方法列表以及在内存中查找实例变量，可以用来访问私用变量
@@ -36,17 +35,20 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 
 <https://www.jianshu.com/p/eac6ed137e06>
 
-# Timer
-
-NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其它线程的runLoop需要手动开启使Timer工作，哪里开启，哪里结束。
-循环引用问题
 
 # 内存管理
+
 <http://www.cocoachina.com/ios/20160303/15498.html>
 
 # 深浅拷贝
 
-copy/mutableCopy/NSCopying/NSMutableCopying 
+<http://www.jb51.net/article/89676.htm>
+
+
+![shallow deep copy](/iOS/images/shallow_deep_copy.png)
+
+- 深拷贝中复制一层
+- 完全复制需要使用归档和接档
 
 # OC对象内存布局
 
@@ -80,8 +82,11 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 
 用copy是为了安全,防止NSMutableString赋值给NSString时,前者修改引起后者值变化而用的
 
+# GCD
 
-# pthread、NSThread、GCD、NSOperationQueue
+<https://www.jianshu.com/p/77c5051aede2>
+
+# pthread、NSThread、NSOperationQueue
 
 - NSOperationQueue可以往里面添加Operation任务，可以限制最大并发个数
 
@@ -91,6 +96,8 @@ copy/mutableCopy/NSCopying/NSMutableCopying
 - 信号量为0时，线程阻塞直到信号量大于0
 
 # 锁机制
+
+
 
 #事件、响应链、事件传递、事件拦截
 
@@ -117,6 +124,10 @@ block里可以直接修改的是静态变量、静态全局变量和全局变量
 
 block 有三种，全局block，栈block和堆block，只有堆block会持有对象
 
+# 循环引用问题
+
+<https://www.cnblogs.com/wengzilin/p/4347974.html>
+
 # KVC、KVO与runtime
 
 # 线程安全
@@ -135,6 +146,9 @@ block 有三种，全局block，栈block和堆block，只有堆block会持有对
 # NSTimer
 
 <https://blog.csdn.net/a2331046/article/details/50240635>
+
+NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其它线程的runLoop需要手动开启使Timer工作，哪里开启，哪里结束。
+循环引用问题
 
 ### 相关问题
 
