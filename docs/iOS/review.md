@@ -1,3 +1,15 @@
+# 整个招聘流程
+
+<http://www.woshipm.com/zhichang/526302.html>
+
+## 面试前
+
+![before review](/iOS/images/before_review.jpg)
+
+## 面试中
+
+![on review](/iOS/images/on_review.jpg)
+
 
 # 属性列表和成员变量
 
