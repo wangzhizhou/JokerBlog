@@ -132,8 +132,17 @@ block 有三种，全局block，栈block和堆block，只有堆block会持有对
 - pthread_mutex是C语言锁接口，不太容易使用
 - OSSpinLock
 
+# NSTimer
 
+<https://blog.csdn.net/a2331046/article/details/50240635>
 
+### 相关问题
+
+- timer会retain指定timer回调方法的接收者，也就是target对象，以此保证定时任务能够完成
+- 一次性timer在任务执行完成后会自动invalidate,而无限重复性的timer由于一直有效，所以需要手动调用invalidate
+- dealloc中调用[timer invalidate]不行，因为timer没有失效前，target对象引用计数不为0， dealloc不会被调动
+- timer不是实时的，延迟程序与当前线程的执行情况相关，如果上一次定时任务被延迟，可能会和之后的定时事件合并为一个
+- timer要添加到runloop中才会生效，自己alloc和init的timer需要加到runloop里面，同时启动runloop才能生效(还要注意runloop的运行模式是否正确)。所有的source都要加入到runloop中才能使用，timer是一种source
 
 # Runloop机制
  
