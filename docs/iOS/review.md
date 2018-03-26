@@ -218,6 +218,12 @@ View/Interactor/Presenter/Entity/Router
 
 <https://www.zhihu.com/question/24964987>
 
+- topK 问题
+
+## 崩溃率标准
+
+![crash rate](/iOS/images/crash_rate.jpg)
+
 # 腾讯面试
 
 准备资料: <http://www.cocoachina.com/bbs/read.php?tid=460991>
