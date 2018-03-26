@@ -416,12 +416,42 @@ void reverseNocur(node **head) {
 
 ### 面试经过 
 
- - KVO怎样保证addObserver和removeObserver成对儿调用
+ - KVO怎样保证addObserver和removeObserver成对儿调用(使用方法中的context参数作为标识，防止重复添加和重复移除)<https://blog.csdn.net/klabcxy36897/article/details/51680423>
+
  - 常用的集合类对象NSArray/NSDictionary/NSSet/NSCountSet/NSOrderSet
+
+![foundation 1](/iOS/images/foundation_1.jpg)
+
+![foundation 2](/iOS/images/foundation_2.jpg)
+
+![foundation 3](/iOS/images/foundation_3.jpg)
+
+![UIKit](/iOS/images/uikit.jpg)
+
  - KVC使用在什么情况下
+
  - 如何让一个runloop一直保持运行而不空闲
+
  - associated对象是个什么情况，strong和weak引用会不会出问题
+
+```
+ objc_setAssociatedObject()
+ objc_getAssociatedObject()
+ objc_removeAssociatedObjects() //释放所有的关联对象
+```
+
  - 实现替换放在+load里还是+initialize中
+
+```
+ +(void)initialize(当类第一次被调用的时候就会调用该方法,整个程序运行中只会调用一次)
+ +(void)load(当程序启动的时候就会调用该方法,换句话说,只要程序一启动就会调用load方法,整个程序运行中只会调用一次)
+
+1. 在加载阶段，如果类实现了load方法，系统就会调用它，load方法不参与覆写机制
+2. 在首次使用某个类之前，系统会向其发送initialize消息，通常应该在里面判断当前要初始化的类，防止子类未覆写initialize的情况下调用两次
+3. load与initialize方法都应该实现得精简一些，有助于保持应用程序的响应能力，也能减少引入“依赖环”（interdependency cycle）的几率
+4. 无法在编译期设定的全局常量，可以放在initialize方法里初始化
+```
+
  - Notification中post和receive是在同一个现程中发生的
 
 # 蜻蜓FM
