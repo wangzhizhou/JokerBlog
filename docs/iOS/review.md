@@ -412,7 +412,17 @@ void reverseNocur(node **head) {
 
 - **周一 2018.03.26   10:00 北京市海淀区西北旺路文思海辉   沈悦 15094656466    滴滴**
 
-![review didi]()
+![review didi](/iOS/images/review_didi.jpg)
+
+### 面试经过 
+
+ - KVO怎样保证addObserver和removeObserver成对儿调用
+ - 常用的集合类对象NSArray/NSDictionary/NSSet/NSCountSet/NSOrderSet
+ - KVC使用在什么情况下
+ - 如何让一个runloop一直保持运行而不空闲
+ - associated对象是个什么情况，strong和weak引用会不会出问题
+ - 实现替换放在+load里还是+initialize中
+ - Notification中post和receive是在同一个现程中发生的
 
 # 蜻蜓FM
 
