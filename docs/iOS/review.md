@@ -224,6 +224,10 @@ View/Interactor/Presenter/Entity/Router
 
 ![crash rate](/iOS/images/crash_rate.jpg)
 
+# 线程安全
+
+ - atomic所说的线程安全只是保证了getter和setter存取方法的线程安全，并不能保证整个对象是线程安全的
+
 # 腾讯面试
 
 准备资料: <http://www.cocoachina.com/bbs/read.php?tid=460991>
@@ -463,6 +467,14 @@ void reverseNocur(node **head) {
 # 蜻蜓FM
 
 - **周二 2018.03.27   15:00  北京市 朝阳区 朝外SOHO，D座，1122室 常夕露  18610363605    蜻蜓FM**
+
+![review qinting](/iOS/images/review_qinting.jpg)
+
+### 过程
+
+- 问了一下项目
+- 写一个旋转数组查找算法
+- 写quickSort、BFS、DFS, 递归转循环
 
 # 新浪微博
 
