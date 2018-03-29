@@ -474,13 +474,38 @@ void reverseNocur(node **head) {
 
 - 问了一下项目
 - 写一个旋转数组查找算法
-- 写quickSort、BFS、DFS, 递归转循环
+- 写quickSort、BFS、DFS, 
+- 递归转循环<https://www.cnblogs.com/coderkian/p/3758068.html>
 
 # 新浪微博
 
 - **周三 2018.03.28   14:00 北京市海淀区西北旺东路10号院西区8号楼新浪总部大厦北门 王楚 18813016799 新浪微博**
 
+![review sina](/iOS/images/review_sina.jpg)
+
+### 过程
+
+- 先作笔试题
+- NSRunloop保活,给runloop添加一下NSMachPort<AFNetwork>
+- TableView优化的方法:缓存高度、异步绘制、按需加载图片
+- 如何提前加载图片
+- 判断图片类型，图片数据的第一个字节会标识出这个图片的类型
+- imageName和imageWithContentOfFile、imageWithData的区别: imageName加载的图片会在内存中缓存，后两者不会缓存
+- 海量数据处理，内存大小限制时的总题
+- topK问题
+- crash收集
+![crash collect](/iOS/images/crash_collection.png)
+- NSOperation自定义子类<https://www.jianshu.com/p/4b1d77054b35>
+
 # 美团
 
 - **周四 2018.03.29   10:30 北京市朝阳区望京东路6号望京国际研发园FG座  杨喆   15600243362   自带简历  美团**
+
+![review meituan]()
+
+# 百度
+
+- **周四 2018.03.29   14:00 海淀区西北旺东路 文思海辉大厦 -百度视频办公区  魏博  13891924500   百度视频**
+
+![review baidu]()
 
