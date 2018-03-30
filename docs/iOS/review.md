@@ -28,6 +28,8 @@ KVC本质上是操作方法列表以及在内存中查找实例变量，可以�
 
 类被第一观察时，会产生一个子类，子类种重写属性的setter方法，并把isa指针指向该子类。重写的setter方法实现通知机制
 
+![kvo theory](/iOS/images/kvo_theory.png)
+
 # Notification
 
 post和转发在同一个线程中进行，与注册观察者所在的线程无关，必要时需要转发到不同线程
