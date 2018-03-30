@@ -98,6 +98,8 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 
 <https://www.jianshu.com/p/77c5051aede2>
 
+<http://www.cocoachina.com/ios/20160804/17291.html>
+
 # pthread、NSThread、NSOperationQueue
 
 - NSOperationQueue可以往里面添加Operation任务，可以限制最大并发个数
@@ -119,6 +121,12 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 - 还不行调用methodSignatureForSelector获得方法签名，调用forwardInvocation
 
 关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。
+
+
+# 响应链
+
+<https://www.cnblogs.com/Xylophone/p/7148037.html>
+
 
 # 变量类型
 
