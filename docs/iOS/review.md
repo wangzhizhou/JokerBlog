@@ -68,6 +68,8 @@
 
 # 属性列表和成员变量
 
+
+
 # KVC
 
 KVC本质上是操作方法列表以及在内存中查找实例变量，可以用来访问私用变量
@@ -561,3 +563,21 @@ void reverseNocur(node **head) {
 - 整理一下项目中的关键技术点
 - <https://blog.csdn.net/u010742414/article/details/78260938>
 - NSOperation的main方法调用后Operation会被移除，start方法在调用后，operation需要手动管理其释放
+
+# 百度视频 
+
+
+
+# 探探 
+
+- LRUCache实现
+
+# 快手
+
+- 字符串旋转(左/右)
+- 求集合的所有子集
+- 求两个有序数组的公共元素
+
+# 猿题库
+
+# 快看漫画
