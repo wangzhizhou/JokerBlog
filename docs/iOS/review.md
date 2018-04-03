@@ -575,7 +575,38 @@ void reverseNocur(node **head) {
 # 快手
 
 - 字符串旋转(左/右)
+
+```
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+
+string rotateString(string &input, int index) {
+    
+    reverse(input.begin(),input.begin() + index);
+    reverse(input.begin()+index, input.end());
+    reverse(input.begin(),input.end());
+    
+    return input;
+}
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+
+    string input = "abcdefg";
+    
+    cout<<rotateString(input, 2)<<endl;
+    
+    return 0;
+}
+```
 - 求集合的所有子集
+```
+
+```
 - 求两个有序数组的公共元素
 
 # 猿题库
