@@ -10,6 +10,61 @@
 
 ![on review](/iOS/images/on_review.jpg)
 
+# MRC和ARC下的属性和getter/setter写法
+
+### MRC
+
+```
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@property (nonatomic, strong) NSString *name;
+
+@end
+
+@implementation ViewController
+
+@synthesize name = _name;
+
+-(void)setName:(NSString *)name {
+    if(_name != name){
+        [_name release];
+        _name = [name retain];
+    }
+}
+
+-(NSString *)name{
+    return _name;
+}
+@end
+```
+
+### ARC
+
+```
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@property (nonatomic, strong) NSString *name;
+
+@end
+
+@implementation ViewController
+
+@synthesize name = _name;
+
+-(void)setName:(NSString *)name {
+    _name = name;
+}
+
+-(NSString *)name{
+    return _name;
+}
+
+@end
+```
 
 # 属性列表和成员变量
 
