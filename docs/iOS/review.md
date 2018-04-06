@@ -98,6 +98,8 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 
 <https://www.jianshu.com/p/77c5051aede2>
 
+<http://www.cocoachina.com/cms/wap.php?action=article&id=22573>
+
 # pthread、NSThread、NSOperationQueue
 
 - NSOperationQueue可以往里面添加Operation任务，可以限制最大并发个数
@@ -516,5 +518,12 @@ void reverseNocur(node **head) {
 
 - 写一个LRUCache
 
+
+# 快手
+
+
+- **周二 2018.04.03   14:00 北京市 海淀区 清华同方科技大厦B座12层   快手**
+
+![review kuai shou]()
 
 

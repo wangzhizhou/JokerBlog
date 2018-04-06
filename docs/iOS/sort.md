@@ -405,4 +405,86 @@ func count_sort(_ array: inout [Int]) -> [Int] {
 
 ## 桶排序
 
+- **描述:** 在计数排序的基础上的改进版，先把序列分成若干桶，对每一桶可以采用之前的各种排序方法，对所有桶排序完成后，再把所有桶合并起来形成结果。
+
+![bucket sort](/iOS/images/bucket_sort.png)
+
+
+```swift
+import Foundation
+
+func bucket_sort_test(_ array: inout [Int]) -> [Int] {
+    return bucket_sort(&array)
+}
+
+func bucket_sort(_ array: inout [Int], bucketSize: Int = 5) -> [Int] {
+    
+    guard array.count > 0 else {
+        return array
+    }
+    
+    let min = array.min()!
+    let max = array.max()!
+    
+    let bucketCount = (max - min + 1) / bucketSize + 1
+    var bucket = Array(repeating: [Int](), count: bucketCount)
+    
+    
+    array.forEach { (e) in
+        bucket[(e - min + 1) / bucketSize].append(e)
+    }
+    
+    var ret = [Int]()
+    
+    for var b in bucket {
+        if b.count > 0 {
+            ret.append(contentsOf: count_sort(&b))
+        }
+    }
+    
+    return ret
+}
+```
+
 ## 基数排序
+
+适合小范围优先级相关的排序场景
+
+- **描述:** 基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。 
+
+![radix sort](/iOS/images/radix_sort.gif)
+
+```swift
+import Foundation
+
+func radix_sort_test(_ array: inout [Int]) -> [Int] {
+    return radix_sort(&array)
+}
+
+func radix_sort(_ array: inout [Int], maxDigitCount: Int = 2) -> [Int] {
+    
+    let radix = 10;
+    
+    var dev = 1
+    for i in 0 ..< maxDigitCount {
+    
+        var decimalBuckets = Array(repeating: [Int](), count: radix)
+        
+        dev *= (i == 0) ? 1 : 10
+        for e in array {
+            let digit = (e / dev) % radix
+            decimalBuckets[digit].append(e)
+        }
+        
+        var i = 0
+        decimalBuckets.forEach { (bucket) in
+            for e in bucket {
+                array[i] = e
+                i += 1
+            }
+        }
+    }
+    
+    return array
+}
+```
