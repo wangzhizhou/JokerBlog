@@ -10,8 +10,65 @@
 
 ![on review](/iOS/images/on_review.jpg)
 
+# MRC和ARC下的属性和getter/setter写法
+
+### MRC
+
+```
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@property (nonatomic, strong) NSString *name;
+
+@end
+
+@implementation ViewController
+
+@synthesize name = _name;
+
+-(void)setName:(NSString *)name {
+    if(_name != name){
+        [_name release];
+        _name = [name retain];
+    }
+}
+
+-(NSString *)name{
+    return _name;
+}
+@end
+```
+
+### ARC
+
+```
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@property (nonatomic, strong) NSString *name;
+
+@end
+
+@implementation ViewController
+
+@synthesize name = _name;
+
+-(void)setName:(NSString *)name {
+    _name = name;
+}
+
+-(NSString *)name{
+    return _name;
+}
+
+@end
+```
 
 # 属性列表和成员变量
+
+
 
 # KVC
 
@@ -27,6 +84,8 @@ KVC本质上是操作方法列表以及在内存中查找实例变量，可以�
 主要添加和移除，不要重复添加，及时移除
 
 类被第一观察时，会产生一个子类，子类种重写属性的setter方法，并把isa指针指向该子类。重写的setter方法实现通知机制
+
+![kvo theory](/iOS/images/kvo_theory.png)
 
 # Notification
 
@@ -99,6 +158,7 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 <https://www.jianshu.com/p/77c5051aede2>
 
 <http://www.cocoachina.com/cms/wap.php?action=article&id=22573>
+<http://www.cocoachina.com/ios/20160804/17291.html>
 
 # pthread、NSThread、NSOperationQueue
 
@@ -121,6 +181,12 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 - 还不行调用methodSignatureForSelector获得方法签名，调用forwardInvocation
 
 关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。
+
+
+# 响应链
+
+<https://www.cnblogs.com/Xylophone/p/7148037.html>
+
 
 # 变量类型
 
@@ -503,6 +569,19 @@ void reverseNocur(node **head) {
 
 - **周四 2018.03.29   10:30 北京市朝阳区望京东路6号望京国际研发园FG座  杨喆   15600243362   自带简历  美团**
 
+### 三面问题准备
+
+- topK问题
+- 红绿灯路口优化问题
+- O(1)时间复杂度删链表节点
+- 和最大子数组
+- KVO派生子类后，原对象还能判断类型相等吗
+- 类簇模式、构建者模式、工厂模式
+- 排序算法哪些是稳定的哪些是不稳定的，算法复杂度，稳定排序有什么用
+- 整理一下项目中的关键技术点
+- <https://blog.csdn.net/u010742414/article/details/78260938>
+- NSOperation的main方法调用后Operation会被移除，start方法在调用后，operation需要手动管理其释放
+
 
 # 百度视频
 
@@ -518,12 +597,48 @@ void reverseNocur(node **head) {
 
 - 写一个LRUCache
 
-
 # 快手
-
 
 - **周二 2018.04.03   14:00 北京市 海淀区 清华同方科技大厦B座12层   快手**
 
 ![review kuai shou]()
 
+- 字符串旋转(左/右)
 
+```
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+
+string rotateString(string &input, int index) {
+    
+    reverse(input.begin(),input.begin() + index);
+    reverse(input.begin()+index, input.end());
+    reverse(input.begin(),input.end());
+    
+    return input;
+}
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+
+    string input = "abcdefg";
+    
+    cout<<rotateString(input, 2)<<endl;
+    
+    return 0;
+}
+```
+- 求集合的所有子集
+
+```
+
+```
+- 求两个有序数组的公共元素
+
+# 猿题库
+
+# 快看漫画
