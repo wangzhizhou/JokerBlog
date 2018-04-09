@@ -8,7 +8,7 @@
 
 ```
 https://opensource.apple.com/tarballs/Libc/Libc-825.40.1.tar.gz
-https://opensource.apple.com/tarballs/dyld/dyld-519.2.2.tar.gz
+https://opensource.apple.com/tarballs/dyld/dyld-421.1.tar.gz
 https://opensource.apple.com/tarballs/libauto/libauto-187.tar.gz
 https://opensource.apple.com/tarballs/libclosure/libclosure-67.tar.gz
 https://opensource.apple.com/tarballs/libdispatch/libdispatch-913.30.4.tar.gz
@@ -211,5 +211,44 @@ https://opensource.apple.com/tarballs/launchd/launchd-842.92.1.tar.gz
 ```
 static_cast<uint32_t>(mts)
 ```
+
+
+## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/runtime/objc-errors.mm:77:10: '_simple.h' file not found
+
+这个文件在路径`Libc-825.40.1/gen/_simple.h`
+
+
+## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/runtime/objc-runtime-new.mm:2350:46: Use of undeclared identifier 'DYLD_MACOSX_VERSION_10_11'
+
+需要使用dyld-421.1版本中的dyld_priv.h文件，并添加
+```
+#define DYLD_MACOSX_VERSION_10_13       0x000A0D00
+```
+
+## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/runtime/objc-block-trampolines.mm:36:10: 'Block_private.h' file not found
+
+这个文件的路径在：`libclosure-67/Block_private.h`
+
+## ld: can't open order file: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/AppleInternal/OrderFiles/libobjc.order
+
+`Build Settings->Linking->Order File`，把`Debug`和`Release`下的
+
+```
+$(SDKROOT)/AppleInternal/OrderFiles/libobjc.order
+```
+
+改成
+
+```
+libobjc.order
+```
+
+## clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+只需要去`Build Settings -> Linking -> Other Linker Flags`里删掉"`-lCrashReporterClient`" （Debug 和 Release 都有的哦，需要删两个哦）
+
+# 这样终于编译成功了
+
+
 
 
