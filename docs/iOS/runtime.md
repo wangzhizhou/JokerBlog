@@ -15,6 +15,7 @@ https://opensource.apple.com/tarballs/libdispatch/libdispatch-913.30.4.tar.gz
 https://opensource.apple.com/tarballs/libpthread/libpthread-301.30.1.tar.gz
 https://opensource.apple.com/tarballs/xnu/xnu-4570.41.2.tar.gz
 https://opensource.apple.com/tarballs/libplatform/libplatform-161.20.1.tar.gz
+https://opensource.apple.com/tarballs/launchd/launchd-842.92.1.tar.gz
 ```
 
 ## /Users/JokerAtBaoFeng/Desktop/objc4-723/runtime/objc-os.h:94:13: 'sys/reason.h' file not found
@@ -94,4 +95,121 @@ https://opensource.apple.com/tarballs/libplatform/libplatform-161.20.1.tar.gz
 这个文件的路径在`libpthread-301.30.1/sys/qos_private.h`
 
 ## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/runtime/objc-private.h:324:10: 'objc-shared-cache.h' file not found
+
+这个文件的路径在`dyld-519.2.2/include/objc-shared-cache.h`
+
+## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/include/System/pthread_machdep.h:214:13: Typedef redefinition with different types ('int' vs 'volatile OSSpinLock' (aka 'volatile int'))
+
+注释代得定义代码：
+
+```
+//typedef int pthread_lock_t;
+```
+
+
+## /Users/JokerAtBaoFeng/Desktop/objc-runtime/objc4-723/runtime/objc-os.h:735:19: Use of undeclared identifier '_PTHREAD_PRIORITY_FLAGS_MASK'
+
+在`objc-os.h`中添加头文件包含: `#include <pthread/qos_private.h>`
+
+
+
+## Static declaration of '_pthread_has_direct_tsd' follows non-static declaration
+
+注释`pthread_machdep.`中的方法
+
+```
+//__inline__ static int
+//_pthread_has_direct_tsd(void)
+//{
+//#if TARGET_IPHONE_SIMULATOR
+//    /* Simulator will use the host implementation, so bypass the macro that is in the target code */
+//    return 0;
+//#elif defined(__ppc__)
+//    int *caps = (int *)_COMM_PAGE_CPU_CAPABILITIES;
+//    if (*caps & kFastThreadLocalStorage) {
+//        return 1;
+//    } else {
+//        return 0;
+//    }
+//#else
+//    return 1;
+//#endif
+//}
+```
+
+## Static declaration of '_pthread_setspecific_direct' follows non-static declaration
+
+注释`pthread_machdep.`中的方法
+
+```
+/* To be used with static constant keys only */
+//__inline__ static int
+//_pthread_setspecific_direct(unsigned long slot, void * val)
+//{
+//#if defined(__i386__)
+//#if defined(__PIC__)
+//    __asm__("movl %1,%%gs:%0" : "=m" (*(void **)(slot * sizeof(void *))) : "rn" (val));
+//#else
+//    __asm__("movl %1,%%gs:%0" : "=m" (*(void **)(slot * sizeof(void *))) : "ri" (val));
+//#endif
+//#elif defined(__x86_64__)
+//    /* PIC is free and cannot be disabled, even with: gcc -mdynamic-no-pic ... */
+//    __asm__("movq %1,%%gs:%0" : "=m" (*(void **)(slot * sizeof(void *))) : "rn" (val));
+//#elif (defined(__arm__) && (defined(_ARM_ARCH_6) || defined(_ARM_ARCH_5))) 
+//    void **__pthread_tsd;
+//#if defined(__arm__) && defined(_ARM_ARCH_6)
+//    uintptr_t __pthread_tpid;
+//    __asm__("mrc p15, 0, %0, c13, c0, 3" : "=r" (__pthread_tpid));
+//    __pthread_tsd = (void**)(__pthread_tpid & ~0x3ul);
+//#elif defined(__arm__) && defined(_ARM_ARCH_5)
+//    register uintptr_t __pthread_tpid asm ("r9");
+//    __pthread_tsd = (void**)__pthread_tpid;
+//#endif
+//    __pthread_tsd[slot] = val;
+//#else
+//#error no _pthread_setspecific_direct implementation for this arch
+//#endif
+//    return 0;
+//}
+```
+
+
+## Static declaration of '_pthread_getspecific_direct' follows non-static declaration
+
+注释`pthread_machdep.`中的方法
+
+```
+//__inline__ static void *
+//_pthread_getspecific_direct(unsigned long slot)
+//{
+//    void *ret;
+//#if defined(__i386__) || defined(__x86_64__)
+//    __asm__("mov %%gs:%1, %0" : "=r" (ret) : "m" (*(void **)(slot * sizeof(void *))));
+//#elif (defined(__arm__) && (defined(_ARM_ARCH_6) || defined(_ARM_ARCH_5))) 
+//    void **__pthread_tsd;
+//#if defined(__arm__) && defined(_ARM_ARCH_6)
+//    uintptr_t __pthread_tpid;
+//    __asm__("mrc p15, 0, %0, c13, c0, 3" : "=r" (__pthread_tpid));
+//    __pthread_tsd = (void**)(__pthread_tpid & ~0x3ul);
+//#elif defined(__arm__) && defined(_ARM_ARCH_5)
+//    register uintptr_t __pthread_tpid asm ("r9");
+//    __pthread_tsd = (void**)__pthread_tpid;
+//#endif
+//    ret = __pthread_tsd[slot];
+//#else
+//#error no _pthread_getspecific_direct implementation for this arch
+//#endif
+//    return ret;
+//}
+```
+
+
+## Non-constant-expression cannot be narrowed from type 'uintptr_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') in initializer list
+
+按编译提示修复
+
+```
+static_cast<uint32_t>(mts)
+```
+
 
