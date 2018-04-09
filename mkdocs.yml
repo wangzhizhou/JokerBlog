@@ -233,6 +233,7 @@ pages:
         - 面试: "iOS/review.md"
         - 十大排序算法: "iOS/sort.md"
         - 核心动画: "iOS/core animation.md"
+        - OC运行时编译: "iOS/runtime.md"
     - 乐理基础: 
         - 乐音:
             - "music/theory/tones/Pitches and Clefs.md"
