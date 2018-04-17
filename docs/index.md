@@ -11,3 +11,5 @@ Hello, I'm Wang Zhizhou, a coder. Right now, I'm working on iOS development. I w
 - WeChat: `w_z_z_1991`
 
 	![wechat](/assets/pictures/wechat.jpg)
+
+- ![me](assets/Resume/Original Material/dz1.jpg)
