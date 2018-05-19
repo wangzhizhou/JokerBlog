@@ -1,1 +1,10 @@
 python_markdown_math
+Pygments 
+setuptools
+docutils 
+mock 
+pillow 
+alabaster 
+commonmark==0.5.4 
+recommonmark  
+mkdocs
