@@ -48,8 +48,8 @@ google_analytics: ["UA-36723568-3", "mkdocs.org"]
 # mkdocs-bootswatch themes
 
 # my prefer themes
-# theme: "amelia"
-theme: "cyborg"
+theme: "amelia"
+# theme: "cyborg"
 # theme: "united"
 
 # no prefer themes
