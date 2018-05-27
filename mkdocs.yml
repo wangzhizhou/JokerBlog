@@ -4,12 +4,12 @@
 # project documentation.
 # When rendering the theme this 
 # setting will be passed as the site_name context variable.
-site_name: "Joker's Blog"
+site_name: "Joker Blog"
 
 # Set the canonical URL of the site. 
 # This will add a link tag with the canonical URL to the generated HTML header.
 # default: null
-site_url:  "http://jokerblog.readthedocs.io/"
+site_url:  "http://jokerblog.readthedocs.io"
 
 
 # Set the site description. This will add a meta tag to the generated HTML header.
@@ -32,12 +32,12 @@ repo_name: "GitHub"
 # When set, provides a link directly to the page in your source repository. 
 # This makes it easier to find and edit the source for the page. 
 # If repo_url is not set, this option is ignored.
-# edit_uri: "edit/master/docs/"
-# edit_uri:  blob/master/docs/
+edit_uri: "edit/master/docs/"
+# edit_uri:  "blob/master/docs/"
 
 # Set the Google analytics tracking configuration.
 # default: null
-#google_analytics: ["UA-36723568-3", "mkdocs.org"]
+google_analytics: ["UA-36723568-3", "mkdocs.org"]
 
 # built-in theme
 # default: mkdocs
@@ -45,8 +45,32 @@ repo_name: "GitHub"
     #name: "readthedocs"
     #custom_dir: "joker_theme"
 
-theme: "readthedocs"
-theme_dir: "joker_theme"
+# mkdocs-bootswatch themes
+
+# my prefer themes
+# theme: "amelia"
+theme: "cyborg"
+# theme: "united"
+
+# no prefer themes
+# theme: "cerulean"
+# theme: "cosmo"
+# theme: "flatly"
+# theme: "journal"
+# theme: "readable"
+# theme: "simplex"
+# theme: "slate"
+# theme: "spacelab"
+# theme: "yeti"
+
+# mkdocs-bootstrap theme
+# theme: "bootstrap"
+
+# built-in theme
+# theme: "readthedocs"
+
+#custom joker_theme
+# theme_dir: "joker_theme"
 
 # Lets you set the directory containing the documentation source markdown files. 
 # This can either be a relative directory, 
@@ -129,7 +153,7 @@ use_directory_urls: true
 # As with all settings, 
 # you can set this from the command line, which can be useful, for example:
 #   mkdocs serve --dev-addr=0.0.0.0:80
-# dev_addr: '127.0.0.1:8000'
+dev_addr: '0.0.0.0:8000'
 
 
 # MkDocs uses the Python Markdown library to translate Markdown files into HTML. 
@@ -145,9 +169,10 @@ use_directory_urls: true
 #    - sane_lists
 markdown_extensions:
     - mdx_math
+    - smarty
 
-# plugins:
-#     - search
+plugins:
+    - search
 
 # This setting is used to determine the set of pages that should be 
 # built for the documentation.
@@ -155,97 +180,99 @@ markdown_extensions:
 # nested list of all the Markdown files found within the docs_dir and 
 # its sub-directories. If none are found it will be [] (an empty list).
 pages:
-    - 'About Me': 'index.md'
-    - 'Create your own blog as me': 'How I create this blog.md'
+    - 'Home': 'index.md'
     - 'Z-turn': 
-        - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
-        - 'tech/Learn STL In 30 Minutes.md'
-        - 'tech/Installation of Ubuntu 16.04 On UDisk.md'
-        - 'tech/Configure Git Server With Ubuntn and Apache 2.md'
-        - 'tech/Add Watermark on Video with OpenCV and FFmpeg.md'
-        - 'tech/Develop DLNA Using Platinum Library.md'
-        - 'tech/FFmpeg and SDL tutorial 1.md'
-        - 'tech/FFmpeg compiled on MacOS.md'
-        - 'tech/FFmpeg version 3.1.4 example code.md'
-        - 'tech/Fmpeg 2.8.6 example code - transcoding.md'
-        - 'tech/Nmap Basics.md'
-        - 'tech/Use GDB.md'
-        - 'tech/User OpenCV to add watermark on a video.md'
-        - 'tech/Wireshark Basics.md'
-        - 'tech/Optimizing App Startup Time.md'
-        - 'tech/OpenVPN on Raspberry Pi.md'
-        - 'tech/swift on client and server.md'
-        - 'tech/my hardware.md'
-        - 'tech/kotlin.md'
-        - 'tech/Convert MP4 to GIF With FFmpeg.md'
-        - 'tech/jupyterhub.md'
-    - 'etc':
-        - 'life/alipay-scan-fu-icon.md'
-        - 'life/Renting in Beijing.md'
-        - 'life/Gu Bei Shui Zhen.md'
-    - 'Music':
-        - 'music/whistle.md'
-    - 'Game':
-        - 'minecraft/minecraft.md'
-    - 'Me':
-        - 'me/My Plan for finding Job.md'
-        - 'me/Personal Pre-Work Record.md'
-        - 'me/My Financial Planning.md'
-        - 'me/Life in Beijing.md'
-        - 'me/jokerhub.md'
-    - Jenkins:
-        - 导览: jenkins/guide/index.md
-        - 第一个管道: jenkins/guide/first-pipeline.md
-        - 多步管道: jenkins/guide/multiple-steps-pipeline.md
-        - 定义执行环境: jenkins/guide/define-execution-environments.md
-        - 使用环境变量: jenkins/guide/using-environment-variables.md
-        - 记录测试结果: jenkins/guide/recording-test-results-and-artifacts.md
-        - 清理和通知: jenkins/guide/cleaning-up-and-notification.md
-        - 布署: jenkins/guide/deployment.md
-    - ReactiveX:
-        - 介绍: reactiveX/introduction.md
-        - 可观察的: reactiveX/Observable.md
-        - 运算符: reactiveX/Operators.md
-        - 单事件可观察对象: reactiveX/Single.md
-        - 主题: reactiveX/Subject.md
-        - 调度器: reactiveX/Scheduler.md
-    - Docker:
-        - 简介: docker/start-learn.md
-        - 定位: docker/Orientation.md
-        - 容器: docker/Container.md
-        - 服务: docker/Service.md
-        - 机群: docker/Swarm.md
-        - 栈: docker/Stack.md
-        - 部署应用: docker/Deploy.md
-    - Nginx:
-        - 新手教程: nginx/beginner-guide.md
-        - 主要用途: nginx/application.md
-    - iOS:
-        - 工作流: "iOS/workflow.md"
-        - 持续集成: "iOS/XCode 9 CI.md"
-        - Swift4: "iOS/swift4-notes.md"
-        - 服务端Swift:
-            - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
-            - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
-        - OC相关: "iOS/objc.md"
-        - 逆向工程: "iOS/reverse.md"
-        - 应用优化: "iOS/optimization.md"
-        - 面试: "iOS/review.md"
-        - 十大排序算法: "iOS/sort.md"
-        - 核心动画: "iOS/core animation.md"
-        - OC运行时编译: "iOS/runtime.md"
-    - 乐理基础: 
-        - 乐音:
-            - "music/theory/tones/Pitches and Clefs.md"
-        - 节拍:
-            - "music/theory/rhythms/Note Values and Basic Notation.md"
-        - 曲调:
-            - "music/theory/tunes/Melodies.md"
-        - 伴奏:
-            - "music/theory/accompanying/Transcribing What You Hear.md"
-        - 修饰:
-            - "music/theory/embellishing/Harmony and Counterpoint.md"
-        - 编曲:
-            - "music/theory/arranging/composing and arranging for voices and instruments.md"
-        - 附录:
-            - "music/theory/appendixes/A.md"
+        - 'Tech':
+            - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
+            - 'tech/Learn STL In 30 Minutes.md'
+            - 'tech/Installation of Ubuntu 16.04 On UDisk.md'
+            - 'tech/Configure Git Server With Ubuntn and Apache 2.md'
+            - 'tech/Add Watermark on Video with OpenCV and FFmpeg.md'
+            - 'tech/Develop DLNA Using Platinum Library.md'
+            - 'tech/FFmpeg and SDL tutorial 1.md'
+            - 'tech/FFmpeg compiled on MacOS.md'
+            - 'tech/FFmpeg version 3.1.4 example code.md'
+            - 'tech/Fmpeg 2.8.6 example code - transcoding.md'
+            - 'tech/Nmap Basics.md'
+            - 'tech/Use GDB.md'
+            - 'tech/User OpenCV to add watermark on a video.md'
+            - 'tech/Wireshark Basics.md'
+            - 'tech/Optimizing App Startup Time.md'
+            - 'tech/OpenVPN on Raspberry Pi.md'
+            - 'tech/swift on client and server.md'
+            - 'tech/my hardware.md'
+            - 'tech/kotlin.md'
+            - 'tech/Convert MP4 to GIF With FFmpeg.md'
+            - 'tech/jupyterhub.md'
+        - 'etc':
+            - 'life/alipay-scan-fu-icon.md'
+            - 'life/Renting in Beijing.md'
+            - 'life/Gu Bei Shui Zhen.md'
+        - 'Music':
+            - 'music/whistle.md'
+        - 'Game':
+            - 'minecraft/minecraft.md'
+        - Jenkins:
+            - 导览: jenkins/guide/index.md
+            - 第一个管道: jenkins/guide/first-pipeline.md
+            - 多步管道: jenkins/guide/multiple-steps-pipeline.md
+            - 定义执行环境: jenkins/guide/define-execution-environments.md
+            - 使用环境变量: jenkins/guide/using-environment-variables.md
+            - 记录测试结果: jenkins/guide/recording-test-results-and-artifacts.md
+            - 清理和通知: jenkins/guide/cleaning-up-and-notification.md
+            - 布署: jenkins/guide/deployment.md
+        - ReactiveX:
+            - 介绍: reactiveX/introduction.md
+            - 可观察的: reactiveX/Observable.md
+            - 运算符: reactiveX/Operators.md
+            - 单事件可观察对象: reactiveX/Single.md
+            - 主题: reactiveX/Subject.md
+            - 调度器: reactiveX/Scheduler.md
+        - Docker:
+            - 简介: docker/start-learn.md
+            - 定位: docker/Orientation.md
+            - 容器: docker/Container.md
+            - 服务: docker/Service.md
+            - 机群: docker/Swarm.md
+            - 栈: docker/Stack.md
+            - 部署应用: docker/Deploy.md
+        - Nginx:
+            - 新手教程: nginx/beginner-guide.md
+            - 主要用途: nginx/application.md
+        - iOS:
+            - 工作流: "iOS/workflow.md"
+            - 持续集成: "iOS/XCode 9 CI.md"
+            - Swift4: "iOS/swift4-notes.md"
+            - 服务端Swift:
+                - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
+                - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
+            - OC相关: "iOS/objc.md"
+            - 逆向工程: "iOS/reverse.md"
+            - 应用优化: "iOS/optimization.md"
+            - 面试: "iOS/review.md"
+            - 十大排序算法: "iOS/sort.md"
+            - 核心动画: "iOS/core animation.md"
+            - OC运行时编译: "iOS/runtime.md"
+        - 乐理基础: 
+            - 乐音:
+                - "music/theory/tones/Pitches and Clefs.md"
+            - 节拍:
+                - "music/theory/rhythms/Note Values and Basic Notation.md"
+            - 曲调:
+                - "music/theory/tunes/Melodies.md"
+            - 伴奏:
+                - "music/theory/accompanying/Transcribing What You Hear.md"
+            - 修饰:
+                - "music/theory/embellishing/Harmony and Counterpoint.md"
+            - 编曲:
+                - "music/theory/arranging/composing and arranging for voices and instruments.md"
+            - 附录:
+                - "music/theory/appendixes/A.md"
+    - 'About': 
+        - 'Me':
+            - 'me/My Plan for finding Job.md'
+            - 'me/Personal Pre-Work Record.md'
+            - 'me/My Financial Planning.md'
+            - 'me/Life in Beijing.md'
+            - 'me/jokerhub.md'    
+        - 'Blog': 'How I create this blog.md'
