@@ -41,14 +41,14 @@ google_analytics: ["UA-36723568-3", "mkdocs.org"]
 
 # built-in theme
 # default: mkdocs
-#theme: 
-    #name: "readthedocs"
-    #custom_dir: "joker_theme"
+theme: 
+    name: "readthedocs"
+    custom_dir: "joker_theme"
 
 # mkdocs-bootswatch themes
 
 # my prefer themes
-theme: "amelia"
+# theme: "amelia"
 # theme: "cyborg"
 # theme: "united"
 
@@ -276,5 +276,5 @@ pages:
             - 'me/My Financial Planning.md'
             - 'me/Life in Beijing.md'
             - 'me/jokerhub.md'   
-            - 'me/job review.me' 
+            - 'me/job review.md' 
         - 'Blog': 'How I create this blog.md'
