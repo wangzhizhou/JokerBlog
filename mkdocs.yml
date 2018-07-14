@@ -44,6 +44,7 @@ google_analytics: ["UA-36723568-3", "mkdocs.org"]
 theme: 
     name: "readthedocs"
     custom_dir: "joker_theme"
+    show_sidebar: false
 
 # mkdocs-bootswatch themes
 
