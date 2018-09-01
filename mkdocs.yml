@@ -21,7 +21,7 @@ theme:
     # icon: 'cloud'
   language: 'zh'
   direction: 'ltr'
-  favicon: 'assets/images/favicon.ico'
+  favicon: 'img/favicon.ico'
   feature:
     tabs: false
 
@@ -56,7 +56,7 @@ extra_javascript:
 
 
 
-pages:
+nav:
     - 'Home': 'index.md'
     - 'Z-turn': 
         - 'Tech':
@@ -86,6 +86,7 @@ pages:
             - 'life/alipay-scan-fu-icon.md'
             - 'life/Renting in Beijing.md'
             - 'life/Gu Bei Shui Zhen.md'
+            - 'life/dimission.md'
         - 'Music':
             - 'music/whistle.md'
         - 'Game':
@@ -131,6 +132,7 @@ pages:
             - 十大排序算法: "iOS/sort.md"
             - 核心动画: "iOS/core animation.md"
             - OC运行时编译: "iOS/runtime.md"
+            - 设计模块: "iOS/design-pattern.md"
         - 乐理基础: 
             - 乐音:
                 - "music/theory/tones/Pitches and Clefs.md"
