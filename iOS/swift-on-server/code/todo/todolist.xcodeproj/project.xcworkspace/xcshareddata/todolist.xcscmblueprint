@@ -1,0 +1,141 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++79D4511" : 0,
+    "814C995A65BEAC22D03A0487F6F6472E38EBDABF+++2AA1896" : 0,
+    "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++3B4E366" : 0,
+    "43425688648679ECEC3105C3812E3C82D04FD563+++94A4AB6" : 0,
+    "43425688648679ECEC3105C3812E3C82D04FD563+++5F3BBF7" : 0,
+    "85E996FB125657C20E42A299A76F925867A7A6E4+++917F229" : 0,
+    "8E25278F4FF9957511DC7B48244FBFBA8517C8F6+++9101AD2" : 0,
+    "77528AA6C8B451D66547916CA3CB970C85CBD7B4+++D1D4706" : 0,
+    "D558C2C080AA9B11469965A414116D0915FC799A+++76CC4D2" : 0,
+    "40635794C1929E96A4709153927459486D34FA7B+++4F1D741" : 0,
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++8CC5DCD" : 0,
+    "3C204411A853DAB80C5D739B4751B473EEDB4D4F+++F2BC1C4" : 0,
+    "43FED6F9B97D7140A021A85DB6F3FFC9A803F774+++4D0F0A1" : 0,
+    "CB7FD8B39A3635BAEA340C1AE3EF89553CB3204E+++075631F" : 0,
+    "1A81AC7E588BE86E760603555BCE76FB0C611997+++85692A1" : 0,
+    "1A6ECED8CDE8ABEF932257DC949CF5ADF69EE23B+++194638A" : 0,
+    "FAE24D5A8FEA749B395E6EB085765F54F8FA1263+++DB65878" : 0,
+    "43C021D2F0E746BBB29CA4E06229F111196D4871+++034FAF5" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20F0E005-F0FC-4187-BA68-4BE73033F2A1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++79D4511" : "todo\/.build\/checkouts\/Kitura-Credentials--1877793223337482428\/",
+    "814C995A65BEAC22D03A0487F6F6472E38EBDABF+++2AA1896" : "..\/..\/..\/..",
+    "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++3B4E366" : "todo\/.build\/checkouts\/Kitura-Credentials.git-1137106172743287290\/",
+    "43425688648679ECEC3105C3812E3C82D04FD563+++94A4AB6" : "todo\/.build\/checkouts\/Kitura.git-6522211175291160341\/",
+    "43425688648679ECEC3105C3812E3C82D04FD563+++5F3BBF7" : "todo\/.build\/checkouts\/Kitura-5023846263630101647\/",
+    "85E996FB125657C20E42A299A76F925867A7A6E4+++917F229" : "todo\/.build\/checkouts\/LoggerAPI.git--6449715459278086880\/",
+    "8E25278F4FF9957511DC7B48244FBFBA8517C8F6+++9101AD2" : "todo\/.build\/checkouts\/Kitura-Session.git-4044573149666132076\/",
+    "77528AA6C8B451D66547916CA3CB970C85CBD7B4+++D1D4706" : "todo\/.build\/checkouts\/BlueSSLService.git--6577639804771281610\/",
+    "D558C2C080AA9B11469965A414116D0915FC799A+++76CC4D2" : "todo\/.build\/checkouts\/Kitura.git-6522211175291160341\/",
+    "40635794C1929E96A4709153927459486D34FA7B+++4F1D741" : "todo\/.build\/checkouts\/Kitura-net.git--7410958935072501107\/",
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++8CC5DCD" : "todo\/.build\/checkouts\/SwiftyJSON.git--6955445084174387031\/",
+    "3C204411A853DAB80C5D739B4751B473EEDB4D4F+++F2BC1C4" : "todo\/.build\/checkouts\/Configuration.git--2683441109504822782\/",
+    "43FED6F9B97D7140A021A85DB6F3FFC9A803F774+++4D0F0A1" : "todo\/.build\/checkouts\/Kitura-CredentialsFacebook--3457135059537823578\/",
+    "CB7FD8B39A3635BAEA340C1AE3EF89553CB3204E+++075631F" : "todo\/.build\/checkouts\/BlueCryptor.git-2709167748876642405\/",
+    "1A81AC7E588BE86E760603555BCE76FB0C611997+++85692A1" : "todo\/.build\/checkouts\/Kitura-TemplateEngine.git--5059963620657797085\/",
+    "1A6ECED8CDE8ABEF932257DC949CF5ADF69EE23B+++194638A" : "todo\/.build\/checkouts\/miniPromiseKit--2300971575253605313\/",
+    "FAE24D5A8FEA749B395E6EB085765F54F8FA1263+++DB65878" : "todo\/.build\/checkouts\/Swift-cfenv--6767409976302647106\/",
+    "43C021D2F0E746BBB29CA4E06229F111196D4871+++034FAF5" : "todo\/.build\/checkouts\/BlueSocket.git-3162807777605905816\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "todolist",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "todolist.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/miniPromiseKit--2300971575253605313",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A6ECED8CDE8ABEF932257DC949CF5ADF69EE23B+++194638A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-TemplateEngine.git--5059963620657797085",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A81AC7E588BE86E760603555BCE76FB0C611997+++85692A1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Configuration.git--2683441109504822782",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C204411A853DAB80C5D739B4751B473EEDB4D4F+++F2BC1C4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-net.git--7410958935072501107",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "40635794C1929E96A4709153927459486D34FA7B+++4F1D741"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-5023846263630101647",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43425688648679ECEC3105C3812E3C82D04FD563+++5F3BBF7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-5023846263630101647",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43425688648679ECEC3105C3812E3C82D04FD563+++94A4AB6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/BlueSocket.git-3162807777605905816",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43C021D2F0E746BBB29CA4E06229F111196D4871+++034FAF5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-CredentialsFacebook--3457135059537823578",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43FED6F9B97D7140A021A85DB6F3FFC9A803F774+++4D0F0A1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/BlueSSLService.git--6577639804771281610",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77528AA6C8B451D66547916CA3CB970C85CBD7B4+++D1D4706"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wangzhizhou\/KM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "814C995A65BEAC22D03A0487F6F6472E38EBDABF+++2AA1896"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/LoggerAPI.git--6449715459278086880",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "85E996FB125657C20E42A299A76F925867A7A6E4+++917F229"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-Session.git-4044573149666132076",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8E25278F4FF9957511DC7B48244FBFBA8517C8F6+++9101AD2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-Credentials--1877793223337482428",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++3B4E366"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-Credentials--1877793223337482428",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C35C4161A47177E0118BF8107DBC477FE9A9C7F+++79D4511"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/SwiftyJSON.git--6955445084174387031",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++8CC5DCD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/BlueCryptor.git-2709167748876642405",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CB7FD8B39A3635BAEA340C1AE3EF89553CB3204E+++075631F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Kitura-5023846263630101647",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D558C2C080AA9B11469965A414116D0915FC799A+++76CC4D2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/JokerAtBaoFeng\/Documents\/KM\/docs\/swift\/swift-on-server\/code\/todo\/.build\/repositories\/Swift-cfenv--6767409976302647106",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FAE24D5A8FEA749B395E6EB085765F54F8FA1263+++DB65878"
+    }
+  ]
+}

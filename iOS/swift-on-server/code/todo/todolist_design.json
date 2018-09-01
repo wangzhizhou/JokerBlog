@@ -1,0 +1,9 @@
+{
+    "_id": "_design/tododesign",
+    "_views": {
+        "all_todos": {
+            "map":
+            "function(doc){ emit(doc._id, [doc._id, doc.title]); } "
+         }
+    }
+}

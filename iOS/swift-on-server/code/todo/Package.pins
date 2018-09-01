@@ -1,0 +1,102 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "CCurl",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/CCurl.git",
+      "version": "0.4.1"
+    },
+    {
+      "package": "CloudFoundryEnv",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Swift-cfenv",
+      "version": "4.0.2"
+    },
+    {
+      "package": "CommonCrypto",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
+      "version": "0.1.5"
+    },
+    {
+      "package": "Configuration",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Configuration.git",
+      "version": "1.0.2"
+    },
+    {
+      "package": "Cryptor",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+      "version": "0.8.16"
+    },
+    {
+      "package": "Kitura",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura",
+      "version": "1.7.8"
+    },
+    {
+      "package": "Kitura-Credentials",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura-Credentials.git",
+      "version": "1.7.2"
+    },
+    {
+      "package": "Kitura-CredentialsFacebook",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura-CredentialsFacebook",
+      "version": "1.7.0"
+    },
+    {
+      "package": "Kitura-Session",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura-Session.git",
+      "version": "1.7.0"
+    },
+    {
+      "package": "Kitura-TemplateEngine",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura-TemplateEngine.git",
+      "version": "1.7.2"
+    },
+    {
+      "package": "Kitura-net",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/Kitura-net.git",
+      "version": "1.7.15"
+    },
+    {
+      "package": "LoggerAPI",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
+      "version": "1.7.1"
+    },
+    {
+      "package": "MiniPromiseKit",
+      "reason": null,
+      "repositoryURL": "https://github.com/davidungar/miniPromiseKit",
+      "version": "4.3.0"
+    },
+    {
+      "package": "SSLService",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/BlueSSLService.git",
+      "version": "0.12.52"
+    },
+    {
+      "package": "Socket",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+      "version": "0.12.65"
+    },
+    {
+      "package": "SwiftyJSON",
+      "reason": null,
+      "repositoryURL": "https://github.com/IBM-Swift/SwiftyJSON.git",
+      "version": "16.0.2"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,2232 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is my personal blog as documentr">
+      
+      
+        <link rel="canonical" href="http://jokerblog.readthedocs.io/tech/Optimizing App Startup Time/">
+      
+      
+        <meta name="author" content="wangzhizhou">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+    
+    
+      
+        <title>一次优化App启动速度的体验 - Joker Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Joker Blog
+              </span>
+              <span class="md-header-nav__topic">
+                一次优化App启动速度的体验
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JokerBlog
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Joker Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JokerBlog
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Z-turn
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Z-turn
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Tech
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Tech
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/" title="Network Simulator 2 Installation Guide for Ubuntu" class="md-nav__link">
+      Network Simulator 2 Installation Guide for Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Learn STL In 30 Minutes/" title="Learn STL In 30 Minutes" class="md-nav__link">
+      Learn STL In 30 Minutes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Installation of Ubuntu 16.04 On UDisk/" title="Installation of Ubuntu 16.04 On UDisk" class="md-nav__link">
+      Installation of Ubuntu 16.04 On UDisk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Configure Git Server With Ubuntn and Apache 2/" title="Configure Git Server With Ubuntu and Apache 2" class="md-nav__link">
+      Configure Git Server With Ubuntu and Apache 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/" title="Add Watermark on Video with OpenCV and FFmpeg" class="md-nav__link">
+      Add Watermark on Video with OpenCV and FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Develop DLNA Using Platinum Library/" title="Develop DLNA Using Platinum Library" class="md-nav__link">
+      Develop DLNA Using Platinum Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg and SDL tutorial 1/" title="FFmpeg and SDL tutorial 1" class="md-nav__link">
+      FFmpeg and SDL tutorial 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg compiled on MacOS/" title="FFmpeg compiled on MacOS" class="md-nav__link">
+      FFmpeg compiled on MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg version 3.1.4 example code/" title="FFmpeg version 3.1.4 example code" class="md-nav__link">
+      FFmpeg version 3.1.4 example code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg 2.8.6 example code - transcoding" class="md-nav__link">
+      FFmpeg 2.8.6 example code - transcoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Nmap Basics/" title="[Nmap](https://nmap.org) Basics" class="md-nav__link">
+      [Nmap](https://nmap.org) Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Use GDB/" title="Use GDB" class="md-nav__link">
+      Use GDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../User OpenCV to add watermark on a video/" title="User OpenCV to add watermark on a video" class="md-nav__link">
+      User OpenCV to add watermark on a video
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wireshark Basics/" title="Wireshark Basics" class="md-nav__link">
+      Wireshark Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        一次优化App启动速度的体验
+      </label>
+    
+    <a href="./" title="一次优化App启动速度的体验" class="md-nav__link md-nav__link--active">
+      一次优化App启动速度的体验
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="应用的启动过程" class="md-nav__link">
+    应用的启动过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-main" title="理论 - main()函数执行前发生的事情" class="md-nav__link">
+    理论 - main()函数执行前发生的事情
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mach-o" title="Mach-O格式" class="md-nav__link">
+    Mach-O格式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="文件类型" class="md-nav__link">
+    文件类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o_1" title="Mach-O镜像文件" class="md-nav__link">
+    Mach-O镜像文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o-universal" title="Mach-O Universal文件" class="md-nav__link">
+    Mach-O Universal文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="虚拟内存基础" class="md-nav__link">
+    虚拟内存基础
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o_2" title="Mach-O二进制文件如何加载和准备" class="md-nav__link">
+    Mach-O二进制文件如何加载和准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebasng-and-binding" title="Rebasng And Binding" class="md-nav__link">
+    Rebasng And Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-selector" title="Unique Selector" class="md-nav__link">
+    Unique Selector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="实践" class="md-nav__link">
+    实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="怎样测量时间" class="md-nav__link">
+    怎样测量时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="热启动和冷启动" class="md-nav__link">
+    热启动和冷启动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main" title="测量main()函数调用前所花费的时间" class="md-nav__link">
+    测量main()函数调用前所花费的时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="优化启动时间的方法" class="md-nav__link">
+    优化启动时间的方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../OpenVPN on Raspberry Pi/" title="OpenVPN on Raspberry Pi" class="md-nav__link">
+      OpenVPN on Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift on client and server/" title="Swift On Server End" class="md-nav__link">
+      Swift On Server End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../my hardware/" title="花生壳动态域名" class="md-nav__link">
+      花生壳动态域名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin/" title="安装最新JDK" class="md-nav__link">
+      安装最新JDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Convert MP4 to GIF With FFmpeg/" title="Convert MP4 to GIF With FFmpeg" class="md-nav__link">
+      Convert MP4 to GIF With FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jupyterhub/" title="issue 1" class="md-nav__link">
+      issue 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tech share/" title="Tech share" class="md-nav__link">
+      Tech share
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      etc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/alipay-scan-fu-icon/" title="Alipay scan fu icon" class="md-nav__link">
+      Alipay scan fu icon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Renting in Beijing/" title="北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)" class="md-nav__link">
+      北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Gu Bei Shui Zhen/" title="2017年古北水镇国庆旅游计划" class="md-nav__link">
+      2017年古北水镇国庆旅游计划
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Music
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Music
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/whistle/" title="Whistle" class="md-nav__link">
+      Whistle
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Game
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Game
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../minecraft/minecraft/" title="Minecraft 最新版(1.12) 自建体验" class="md-nav__link">
+      Minecraft 最新版(1.12) 自建体验
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Jenkins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Jenkins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/" title="导览" class="md-nav__link">
+      导览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">
+      第一个管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">
+      多步管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">
+      定义执行环境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">
+      使用环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">
+      记录测试结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">
+      清理和通知
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">
+      布署
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      ReactiveX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        ReactiveX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Observable/" title="可观察的" class="md-nav__link">
+      可观察的
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Operators/" title="运算符" class="md-nav__link">
+      运算符
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Single/" title="单事件可观察对象" class="md-nav__link">
+      单事件可观察对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Subject/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Scheduler/" title="调度器" class="md-nav__link">
+      调度器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/start-learn/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Orientation/" title="定位" class="md-nav__link">
+      定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Container/" title="容器" class="md-nav__link">
+      容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Service/" title="服务" class="md-nav__link">
+      服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Swarm/" title="机群" class="md-nav__link">
+      机群
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Stack/" title="栈" class="md-nav__link">
+      栈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Deploy/" title="部署应用" class="md-nav__link">
+      部署应用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+    
+    <label class="md-nav__link" for="nav-2-8">
+      Nginx
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-8">
+        Nginx
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">
+      新手教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/application/" title="主要用途" class="md-nav__link">
+      主要用途
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
+    
+    <label class="md-nav__link" for="nav-2-9">
+      iOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-9">
+        iOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/workflow/" title="工作流" class="md-nav__link">
+      工作流
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/XCode 9 CI/" title="持续集成" class="md-nav__link">
+      持续集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift4-notes/" title="Swift4" class="md-nav__link">
+      Swift4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9-4" type="checkbox" id="nav-2-9-4">
+    
+    <label class="md-nav__link" for="nav-2-9-4">
+      服务端Swift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-9-4">
+        服务端Swift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[4]Swift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">
+      第四章Swfit包管理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">
+      第五章使用Kitura写ToDoList
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/objc/" title="OC相关" class="md-nav__link">
+      OC相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/reverse/" title="逆向工程" class="md-nav__link">
+      逆向工程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/optimization/" title="应用优化" class="md-nav__link">
+      应用优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/review/" title="面试" class="md-nav__link">
+      面试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/sort/" title="十大排序算法" class="md-nav__link">
+      十大排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/core animation/" title="核心动画" class="md-nav__link">
+      核心动画
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/runtime/" title="OC运行时编译" class="md-nav__link">
+      OC运行时编译
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
+    
+    <label class="md-nav__link" for="nav-2-10">
+      乐理基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-10">
+        乐理基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-1" type="checkbox" id="nav-2-10-1">
+    
+    <label class="md-nav__link" for="nav-2-10-1">
+      乐音
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-1">
+        乐音
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tones/Pitches and Clefs/" title="音高和谱号" class="md-nav__link">
+      音高和谱号
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-2" type="checkbox" id="nav-2-10-2">
+    
+    <label class="md-nav__link" for="nav-2-10-2">
+      节拍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-2">
+        节拍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/rhythms/Note Values and Basic Notation/" title="Note Values and Basic Notation" class="md-nav__link">
+      Note Values and Basic Notation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-3" type="checkbox" id="nav-2-10-3">
+    
+    <label class="md-nav__link" for="nav-2-10-3">
+      曲调
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-3">
+        曲调
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">
+      Melodies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-4" type="checkbox" id="nav-2-10-4">
+    
+    <label class="md-nav__link" for="nav-2-10-4">
+      伴奏
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-4">
+        伴奏
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/accompanying/Transcribing What You Hear/" title="Transcribing What You Hear" class="md-nav__link">
+      Transcribing What You Hear
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-5" type="checkbox" id="nav-2-10-5">
+    
+    <label class="md-nav__link" for="nav-2-10-5">
+      修饰
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-5">
+        修饰
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/embellishing/Harmony and Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">
+      Harmony and Counterpoint
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-6" type="checkbox" id="nav-2-10-6">
+    
+    <label class="md-nav__link" for="nav-2-10-6">
+      编曲
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-6">
+        编曲
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/arranging/composing and arranging for voices and instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">
+      Composing and arranging for voices and instruments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-7" type="checkbox" id="nav-2-10-7">
+    
+    <label class="md-nav__link" for="nav-2-10-7">
+      附录
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-7">
+        附录
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">
+      A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Me
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Me
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Plan for finding Job/" title="My plan for finding job" class="md-nav__link">
+      My plan for finding job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Personal Pre-Work Record/" title="Personal Pre-Work Record" class="md-nav__link">
+      Personal Pre-Work Record
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Financial Planning/" title="我的理财规划" class="md-nav__link">
+      我的理财规划
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Life in Beijing/" title="人在北京" class="md-nav__link">
+      人在北京
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/jokerhub/" title="jokerhub 域名申请" class="md-nav__link">
+      jokerhub 域名申请
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/job review/" title="入职月度回顾" class="md-nav__link">
+      入职月度回顾
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../How I create this blog/" title="Blog" class="md-nav__link">
+      Blog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="应用的启动过程" class="md-nav__link">
+    应用的启动过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-main" title="理论 - main()函数执行前发生的事情" class="md-nav__link">
+    理论 - main()函数执行前发生的事情
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mach-o" title="Mach-O格式" class="md-nav__link">
+    Mach-O格式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="文件类型" class="md-nav__link">
+    文件类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o_1" title="Mach-O镜像文件" class="md-nav__link">
+    Mach-O镜像文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o-universal" title="Mach-O Universal文件" class="md-nav__link">
+    Mach-O Universal文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="虚拟内存基础" class="md-nav__link">
+    虚拟内存基础
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mach-o_2" title="Mach-O二进制文件如何加载和准备" class="md-nav__link">
+    Mach-O二进制文件如何加载和准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rebasng-and-binding" title="Rebasng And Binding" class="md-nav__link">
+    Rebasng And Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-selector" title="Unique Selector" class="md-nav__link">
+    Unique Selector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="实践" class="md-nav__link">
+    实践
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="怎样测量时间" class="md-nav__link">
+    怎样测量时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="热启动和冷启动" class="md-nav__link">
+    热启动和冷启动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main" title="测量main()函数调用前所花费的时间" class="md-nav__link">
+    测量main()函数调用前所花费的时间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="优化启动时间的方法" class="md-nav__link">
+    优化启动时间的方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/tech/Optimizing App Startup Time.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>一次优化App启动速度的体验</h1>
+                
+                <p># 一次优化App启动速度的体验</p>
+<h2 id="_1">应用的启动过程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>连接和装载</p>
+</li>
+<li>
+<p>UIKit初始化</p>
+</li>
+<li>
+<p>应用程序回调</p>
+</li>
+<li>
+<p>开机动画展现 </p>
+</li>
+</ol>
+<h2 id="-main">理论 - main()函数执行前发生的事情<a class="headerlink" href="#-main" title="Permanent link">&para;</a></h2>
+<h3 id="mach-o">Mach-O格式<a class="headerlink" href="#mach-o" title="Permanent link">&para;</a></h3>
+<h4 id="_2">文件类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code class="codehilite">Executable</code> —— 应用对应的二进制文件</li>
+<li><code class="codehilite">Dylib</code> —— 动态库，例如: DSOs/DLLs</li>
+<li><code class="codehilite">Bundle</code> —— 不能被链接的动态库，只能在运行时用dlopen()函数加载，例如：插件</li>
+</ul>
+<p><code class="codehilite">image</code> —— 可以是上面提到的三种类型中的任何一种
+<code class="codehilite">Framework</code> —— 以一定目录结构组织资源和头文件的一种动态库</p>
+<h4 id="mach-o_1">Mach-O镜像文件<a class="headerlink" href="#mach-o_1" title="Permanent link">&para;</a></h4>
+<p>通常被划分成段(<code class="codehilite">segment</code>)：<code class="codehilite">__TEXT</code>、<code class="codehilite">__DATA</code>、<code class="codehilite">__LINKEDIT</code></p>
+<p>一个段通常由多个页(<code class="codehilite">page</code>)构成，页大小由硬件决定，<code class="codehilite">arm64</code>机器上的页是16KB, 其它机器上的页大小为4KB。</p>
+<p>区域(<code class="codehilite">section</code>)是段(<code class="codehilite">segment</code>)的局部，编译器一般不会考虑这个概念。它们彼此之间不能重叠。</p>
+<p><code class="codehilite">__TEXT</code>段是二进制的头部，用来存放Mach头信息、机器命令或者常量，只读。</p>
+<p><code class="codehilite">__DATA</code>段存放全局变量，可读写。</p>
+<p><code class="codehilite">__LINKEDIT</code>段包含怎么装载程序的<code class="codehilite">元数据</code>, 像函数、变量的名称和地址。</p>
+<h4 id="mach-o-universal">Mach-O Universal文件<a class="headerlink" href="#mach-o-universal" title="Permanent link">&para;</a></h4>
+<p>把针对不同平台的多个Mach-O文件合并到一个文件里面，有一个<code class="codehilite">Fat Header</code>信息区存放所有架构和对就的二进制数据在整个文件中的偏移地址。</p>
+<h3 id="_3">虚拟内存基础<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>软件中的问题都可以通过添加中间层来解决，虚拟内存就是为了解决不同进程的逻辑地址灵活的映射到物理内存地址的问题而存在的。不同进程的逻辑地址可以被虚拟内存系统映射到不同或者相同的物理内存中，从而实现互斥或共享的功能。我们前面所提到的动态库在不同进程间的共享就可以以这种方式进行。每一个页都可以被设置为<code class="codehilite">读</code>、<code class="codehilite">写</code>、<code class="codehilite">执行</code>的任意组合来限制其访问权限。</p>
+<p><code class="codehilite">ASLR</code> —— 地址空间布局随机，镜像被加载进内存空间中的随机位置</p>
+<p><code class="codehilite">代码签名</code> —— 每一页的数据都被哈希算法处理过，当页面加载进内存时会被校验，这些哈希值都被存放在<code class="codehilite">__LINKEDIT</code>段中，这样就可以确保校验每一页数据，保证程序运行的安全性。</p>
+<h3 id="mach-o_2">Mach-O二进制文件如何加载和准备<a class="headerlink" href="#mach-o_2" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite">Exec()</code> —— 是一个系统调用。
+<code class="codehilite">dyld</code> —— 负责加载动态库。</p>
+<p>系统把应用映射到内存后会加载<code class="codehilite">dyld</code>来负责加载应用依赖的其它动态库。</p>
+<ul>
+<li>分析出应用运行需要依赖的动态库。从已经加载的应用程序的头部信息中获取。</li>
+<li>查找所有依赖的动态库的位置，找到对应的Mach-O文件，打开并校验代码签名。</li>
+<li>注册依赖库的代码签名到内核中，之后调用<code class="codehilite">mmap</code>映射动态库的每一个段到物理内存中。</li>
+<li>在这个加载依赖库的过程中，依赖库本身也会依赖其它的库，所以这个过程会递归执行。在加载的过程中，一些已经加载的库不会被重新加载，大部分都是系统库。</li>
+</ul>
+<h4 id="rebasng-and-binding">Rebasng And Binding<a class="headerlink" href="#rebasng-and-binding" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite">Rebasing</code> —— 由于应用是被随机加载到物理地址里的，所以一些内部地址需要重新计算一下对应的偏移量来调整正确指向。</p>
+<p><code class="codehilite">binding</code> —— 应用内的指针指向应用外部的符号，找到这个外部符号后，需要将这个指针与这个符号的对应地址进行绑定。</p>
+<p>Objective-C 是一种动态类型语言，它定义的所有类都在一个全局表中注册后使用。</p>
+<h4 id="unique-selector">Unique Selector<a class="headerlink" href="#unique-selector" title="Permanent link">&para;</a></h4>
+<p>感觉和类方法是等价的。 +load() 或者 +initialize()</p>
+<h2 id="_4">实践<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">怎样测量时间<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>不同平台的标准不同，但大致上<code class="codehilite">iPhone(400ms)</code>、<code class="codehilite">iPad(500ms)</code>以内是一个不错的标准。因为应用被打开时，系统会有一段动画来完成平滑过渡，在这段动画时间内都可以算是不错的启动时间。这个动画的时间大致是<code class="codehilite">400ms</code>。应用如果启动时间超过<code class="codehilite">20s</code>会被系统杀死。</p>
+<p>如果应用启动太慢，系统看门狗会结束应用，XCode调试时不启用系统看门狗。</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>看门狗定时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动</td>
+<td>20秒</td>
+</tr>
+<tr>
+<td>后台恢复</td>
+<td>10秒</td>
+</tr>
+<tr>
+<td>挂起</td>
+<td>10秒</td>
+</tr>
+<tr>
+<td>退出</td>
+<td>6秒</td>
+</tr>
+<tr>
+<td>背景任务</td>
+<td>10分钟</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">热启动和冷启动<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>热启动 —— 应用已经在内存的情况下被调起</p>
+</li>
+<li>
+<p>冷启动 —— 应用完全不在内存或缓存中的情况下被调起</p>
+</li>
+</ul>
+<p>我们测量启动时间是以冷启动时间为准的。这通常需要重新启动设备。</p>
+<h3 id="main">测量main()函数调用前所花费的时间<a class="headerlink" href="#main" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite">Dyld</code>有内建的测试机制。可以在项目中设置<code class="codehilite">DYLD_PRINT_STATICTICS</code>为<code class="codehilite">1</code>来开启统计功能。</p>
+<p>设置项目的启动时间统计相关的环境变量，如下图：</p>
+<p><img alt="statistics" src="../../assets/pictures/launchTimeSetup.png" /></p>
+<p>需要机器重新启动后，确保测试时长比较准确，即冷启动。</p>
+<p>冷启动统计结果如下图:</p>
+<p><img alt="refresh launch" src="../../assets/pictures/launchTimeStatistics.png" /></p>
+<h3 id="_7">优化启动时间的方法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>避免链接不必要的framework</li>
+<li>Optional类型的framework会使链接器有一些额外的消耗，尽量少用</li>
+<li>避免创建全局C++对象，避免在<code class="codehilite">+load()</code>方法中运行代码(类加载时)，而放到<code class="codehilite">+initialize()</code>中(类被首次初始化时会被调用)</li>
+<li>把应用引入的动态库合并后进行加载。</li>
+<li>使用<code class="codehilite">dlopen</code>把库的加载时机推迟一些，但不推荐，因为会引起很多问题。</li>
+<li>尽量使用swift，因为swift考虑了这些因素。</li>
+<li>减少Objc的类的数量</li>
+<li>编译器选项添加`Wglobal-constructors</li>
+<li>排除静态初始化</li>
+</ul>
+<p>参考视频：</p>
+<ul>
+<li>
+<p><a href="https://developer.apple.com/videos/play/wwdc2012/235/">WWDC 2012 - iOS App Performance Responsiveness</a></p>
+</li>
+<li>
+<p><a href="https://developer.apple.com/videos/play/wwdc2016/406/">WWDC 2016 - Optimizing App Startup Time</a></p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Wireshark Basics/" title="Wireshark Basics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                Wireshark Basics
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../OpenVPN on Raspberry Pi/" title="OpenVPN on Raspberry Pi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                OpenVPN on Raspberry Pi
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Created by Wang Zhizhou
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-36723568-3","mkdocs.org"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2001 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is my personal blog as documentr">
+      
+      
+        <link rel="canonical" href="http://jokerblog.readthedocs.io/docker/Swarm/">
+      
+      
+        <meta name="author" content="wangzhizhou">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+    
+    
+      
+        <title>机群 - Joker Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#swarm" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Joker Blog
+              </span>
+              <span class="md-header-nav__topic">
+                机群
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JokerBlog
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Joker Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      JokerBlog
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Z-turn
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Z-turn
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Tech
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Tech
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Network Simulator 2 Installation Guide for Ubuntu/" title="Network Simulator 2 Installation Guide for Ubuntu" class="md-nav__link">
+      Network Simulator 2 Installation Guide for Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Learn STL In 30 Minutes/" title="Learn STL In 30 Minutes" class="md-nav__link">
+      Learn STL In 30 Minutes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Installation of Ubuntu 16.04 On UDisk/" title="Installation of Ubuntu 16.04 On UDisk" class="md-nav__link">
+      Installation of Ubuntu 16.04 On UDisk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Configure Git Server With Ubuntn and Apache 2/" title="Configure Git Server With Ubuntu and Apache 2" class="md-nav__link">
+      Configure Git Server With Ubuntu and Apache 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Add Watermark on Video with OpenCV and FFmpeg/" title="Add Watermark on Video with OpenCV and FFmpeg" class="md-nav__link">
+      Add Watermark on Video with OpenCV and FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Develop DLNA Using Platinum Library/" title="Develop DLNA Using Platinum Library" class="md-nav__link">
+      Develop DLNA Using Platinum Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/FFmpeg and SDL tutorial 1/" title="FFmpeg and SDL tutorial 1" class="md-nav__link">
+      FFmpeg and SDL tutorial 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/FFmpeg compiled on MacOS/" title="FFmpeg compiled on MacOS" class="md-nav__link">
+      FFmpeg compiled on MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/FFmpeg version 3.1.4 example code/" title="FFmpeg version 3.1.4 example code" class="md-nav__link">
+      FFmpeg version 3.1.4 example code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg 2.8.6 example code - transcoding" class="md-nav__link">
+      FFmpeg 2.8.6 example code - transcoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Nmap Basics/" title="[Nmap](https://nmap.org) Basics" class="md-nav__link">
+      [Nmap](https://nmap.org) Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Use GDB/" title="Use GDB" class="md-nav__link">
+      Use GDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/User OpenCV to add watermark on a video/" title="User OpenCV to add watermark on a video" class="md-nav__link">
+      User OpenCV to add watermark on a video
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Wireshark Basics/" title="Wireshark Basics" class="md-nav__link">
+      Wireshark Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Optimizing App Startup Time/" title="一次优化App启动速度的体验" class="md-nav__link">
+      一次优化App启动速度的体验
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/OpenVPN on Raspberry Pi/" title="OpenVPN on Raspberry Pi" class="md-nav__link">
+      OpenVPN on Raspberry Pi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/swift on client and server/" title="Swift On Server End" class="md-nav__link">
+      Swift On Server End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/my hardware/" title="花生壳动态域名" class="md-nav__link">
+      花生壳动态域名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/kotlin/" title="安装最新JDK" class="md-nav__link">
+      安装最新JDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/Convert MP4 to GIF With FFmpeg/" title="Convert MP4 to GIF With FFmpeg" class="md-nav__link">
+      Convert MP4 to GIF With FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/jupyterhub/" title="issue 1" class="md-nav__link">
+      issue 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tech/tech share/" title="Tech share" class="md-nav__link">
+      Tech share
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      etc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/alipay-scan-fu-icon/" title="Alipay scan fu icon" class="md-nav__link">
+      Alipay scan fu icon
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Renting in Beijing/" title="北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)" class="md-nav__link">
+      北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Gu Bei Shui Zhen/" title="2017年古北水镇国庆旅游计划" class="md-nav__link">
+      2017年古北水镇国庆旅游计划
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Music
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Music
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/whistle/" title="Whistle" class="md-nav__link">
+      Whistle
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Game
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Game
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../minecraft/minecraft/" title="Minecraft 最新版(1.12) 自建体验" class="md-nav__link">
+      Minecraft 最新版(1.12) 自建体验
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Jenkins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Jenkins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/" title="导览" class="md-nav__link">
+      导览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">
+      第一个管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">
+      多步管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">
+      定义执行环境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">
+      使用环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">
+      记录测试结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">
+      清理和通知
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">
+      布署
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      ReactiveX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        ReactiveX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Observable/" title="可观察的" class="md-nav__link">
+      可观察的
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Operators/" title="运算符" class="md-nav__link">
+      运算符
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Single/" title="单事件可观察对象" class="md-nav__link">
+      单事件可观察对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Subject/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Scheduler/" title="调度器" class="md-nav__link">
+      调度器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" checked>
+    
+    <label class="md-nav__link" for="nav-2-7">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../start-learn/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Orientation/" title="定位" class="md-nav__link">
+      定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Container/" title="容器" class="md-nav__link">
+      容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Service/" title="服务" class="md-nav__link">
+      服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="机群" class="md-nav__link md-nav__link--active">
+      机群
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Stack/" title="栈" class="md-nav__link">
+      栈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Deploy/" title="部署应用" class="md-nav__link">
+      部署应用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+    
+    <label class="md-nav__link" for="nav-2-8">
+      Nginx
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-8">
+        Nginx
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">
+      新手教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/application/" title="主要用途" class="md-nav__link">
+      主要用途
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
+    
+    <label class="md-nav__link" for="nav-2-9">
+      iOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-9">
+        iOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/workflow/" title="工作流" class="md-nav__link">
+      工作流
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/XCode 9 CI/" title="持续集成" class="md-nav__link">
+      持续集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift4-notes/" title="Swift4" class="md-nav__link">
+      Swift4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-9-4" type="checkbox" id="nav-2-9-4">
+    
+    <label class="md-nav__link" for="nav-2-9-4">
+      服务端Swift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-9-4">
+        服务端Swift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[4]Swift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">
+      第四章Swfit包管理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">
+      第五章使用Kitura写ToDoList
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/objc/" title="OC相关" class="md-nav__link">
+      OC相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/reverse/" title="逆向工程" class="md-nav__link">
+      逆向工程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/optimization/" title="应用优化" class="md-nav__link">
+      应用优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/review/" title="面试" class="md-nav__link">
+      面试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/sort/" title="十大排序算法" class="md-nav__link">
+      十大排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/core animation/" title="核心动画" class="md-nav__link">
+      核心动画
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/runtime/" title="OC运行时编译" class="md-nav__link">
+      OC运行时编译
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
+    
+    <label class="md-nav__link" for="nav-2-10">
+      乐理基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-10">
+        乐理基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-1" type="checkbox" id="nav-2-10-1">
+    
+    <label class="md-nav__link" for="nav-2-10-1">
+      乐音
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-1">
+        乐音
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tones/Pitches and Clefs/" title="音高和谱号" class="md-nav__link">
+      音高和谱号
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-2" type="checkbox" id="nav-2-10-2">
+    
+    <label class="md-nav__link" for="nav-2-10-2">
+      节拍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-2">
+        节拍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/rhythms/Note Values and Basic Notation/" title="Note Values and Basic Notation" class="md-nav__link">
+      Note Values and Basic Notation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-3" type="checkbox" id="nav-2-10-3">
+    
+    <label class="md-nav__link" for="nav-2-10-3">
+      曲调
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-3">
+        曲调
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">
+      Melodies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-4" type="checkbox" id="nav-2-10-4">
+    
+    <label class="md-nav__link" for="nav-2-10-4">
+      伴奏
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-4">
+        伴奏
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/accompanying/Transcribing What You Hear/" title="Transcribing What You Hear" class="md-nav__link">
+      Transcribing What You Hear
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-5" type="checkbox" id="nav-2-10-5">
+    
+    <label class="md-nav__link" for="nav-2-10-5">
+      修饰
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-5">
+        修饰
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/embellishing/Harmony and Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">
+      Harmony and Counterpoint
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-6" type="checkbox" id="nav-2-10-6">
+    
+    <label class="md-nav__link" for="nav-2-10-6">
+      编曲
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-6">
+        编曲
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/arranging/composing and arranging for voices and instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">
+      Composing and arranging for voices and instruments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-10-7" type="checkbox" id="nav-2-10-7">
+    
+    <label class="md-nav__link" for="nav-2-10-7">
+      附录
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-10-7">
+        附录
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">
+      A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Me
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Me
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Plan for finding Job/" title="My plan for finding job" class="md-nav__link">
+      My plan for finding job
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Personal Pre-Work Record/" title="Personal Pre-Work Record" class="md-nav__link">
+      Personal Pre-Work Record
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Financial Planning/" title="我的理财规划" class="md-nav__link">
+      我的理财规划
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Life in Beijing/" title="人在北京" class="md-nav__link">
+      人在北京
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/jokerhub/" title="jokerhub 域名申请" class="md-nav__link">
+      jokerhub 域名申请
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/job review/" title="入职月度回顾" class="md-nav__link">
+      入职月度回顾
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../How I create this blog/" title="Blog" class="md-nav__link">
+      Blog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/docker/Swarm.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <p>上一章，把我们的应用转变成一个服务并部署在了单节点机群上，单节点机群使用多个进程模拟机群。</p>
+<p>这一章我们将把应用部署在多物理机器组成的机群上。多容器多机器应用可以放在被<code class="codehilite">Docker</code>化的机群上，即<code class="codehilite">swarm</code>。</p>
+<h1 id="swarm">理解<code class="codehilite">Swarm</code>机群<a class="headerlink" href="#swarm" title="Permanent link">&para;</a></h1>
+<p><code class="codehilite">Swarm</code>是运行<code class="codehilite">Docker</code>并组成集群的一组机器。你可以像在一台机器上运行<code class="codehilite">Docker</code>命令，但实际上，它会通过<code class="codehilite">Swarm Manager</code>在整个机群上运行。<code class="codehilite">Swarm</code>机群中的机器可以是虚拟的也可以是物理的，当它们加入<code class="codehilite">Swarm</code>机群后，被称作<code class="codehilite">节点</code>。</p>
+<p><code class="codehilite">Swarm</code>管理器可以使用多种策略来运行容器，<code class="codehilite">空结点</code>是指那些运行最不常用容器的机器。<code class="codehilite">全局</code>策略会确保每一台机器只运行一个指定的容器实例。你在<code class="codehilite">docker-compose.yml</code>中指示<code class="codehilite">swarm</code>机群使用哪一种策略。</p>
+<p><code class="codehilite">Swarm</code>管理是机群中唯一的一台允许你执行命令或授权其它机器作为工作者加入机群的角色。工作者只提供处理能力，不能指挥其它机器。</p>
+<p>目前为止，我们的操作都是在单主机环境下进行的。但是<code class="codehilite">Docker</code>可以转换成<code class="codehilite">机群</code>模式，转换为<code class="codehilite">机群</code>模式会把当前的机器变成<code class="codehilite">Swarm Manager</code>。至此，<code class="codehilite">Docker</code>运行的命令会作用在所管理的机群所有机器上，而不仅仅只在当前机器上执行。</p>
+<h1 id="swarm_1">建立你的Swarm机群<a class="headerlink" href="#swarm_1" title="Permanent link">&para;</a></h1>
+<p>一个<code class="codehilite">Swarm</code>机群由多个节点组成，这些节点可以是虚拟的也可以是物理的。</p>
+<p>运行<code class="codehilite">docker swarm init</code>开启<code class="codehilite">swarm</code>模式，并把当前的机器变为<code class="codehilite">swarm manager</code>。</p>
+<p>使用<code class="codehilite">docker swarm join</code>来使其它的机器作为工作者加入到<code class="codehilite">Swarm</code>机群中，创建机群需要多个机器，我们可以使用虚拟机来创建多个虚拟的机器。</p>
+<h1 id="_1">创建机群<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>安装<a href="https://www.virtualbox.org/wiki/Downloads"><code class="codehilite">Virtual Box</code></a></p>
+<p><strong>注意</strong>：如果你是<code class="codehilite">Windows 10</code>系统，它自带的Hyper-V就可以创建虚拟机，所以不需要安装<code class="codehilite">Virtual Box</code>。</p>
+<p>安装完<code class="codehilite">Virtual Box</code>后，使用<code class="codehilite">docker-machine</code>来创建多个虚拟机：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine create --driver virtualbox myvm1
+$ docker-machine craete --driver virtualbox myvm2
+</pre></div>
+</td></tr></table>
+
+<p>你现在创建了两个虚拟机了，可以使用命令<code class="codehilite">docker-machine ls</code>来查看。第一个会指定为<code class="codehilite">manager</code>，第二个会被受权加入机群，成为工作者。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ls
+NAME    ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER        ERRORS
+myvm1   -        virtualbox   Running   tcp://192.168.99.100:2376           v17.06.0-ce   
+myvm2   -        virtualbox   Running   tcp://192.168.99.101:2376           v17.06.0-ce   
+</pre></div>
+</td></tr></table>
+
+<p>可以使用<code class="codehilite">docker-machine ssh</code>来登录<code class="codehilite">myvm1</code>，并使其成为一个<code class="codehilite">Swarm Manager</code>：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm1 <span class="s2">&quot;docker swarm init&quot;</span>
+Error response from daemon: could not choose an IP address to advertise since this system has multiple addresses on different interfaces <span class="o">(</span><span class="m">10</span>.0.2.15 on eth0 and <span class="m">192</span>.168.99.100 on eth1<span class="o">)</span> - specify one with --advertise-addr
+<span class="nb">exit</span> status <span class="m">1</span>
+</pre></div>
+</td></tr></table>
+
+<p>如果碰到需要使用<code class="codehilite">--advertise-addr</code>的错误，可以使用<code class="codehilite">docker-machine ls</code>先查看<code class="codehilite">myvm1</code>的IP地址，再使用命令运行一次，但是我们需要使用端口<code class="codehilite">2377</code>，因为<code class="codehilite">swarm join</code>使用这个端口工作：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm1 <span class="s2">&quot;docker swarm init --advertise-addr 192.168.99.100:2377&quot;</span>
+Swarm initialized: current node <span class="o">(</span>7z8gne0xkr4nixklkx8t1sb3g<span class="o">)</span> is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-5t4tfzrmtnw9prl7fcpcwpgp924vvntg03urytnw1g2c7ou0ej-6thxazc7buydklnmyi1idr1rv <span class="m">192</span>.168.99.100:2377
+
+To add a manager to this swarm, run <span class="s1">&#39;docker swarm join-token manager&#39;</span> and follow the instructions.
+</pre></div>
+</td></tr></table>
+
+<p><code class="codehilite">docker swarm init</code>会输出一段用来加入机群的指令，你可以复制这段指令并在想加入的机器上运行就可以把机器转化成工作者了。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm2 <span class="s2">&quot;docker swarm join --token SWMTKN-1-5t4tfzrmtnw9prl7fcpcwpgp924vvntg03urytnw1g2c7ou0ej-6thxazc7buydklnmyi1idr1rv 192.168.99.100:2377&quot;</span>
+This node joined a swarm as a worker.
+</pre></div>
+</td></tr></table>
+
+<p>恭喜你，已经创建了你的第一个机群了。</p>
+<p>直接使用<code class="codehilite">docker-machine ssh myvm1</code>这种方式会登录机器，需要使用<code class="codehilite">exit</code>来登出</p>
+<p>而使用<code class="codehilite">docker-machine ssh myvm1 &quot;command&quot;</code>这种方法会登录机器后执行命令，并自动登出。</p>
+<h1 id="_2">在机群上部署你的应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>最难的部分过去了，现在只需要重复在上一章已经做过的流程来就可以了。只需要记住<code class="codehilite">myvm1</code>是<code class="codehilite">Swarm Manager</code>可以执行指令，其它的是工作者，只处理事务。</p>
+<p>把我们之前创建的<code class="codehilite">docker-compose.yml</code>文件拷到<code class="codehilite">myvm1</code>这个<code class="codehilite">swarm manager</code>上：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine scp docker-compose.yml myvm1:~
+docker-compose.yml                                                                    <span class="m">100</span>%  <span class="m">368</span>   <span class="m">333</span>.7KB/s   <span class="m">00</span>:00 
+</pre></div>
+</td></tr></table>
+
+<p>然后开始部署我们的应用到机群上：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm1 <span class="s2">&quot;docker stack deploy -c docker-compose.yml hello&quot;</span>
+Creating network hello_webnet
+Creating service hello_web
+</pre></div>
+</td></tr></table>
+
+<p>查看部署情况：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm1 <span class="s2">&quot;docker stack ps hello&quot;</span>
+ID                  NAME                IMAGE                      NODE                DESIRED STATE       CURRENT STATE                  ERROR               PORTS
+fla301e97hse        hello_web.1         zhulongyixian/hello:v1.0   myvm2               Running             Preparing about a minute ago                       
+jhp43be5v3op        hello_web.2         zhulongyixian/hello:v1.0   myvm1               Running             Preparing about a minute ago                       
+k58kkikey222        hello_web.3         zhulongyixian/hello:v1.0   myvm2               Running             Preparing about a minute ago                       
+85gtwdojwots        hello_web.4         zhulongyixian/hello:v1.0   myvm1               Running             Preparing about a minute ago   
+</pre></div>
+</td></tr></table>
+
+<p>可以看到应用已经被部署到机群上了。</p>
+<h1 id="_3">访问你的机群<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>你可以通过<code class="codehilite">myvm1</code>或者<code class="codehilite">myvm2</code>的IP地址来访问我们已经部署的应用。因为我们创建了在机群机器间共享的网络层，用来平衡负载。</p>
+<p>使用<code class="codehilite">docker-machine ls</code>查看机器的IP地址：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ls
+NAME    ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER        ERRORS
+myvm1   -        virtualbox   Running   tcp://192.168.99.100:2376           v17.06.0-ce   
+myvm2   -        virtualbox   Running   tcp://192.168.99.101:2376           v17.06.0-ce
+</pre></div>
+</td></tr></table>
+
+<p>在浏览器中打开:<a href="http://192.168.99.100">http://192.168.99.100</a>就可以访问服务了。多刷新几次浏览器，会发现容器ID会不停的变化，说明我们的机群可以处理负载平衡。</p>
+<p>我们可以通过机群内任意一个节点的IP来访问服务的原因是我们的机群设置了路由网。这可以使部署的服务在机群内部有指定端口，不用关心容器是如果被执行的。下面是一张三节点机群图用来说明发布在<code class="codehilite">8080</code>端口的<code class="codehilite">my-web</code>服务的内部网络结构：</p>
+<p><img alt="ingress network" src="../image/ingress.png" /></p>
+<p><strong>可能遇到的连接问题</strong>: 为了使用<code class="codehilite">Swarm</code>机群，我们在开启<code class="codehilite">Swarm</code>模式前要确保节点之间的以下端口是打开的：</p>
+<ul>
+<li><code class="codehilite">7946</code> TCP/UDP端口，这个端口用于网络发现</li>
+<li><code class="codehilite">4789</code> UDP端口，这个端口用于容器的ingress网络</li>
+</ul>
+<h1 id="_4">扩展你的应用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>你可以像第三章学到的那样，通过改变<code class="codehilite">docker-compose.yml</code>中的设置并重新运行命令<code class="codehilite">docker stack deploy -c docker-compose.yml hello</code>来改变部署的方式。也可以使用命令<code class="codehilite">docker swarm join</code>命令来加入更多的工作者节点，然后使用前面的命令更新部署一次。</p>
+<h1 id="_5">清理工作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<p>可以使用下面的命令停止应用栈的运行：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm1 <span class="s2">&quot;docker stack rm hello&quot;</span>
+Removing service hello_web
+Removing network hello_webnet
+</pre></div>
+</td></tr></table>
+
+<p>这只是移除了机群上的应用，但机群本身还在运行。</p>
+<p>可以使用下面的命令关闭机群：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker-machine ssh myvm2 <span class="s2">&quot;docker swarm leave&quot;</span>
+Node left the swarm. <span class="c1"># 工作者节点离开机群</span>
+
+$ docker-machine ssh myvm1 <span class="s2">&quot;docker swarm leave --force&quot;</span>
+Node left the swarm. <span class="c1"># 机群管理节点离开机群</span>
+</pre></div>
+</td></tr></table>
+
+<h1 id="_6">常用到的指令列表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker-machine create --driver virtualbox myvm1 # Create a VM (Mac, Win7, Linux)
+docker-machine create -d hyperv --hyperv-virtual-switch &quot;myswitch&quot; myvm1 # Win10
+docker-machine env myvm1                # View basic information about your node
+docker-machine ssh myvm1 &quot;docker node ls&quot;         # List the nodes in your swarm
+docker-machine ssh myvm1 &quot;docker node inspect &lt;node ID&gt;&quot;        # Inspect a node
+docker-machine ssh myvm1 &quot;docker swarm join-token -q worker&quot;   # View join token
+docker-machine ssh myvm1   # Open an SSH session with the VM; type &quot;exit&quot; to end
+docker-machine ssh myvm2 &quot;docker swarm leave&quot;  # Make the worker leave the swarm
+docker-machine ssh myvm1 &quot;docker swarm leave -f&quot; # Make master leave, kill swarm
+docker-machine start myvm1            # Start a VM that is currently not running
+docker-machine stop $(docker-machine ls -q)               # Stop all running VMs
+docker-machine rm $(docker-machine ls -q) # Delete all VMs and their disk images
+docker-machine scp docker-compose.yml myvm1:~     # Copy file to node&#39;s home dir
+docker-machine ssh myvm1 &quot;docker stack deploy -c &lt;file&gt; &lt;app&gt;&quot;   # Deploy an app
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Service/" title="服务" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                服务
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Stack/" title="栈" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                栈
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Created by Wang Zhizhou
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-36723568-3","mkdocs.org"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
