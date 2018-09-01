@@ -1,185 +1,61 @@
-# This is a required setting, 
-# and should be a string that is 
-# used as the main title for the 
-# project documentation.
-# When rendering the theme this 
-# setting will be passed as the site_name context variable.
 site_name: "Joker Blog"
-
-# Set the canonical URL of the site. 
-# This will add a link tag with the canonical URL to the generated HTML header.
-# default: null
 site_url:  "http://jokerblog.readthedocs.io"
-
-
-# Set the site description. This will add a meta tag to the generated HTML header.
-# default: null
 site_description: "This is my personal blog as documentr"
-
-# Set the name of the author. This will add a meta tag to the generated HTML header.
-# default: null
 site_author: "wangzhizhou"
 
-# When set, provides a link to your GitHub or Bitbucket repository on each page.
-# default: null
 repo_url: "https://github.com/wangzhizhou/JokerBlog"
+repo_name: "JokerBlog"
 
-# When set, provides a link to your GitHub or Bitbucket repository on each page.
-# default: 'GitHub' or 'Bitbucket' if the repo_url matches those domains, 
-# otherwise null
-repo_name: "GitHub"
-
-# When set, provides a link directly to the page in your source repository. 
-# This makes it easier to find and edit the source for the page. 
-# If repo_url is not set, this option is ignored.
-edit_uri: "edit/master/docs/"
-# edit_uri:  "blob/master/docs/"
-
-# Set the Google analytics tracking configuration.
-# default: null
 google_analytics: ["UA-36723568-3", "mkdocs.org"]
-
-# built-in theme
-# default: mkdocs
-theme: 
-    name: "readthedocs"
-    custom_dir: "joker_theme"
-    show_sidebar: false
-
-# mkdocs-bootswatch themes
-
-# my prefer themes
-# theme: "amelia"
-# theme: "cyborg"
-# theme: "united"
-
-# no prefer themes
-# theme: "cerulean"
-# theme: "cosmo"
-# theme: "flatly"
-# theme: "journal"
-# theme: "readable"
-# theme: "simplex"
-# theme: "slate"
-# theme: "spacelab"
-# theme: "yeti"
-
-# mkdocs-bootstrap theme
-# theme: "bootstrap"
-
-# built-in theme
-# theme: "readthedocs"
-
-#custom joker_theme
-# theme_dir: "joker_theme"
-
-# Lets you set the directory containing the documentation source markdown files. 
-# This can either be a relative directory, 
-# in which case it is resolved relative to the directory 
-# containing your configuration file, 
-# or it can be an absolute directory path from the root of your local file system.
-# default: 'docs'
-docs_dir: "docs"
-
-
-# Lets you set the directory where the output HTML and other files are created. 
-# This can either be a relative directory, 
-# in which case it is resolved relative to the directory containing your 
-# configuration file, or it can be an absolute directory path from the root 
-# of your local file system.
-# default: 'site'
-site_dir: "site"
-
-
-# Set a list of CSS files in your docs_dir to be included by the theme. 
-# For example, the following example will include the extra.css file 
-# within the css subdirectory in your docs_dir.
-# default: []
-# extra_css: []
-
-
-# Set a list of JavaScript files in your docs_dir to be included by the theme. 
-# See the example in extra_css for usage.
-# default: []
-# http://www.bootcdn.cn/mathjax/readme/ 用来加速js的CDN
-extra_javascript:
-    - https://cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML
-
-# Set a list of templates in your docs_dir to be built by MkDocs. 
-# To see more about writing templates for MkDocs read the documentation 
-# about custom themes and specifically the section about the variables 
-# that are available to templates.
-# default: []
-# extra_templates: []
-
-# A set of key value pairs, where the values can be any valid YAML construct, 
-# that will be passed to the template. 
-# This allows for great flexibility when creating custom themes.
-# example:
-#   extra: 
-#       version: 1.0:w
-# extra: {} 
-
-# Set the copyright information to be included in the documentation by the theme.
-# default: null
 copyright: "Created by Wang Zhizhou"
 
-
-# Set the remote name to push to when using gh-deploy to deploy to Github Pages. 
-# This option can be overridden by a command line option in gh-deploy.
-remote_name: "origin"
-
-
-# Set the remote branch to commit to when using gh-deploy to deploy to Github Pages. 
-# This option can be overridden by a command line option in gh-deploy.
-# default: gh-pages
-remote_branch: "gh-pages"
-
-
-# This setting controls the style used for linking to pages within the documentation.# The default style of use_directory_urls=true creates more user friendly URLs, 
-# and is usually what you'll want to use.
-use_directory_urls: true
-
-
-# Determines if a broken link to a page within the documentation is 
-# considered a warning or an error (link to a page not listed in the pages setting). 
-# Set to true to halt processing when a broken link is found, false prints a warning.
-#strict: true
+theme: 
+  name: 'material'
+  palette:
+    primary: 'Green'
+    accent: 'Orange'
+  font: 
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+  #logo: # 'images/logo.svg'
+    # icon: 'cloud'
+  language: 'zh'
+  direction: 'ltr'
+  favicon: 'assets/images/favicon.ico'
+  feature:
+    tabs: false
 
 
-# Determines the address used when running mkdocs serve. 
-# Setting this allows you to use another port, 
-# or allows you to make the service accessible over your local network 
-# by using the 0.0.0.0 address.
-# As with all settings, 
-# you can set this from the command line, which can be useful, for example:
-#   mkdocs serve --dev-addr=0.0.0.0:80
-dev_addr: '0.0.0.0:8000'
-
-
-# MkDocs uses the Python Markdown library to translate Markdown files into HTML. 
-# Python Markdown supports a variety of extensions that customize how pages are 
-# formatted. This setting lets you enable a list of extensions beyond the ones that 
-# MkDocs uses by default (meta, toc, tables, and fenced_code).
-# default: []
-# Example:
-# markdown_extensions:
-#    - smarty
-#    - toc:
-#        permalink: True
-#    - sane_lists
 markdown_extensions:
-    - mdx_math
-    - smarty
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
-plugins:
-    - search
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
-# This setting is used to determine the set of pages that should be 
-# built for the documentation.
-# By default pages will contain an alphanumerically sorted, 
-# nested list of all the Markdown files found within the docs_dir and 
-# its sub-directories. If none are found it will be [] (an empty list).
+
+
 pages:
     - 'Home': 'index.md'
     - 'Z-turn': 

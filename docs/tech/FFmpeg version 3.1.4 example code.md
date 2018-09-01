@@ -9,7 +9,7 @@ FFmpeg 3.1.4 适配 | 官网提供的示例代码
 [avio_reading.c](/assets/ffmpeg-code/example-3.1.4/avio_reading.c)| [avio_reading.c](https://ffmpeg.org/doxygen/trunk/avio_reading_8c-example.html)
 
 
-编译脚本[build.sh](/assets/ffmpeg-code/example-3.1.4/build.sh)内容如下：
+编译脚本[build.sh](/assets/ffmpeg-code/build-scripts/build.sh)内容如下：
 
 ``` 
 # !/usr/bin/env bash

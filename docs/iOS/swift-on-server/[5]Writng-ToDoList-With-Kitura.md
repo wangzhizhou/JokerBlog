@@ -80,13 +80,13 @@ Hello, World!
 
 因为服务器一般需要命令行操作，所以这里介绍使用服务行部署服务的过程，这里将使用[`IBM Bluemix`](https://www.ibm.com/cloud-computing/bluemix/zh)云服务, 它可以试用30天，需要注册一个帐号并且需要开通`CloudFoundry`应用程序服务。
 
-![ibm-bluemix](/swift/swift-on-server/images/ibm-bluemix.png)
+![ibm-bluemix](/iOS/swift-on-server/images/ibm-bluemix.png)
 
-![ibm-bluemix-cloundFoundry](/swift/swift-on-server/images/ibm-bluemix-cloudFoundry.png)
+![ibm-bluemix-cloundFoundry](/iOS/swift-on-server/images/ibm-bluemix-cloudFoundry.png)
 
 可以在相关界面下载CLI命令行工具用来布署应用。
 
-![ibm-bluemix-cli](/swift/swift-on-server/images/ibm-bluemix-cli.png)
+![ibm-bluemix-cli](/iOS/swift-on-server/images/ibm-bluemix-cli.png)
 
 
 下载并完成`Bluemix-CLI`的安装。
@@ -149,7 +149,7 @@ do {
 
 详情请参考IBM出口书籍及相关代码: 
 
-- [Extending Swift Values to the Server](/swift/swift-on-server/books/KUM12369USEN.pdf)
+- [Extending Swift Values to the Server](/iOS/swift-on-server/books/KUM12369USEN.pdf)
 - [相关代码下载](https://github.com/oreillymedia/extending_swift_values_to_the_server)
 
 

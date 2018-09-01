@@ -108,7 +108,7 @@ if env["MY_SYSTEM_ENV"] == "true" { ... }
 
 一些`Swift`项目的样板建立之后，就可以往里面添加一些新的依赖了。例如添加一个运算符(`|>`)支持，这可以在[`IBM Swift Package Catalog`](https://packagecatalog.com)上去查找。
 
-![IBM-Swift-Package-Catalog](/swift/swift-on-server/images/ibm-swift-package-catalog.png)
+![IBM-Swift-Package-Catalog](/iOS/swift-on-server/images/ibm-swift-package-catalog.png)
 
 
 编辑后的`Package.swift`文件内容如下:
@@ -207,9 +207,9 @@ $ open -a Xcode MyProject.xcodeproj/
 
 在XCode中运行前，要修改一下运行方案：
 
-![run-in-xcode](/swift/swift-on-server/images/run-in-xcode.png)
+![run-in-xcode](/iOS/swift-on-server/images/run-in-xcode.png)
 
-![run-in-xcode-result](/swift/swift-on-server/images/run-in-xcode-result.png)
+![run-in-xcode-result](/iOS/swift-on-server/images/run-in-xcode-result.png)
 
 ## 创建自己的库
 
