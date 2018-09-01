@@ -131,6 +131,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://jokerblog.readthedocs.io/life/dimission/</loc>
+     <lastmod>2018-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://jokerblog.readthedocs.io/music/whistle/</loc>
      <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
@@ -312,6 +317,11 @@
     </url>
     <url>
      <loc>http://jokerblog.readthedocs.io/iOS/runtime/</loc>
+     <lastmod>2018-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://jokerblog.readthedocs.io/iOS/design-pattern/</loc>
      <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
