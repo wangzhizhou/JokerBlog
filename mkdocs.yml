@@ -24,7 +24,7 @@ theme:
   direction: 'ltr'
   favicon: 'img/favicon.ico'
   feature:
-    tabs: false
+    tabs: true
 
 
 markdown_extensions:
@@ -58,6 +58,9 @@ extra_javascript:
 
 extra_css:
   - 'stylesheets/extra.css'
+
+extra:
+    disqus: 'jokerhub-blog'
 
 nav:
     - 'Home': 'index.md'
