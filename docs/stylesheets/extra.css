@@ -1,0 +1,9 @@
+.md-typeset h1 {
+    color: #1b6a3e;
+    font-weight: bold;
+}
+
+.md-typeset .codehilite {
+    color: red;
+    font-weight: bold;
+}

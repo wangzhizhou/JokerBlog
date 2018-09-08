@@ -11,6 +11,7 @@ copyright: "Created by Wang Zhizhou"
 
 theme: 
   name: 'material'
+#   custom_dir: 'joker_theme'
   palette:
     primary: 'Green'
     accent: 'Orange'
@@ -52,9 +53,11 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_javascript:
+  - 'javascripts/extra.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
-
+extra_css:
+  - 'stylesheets/extra.css'
 
 nav:
     - 'Home': 'index.md'
