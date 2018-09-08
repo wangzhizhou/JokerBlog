@@ -16,7 +16,7 @@ theme:
     primary: 'Green'
     accent: 'Orange'
   font: 
-    text: 'Ubuntu'
+    text: 'Roboto Slab'
     code: 'Ubuntu Mono'
   #logo: # 'images/logo.svg'
     # icon: 'cloud'
@@ -60,7 +60,14 @@ extra_css:
   - 'stylesheets/extra.css'
 
 extra:
-    disqus: 'jokerhub-blog'
+  disqus: 'jokerhub-blog'
+  social:
+    - type: 'github'
+      link: 'https://github.com/wangzhizhou'
+    - type: 'twitter'
+      link: 'https://twitter.com/w_z_z_1991'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/wangzhizhou'
 
 nav:
     - 'Home': 'index.md'
