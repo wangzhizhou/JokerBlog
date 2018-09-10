@@ -70,7 +70,9 @@ extra:
       link: 'https://linkedin.com/in/wangzhizhou'
 
 nav:
-    - 'Home': 'index.md'
+    - 'Home': 
+        - 'Introduction': 'index.md'
+        - 'This Blog': 'How I create this blog.md'
     - 'Z-turn': 
         - 'Tech':
             - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
@@ -95,15 +97,6 @@ nav:
             - 'tech/Convert MP4 to GIF With FFmpeg.md'
             - 'tech/jupyterhub.md'
             - 'tech/tech share.md'
-        - 'etc':
-            - 'life/alipay-scan-fu-icon.md'
-            - 'life/Renting in Beijing.md'
-            - 'life/Gu Bei Shui Zhen.md'
-            - 'life/dimission.md'
-        - 'Music':
-            - 'music/whistle.md'
-        - 'Game':
-            - 'minecraft/minecraft.md'
         - Jenkins:
             - 导览: jenkins/guide/index.md
             - 第一个管道: jenkins/guide/first-pipeline.md
@@ -143,9 +136,8 @@ nav:
             - 应用优化: "iOS/optimization.md"
             - 面试: "iOS/review.md"
             - 十大排序算法: "iOS/sort.md"
-            - 核心动画: "iOS/core animation.md"
             - OC运行时编译: "iOS/runtime.md"
-            - 设计模块: "iOS/design-pattern.md"
+            - 设计模式: "iOS/design-pattern.md"
         - 乐理基础: 
             - 乐音:
                 - "music/theory/tones/Pitches and Clefs.md"
@@ -162,11 +154,18 @@ nav:
             - 附录:
                 - "music/theory/appendixes/A.md"
     - 'About': 
+        - 'Job': 
+            - 'job/My Plan for finding Job.md'
+            - 'job/dimission.md'
+        - 'Life':
+            - 'life/alipay-scan-fu-icon.md'
+            - 'life/Renting in Beijing.md'
+            - 'life/Gu Bei Shui Zhen.md'
         - 'Me':
-            - 'me/My Plan for finding Job.md'
             - 'me/Personal Pre-Work Record.md'
             - 'me/My Financial Planning.md'
             - 'me/Life in Beijing.md'
             - 'me/jokerhub.md'   
-            - 'me/job review.md' 
-        - 'Blog': 'How I create this blog.md'
+        - 'Game':
+            - 'minecraft/minecraft.md'
+        
