@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1800,7 +1800,7 @@
 <li>空间复杂度: 运行完一个程序所需内存的大小</li>
 </ul>
 <h1 id="_2">各类排序算法的总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<p><img alt="sort10" src="/iOS/images/sort10.png" /></p>
+<p><img alt="sort10" src="../images/sort10.png" /></p>
 <ul>
 <li>n: 数据规模</li>
 <li>k: "桶"的个数</li>
@@ -1808,14 +1808,14 @@
 <li>out-place: 排序过程需要申请不定量辅助存储空间进行计算和操作</li>
 </ul>
 <h1 id="_3">分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
-<p><img alt="sort_cat" src="/iOS/images/sort_cat.png" /></p>
+<p><img alt="sort_cat" src="../images/sort_cat.png" /></p>
 <h1 id="swift">下面是具体的各种算法及swift实现<a class="headerlink" href="#swift" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="_4">冒泡排序<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>描述:</strong> 首先遍历整个序列，遍历过程中不断比较相邻两个元素，如果逆序就交换两元素的位置，一趟下来就把最大元素挪到了最后位置，然后把去掉最大元素的序列看成一个规模更小子序列再进行相同遍历操作，直到序列排序完成。</li>
 </ul>
-<p><img alt="bubble sort" src="/iOS/images/bubble_sort.gif" /></p>
+<p><img alt="bubble sort" src="../images/bubble_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1856,7 +1856,7 @@
 <ul>
 <li><strong>描述:</strong> 首先遍历序列，记录最小元素的下标或索引，遍历完成后，将最小元素和序列第一个元素进行位置交换，再将最小元素排除后序列看成一个规模更小的子序列重复之前遍历过程，直到整个序列有序。</li>
 </ul>
-<p><img alt="select sort" src="/iOS/images/select_sort.gif" /></p>
+<p><img alt="select sort" src="../images/select_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1903,7 +1903,7 @@
 <ul>
 <li><strong>描述:</strong> (类比于扑克牌整牌)首先把第一个元素看成是一个有序序列，把第二元素插入这个有序序列，插入过程从有序序列的尾部元素开始，逐个向前比较，如果插入元素大于或等于最后一个元素,就插入有序序列尾部，那么有序序列就扩大为2个元素，如果插入元素比最后一个元素小，继续向前查找比较，直到找到一个小于或者等于插入元素的元素，并将该元素后面所有包含在有序序列中的元素依次向后挪一位给插入元素空出位置(如果要插入的元素比有序序列中的所有元素都小，就把整个有序序列往后挪一个位置)，并放入所插入的元素，从而扩大有序序列的个数，如引循环，直到整个原始序列有序。</li>
 </ul>
-<p><img alt="insert sort" src="/iOS/images/insert_sort.gif" /></p>
+<p><img alt="insert sort" src="../images/insert_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2093,7 +2093,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <ul>
 <li><strong>描述:</strong> 把待排序序列分成两个长度为\(n/2\)的子序列，对两个子序列分别进行归并排序(用到递归的思想)，再将两个有序的子序列合并成最终的整体有序序列，关键是归并操作的实现</li>
 </ul>
-<p><img alt="merge sort" src="/iOS/images/merge_sort.gif" /></p>
+<p><img alt="merge sort" src="../images/merge_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2199,7 +2199,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <ul>
 <li><strong>描述:</strong> 从待排序序列中挑一个元素作为基准值，将序列中所有比基准值小的元素放在前半部分，大于或等于基准值的放在后半部分，基准值放在中间，这个过程叫作以基准值对序列进行分区，分区后，前后两部份子序列再分别进行快速排序，递归的完成排序任务。排序的关键部分是分区函数的实现</li>
 </ul>
-<p><img alt="quick sort" src="/iOS/images/quick_sort.gif" /></p>
+<p><img alt="quick sort" src="../images/quick_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2286,7 +2286,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 所以就可以通过数组下标来模拟二叉树结点操作，进行模拟出堆的相关操作，完全二叉树最后一个非叶子结点的下标: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">floor(arr.count / 2) - 1</span><script type="math/tex">floor(arr.count / 2) - 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">floor(arr.count / 2) - 1</span><script type="math/tex">floor(arr.count / 2) - 1</script></span></script></span></p>
 </li>
 </ul>
-<p><img alt="heap sort" src="/iOS/images/heap_sort.gif" /></p>
+<p><img alt="heap sort" src="../images/heap_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2379,7 +2379,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <ul>
 <li><strong>描述:</strong> 获得序列的最大值、最小值，统计序列中每个元素出现的次数，存入数组，数组的下标对应序列元素的值，对所有计数累加，以累加值作为序列的下标索引，反向填充序列，完成排序任务</li>
 </ul>
-<p><img alt="count sort" src="/iOS/images/count.gif" /></p>
+<p><img alt="count sort" src="../images/count.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2436,7 +2436,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <ul>
 <li><strong>描述:</strong> 在计数排序的基础上的改进版，先把序列分成若干桶，对每一桶可以采用之前的各种排序方法，对所有桶排序完成后，再把所有桶合并起来形成结果。由于用到了辅助存储桶，所以是Out-Place的</li>
 </ul>
-<p><img alt="bucket sort" src="/iOS/images/bucket_sort.png" /></p>
+<p><img alt="bucket sort" src="../images/bucket_sort.png" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2510,7 +2510,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <ul>
 <li><strong>描述:</strong> 基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。 </li>
 </ul>
-<p><img alt="radix sort" src="/iOS/images/radix_sort.gif" /></p>
+<p><img alt="radix sort" src="../images/radix_sort.gif" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2703,7 +2703,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
       
         <script src="../../javascripts/extra.js"></script>
       

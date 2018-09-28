@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1851,10 +1851,10 @@
 <p><strong>容器(container)</strong>，是一个镜像的运行实例，也就是镜像运行时被加载到了内存中。默认情况下，容器运行可以做到和宿主机完全互不影响。当然，如果明确配置了交互的情况下，容器也可以访问宿主机的文件和端口。</p>
 <p>容器是基于宿主机的内核来运行应用程序的。它比仅通过<code class="codehilite">hypervisor</code>访问宿主机资源的虚拟机有更高的执行效率。因为容器可以作为宿主机的一个进程运行，所以更加节约内存资源。</p>
 <h2 id="vs">窗口 VS 虚拟机<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
-<p><img alt="VM" src="/docker/image/vm.png" /></p>
+<p><img alt="VM" src="../image/vm.png" /></p>
 <p>虚拟机会运行<code class="codehilite">Guest OS</code>，这是很耗费资源的，并且这个<code class="codehilite">Guest OS</code>的磁盘镜像和应用状态很容易纠缠在一起。并且每一个<code class="codehilite">Guest OS</code>的系统设置、系统依赖、系统安全补丁和一些其它细节很难保证一致。</p>
 <hr />
-<p><img alt="Container" src="/docker/image/container.png" /></p>
+<p><img alt="Container" src="../image/container.png" /></p>
 <p>容器可以共享内核，并且容器镜像内唯一需要的信息就是所要执行的文件和它的依赖，而这些信息是不需要安装在操作系统上的。这使得<code class="codehilite">容器</code>可以像本地进程一样运行和管理。你可以像在<code class="codehilite">linux</code>上使用<code class="codehilite">ps</code>命令一样，使用<code class="codehilite">docker ps</code>来查看活动容器的运行情况，因为容器内包含了所有运行所需要的依赖，所以它们之间的配置不会纠缠在一起，可以在任何地方运行。</p>
 <h1 id="docker">安装Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p>先要确保你安装了最版本的docker，版本在<code class="codehilite">1.13</code>之后。</p>
@@ -2043,7 +2043,7 @@ Docker version <span class="m">17</span>.06.0-ce, build 02c1d87
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
       
         <script src="../../javascripts/extra.js"></script>
       
