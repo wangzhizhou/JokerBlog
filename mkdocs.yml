@@ -138,6 +138,7 @@ nav:
             - 十大排序算法: "iOS/sort.md"
             - OC运行时编译: "iOS/runtime.md"
             - 设计模式: "iOS/design-pattern.md"
+            - AirDrop社交: "iOS/airdrop.md"
         - 乐理基础: 
             - 乐音:
                 - "music/theory/tones/Pitches and Clefs.md"
