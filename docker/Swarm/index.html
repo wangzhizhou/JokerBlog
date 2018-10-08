@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1233,6 +1233,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/airdrop/" title="AirDrop社交" class="md-nav__link">
+      AirDrop社交
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1908,7 +1920,7 @@ myvm2   -        virtualbox   Running   tcp://192.168.99.101:2376           v17.
 
 <p>在浏览器中打开:<a href="http://192.168.99.100">http://192.168.99.100</a>就可以访问服务了。多刷新几次浏览器，会发现容器ID会不停的变化，说明我们的机群可以处理负载平衡。</p>
 <p>我们可以通过机群内任意一个节点的IP来访问服务的原因是我们的机群设置了路由网。这可以使部署的服务在机群内部有指定端口，不用关心容器是如果被执行的。下面是一张三节点机群图用来说明发布在<code class="codehilite">8080</code>端口的<code class="codehilite">my-web</code>服务的内部网络结构：</p>
-<p><img alt="ingress network" src="../image/ingress.png" /></p>
+<p><img alt="ingress network" src="/docker/image/ingress.png" /></p>
 <p><strong>可能遇到的连接问题</strong>: 为了使用<code class="codehilite">Swarm</code>机群，我们在开启<code class="codehilite">Swarm</code>模式前要确保节点之间的以下端口是打开的：</p>
 <ul>
 <li><code class="codehilite">7946</code> TCP/UDP端口，这个端口用于网络发现</li>
@@ -2091,7 +2103,7 @@ docker-machine ssh myvm1 &quot;docker stack deploy -c &lt;file&gt; &lt;app&gt;&q
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../javascripts/extra.js"></script>
       

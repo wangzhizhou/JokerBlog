@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1233,6 +1233,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/airdrop/" title="AirDrop社交" class="md-nav__link">
+      AirDrop社交
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1793,7 +1805,7 @@
 <p><code class="codehilite">ReactiveX</code>中的一些运算有一些可以接受调度器作为参数的变体，这种变体就是指定这个运算在指定的调度器上做部分或者全部工作。</p>
 <p>可观察对象及其运算默认是在<code class="codehilite">Subscribe</code>方法被调用时所在的线程上工作的。<code class="codehilite">SubscribeOn</code>方法为可观察对象指定另一个调度器，以使它的工作在其上进行。<code class="codehilite">ObserveOn</code>为可观察对象指定一个调度器，使它在发送通知给观察者时在这个调度器上执行。</p>
 <p>就像下图所示，<code class="codehilite">SubscribeOn</code>指定开始时可观察对象在哪个线程上运行，不管这个操作放在运算链中的哪个位置，作用都一样，与位置无关。而<code class="codehilite">ObserveOn</code>方法会作用于可观察对象即将使用的线程上。所以你可能会在链式运算中多次调用<code class="codehilite">ObserveOn</code>方法来改变它所作用的线程。</p>
-<p><img alt="scheduler" src="../images/scheduler.png" /></p>
+<p><img alt="scheduler" src="/reactiveX/images/scheduler.png" /></p>
 <h1 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="http://www.introtorx.com/Content/v1.0.10621.0/15_SchedulingAndThreading.html">Introduction to Rx: Scheduling and Threading</a></li>
@@ -1921,7 +1933,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../javascripts/extra.js"></script>
       

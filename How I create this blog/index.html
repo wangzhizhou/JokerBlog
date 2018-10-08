@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1231,6 +1231,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../iOS/airdrop/" title="AirDrop社交" class="md-nav__link">
+      AirDrop社交
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2016,24 +2028,24 @@ INFO    -  Cleaning site directory
 <p><strong>那么剩下的就是如何配置手机通过电脑来访问Http服务了</strong></p>
 <p>在当前的WiFi连接中配置一下<code class="codehilite">http代理</code>，电脑上需要有代理软件安装，例如<code class="codehilite">Charles</code>或者<code class="codehilite">Fiddler</code></p>
 <p>例如,Mac下使用<code class="codehilite">Charles</code>代理软件，手机可设置如下：</p>
-<p><img alt="http代理" src="../assets/pictures/http_proxy.png" /></p>
+<p><img alt="http代理" src="/assets/pictures/http_proxy.png" /></p>
 <p>然后手机输入<a href="http://doc.com:8000">http://doc.com:8000</a>浏览到文档效果如下：</p>
-<p><img alt="doc" src="../assets/pictures/blog_home.png" /></p>
+<p><img alt="doc" src="/assets/pictures/blog_home.png" /></p>
 <h1 id="_9">在线托管<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <p>本地编辑的差不多了，可以发布到网络上，这就涉及到托管服务。源代码可以通过<code class="codehilite">GitHub</code>仓库服务托管，文档自动生成和浏览可以通过<code class="codehilite">Read The Docs</code>服务来托管，并且当配置了<code class="codehilite">GitHub</code>对<code class="codehilite">Read The Docs</code>的<code class="codehilite">Web Hook</code>后，<code class="codehilite">GitHub</code>仓库的每次提交都会自动触发<code class="codehilite">Read The Docs</code>上的文档重新生成,以便保持最新状态，很方便。</p>
 <p>前面已经注册了这两个托管服务的帐号。下面动手来发布文档到网络上，让更多的人可以看到。</p>
 <ol>
 <li>
 <p>登录<code class="codehilite">GitHub</code>并创建一个托管仓库
-<img alt="create a repo" src="../assets/pictures/createRepo.gif" /></p>
+<img alt="create a repo" src="/assets/pictures/createRepo.gif" /></p>
 </li>
 <li>
 <p>给仓库添加<code class="codehilite">Read The Docs</code>的<code class="codehilite">WebHook</code>
-<img alt="repo add the webhook" src="../assets/pictures/readthedocswebhook.gif" /></p>
+<img alt="repo add the webhook" src="/assets/pictures/readthedocswebhook.gif" /></p>
 </li>
 <li>
 <p>登录<code class="codehilite">Read The Docs</code>并导入文档项目仓库
-<img alt="import repo to Red the Docs" src="../assets/pictures/deployTheDemoBlog.gif" /></p>
+<img alt="import repo to Red the Docs" src="/assets/pictures/deployTheDemoBlog.gif" /></p>
 </li>
 <li>
 <p>使用<code class="codehilite">git</code>命令初始化文档项目为<code class="codehilite">git</code> 仓库, 创建首次提交并上传到<code class="codehilite">GitHub</code>的仓库中，触发<code class="codehilite">Read The Docs</code>自动构建服务
@@ -2057,7 +2069,7 @@ git push -u origin master
 <p>在线浏览文档</p>
 </li>
 </ol>
-<p><img alt="read the demo blog" src="../assets/pictures/readthedemoblog.png" /></p>
+<p><img alt="read the demo blog" src="/assets/pictures/readthedemoblog.png" /></p>
 <h1 id="_10">我创建的几个文档示例<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
@@ -2188,7 +2200,7 @@ git push -u origin master
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../javascripts/extra.js"></script>
       
