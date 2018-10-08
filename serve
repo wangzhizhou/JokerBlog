@@ -2,7 +2,7 @@
 
 
 SERVE_IP=$(ifconfig en0 | grep "inet " | awk '{print $2}')
-echo "SERVE IP: ${SERVE_IP}"
+echo "SERVE IP: http://${SERVE_IP}"
 
 VENV="vblogenv"
 if [ -d "$VENV" ]; then
