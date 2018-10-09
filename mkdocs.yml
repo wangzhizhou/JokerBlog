@@ -70,9 +70,7 @@ extra:
       link: 'https://linkedin.com/in/wangzhizhou'
 
 nav:
-    - 'Home': 
-        - 'Introduction': 'index.md'
-        - 'This Blog': 'How I create this blog.md'
+    - 'Home': 'index.md'
     - 'Z-turn': 
         - 'Tech':
             - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
@@ -155,6 +153,7 @@ nav:
             - 附录:
                 - "music/theory/appendixes/A.md"
     - 'About': 
+        - 'This Blog': 'How I create this blog.md'
         - 'Job': 
             - 'job/My Plan for finding Job.md'
             - 'job/dimission.md'
