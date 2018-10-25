@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
@@ -1781,28 +1781,28 @@
 <h1 id="subject">Subject的变体<a class="headerlink" href="#subject" title="Permanent link">&para;</a></h1>
 <p>有四种变体，应用于某些特殊情况下。但不是所有的实现中都使用了它们。某些实现中使用的名称可能有些不同，例如在<code class="codehilite">RxScala</code>中，<code class="codehilite">Subject</code>被称为<code class="codehilite">PublicSubject</code>。</p>
 <h1 id="asyncsubject">AsyncSubject<a class="headerlink" href="#asyncsubject" title="Permanent link">&para;</a></h1>
-<p><img alt="AsyncSubject" src="/reactiveX/images/asyncSubject.png" /></p>
+<p><img alt="AsyncSubject" src="../images/asyncSubject.png" /></p>
 <p>一个<code class="codehilite">AsyncSubject</code>在源可观察对象发出完成通知后才发出源可观察对象的最后一个事件和它的完成通知。如果源可观察对象没有发出任何事件，<code class="codehilite">AsyncSubject</code>不发出任何事件，但会发出完成或者错误通知。</p>
-<p><img alt="AsyncSubject" src="/reactiveX/images/asyncSubjectWithError.png" /></p>
+<p><img alt="AsyncSubject" src="../images/asyncSubjectWithError.png" /></p>
 <h3 id="_2">参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://www.introtorx.com/Content/v1.0.10621.0/02_KeyTypes.html#AsyncSubject">Introduction to Rx: AsyncSubject</a></li>
 </ul>
 <h1 id="behaviorsubject">BehaviorSubject<a class="headerlink" href="#behaviorsubject" title="Permanent link">&para;</a></h1>
-<p><img alt="behaviorSubject" src="/reactiveX/images/behaviorSubject.png" /></p>
+<p><img alt="behaviorSubject" src="../images/behaviorSubject.png" /></p>
 <p>当一个观察者订阅了一个<code class="codehilite">BehaviorSubject</code>后，它会收到订阅前源可观察对象发出的最近一个事件，以及订阅后的所有事件。</p>
-<p><img alt="behaviorSubjectWithError" src="/reactiveX/images/behaviorSubjectWithError.png" /></p>
+<p><img alt="behaviorSubjectWithError" src="../images/behaviorSubjectWithError.png" /></p>
 <h3 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://www.introtorx.com/Content/v1.0.10621.0/02_KeyTypes.html#BehaviorSubject">Introduction to Rx: BehaviorSubject</a></li>
 </ul>
 <h1 id="publishsubject">PublishSubject<a class="headerlink" href="#publishsubject" title="Permanent link">&para;</a></h1>
-<p><img alt="PublishSubject" src="/reactiveX/images/publishSubject.png" /></p>
+<p><img alt="PublishSubject" src="../images/publishSubject.png" /></p>
 <p>观察者如果订阅了<code class="codehilite">PublishSubject</code>，它可接收到自订阅之后发生的所有事件。</p>
-<p><img alt="PublishSubjectWithError" src="/reactiveX/images/publishSubjectWithError.png" /></p>
+<p><img alt="PublishSubjectWithError" src="../images/publishSubjectWithError.png" /></p>
 <p>如果你不想漏掉订阅之前的那些事件，可以选择创建一个冷可观察对象或者使用<code class="codehilite">ReplaySubject</code></p>
 <h1 id="replaysubject">ReplaySubject<a class="headerlink" href="#replaysubject" title="Permanent link">&para;</a></h1>
-<p><img alt="replaySubject" src="/reactiveX/images/replaySubject.png" /></p>
+<p><img alt="replaySubject" src="../images/replaySubject.png" /></p>
 <p><code class="codehilite">ReplaySubject</code>向订阅它的所有观察者发送所有它所发出的事件，不管观察者是从什么时候开始订阅它。</p>
 <p>使用<code class="codehilite">ReplaySubject</code>作为观察者时，不要从多个线程中调用它的<code class="codehilite">onNext</code>和<code class="codehilite">on</code>方法，因为这样产生的不一致会违反可观察对象的条约规定，对先重发事件还是先重发通知产生二义性。</p>
 <h3 id="_4">参考<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -1930,7 +1930,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
       
         <script src="../../javascripts/extra.js"></script>
       
