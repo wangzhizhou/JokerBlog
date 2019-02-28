@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,18 +57,47 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
         <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
     
+    
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-36723568-3", "mkdocs.org")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -123,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Joker Blog
-              </span>
-              <span class="md-header-nav__topic">
-                A
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Joker Blog
+            </span>
+            <span class="md-header-nav__topic">
+              A
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -161,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -172,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      JokerBlog
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
           </div>
         </div>
       
@@ -207,31 +230,28 @@
     <ul class="md-tabs__list">
       
         
-  <li class="md-tabs__item">
-    
-      <a href="../../../.." title="Home" class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-  
-  
-    
-    
   
   
     <li class="md-tabs__item">
       
-        <a href="../../../../tech/Network Simulator 2 Installation Guide for Ubuntu/" title="Z-turn" class="md-tabs__link">
-          Z-turn
+        <a href="../../../.." title="主页" class="md-tabs__link">
+          主页
         </a>
       
     </li>
   
 
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../job/My Plan for finding Job/" title="工作" class="md-tabs__link">
+          工作
+        </a>
+      
+    </li>
   
 
       
@@ -240,8 +260,34 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../How I create this blog/" title="About" class="md-tabs__link">
-          About
+        <a href="../../../../life/alipay-scan-fu-icon/" title="生活" class="md-tabs__link">
+          生活
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../geek/Network Simulator 2 Installation Guide for Ubuntu/" title="Geek" class="md-tabs__link md-tabs__link--active">
+          Geek
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../me/My Financial Planning/" title="关于我" class="md-tabs__link">
+          关于我
         </a>
       
     </li>
@@ -275,20 +321,18 @@
 
   
 
-
-  <a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      JokerBlog
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -298,10 +342,166 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      主页
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        主页
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../../.." title="Home" class="md-nav__link">
-      Home
+    <a href="../../../.." title="简介" class="md-nav__link">
+      简介
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../How I create this blog/" title="博客创建过程" class="md-nav__link">
+      博客创建过程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      工作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        工作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../job/My Plan for finding Job/" title="求职" class="md-nav__link">
+      求职
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../job/dimission/" title="离职" class="md-nav__link">
+      离职
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      生活
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        生活
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../life/alipay-scan-fu-icon/" title="支付宝集福" class="md-nav__link">
+      支付宝集福
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../life/Renting in Beijing/" title="北京租房" class="md-nav__link">
+      北京租房
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../life/Gu Bei Shui Zhen/" title="古北水镇游玩" class="md-nav__link">
+      古北水镇游玩
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../minecraft/minecraft/" title="我的世界游戏" class="md-nav__link">
+      我的世界游戏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -314,17 +514,161 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-2">
-      Z-turn
+    <label class="md-nav__link" for="nav-4">
+      Geek
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Z-turn
+      <label class="md-nav__title" for="nav-4">
+        Geek
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Network Simulator 2 Installation Guide for Ubuntu/" title="Ubuntu安装NS2网络模拟器" class="md-nav__link">
+      Ubuntu安装NS2网络模拟器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Learn STL In 30 Minutes/" title="30分钟掌握STL" class="md-nav__link">
+      30分钟掌握STL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Installation of Ubuntu 16.04 On UDisk/" title="U盘安装Ubuntu" class="md-nav__link">
+      U盘安装Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Configure Git Server With Ubuntn and Apache 2/" title="搭建Git服务" class="md-nav__link">
+      搭建Git服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/User OpenCV to add watermark on a video/" title="OpenCV给视频添加水印" class="md-nav__link">
+      OpenCV给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Add Watermark on Video with OpenCV and FFmpeg/" title="OpenCV+FFmpeg给视频添加水印" class="md-nav__link">
+      OpenCV+FFmpeg给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Develop DLNA Using Platinum Library/" title="DLNA开发" class="md-nav__link">
+      DLNA开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Nmap Basics/" title="Nmap基础" class="md-nav__link">
+      Nmap基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Use GDB/" title="GDB使用" class="md-nav__link">
+      GDB使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/kotlin/" title="Kotlin学习" class="md-nav__link">
+      Kotlin学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/jupyterhub/" title="jupyterhub工具使用" class="md-nav__link">
+      jupyterhub工具使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/bluegogo-crack/" title="bluegogo破解" class="md-nav__link">
+      bluegogo破解
+    </a>
+  </li>
+
         
           
           
@@ -333,14 +677,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
     
-    <label class="md-nav__link" for="nav-2-1">
-      Tech
+    <label class="md-nav__link" for="nav-4-13">
+      FFmpeg
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-1">
-        Tech
+      <label class="md-nav__title" for="nav-4-13">
+        FFmpeg
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -351,8 +695,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../tech/Network Simulator 2 Installation Guide for Ubuntu/" title="Network Simulator 2 Installation Guide for Ubuntu" class="md-nav__link">
-      Network Simulator 2 Installation Guide for Ubuntu
+    <a href="../../../../geek/FFmpeg and SDL tutorial 1/" title="FFmpeg教程" class="md-nav__link">
+      FFmpeg教程
     </a>
   </li>
 
@@ -363,8 +707,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../tech/Learn STL In 30 Minutes/" title="Learn STL In 30 Minutes" class="md-nav__link">
-      Learn STL In 30 Minutes
+    <a href="../../../../geek/FFmpeg compiled on MacOS/" title="Mac上编译FFmpeg" class="md-nav__link">
+      Mac上编译FFmpeg
     </a>
   </li>
 
@@ -375,8 +719,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../tech/Installation of Ubuntu 16.04 On UDisk/" title="Installation of Ubuntu 16.04 On UDisk" class="md-nav__link">
-      Installation of Ubuntu 16.04 On UDisk
+    <a href="../../../../geek/FFmpeg version 3.1.4 example code/" title="FFmpeg示例代码学习" class="md-nav__link">
+      FFmpeg示例代码学习
     </a>
   </li>
 
@@ -387,8 +731,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../tech/Configure Git Server With Ubuntn and Apache 2/" title="Configure Git Server With Ubuntu and Apache 2" class="md-nav__link">
-      Configure Git Server With Ubuntu and Apache 2
+    <a href="../../../../geek/Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg转码学习" class="md-nav__link">
+      FFmpeg转码学习
     </a>
   </li>
 
@@ -399,224 +743,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../tech/Add Watermark on Video with OpenCV and FFmpeg/" title="Add Watermark on Video with OpenCV and FFmpeg" class="md-nav__link">
-      Add Watermark on Video with OpenCV and FFmpeg
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Develop DLNA Using Platinum Library/" title="Develop DLNA Using Platinum Library" class="md-nav__link">
-      Develop DLNA Using Platinum Library
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/FFmpeg and SDL tutorial 1/" title="FFmpeg and SDL tutorial 1" class="md-nav__link">
-      FFmpeg and SDL tutorial 1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/FFmpeg compiled on MacOS/" title="FFmpeg compiled on MacOS" class="md-nav__link">
-      FFmpeg compiled on MacOS
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/FFmpeg version 3.1.4 example code/" title="FFmpeg version 3.1.4 example code" class="md-nav__link">
-      FFmpeg version 3.1.4 example code
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg 2.8.6 example code - transcoding" class="md-nav__link">
-      FFmpeg 2.8.6 example code - transcoding
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Nmap Basics/" title="[Nmap](https://nmap.org) Basics" class="md-nav__link">
-      [Nmap](https://nmap.org) Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Use GDB/" title="Use GDB" class="md-nav__link">
-      Use GDB
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/User OpenCV to add watermark on a video/" title="User OpenCV to add watermark on a video" class="md-nav__link">
-      User OpenCV to add watermark on a video
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Wireshark Basics/" title="Wireshark Basics" class="md-nav__link">
-      Wireshark Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Optimizing App Startup Time/" title="一次优化App启动速度的体验" class="md-nav__link">
-      一次优化App启动速度的体验
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/OpenVPN on Raspberry Pi/" title="OpenVPN on Raspberry Pi" class="md-nav__link">
-      OpenVPN on Raspberry Pi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/swift on client and server/" title="Swift On Server End" class="md-nav__link">
-      Swift On Server End
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/my hardware/" title="花生壳动态域名" class="md-nav__link">
-      花生壳动态域名
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/kotlin/" title="安装最新JDK" class="md-nav__link">
-      安装最新JDK
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/Convert MP4 to GIF With FFmpeg/" title="Convert MP4 to GIF With FFmpeg" class="md-nav__link">
-      Convert MP4 to GIF With FFmpeg
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/jupyterhub/" title="issue 1" class="md-nav__link">
-      issue 1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/tech share/" title="Tech share" class="md-nav__link">
-      Tech share
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tech/bluegogo-crack/" title="Bluegogo crack" class="md-nav__link">
-      Bluegogo crack
+    <a href="../../../../geek/Convert MP4 to GIF With FFmpeg/" title="使用FFmpeg将MP4转成GIF图片" class="md-nav__link">
+      使用FFmpeg将MP4转成GIF图片
     </a>
   </li>
 
@@ -633,13 +761,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
     
-    <label class="md-nav__link" for="nav-2-2">
+    <label class="md-nav__link" for="nav-4-14">
       Jenkins
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
+      <label class="md-nav__title" for="nav-4-14">
         Jenkins
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -753,13 +881,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
     
-    <label class="md-nav__link" for="nav-2-3">
+    <label class="md-nav__link" for="nav-4-15">
       ReactiveX
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
+      <label class="md-nav__title" for="nav-4-15">
         ReactiveX
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -849,13 +977,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
     
-    <label class="md-nav__link" for="nav-2-4">
+    <label class="md-nav__link" for="nav-4-16">
       Docker
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
+      <label class="md-nav__title" for="nav-4-16">
         Docker
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -957,13 +1085,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
     
-    <label class="md-nav__link" for="nav-2-5">
+    <label class="md-nav__link" for="nav-4-17">
       Nginx
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
+      <label class="md-nav__title" for="nav-4-17">
         Nginx
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1005,13 +1133,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
     
-    <label class="md-nav__link" for="nav-2-6">
+    <label class="md-nav__link" for="nav-4-18">
       iOS
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-6">
+      <label class="md-nav__title" for="nav-4-18">
         iOS
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1058,15 +1186,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../../../geek/swift on client and server/" title="Swift在客户端和服务端的使用" class="md-nav__link">
+      Swift在客户端和服务端的使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6-4" type="checkbox" id="nav-2-6-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-5" type="checkbox" id="nav-4-18-5">
     
-    <label class="md-nav__link" for="nav-2-6-4">
+    <label class="md-nav__link" for="nav-4-18-5">
       服务端Swift
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-6-4">
+      <label class="md-nav__title" for="nav-4-18-5">
         服务端Swift
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1133,6 +1273,18 @@
   <li class="md-nav__item">
     <a href="../../../../iOS/optimization/" title="应用优化" class="md-nav__link">
       应用优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../geek/Optimizing App Startup Time/" title="优化应用启动时长" class="md-nav__link">
+      优化应用启动时长
     </a>
   </li>
 
@@ -1211,13 +1363,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19" checked>
     
-    <label class="md-nav__link" for="nav-2-7">
+    <label class="md-nav__link" for="nav-4-19">
       乐理基础
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-7">
+      <label class="md-nav__title" for="nav-4-19">
         乐理基础
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1230,13 +1382,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-1" type="checkbox" id="nav-2-7-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-1" type="checkbox" id="nav-4-19-1">
     
-    <label class="md-nav__link" for="nav-2-7-1">
+    <label class="md-nav__link" for="nav-4-19-1">
       乐音
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-1">
+      <label class="md-nav__title" for="nav-4-19-1">
         乐音
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1266,13 +1418,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-2" type="checkbox" id="nav-2-7-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-2" type="checkbox" id="nav-4-19-2">
     
-    <label class="md-nav__link" for="nav-2-7-2">
+    <label class="md-nav__link" for="nav-4-19-2">
       节拍
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-2">
+      <label class="md-nav__title" for="nav-4-19-2">
         节拍
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1302,13 +1454,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-3" type="checkbox" id="nav-2-7-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-3" type="checkbox" id="nav-4-19-3">
     
-    <label class="md-nav__link" for="nav-2-7-3">
+    <label class="md-nav__link" for="nav-4-19-3">
       曲调
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-3">
+      <label class="md-nav__title" for="nav-4-19-3">
         曲调
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1338,13 +1490,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-4" type="checkbox" id="nav-2-7-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-4" type="checkbox" id="nav-4-19-4">
     
-    <label class="md-nav__link" for="nav-2-7-4">
+    <label class="md-nav__link" for="nav-4-19-4">
       伴奏
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-4">
+      <label class="md-nav__title" for="nav-4-19-4">
         伴奏
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1374,13 +1526,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-5" type="checkbox" id="nav-2-7-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-5" type="checkbox" id="nav-4-19-5">
     
-    <label class="md-nav__link" for="nav-2-7-5">
+    <label class="md-nav__link" for="nav-4-19-5">
       修饰
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-5">
+      <label class="md-nav__title" for="nav-4-19-5">
         修饰
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1410,13 +1562,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-6" type="checkbox" id="nav-2-7-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-6" type="checkbox" id="nav-4-19-6">
     
-    <label class="md-nav__link" for="nav-2-7-6">
+    <label class="md-nav__link" for="nav-4-19-6">
       编曲
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-6">
+      <label class="md-nav__title" for="nav-4-19-6">
         编曲
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1448,13 +1600,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7-7" type="checkbox" id="nav-2-7-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-7" type="checkbox" id="nav-4-19-7" checked>
     
-    <label class="md-nav__link" for="nav-2-7-7">
+    <label class="md-nav__link" for="nav-4-19-7">
       附录
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-7-7">
+      <label class="md-nav__title" for="nav-4-19-7">
         附录
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1501,14 +1653,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-3">
-      About
+    <label class="md-nav__link" for="nav-5">
+      关于我
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        About
+      <label class="md-nav__title" for="nav-5">
+        关于我
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1519,159 +1671,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../How I create this blog/" title="This Blog" class="md-nav__link">
-      This Blog
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      Job
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        Job
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../job/My Plan for finding Job/" title="My plan for finding job" class="md-nav__link">
-      My plan for finding job
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../job/dimission/" title="离职时需要注意的问题" class="md-nav__link">
-      离职时需要注意的问题
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
-    
-    <label class="md-nav__link" for="nav-3-3">
-      Life
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
-        Life
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../life/alipay-scan-fu-icon/" title="Alipay scan fu icon" class="md-nav__link">
-      Alipay scan fu icon
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../life/Renting in Beijing/" title="北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)" class="md-nav__link">
-      北京市海淀区学院路街道紫清家园3号楼-2单元-2804(合租)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../life/Gu Bei Shui Zhen/" title="2017年古北水镇国庆旅游计划" class="md-nav__link">
-      2017年古北水镇国庆旅游计划
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
-    
-    <label class="md-nav__link" for="nav-3-4">
-      Me
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        Me
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../me/Personal Pre-Work Record/" title="Personal Pre-Work Record" class="md-nav__link">
-      Personal Pre-Work Record
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../me/My Financial Planning/" title="我的理财规划" class="md-nav__link">
-      我的理财规划
+    <a href="../../../../me/My Financial Planning/" title="理财" class="md-nav__link">
+      理财
     </a>
   </li>
 
@@ -1694,35 +1695,11 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../me/jokerhub/" title="jokerhub 域名申请" class="md-nav__link">
-      jokerhub 域名申请
+    <a href="../../../../me/my hardware/" title="硬件" class="md-nav__link">
+      硬件
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      Game
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        Game
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -1730,14 +1707,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../minecraft/minecraft/" title="Minecraft 最新版(1.12) 自建体验" class="md-nav__link">
-      Minecraft 最新版(1.12) 自建体验
+    <a href="../../../../me/Personal Pre-Work Record/" title="早起记录" class="md-nav__link">
+      早起记录
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -1815,13 +1787,13 @@
           </a>
         
         
-          <a href="../../../../How I create this blog/" title="This Blog" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../../../me/My Financial Planning/" title="理财" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                This Blog
+                理财
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1847,7 +1819,6 @@
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../../assets/fonts/font-awesome.css">
     
@@ -1859,14 +1830,13 @@
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../../assets/javascripts/application.b806dc00.js"></script>
       
         
         
@@ -1885,16 +1855,11 @@
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
         <script src="../../../../javascripts/extra.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-36723568-3","mkdocs.org"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>

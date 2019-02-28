@@ -1,0 +1,2203 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is my personal blog as documentr">
+      
+      
+        <link rel="canonical" href="http://jokerblog.readthedocs.io/geek/Installation of Ubuntu 16.04 On UDisk/">
+      
+      
+        <meta name="author" content="wangzhizhou">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>U盘安装Ubuntu - Joker Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-36723568-3", "mkdocs.org")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#installation-of-ubuntu-1604-on-udisk" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Joker Blog
+            </span>
+            <span class="md-header-nav__topic">
+              U盘安装Ubuntu
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." title="主页" class="md-tabs__link">
+          主页
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../job/My Plan for finding Job/" title="工作" class="md-tabs__link">
+          工作
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../life/alipay-scan-fu-icon/" title="生活" class="md-tabs__link">
+          生活
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Network Simulator 2 Installation Guide for Ubuntu/" title="Geek" class="md-tabs__link md-tabs__link--active">
+          Geek
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../me/My Financial Planning/" title="关于我" class="md-tabs__link">
+          关于我
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://jokerblog.readthedocs.io" title="Joker Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Joker Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      主页
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        主页
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../How I create this blog/" title="博客创建过程" class="md-nav__link">
+      博客创建过程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      工作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        工作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job/My Plan for finding Job/" title="求职" class="md-nav__link">
+      求职
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job/dimission/" title="离职" class="md-nav__link">
+      离职
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      生活
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        生活
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/alipay-scan-fu-icon/" title="支付宝集福" class="md-nav__link">
+      支付宝集福
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Renting in Beijing/" title="北京租房" class="md-nav__link">
+      北京租房
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Gu Bei Shui Zhen/" title="古北水镇游玩" class="md-nav__link">
+      古北水镇游玩
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../minecraft/minecraft/" title="我的世界游戏" class="md-nav__link">
+      我的世界游戏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Geek
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Geek
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Network Simulator 2 Installation Guide for Ubuntu/" title="Ubuntu安装NS2网络模拟器" class="md-nav__link">
+      Ubuntu安装NS2网络模拟器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Learn STL In 30 Minutes/" title="30分钟掌握STL" class="md-nav__link">
+      30分钟掌握STL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        U盘安装Ubuntu
+      </label>
+    
+    <a href="./" title="U盘安装Ubuntu" class="md-nav__link md-nav__link--active">
+      U盘安装Ubuntu
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-1604" title="安装Ubuntu 16.04" class="md-nav__link">
+    安装Ubuntu 16.04
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Configure Git Server With Ubuntn and Apache 2/" title="搭建Git服务" class="md-nav__link">
+      搭建Git服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../User OpenCV to add watermark on a video/" title="OpenCV给视频添加水印" class="md-nav__link">
+      OpenCV给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Add Watermark on Video with OpenCV and FFmpeg/" title="OpenCV+FFmpeg给视频添加水印" class="md-nav__link">
+      OpenCV+FFmpeg给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Develop DLNA Using Platinum Library/" title="DLNA开发" class="md-nav__link">
+      DLNA开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Nmap Basics/" title="Nmap基础" class="md-nav__link">
+      Nmap基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Use GDB/" title="GDB使用" class="md-nav__link">
+      GDB使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin/" title="Kotlin学习" class="md-nav__link">
+      Kotlin学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../jupyterhub/" title="jupyterhub工具使用" class="md-nav__link">
+      jupyterhub工具使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bluegogo-crack/" title="bluegogo破解" class="md-nav__link">
+      bluegogo破解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      FFmpeg
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        FFmpeg
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg and SDL tutorial 1/" title="FFmpeg教程" class="md-nav__link">
+      FFmpeg教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg compiled on MacOS/" title="Mac上编译FFmpeg" class="md-nav__link">
+      Mac上编译FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../FFmpeg version 3.1.4 example code/" title="FFmpeg示例代码学习" class="md-nav__link">
+      FFmpeg示例代码学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg转码学习" class="md-nav__link">
+      FFmpeg转码学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Convert MP4 to GIF With FFmpeg/" title="使用FFmpeg将MP4转成GIF图片" class="md-nav__link">
+      使用FFmpeg将MP4转成GIF图片
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Jenkins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Jenkins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/" title="导览" class="md-nav__link">
+      导览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">
+      第一个管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">
+      多步管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">
+      定义执行环境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">
+      使用环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">
+      记录测试结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">
+      清理和通知
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">
+      布署
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      ReactiveX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        ReactiveX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Observable/" title="可观察的" class="md-nav__link">
+      可观察的
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Operators/" title="运算符" class="md-nav__link">
+      运算符
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Single/" title="单事件可观察对象" class="md-nav__link">
+      单事件可观察对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Subject/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Scheduler/" title="调度器" class="md-nav__link">
+      调度器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/start-learn/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Orientation/" title="定位" class="md-nav__link">
+      定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Container/" title="容器" class="md-nav__link">
+      容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Service/" title="服务" class="md-nav__link">
+      服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Swarm/" title="机群" class="md-nav__link">
+      机群
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Stack/" title="栈" class="md-nav__link">
+      栈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Deploy/" title="部署应用" class="md-nav__link">
+      部署应用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      Nginx
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        Nginx
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">
+      新手教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/application/" title="主要用途" class="md-nav__link">
+      主要用途
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      iOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        iOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/workflow/" title="工作流" class="md-nav__link">
+      工作流
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/XCode 9 CI/" title="持续集成" class="md-nav__link">
+      持续集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift4-notes/" title="Swift4" class="md-nav__link">
+      Swift4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift on client and server/" title="Swift在客户端和服务端的使用" class="md-nav__link">
+      Swift在客户端和服务端的使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-5" type="checkbox" id="nav-4-18-5">
+    
+    <label class="md-nav__link" for="nav-4-18-5">
+      服务端Swift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-18-5">
+        服务端Swift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[4]Swift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">
+      第四章Swfit包管理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">
+      第五章使用Kitura写ToDoList
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/objc/" title="OC相关" class="md-nav__link">
+      OC相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/reverse/" title="逆向工程" class="md-nav__link">
+      逆向工程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/optimization/" title="应用优化" class="md-nav__link">
+      应用优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Optimizing App Startup Time/" title="优化应用启动时长" class="md-nav__link">
+      优化应用启动时长
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/review/" title="面试" class="md-nav__link">
+      面试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/sort/" title="十大排序算法" class="md-nav__link">
+      十大排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/runtime/" title="OC运行时编译" class="md-nav__link">
+      OC运行时编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/design-pattern/" title="设计模式" class="md-nav__link">
+      设计模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../iOS/airdrop/" title="AirDrop社交" class="md-nav__link">
+      AirDrop社交
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19">
+    
+    <label class="md-nav__link" for="nav-4-19">
+      乐理基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-19">
+        乐理基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-1" type="checkbox" id="nav-4-19-1">
+    
+    <label class="md-nav__link" for="nav-4-19-1">
+      乐音
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-1">
+        乐音
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tones/Pitches and Clefs/" title="音高和谱号" class="md-nav__link">
+      音高和谱号
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-2" type="checkbox" id="nav-4-19-2">
+    
+    <label class="md-nav__link" for="nav-4-19-2">
+      节拍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-2">
+        节拍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/rhythms/Note Values and Basic Notation/" title="Note Values and Basic Notation" class="md-nav__link">
+      Note Values and Basic Notation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-3" type="checkbox" id="nav-4-19-3">
+    
+    <label class="md-nav__link" for="nav-4-19-3">
+      曲调
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-3">
+        曲调
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">
+      Melodies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-4" type="checkbox" id="nav-4-19-4">
+    
+    <label class="md-nav__link" for="nav-4-19-4">
+      伴奏
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-4">
+        伴奏
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/accompanying/Transcribing What You Hear/" title="Transcribing What You Hear" class="md-nav__link">
+      Transcribing What You Hear
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-5" type="checkbox" id="nav-4-19-5">
+    
+    <label class="md-nav__link" for="nav-4-19-5">
+      修饰
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-5">
+        修饰
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/embellishing/Harmony and Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">
+      Harmony and Counterpoint
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-6" type="checkbox" id="nav-4-19-6">
+    
+    <label class="md-nav__link" for="nav-4-19-6">
+      编曲
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-6">
+        编曲
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/arranging/composing and arranging for voices and instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">
+      Composing and arranging for voices and instruments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19-7" type="checkbox" id="nav-4-19-7">
+    
+    <label class="md-nav__link" for="nav-4-19-7">
+      附录
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-19-7">
+        附录
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">
+      A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      关于我
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        关于我
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Financial Planning/" title="理财" class="md-nav__link">
+      理财
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Life in Beijing/" title="人在北京" class="md-nav__link">
+      人在北京
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/my hardware/" title="硬件" class="md-nav__link">
+      硬件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Personal Pre-Work Record/" title="早起记录" class="md-nav__link">
+      早起记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-1604" title="安装Ubuntu 16.04" class="md-nav__link">
+    安装Ubuntu 16.04
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/geek/Installation of Ubuntu 16.04 On UDisk.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="installation-of-ubuntu-1604-on-udisk">Installation of Ubuntu 16.04 On UDisk<a class="headerlink" href="#installation-of-ubuntu-1604-on-udisk" title="Permanent link">&para;</a></h1>
+<h3 id="ubuntu-1604">安装Ubuntu 16.04<a class="headerlink" href="#ubuntu-1604" title="Permanent link">&para;</a></h3>
+<p>我是在Mac电脑下工作的，首先需要制作一个U盘安装盘。因为Mac电脑是通过UEFI引导的，所以需要将U盘分区为GUID格式的，当然如果你不是在Mac下工作，就不必分区为GUID了，这样分区只是为了让UEFI可以在引导菜单中显示制作好的U盘安装盘。</p>
+<p>在Mac下制U盘安装盘，首先要将下载好的IOS镜像文件转化成为IMG格式，假设我的Ubuntu系统IOS文件名为：<strong>ubuntu-16.04-desktop-i386.iso</strong>, 使用如下命令进行格式转化:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">wangzhizhou$</span>  <span class="n">hdiutil</span> <span class="n">convert</span> <span class="o">-</span><span class="n">format</span> <span class="n">UDRW</span> <span class="o">-</span><span class="n">o</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="na">img</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="na">iso</span>
+</pre></div>
+</td></tr></table>
+
+<p>转化后的文件名为：<code class="codehilite">ubuntu-16.04-desktop-i386.img.dmg</code>，这个其实名字没什么关系，重要的是镜像的内容按照Mac可识别的格式得到了转化，之后我们就将转化后的文件写入U盘。</p>
+<p>写入U盘前，首先要找到U盘，我们使用<code class="codehilite">diskutil list</code>将当前插入电脑的所有磁盘显示出来，找出我们想要写入的那个,我这里显示如下：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">wangzhizhou$</span> <span class="n">diskutil</span> <span class="n">list</span>
+<span class="sr">/dev/</span><span class="n">disk0</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">121.3</span> <span class="n">GB</span>   <span class="n">disk0</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">EFI</span>                     <span class="mf">209.7</span> <span class="n">MB</span>   <span class="n">disk0s1</span>
+   <span class="mi">2</span><span class="o">:</span>          <span class="n">Apple_CoreStorage</span> <span class="n">Macintosh</span> <span class="n">HD</span>            <span class="mf">120.5</span> <span class="n">GB</span>   <span class="n">disk0s2</span>
+   <span class="mi">3</span><span class="o">:</span>                 <span class="n">Apple_Boot</span> <span class="n">Recovery</span> <span class="n">HD</span>             <span class="mf">650.0</span> <span class="n">MB</span>   <span class="n">disk0s3</span>
+<span class="sr">/dev/</span><span class="n">disk1</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">virtual</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>                  <span class="n">Apple_HFS</span> <span class="n">Macintosh</span> <span class="n">HD</span>           <span class="o">+</span><span class="mf">120.1</span> <span class="n">GB</span>   <span class="n">disk1</span>
+                                 <span class="n">Logical</span> <span class="n">Volume</span> <span class="n">on</span> <span class="n">disk0s2</span>
+                                 <span class="n">DA03CC12</span><span class="o">-</span><span class="mi">7</span><span class="n">D54</span><span class="o">-</span><span class="mi">44</span><span class="n">AA</span><span class="o">-</span><span class="n">ADC8</span><span class="o">-</span><span class="mi">424073352296</span>
+                                 <span class="n">Unlocked</span> <span class="n">Encrypted</span>
+<span class="sr">/dev/</span><span class="n">disk2</span> <span class="o">(</span><span class="n">external</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">61.9</span> <span class="n">GB</span>    <span class="n">disk2</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">EFI</span>                     <span class="mf">209.7</span> <span class="n">MB</span>   <span class="n">disk2s1</span>
+   <span class="mi">2</span><span class="o">:</span>                  <span class="n">Apple_HFS</span>                         <span class="mf">61.6</span> <span class="n">GB</span>    <span class="n">disk2s2</span>
+</pre></div>
+</td></tr></table>
+
+<p>从上面看出，我要写入的U盘是<code class="codehilite">/dev/disk2</code>,因为它是外部物理盘，并磁盘大小与我的U盘大小一致，64GB左右。我已经使用磁盘工具把它格式化成GUID分区，所以支持UEFI引导。</p>
+<p>我们先用命令把U盘推出，这样也能进行写入操作，因为我们是写入系统镜像，如果不推出就写入的话，不能写到磁盘的最开始部分，也就无法进行引导。我U盘的挂载点为<code class="codehilite">/Volumes/Ubuntu/</code>，所以使用如下命令：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">wangzhizhou$</span> <span class="n">diskutil</span> <span class="n">unmount</span> <span class="sr">/Volumes/Ubuntu/</span>
+<span class="n">Volume</span> <span class="n">Ubuntu</span> <span class="n">on</span> <span class="n">disk2s2</span> <span class="n">unmounted</span>
+</pre></div>
+</td></tr></table>
+
+<p>既然U盘已从挂载点卸载，我们就可以写入系统镜像文件了，注意是转化后的文件<code class="codehilite">ubuntu-16.04-desktop-i386.img.dmg</code>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">wangzhizhou$</span> <span class="n">sudo</span> <span class="n">dd</span> <span class="k">if</span><span class="o">=</span><span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">i386</span><span class="o">.</span><span class="na">img</span><span class="o">.</span><span class="na">dmg</span> <span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span> <span class="n">bs</span><span class="o">=</span><span class="mi">1024</span><span class="n">m</span>
+<span class="n">Password</span><span class="o">:</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="n">records</span> <span class="k">in</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="n">records</span> <span class="n">out</span>
+<span class="mi">1504051200</span> <span class="n">bytes</span> <span class="n">transferred</span> <span class="k">in</span> <span class="mf">96.270441</span> <span class="n">secs</span> <span class="o">(</span><span class="mi">15623188</span> <span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="o">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>注意，我们使用了<code class="codehilite">/dev/rdisk2</code>作为写入的目标磁盘，rdisk2对应于disk2，通常使用它能够以更快的速度写入U盘，r代表removeable，即可移动磁盘的意思。</p>
+<p>现在我们重启Mac，并在重启过程中按下<code class="codehilite">option</code>不放直到启动菜单出现我们的U盘安装盘，如果没有出现，说明没有制作成功，一定是哪个环节没有按步骤来，需要重头来一遍。注意U盘要插在电脑上。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">wangzhizhou$</span> <span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</td></tr></table>
+
+<p>重启电脑</p>
+<p>之后就是正常的安装Ubuntu了，自己去摸索吧～</p>
+<p>我靠，开机后居然不能引导，经过不断的百度，有网友称Ubuntu只对64位版本提供UEFI引导模式，呜呼，又得重新来一遍。先下载一个64位版的Ubuntu安装镜像，然后再重新来一次吧。如果使用传统BIOS引导完全不存在这种情况。</p>
+<p><strong>这次文件名为：<code class="codehilite">ubuntu-16.04-desktop-amd64.iso</code>,就不一一说明了，直接贴命令行：</strong></p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">JokerAtBaoFeng$</span> <span class="n">diskutil</span> <span class="n">list</span>
+<span class="sr">/dev/</span><span class="n">disk0</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">251.0</span> <span class="n">GB</span>   <span class="n">disk0</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">EFI</span>                     <span class="mf">209.7</span> <span class="n">MB</span>   <span class="n">disk0s1</span>
+   <span class="mi">2</span><span class="o">:</span>          <span class="n">Apple_CoreStorage</span> <span class="n">Macintosh</span> <span class="n">HD</span>            <span class="mf">250.1</span> <span class="n">GB</span>   <span class="n">disk0s2</span>
+   <span class="mi">3</span><span class="o">:</span>                 <span class="n">Apple_Boot</span> <span class="n">Recovery</span> <span class="n">HD</span>             <span class="mf">650.0</span> <span class="n">MB</span>   <span class="n">disk0s3</span>
+<span class="sr">/dev/</span><span class="n">disk1</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">virtual</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>                  <span class="n">Apple_HFS</span> <span class="n">Macintosh</span> <span class="n">HD</span>           <span class="o">+</span><span class="mf">249.8</span> <span class="n">GB</span>   <span class="n">disk1</span>
+                                 <span class="n">Logical</span> <span class="n">Volume</span> <span class="n">on</span> <span class="n">disk0s2</span>
+                                 <span class="mi">3</span><span class="n">B2115D8</span><span class="o">-</span><span class="mi">1852</span><span class="o">-</span><span class="mi">411</span><span class="n">F</span><span class="o">-</span><span class="mi">9052</span><span class="o">-</span><span class="n">ABA876FD6128</span>
+                                 <span class="n">Unencrypted</span>
+<span class="sr">/dev/</span><span class="n">disk2</span> <span class="o">(</span><span class="n">external</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">61.9</span> <span class="n">GB</span>    <span class="n">disk2</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">EFI</span>                     <span class="mf">209.7</span> <span class="n">MB</span>   <span class="n">disk2s1</span>
+   <span class="mi">2</span><span class="o">:</span>                  <span class="n">Apple_HFS</span> <span class="n">Ubuntu16</span><span class="o">.</span><span class="mi">04</span><span class="n">_64</span>          <span class="mf">61.6</span> <span class="n">GB</span>    <span class="n">disk2s2</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">JokerAtBaoFeng$</span> <span class="n">diskutil</span> <span class="n">unmountDisk</span> <span class="sr">/dev/</span><span class="n">disk2</span>
+<span class="n">Unmount</span> <span class="n">of</span> <span class="n">all</span> <span class="n">volumes</span> <span class="n">on</span> <span class="n">disk2</span> <span class="n">was</span> <span class="n">successful</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">JokerAtBaoFeng$</span> <span class="n">hdiutil</span> <span class="n">convert</span> <span class="o">-</span><span class="n">format</span> <span class="n">UDRW</span> <span class="o">-</span><span class="n">o</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">amd64</span> <span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="na">iso</span>
+<span class="err">正在读取</span><span class="n">Driver</span> <span class="n">Descriptor</span> <span class="n">Map</span><span class="err">（</span><span class="n">DDM</span><span class="err">：</span><span class="mi">0</span><span class="err">）…</span>
+<span class="err">正在读取</span><span class="n">Ubuntu</span> <span class="mf">16.04</span> <span class="n">LTS</span> <span class="n">amd64</span>          <span class="err">（</span><span class="n">Apple_ISO</span><span class="err">：</span><span class="mi">1</span><span class="err">）…</span>
+<span class="err">正在读取</span><span class="n">Apple</span><span class="err">（</span><span class="n">Apple_partition_map</span><span class="err">：</span><span class="mi">2</span><span class="err">）…</span>
+<span class="err">正在读取</span><span class="n">Ubuntu</span> <span class="mf">16.04</span> <span class="n">LTS</span> <span class="n">amd64</span>          <span class="err">（</span><span class="n">Apple_ISO</span><span class="err">：</span><span class="mi">3</span><span class="err">）…</span>
+<span class="o">..............................................................................</span>
+<span class="err">正在读取</span><span class="n">EFI</span><span class="err">（</span><span class="n">Apple_HFS</span><span class="err">：</span><span class="mi">4</span><span class="err">）…</span>
+<span class="o">..............................................................................</span>
+<span class="err">正在读取</span><span class="n">Ubuntu</span> <span class="mf">16.04</span> <span class="n">LTS</span> <span class="n">amd64</span>          <span class="err">（</span><span class="n">Apple_ISO</span><span class="err">：</span><span class="mi">5</span><span class="err">）…</span>
+<span class="o">..............................................................................</span>
+<span class="err">已耗时：</span> <span class="mf">3.304</span><span class="n">s</span>
+<span class="err">速度：</span><span class="mf">428.8</span><span class="n">M</span> <span class="err">字节</span><span class="o">/</span><span class="err">秒</span>
+<span class="err">节省：</span><span class="mf">0.0</span><span class="o">%</span>
+<span class="n">created</span><span class="o">:</span> <span class="sr">/Users/JokerAtBaoFeng/Downloads/</span><span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="na">dmg</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">Downloads</span> <span class="n">JokerAtBaoFeng$</span> <span class="n">sudo</span> <span class="n">dd</span> <span class="k">if</span><span class="o">=</span><span class="n">ubuntu</span><span class="o">-</span><span class="mf">16.04</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="na">dmg</span> <span class="n">of</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">rdisk2</span> <span class="n">bs</span><span class="o">=</span><span class="mi">1024</span><span class="n">m</span>
+<span class="n">Password</span><span class="o">:</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="n">records</span> <span class="k">in</span>
+<span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="n">records</span> <span class="n">out</span>
+<span class="mi">1485881344</span> <span class="n">bytes</span> <span class="n">transferred</span> <span class="k">in</span> <span class="mf">95.220324</span> <span class="n">secs</span> <span class="o">(</span><span class="mi">15604666</span> <span class="n">bytes</span><span class="o">/</span><span class="n">sec</span><span class="o">)</span>
+</pre></div>
+</td></tr></table>
+系统镜像写入完成后，会弹出一个对话框，选择忽略即可。这次应该可以了，64位Ubuntu支持UEFI启动，并且我们的U盘已经按GUID分区方案分过区，现在重启Mac，并按住<code class="codehilite">option</code>不放即可。启动菜单这次会弹出U盘安装盘选项了。</p>
+<p>哦这里又出现问题了，按住<code class="codehilite">option</code>重启后依然没有引导项，这是因为安装过程中，EFI引导文件被安装到了系统磁盘的EFI分区了，我们需要把那个文件拷到安装系统的U盘上的那个EFI分区。我们进入Mactonish HD，启动OS X，在命令行中把所有磁盘都列出来：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">ubuntu</span> <span class="n">wangzhizhou$</span> <span class="n">diskutil</span> <span class="n">list</span>
+<span class="sr">/dev/</span><span class="n">disk0</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">121.3</span> <span class="n">GB</span>   <span class="n">disk0</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">EFI</span>                     <span class="mf">209.7</span> <span class="n">MB</span>   <span class="n">disk0s1</span>
+   <span class="mi">2</span><span class="o">:</span>          <span class="n">Apple_CoreStorage</span> <span class="n">Macintosh</span> <span class="n">HD</span>            <span class="mf">120.5</span> <span class="n">GB</span>   <span class="n">disk0s2</span>
+   <span class="mi">3</span><span class="o">:</span>                 <span class="n">Apple_Boot</span> <span class="n">Recovery</span> <span class="n">HD</span>             <span class="mf">650.0</span> <span class="n">MB</span>   <span class="n">disk0s3</span>
+<span class="sr">/dev/</span><span class="n">disk1</span> <span class="o">(</span><span class="kd">internal</span><span class="o">,</span> <span class="n">virtual</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>                  <span class="n">Apple_HFS</span> <span class="n">Macintosh</span> <span class="n">HD</span>           <span class="o">+</span><span class="mf">120.1</span> <span class="n">GB</span>   <span class="n">disk1</span>
+                                 <span class="n">Logical</span> <span class="n">Volume</span> <span class="n">on</span> <span class="n">disk0s2</span>
+                                 <span class="n">DA03CC12</span><span class="o">-</span><span class="mi">7</span><span class="n">D54</span><span class="o">-</span><span class="mi">44</span><span class="n">AA</span><span class="o">-</span><span class="n">ADC8</span><span class="o">-</span><span class="mi">424073352296</span>
+                                 <span class="n">Unlocked</span> <span class="n">Encrypted</span>
+<span class="sr">/dev/</span><span class="n">disk2</span> <span class="o">(</span><span class="n">external</span><span class="o">,</span> <span class="n">physical</span><span class="o">):</span>
+   <span class="err">#</span><span class="o">:</span>                       <span class="n">TYPE</span> <span class="n">NAME</span>                    <span class="n">SIZE</span>       <span class="n">IDENTIFIER</span>
+   <span class="mi">0</span><span class="o">:</span>      <span class="n">GUID_partition_scheme</span>                        <span class="o">*</span><span class="mf">62.6</span> <span class="n">GB</span>    <span class="n">disk2</span>
+   <span class="mi">1</span><span class="o">:</span>                        <span class="n">EFI</span> <span class="n">NO</span> <span class="n">NAME</span>                 <span class="mf">499.1</span> <span class="n">MB</span>   <span class="n">disk2s1</span>
+   <span class="mi">2</span><span class="o">:</span>        <span class="n">Bios</span> <span class="n">Boot</span> <span class="n">Partition</span>                         <span class="mf">127.9</span> <span class="n">MB</span>   <span class="n">disk2s2</span>
+   <span class="mi">3</span><span class="o">:</span>                 <span class="n">Linux</span> <span class="n">Swap</span>                         <span class="mf">4.1</span> <span class="n">GB</span>     <span class="n">disk2s3</span>
+   <span class="mi">4</span><span class="o">:</span>           <span class="n">Linux</span> <span class="n">Filesystem</span>                         <span class="mf">57.9</span> <span class="n">GB</span>    <span class="n">disk2s4</span>
+</pre></div>
+</td></tr></table>
+
+<p>我们将EFI分区：<code class="codehilite">/dev/disk0s1</code>和<code class="codehilite">/dev/disk2s1</code>都挂载到路径<code class="codehilite">/Volumes</code>下，使用下面的命令：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">localhost</span><span class="o">:~</span> <span class="nt">wangzhizhou</span><span class="o">$</span> <span class="nt">diskutil</span> <span class="nt">mount</span> <span class="o">/</span><span class="nt">dev</span><span class="o">/</span><span class="nt">disk0s1</span><span class="o">;</span><span class="nt">diskutil</span> <span class="nt">mount</span> <span class="o">/</span><span class="nt">dev</span><span class="o">/</span><span class="nt">disk2s1</span>
+<span class="nt">Volume</span> <span class="nt">EFI</span> <span class="nt">on</span> <span class="o">/</span><span class="nt">dev</span><span class="o">/</span><span class="nt">disk0s1</span> <span class="nt">mounted</span>
+<span class="nt">Volume</span> <span class="nt">NO</span> <span class="nt">NAME</span> <span class="nt">on</span> <span class="o">/</span><span class="nt">dev</span><span class="o">/</span><span class="nt">disk2s1</span> <span class="nt">mounted</span>
+<span class="nt">localhost</span><span class="o">:~</span> <span class="nt">wangzhizhou</span><span class="o">$</span> <span class="nt">ls</span> <span class="o">/</span><span class="nt">Volumes</span><span class="o">/</span>
+<span class="nt">EFI</span>     <span class="nt">Macintosh</span> <span class="nt">HD</span>    <span class="nt">NO</span> <span class="nt">NAME</span>
+<span class="nt">localhost</span><span class="p">:</span><span class="nd">NO</span> <span class="nt">NAME</span> <span class="nt">wangzhizhou</span><span class="o">$</span> <span class="nt">ls</span> <span class="o">/</span><span class="nt">Volumes</span><span class="o">/</span><span class="nt">EFI</span><span class="o">/</span> <span class="o">/</span><span class="nt">Volumes</span><span class="o">/</span><span class="nt">NO</span><span class="err">\</span> <span class="nt">NAME</span><span class="o">/</span>
+<span class="o">/</span><span class="nt">Volumes</span><span class="o">/</span><span class="nt">EFI</span><span class="o">/:</span>
+<span class="nt">EFI</span>
+
+<span class="o">/</span><span class="nt">Volumes</span><span class="o">/</span><span class="nt">NO</span> <span class="nt">NAME</span><span class="o">/:</span>
+</pre></div>
+</td></tr></table>
+
+<p><code class="codehilite">/Volumes</code>下<code class="codehilite">EFI</code>和<code class="codehilite">NO NAME</code>目录就是两个EFI分区的挂载点，你发现<code class="codehilite">/Volumes/NO NAME/</code>目录下面什么也没有，这就是为什么U盘系统盘已经安装成功了却没法引导。因为它们错误的安装在了<code class="codehilite">/dev/disk0s1</code>下了,也就是挂载点<code class="codehilite">/Volumes/EFI</code>下了,我们需要把这些文件复制到<code class="codehilite">/Volumes/NO NAME/</code>,下，并作一些调整，用命令行说明吧，文字有点不太清楚了：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">NO</span> <span class="n">NAME</span> <span class="n">wangzhizhou$</span> <span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="sr">/Volumes/EFI/* /Volumes/NO\ NAME/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">cd</span> <span class="sr">/Volumes/NO\ NAME/EFI/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">ls</span>
+<span class="n">APPLE</span>   <span class="n">ubuntu</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">pwd</span>
+<span class="sr">/Volumes/NO NAME/</span><span class="n">EFI</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">APPLE</span><span class="o">/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">mkdir</span> <span class="n">boot</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">cp</span> <span class="n">ubuntu</span><span class="sr">/grubx64.efi boot/</span><span class="n">bootx64</span><span class="o">.</span><span class="na">efi</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">cd</span> <span class="sr">/Volumes/EFI/EFI/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">ls</span>
+<span class="n">APPLE</span>   <span class="n">ubuntu</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">ubuntu</span><span class="o">/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">EFI</span> <span class="n">wangzhizhou$</span> <span class="n">cd</span> <span class="sr">/Volumes/</span>
+<span class="n">localhost</span><span class="o">:</span><span class="n">Volumes</span> <span class="n">wangzhizhou$</span> <span class="n">diskutil</span> <span class="n">umount</span> <span class="n">EFI</span><span class="o">;</span><span class="n">diskutil</span> <span class="n">umount</span> <span class="n">NO</span><span class="o">\</span> <span class="n">NAME</span><span class="o">/</span>
+<span class="n">Volume</span> <span class="n">EFI</span> <span class="n">on</span> <span class="n">disk0s1</span> <span class="n">unmounted</span>
+<span class="n">Unmount</span> <span class="n">successful</span> <span class="k">for</span> <span class="n">NO</span> <span class="n">NAME</span><span class="o">/</span>
+</pre></div>
+</td></tr></table>
+
+<p>好了我们的系统U盘上的EFI分区已经有了引导信息，这次按住<code class="codehilite">option</code>并重启应该能够引导Ubuntu启动了。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">Volumes</span> <span class="n">wangzhizhou$</span> <span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://jokerblog.readthedocs.io/geek/Installation of Ubuntu 16.04 On UDisk/";
+      this.page.identifier =
+        "/geek/Installation of Ubuntu 16.04 On UDisk/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//jokerhub-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Learn STL In 30 Minutes/" title="30分钟掌握STL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                30分钟掌握STL
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Configure Git Server With Ubuntn and Apache 2/" title="搭建Git服务" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                搭建Git服务
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Created by Wang Zhizhou
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/wangzhizhou" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/w_z_z_1991" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wangzhizhou" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
