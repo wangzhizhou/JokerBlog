@@ -1,6 +1,6 @@
 site_name: "Joker Blog"
-site_url:  "http://jokerblog.readthedocs.io"
-site_description: "This is my personal blog as documentr"
+site_url:  "http://blog.jokerhub.cn"
+site_description: "This is my personal blog"
 site_author: "wangzhizhou"
 
 repo_url: "https://github.com/wangzhizhou/JokerBlog"
@@ -11,15 +11,12 @@ copyright: "Created by Wang Zhizhou"
 
 theme: 
   name: 'material'
-#   custom_dir: 'joker_theme'
   palette:
     primary: 'Green'
     accent: 'Orange'
   font: 
     text: 'Roboto Slab'
     code: 'Ubuntu Mono'
-  #logo: # 'images/logo.svg'
-    # icon: 'cloud'
   language: 'zh'
   direction: 'ltr'
   favicon: 'img/favicon.ico'
@@ -81,7 +78,7 @@ nav:
         - 北京租房: 'life/Renting in Beijing.md'
         - 古北水镇游玩: 'life/Gu Bei Shui Zhen.md'
         - 我的世界游戏: 'minecraft/minecraft.md'
-    - 'Geek':
+    - Geek:
         - Ubuntu安装NS2网络模拟器: 'geek/Network Simulator 2 Installation Guide for Ubuntu.md'
         - 30分钟掌握STL: 'geek/Learn STL In 30 Minutes.md'
         - U盘安装Ubuntu: 'geek/Installation of Ubuntu 16.04 On UDisk.md'
