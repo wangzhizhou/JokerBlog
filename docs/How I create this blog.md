@@ -220,12 +220,3 @@ git push -u origin master
 5. 在线浏览文档
 
 ![read the demo blog](/assets/pictures/readthedemoblog.png)
-
-# 我创建的几个文档示例
-
-- **[北上见面会](http://bsmeeting.readthedocs.io/zh/latest/)**
-
-- **[Joker手扎](http://km.readthedocs.io/zh/latest/)**
-
-
-

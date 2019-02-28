@@ -70,32 +70,36 @@ extra:
       link: 'https://linkedin.com/in/wangzhizhou'
 
 nav:
-    - 'Home': 'index.md'
-    - 'Z-turn': 
-        - 'Tech':
-            - 'tech/Network Simulator 2 Installation Guide for Ubuntu.md'
-            - 'tech/Learn STL In 30 Minutes.md'
-            - 'tech/Installation of Ubuntu 16.04 On UDisk.md'
-            - 'tech/Configure Git Server With Ubuntn and Apache 2.md'
-            - 'tech/Add Watermark on Video with OpenCV and FFmpeg.md'
-            - 'tech/Develop DLNA Using Platinum Library.md'
-            - 'tech/FFmpeg and SDL tutorial 1.md'
-            - 'tech/FFmpeg compiled on MacOS.md'
-            - 'tech/FFmpeg version 3.1.4 example code.md'
-            - 'tech/Fmpeg 2.8.6 example code - transcoding.md'
-            - 'tech/Nmap Basics.md'
-            - 'tech/Use GDB.md'
-            - 'tech/User OpenCV to add watermark on a video.md'
-            - 'tech/Wireshark Basics.md'
-            - 'tech/Optimizing App Startup Time.md'
-            - 'tech/OpenVPN on Raspberry Pi.md'
-            - 'tech/swift on client and server.md'
-            - 'tech/my hardware.md'
-            - 'tech/kotlin.md'
-            - 'tech/Convert MP4 to GIF With FFmpeg.md'
-            - 'tech/jupyterhub.md'
-            - 'tech/tech share.md'
-            - 'tech/bluegogo-crack.md'
+    - 主页:
+        - 简介: 'index.md'
+        - 博客创建过程: 'How I create this blog.md'
+    - 工作:
+        - 求职: 'job/My Plan for finding Job.md'
+        - 离职: 'job/dimission.md'
+    - 生活:
+        - 支付宝集福: 'life/alipay-scan-fu-icon.md'
+        - 北京租房: 'life/Renting in Beijing.md'
+        - 古北水镇游玩: 'life/Gu Bei Shui Zhen.md'
+        - 我的世界游戏: 'minecraft/minecraft.md'
+    - 'Geek':
+        - Ubuntu安装NS2网络模拟器: 'geek/Network Simulator 2 Installation Guide for Ubuntu.md'
+        - 30分钟掌握STL: 'geek/Learn STL In 30 Minutes.md'
+        - U盘安装Ubuntu: 'geek/Installation of Ubuntu 16.04 On UDisk.md'
+        - 搭建Git服务: 'geek/Configure Git Server With Ubuntn and Apache 2.md'
+        - OpenCV给视频添加水印: 'geek/User OpenCV to add watermark on a video.md'
+        - OpenCV+FFmpeg给视频添加水印: 'geek/Add Watermark on Video with OpenCV and FFmpeg.md'
+        - DLNA开发: 'geek/Develop DLNA Using Platinum Library.md'
+        - Nmap基础: 'geek/Nmap Basics.md'
+        - GDB使用: 'geek/Use GDB.md'
+        - Kotlin学习: 'geek/kotlin.md'
+        - jupyterhub工具使用: 'geek/jupyterhub.md'
+        - bluegogo破解: 'geek/bluegogo-crack.md'
+        - FFmpeg:
+            - FFmpeg教程: 'geek/FFmpeg and SDL tutorial 1.md'
+            - Mac上编译FFmpeg: 'geek/FFmpeg compiled on MacOS.md'
+            - FFmpeg示例代码学习: 'geek/FFmpeg version 3.1.4 example code.md'
+            - FFmpeg转码学习: 'geek/Fmpeg 2.8.6 example code - transcoding.md'
+            - 使用FFmpeg将MP4转成GIF图片: 'geek/Convert MP4 to GIF With FFmpeg.md'
         - Jenkins:
             - 导览: jenkins/guide/index.md
             - 第一个管道: jenkins/guide/first-pipeline.md
@@ -127,12 +131,14 @@ nav:
             - 工作流: "iOS/workflow.md"
             - 持续集成: "iOS/XCode 9 CI.md"
             - Swift4: "iOS/swift4-notes.md"
+            - Swift在客户端和服务端的使用: 'geek/swift on client and server.md'
             - 服务端Swift:
                 - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
                 - 第五章使用Kitura写ToDoList: "iOS/swift-on-server/[5]Writng-ToDoList-With-Kitura.md"
             - OC相关: "iOS/objc.md"
             - 逆向工程: "iOS/reverse.md"
             - 应用优化: "iOS/optimization.md"
+            - 优化应用启动时长: 'geek/Optimizing App Startup Time.md'
             - 面试: "iOS/review.md"
             - 十大排序算法: "iOS/sort.md"
             - OC运行时编译: "iOS/runtime.md"
@@ -153,20 +159,9 @@ nav:
                 - "music/theory/arranging/composing and arranging for voices and instruments.md"
             - 附录:
                 - "music/theory/appendixes/A.md"
-    - 'About': 
-        - 'This Blog': 'How I create this blog.md'
-        - 'Job': 
-            - 'job/My Plan for finding Job.md'
-            - 'job/dimission.md'
-        - 'Life':
-            - 'life/alipay-scan-fu-icon.md'
-            - 'life/Renting in Beijing.md'
-            - 'life/Gu Bei Shui Zhen.md'
-        - 'Me':
-            - 'me/Personal Pre-Work Record.md'
-            - 'me/My Financial Planning.md'
-            - 'me/Life in Beijing.md'
-            - 'me/jokerhub.md'   
-        - 'Game':
-            - 'minecraft/minecraft.md'
+    - 关于我: 
+        - 理财: 'me/My Financial Planning.md'
+        - 人在北京: 'me/Life in Beijing.md'
+        - 硬件: 'me/my hardware.md'
+        - 早起记录: 'me/Personal Pre-Work Record.md'
         
