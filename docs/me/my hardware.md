@@ -1,41 +1,15 @@
-# 花生壳动态域名
+# 域名
 
-**zhulongyixian.vicp.cc**
-
-## 路由器端口映射
-
-### Raspberry Pi 3 Model B+
-
-- Host IP: 192.168.0.200
-	- SSH Port: 22 -> 22
-	- HTTP Port: 80 -> 8000
-	- HTTPs Port: 5000 -> 443
-	- Gogs Port: 3000 -> 30237
-
-### USB-Armory inversePath 
-
-- Host IP: 192.168.0.202
-	- SSH Port: 22 -> 8004
-
-#### MacBook Pro (Retina, 13-inch, Early 2015)
-
-- Host IP: 192.168.0.201
-	- SSH Port: 22 -> 8001
-	- HTTP Port: 80 -> 8002
-	- Gogs Port: 3000 -> 8003
-
-### 魅蓝Note 2
-
-- Host IP: 192.168.0.203
-	- SSH Port: 22 -> 8005
-
-
-### SSH config file
-
-```
-SG9zdCBtYwogIEhvc3ROYW1lIHd3dy5vb2Jienlvby5jb20KICBVc2VyIGpva2VyCgpIb3N0IGthbGkKCUhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwoJVXNlciByb290CiAgICBQb3J0IDgwMDQKCkhvc3QgcGhvbmUKICAgIEhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwogICAgVXNlciBhbmRyb2lkCiAgICBQb3J0IDgwMDUKCkhvc3QgcGkKICAgIEhvc3ROYW1lIHpodWxvbmd5aXhpYW4udmljcC5jYwogICAgVXNlciBwaQo=
-```
-
-# jokerhub 域名申请
+## jokerhub.cn
 
 在百度云上申请了个人域名：`jokerhub.cn`, 暂时买了一年，费用28元人民币。
+
+## zhulongyixian.vicp.cc
+
+这是一个花生壳动态域名，因为申请的比较早，所以是永久免费的。
+
+# 硬件
+
+- Raspberry Pi 2B+
+- Raspberry Pi 3B+
+- [USB-Armory inversePath MK I](https://blog.csdn.net/w_z_z_1991/article/details/60781695)
