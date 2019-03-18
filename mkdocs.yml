@@ -79,6 +79,7 @@ nav:
         - 古北水镇游玩: 'life/Gu Bei Shui Zhen.md'
         - 我的世界游戏: 'minecraft/minecraft.md'
     - Geek:
+        - Git核心技能: 'geek/Git.md'
         - Ubuntu安装NS2网络模拟器: 'geek/Network Simulator 2 Installation Guide for Ubuntu.md'
         - 30分钟掌握STL: 'geek/Learn STL In 30 Minutes.md'
         - U盘安装Ubuntu: 'geek/Installation of Ubuntu 16.04 On UDisk.md'
@@ -128,6 +129,7 @@ nav:
             - 工作流: "iOS/workflow.md"
             - 持续集成: "iOS/XCode 9 CI.md"
             - Swift4: "iOS/swift4-notes.md"
+            - Swift5: "iOS/swift5-notes.md"
             - Swift在客户端和服务端的使用: 'geek/swift on client and server.md'
             - 服务端Swift:
                 - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
