@@ -63,15 +63,11 @@
 
 总计: ¥6418.5(5.4晚)
 
-## 景区游览计划
+## 景区游览实况
 
-### 夜游西栅
+油管视频，请自备梯子。QAQ
 
-### 东栅
-
-### 西塘日出日落
-
-### 嘉兴
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RVa9K2qdODo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### 杭州见老同学
 
