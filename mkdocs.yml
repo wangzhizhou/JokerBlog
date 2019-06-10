@@ -80,6 +80,7 @@ nav:
         - 乌镇游玩: 'life/WuZhen.md'
         - 我的世界游戏: 'minecraft/minecraft.md'
     - Geek:
+        - WireGuard: 'geek/wireguard.md'
         - Git核心技能: 'geek/Git.md'
         - Ubuntu安装NS2网络模拟器: 'geek/Network Simulator 2 Installation Guide for Ubuntu.md'
         - 30分钟掌握STL: 'geek/Learn STL In 30 Minutes.md'
@@ -143,6 +144,7 @@ nav:
             - 十大排序算法: "iOS/sort.md"
             - OC运行时编译: "iOS/runtime.md"
             - 设计模式: "iOS/design-pattern.md"
+            - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
         - 乐理基础: 
             - 乐音:
