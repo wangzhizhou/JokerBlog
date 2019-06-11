@@ -143,6 +143,7 @@ nav:
             - 面试: "iOS/review.md"
             - 十大排序算法: "iOS/sort.md"
             - OC运行时编译: "iOS/runtime.md"
+            - 线程编码指南: "iOS/TPG.md"
             - 设计模式: "iOS/design-pattern.md"
             - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
