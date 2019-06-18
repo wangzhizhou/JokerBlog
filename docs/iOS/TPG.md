@@ -1,4 +1,7 @@
 # 线程编程指南
+
+[Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
+
 ```
 - (void)launchThread 
 {
@@ -134,6 +137,11 @@ anObject = [myArray objectAtIndex:0];
 - NSDistributedLock
 - NSCondition 这个对应于条件信号量机制
 
+
+## 线程安全总结
+
+- 不可变对象是线程安全的，可变对象是线程不安全的
+- 
 ## 参考文章
 
 - [并发编程指南](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091)

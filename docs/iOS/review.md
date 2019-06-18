@@ -69,8 +69,9 @@
 # 属性列表和成员变量
 
 
-
 # KVC
+
+https://www.cnblogs.com/Jusive/p/5084250.html
 
 KVC本质上是操作方法列表以及在内存中查找实例变量，可以用来访问私用变量
 利用反射:NSStringFromSelector(@selector())可以减少KVC字符串写错
@@ -132,6 +133,8 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 # 类和元类的区别
 
 <https://www.jianshu.com/p/249b705d4fbb>
+
+![class and metaclass](/iOS/images/objc_class_metaclass.png)
 
 # JS与Native交互
 
@@ -642,9 +645,53 @@ int main(int argc, const char * argv[]) {
 # 猿辅导
 
 - 旋转打印矩阵
-- 拆分奇偶数双向链表结点为两个子链表
+```c++
+class Solution {
+    public:
+    vector<int> printMatrix(vector<vector<int> > matrix) {
+        vector<int> ret = vector<int>();
+        int m = min(matrix.size(), matrix[0].size());         
+        for(int i = 0; i <= m / 2; i++) {
+            help(i,matrix[0].size() - 2 * i, matrix.size() - 2 * i, matrix, ret);
+        }
+        return ret;
+    }
+
+    void help(int index, int w, int h, vector<vector<int> >&m, vector<int> &ret) {
+
+        if(w<=0 || h <=0) return;
+
+        int count = 0;
+        while(count < w) {
+            ret.push_back(m[index][index + count]);
+            count++;
+        }
+
+        count = 1;
+        while(count < h) {
+            ret.push_back(m[index + count][index + w - 1]);
+            count++;
+        }
+
+        count = w - 1;
+        while(h > 1 && count > 0){
+            ret.push_back(m[index + h - 1][index + count - 1]);
+            count--;
+        }
+
+        count = h - 2;
+        while(w > 1 && count > 0) {
+            ret.push_back(m[index + count][index]);
+            count--;
+        }
+    }
+};
+```
 - 找一个链表的中间结点
+    - 思路: 设置两个指针，一个每次走一步，另一个每次走两步，当每次走两步的指针到达尾部时，每次走一步的指针就到达中间结点。
+
 - 一个整型数组，相邻两个元素不能同时取出，求所有子序列和的最大值
+- 拆分奇偶数双向链表结点为两个子链表
 
 #百度多模搜索部
 
@@ -653,4 +700,23 @@ int main(int argc, const char * argv[]) {
 # 快看漫画
 
 - **周二 2018.08.10 14:30 北京市朝阳区望京融科中心B座703  王燕飞  15010353996**
+
+
+# 2019年面试过程
+
+## 探探网上笔试，牛客网
+
+找出字符串中第一个不重复字符的下标，找不到返回`-1`。例如："aabbcab", 返回`4`
+
+## 快陪练
+
+- **周三 2019.06.19 15:00 北京市朝阳区望京福码大厦B座9层(地铁14号线东段望京站H口出，走550米左右)**
+
+## 乐信圣文
+
+- **周五 2019.06.21 10:00 北京市海淀区西小口路66号东升科技园C7号楼202室**
+
+## 字节跳动
+
+- **周三 2019.06.26 10:30:00 北京海淀区海淀大街27号中关村天使大厦5层 纪伟芳 15506012902**
 
