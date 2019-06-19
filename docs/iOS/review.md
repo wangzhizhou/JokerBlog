@@ -71,7 +71,7 @@
 
 # KVC
 
-https://www.cnblogs.com/Jusive/p/5084250.html
+<https://www.cnblogs.com/Jusive/p/5084250.html>
 
 KVC本质上是操作方法列表以及在内存中查找实例变量，可以用来访问私用变量
 利用反射:NSStringFromSelector(@selector())可以减少KVC字符串写错
@@ -190,6 +190,25 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 
 <https://www.cnblogs.com/Xylophone/p/7148037.html>
 
+接收到手势点击后，响应UIWindows的hitTest，找到点击发生在具体哪一个子视图上。
+
+```
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+     for (UIView *view in self.subviews) {
+          if([view pointInside:point withEvent:event]){
+              UIView *hitTestView = [view hitTest:point withEvent:event];
+             if(nil == hitTestView){
+                  return view;
+              }
+          }
+      }
+     return nil;
+ }
+```
+
+找到点击发生的具体视图时，逆向按下图的顺序逐级寻找处理函数。
+
+![response chain](/iOS/images/response_chain.png)
 
 # 变量类型
 
@@ -265,9 +284,23 @@ View/Interactor/Presenter/Entity/Router
 # DLNA协议 
 
 - UPnP协议发现网络中的设备(服务、设备(UUID设备标识)、控制点)
-- 
+    - 自动获取IP
+    - 自动公布自己可以提供的服务
+    - 自动感知其他设备是否存在并获取它们所能提供的服务
+- UPnP DA 设备架构: 规定了如果获取IP、如何发现其它设备、发现后用什么方法了解设备功能、设备间如何发送控制消息和事件。
+    - Device
+    - Services
+    - Controller Point
+- UPnP AV 音视频架构:
+    - Controller Point
+    - Media Server
+    - Media Renderer
 
 # 组件化方式
+
+<https://www.jianshu.com/p/59c2d2c4b737>
+
+<https://casatwy.com/modulization_in_action.html>
 
 # category 和 runtime
 
@@ -707,6 +740,8 @@ class Solution {
 ## 探探网上笔试，牛客网
 
 找出字符串中第一个不重复字符的下标，找不到返回`-1`。例如："aabbcab", 返回`4`
+
+<https://blog.csdn.net/chuncanl/article/details/57952208>
 
 ## 快陪练
 
