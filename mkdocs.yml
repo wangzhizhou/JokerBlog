@@ -141,9 +141,11 @@ nav:
             - 应用优化: "iOS/optimization.md"
             - 优化应用启动时长: 'geek/Optimizing App Startup Time.md'
             - 面试: "iOS/review.md"
+            - 面试准备资料: "iOS/job-plan.md"
             - 十大排序算法: "iOS/sort.md"
             - OC运行时编译: "iOS/runtime.md"
             - 线程编码指南: "iOS/TPG.md"
+            - 并发编码指南: "iOS/CPG.md"
             - 设计模式: "iOS/design-pattern.md"
             - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
