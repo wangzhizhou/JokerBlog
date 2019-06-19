@@ -316,6 +316,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://blog.jokerhub.cn/iOS/job-plan/</loc>
+     <lastmod>2019-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://blog.jokerhub.cn/iOS/sort/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
@@ -327,6 +332,11 @@
     </url>
     <url>
      <loc>http://blog.jokerhub.cn/iOS/TPG/</loc>
+     <lastmod>2019-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://blog.jokerhub.cn/iOS/CPG/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
