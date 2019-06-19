@@ -16,6 +16,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://blog.jokerhub.cn/iOS/review/</loc>
+     <lastmod>2019-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://blog.jokerhub.cn/iOS/job-plan/</loc>
+     <lastmod>2019-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://blog.jokerhub.cn/job/dimission/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
@@ -37,11 +47,6 @@
     </url>
     <url>
      <loc>http://blog.jokerhub.cn/life/WuZhen/</loc>
-     <lastmod>2019-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://blog.jokerhub.cn/minecraft/minecraft/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -307,16 +312,6 @@
     </url>
     <url>
      <loc>http://blog.jokerhub.cn/geek/Optimizing App Startup Time/</loc>
-     <lastmod>2019-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://blog.jokerhub.cn/iOS/review/</loc>
-     <lastmod>2019-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://blog.jokerhub.cn/iOS/job-plan/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
