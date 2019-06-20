@@ -136,3 +136,4 @@ Objective-C 是一种动态类型语言，它定义的所有类都在一个全�
 
 -  [WWDC 2016 - Optimizing App Startup Time](https://developer.apple.com/videos/play/wwdc2016/406/)
 
+-  [优化相关文档](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/PerformanceOverview/Introduction/Introduction.html#//apple_ref/doc/uid/TP40001410)
