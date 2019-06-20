@@ -23,321 +23,13 @@
 <p><img alt="before review" src="/iOS/images/before_review.jpg" /></p>
 <h2 id="_3">面试中<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><img alt="on review" src="/iOS/images/on_review.jpg" /></p>
-<h1 id="mrcarcgettersetter">MRC和ARC下的属性和getter/setter写法<a class="headerlink" href="#mrcarcgettersetter" title="Permanent link">&para;</a></h1>
-<h3 id="mrc">MRC<a class="headerlink" href="#mrc" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
-
-<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
-
-<span class="k">@end</span>
-
-<span class="k">@implementation</span> <span class="nc">ViewController</span>
-
-<span class="k">@synthesize</span> <span class="n">name</span> <span class="o">=</span> <span class="n">_name</span><span class="p">;</span>
-
-<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setName:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">_name</span> <span class="o">!=</span> <span class="n">name</span><span class="p">){</span>
-        <span class="p">[</span><span class="n">_name</span> <span class="k">release</span><span class="p">];</span>
-        <span class="n">_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">retain</span><span class="p">];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">name</span><span class="p">{</span>
-    <span class="k">return</span> <span class="n">_name</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">@end</span>
-</pre></div>
-</td></tr></table>
-
-<h3 id="arc">ARC<a class="headerlink" href="#arc" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#import &quot;ViewController.h&quot;</span>
-
-<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
-
-<span class="k">@end</span>
-
-<span class="k">@implementation</span> <span class="nc">ViewController</span>
-
-<span class="k">@synthesize</span> <span class="n">name</span> <span class="o">=</span> <span class="n">_name</span><span class="p">;</span>
-
-<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setName:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span> <span class="p">{</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">-(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">name</span><span class="p">{</span>
-    <span class="k">return</span> <span class="n">_name</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">@end</span>
-</pre></div>
-</td></tr></table>
-
-<h1 id="_4">属性列表和成员变量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
-<h1 id="kvc">KVC<a class="headerlink" href="#kvc" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.cnblogs.com/Jusive/p/5084250.html">https://www.cnblogs.com/Jusive/p/5084250.html</a></p>
-<p>KVC本质上是操作方法列表以及在内存中查找实例变量，可以用来访问私用变量
-利用反射:NSStringFromSelector(@selector())可以减少KVC字符串写错</p>
-<h1 id="kvo">KVO<a class="headerlink" href="#kvo" title="Permanent link">&para;</a></h1>
-<p>主要三个方法:
-- addObserver
-- removeObserver
-- observeValueForKeyPath
-主要添加和移除，不要重复添加，及时移除</p>
-<p>类被第一观察时，会产生一个子类，子类种重写属性的setter方法，并把isa指针指向该子类。重写的setter方法实现通知机制</p>
-<p><img alt="kvo theory" src="/iOS/images/kvo_theory.png" /></p>
-<h1 id="notification">Notification<a class="headerlink" href="#notification" title="Permanent link">&para;</a></h1>
-<p>post和转发在同一个线程中进行，与注册观察者所在的线程无关，必要时需要转发到不同线程</p>
-<h1 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h1>
-<p>Class 被定义为一个指向objc_class的结构体指针，表示一个类的类结构。</p>
-<p>Method是Runtime内部定义的方法,Class中定义有一个objc_method_list,链表都是objc_method类型的</p>
-<p>SEL标示方法的名字/签名</p>
-<p>IMP 是一个函数指针，这个被指向的函数包含一个接收消息的对象id, 调用方法的选标 SEL，以及不定个数的方法参数，并返回一个id。也就是说IMP是消息最终调用的执行代码，是方法真正的实现代码 。我们可以像在Ｃ语言里面一样使用这个函数指针。</p>
-<p>+load先于main()被调用, dyld加载镜像时调用所有类的+load方法，+initialize是懒加载的，只有类被使用时才会被调用。</p>
-<p><a href="https://www.jianshu.com/p/eac6ed137e06">https://www.jianshu.com/p/eac6ed137e06</a></p>
-<h1 id="_5">内存管理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
-<p><a href="http://www.cocoachina.com/ios/20160303/15498.html">http://www.cocoachina.com/ios/20160303/15498.html</a></p>
-<h1 id="_6">深浅拷贝<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
-<p><a href="http://www.jb51.net/article/89676.htm">http://www.jb51.net/article/89676.htm</a></p>
-<p><img alt="shallow deep copy" src="/iOS/images/shallow_deep_copy.png" /></p>
-<ul>
-<li>深拷贝中复制一层</li>
-<li>完全复制需要使用归档和接档</li>
-</ul>
-<h1 id="oc">OC对象内存布局<a class="headerlink" href="#oc" title="Permanent link">&para;</a></h1>
-<p><a href="http://blog.csdn.net/xiaolinyeyi/article/details/51393383">http://blog.csdn.net/xiaolinyeyi/article/details/51393383</a></p>
-<h1 id="_7">运行时和消息转发<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.jianshu.com/p/ea61895be31f">https://www.jianshu.com/p/ea61895be31f</a></p>
-<h1 id="_8">类和元类的区别<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.jianshu.com/p/249b705d4fbb">https://www.jianshu.com/p/249b705d4fbb</a></p>
-<p><img alt="class and metaclass" src="/iOS/images/objc_class_metaclass.png" /></p>
-<h1 id="jsnative">JS与Native交互<a class="headerlink" href="#jsnative" title="Permanent link">&para;</a></h1>
-<ul>
-<li>使用webView:shouldStartLoadWithRequest方法对请求进行拦截并分情况调用NativeCode，需要不断拦截过滤</li>
-<li>使用JS框架如javascriptcore,比较灵活</li>
-<li>stringByEvaluatingJavaScriptFromString应该在主线程中执行</li>
-</ul>
-<h1 id="_9">索引的缺点<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">1</span><span class="p">.</span> <span class="err">需要空间储存索引</span>
-<span class="mi">2</span><span class="p">.</span> <span class="err">创建和维护索引需要耗费时间</span>
-<span class="mi">3</span><span class="p">.</span> <span class="err">当删除，插入和更新数据是，索引也需要进行更新，这样降低了写数据的速度。</span>
-</pre></div>
-</td></tr></table>
-
-<h1 id="nsstring">NSString<a class="headerlink" href="#nsstring" title="Permanent link">&para;</a></h1>
-<p>常量的字符串直接存在常量里，且内容相等的都指向同一块常量区</p>
-<p>用另一个字符串生成的NSString与源字符串同地址</p>
-<p>用copy是为了安全,防止NSMutableString赋值给NSString时,前者修改引起后者值变化而用的</p>
-<h1 id="gcd">GCD<a class="headerlink" href="#gcd" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.jianshu.com/p/77c5051aede2">https://www.jianshu.com/p/77c5051aede2</a></p>
-<p><a href="http://www.cocoachina.com/cms/wap.php?action=article&amp;id=22573">http://www.cocoachina.com/cms/wap.php?action=article&amp;id=22573</a>
-<a href="http://www.cocoachina.com/ios/20160804/17291.html">http://www.cocoachina.com/ios/20160804/17291.html</a></p>
-<h1 id="pthreadnsthreadnsoperationqueue">pthread、NSThread、NSOperationQueue<a class="headerlink" href="#pthreadnsthreadnsoperationqueue" title="Permanent link">&para;</a></h1>
-<ul>
-<li>NSOperationQueue可以往里面添加Operation任务，可以限制最大并发个数</li>
-</ul>
-<h1 id="_10">信号量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
-<ul>
-<li>dispatch_semaphore_create(Init Count)/dispatch_semaphore_wait(-1)/dispatch_semaphore_signal(+1)</li>
-<li>信号量为0时，线程阻塞直到信号量大于0</li>
-</ul>
-<h1 id="_11">锁机制<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
-<h1 id="weaknil">weak置nil原理<a class="headerlink" href="#weaknil" title="Permanent link">&para;</a></h1>
-<p>Runtime维护着一个Weak表，用于存储指向某个对象的所有Weak指针</p>
-<p>Weak表是Hash表，Key是所指对象的地址，Value是Weak指针地址的数组</p>
-<p>在对象被回收的时候，经过层层调用，会最终触发下面的方法将所有Weak指针的值设为nil。* runtime源码，objc-weak.m 的 arr_clear_deallocating 函数</p>
-<p>weak指针的使用涉及到Hash表的增删改查，有一定的性能开销.</p>
-<h1 id="_12">事件、响应链、事件传递、事件拦截<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
-<ul>
-<li>消息首先会顺着继承结构响应</li>
-<li>继承结构中没有被响应会进入resolveInstanceMethod方法，从动态添加的方法里响应</li>
-<li>以上都没有响应使用forwardingTargetForSelector，转交响应目标</li>
-<li>还不行调用methodSignatureForSelector获得方法签名，调用forwardInvocation</li>
-</ul>
-<p>关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。</p>
-<h1 id="_13">响应链<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.cnblogs.com/Xylophone/p/7148037.html">https://www.cnblogs.com/Xylophone/p/7148037.html</a></p>
-<p>接收到手势点击后，响应UIWindows的hitTest，找到点击发生在具体哪一个子视图上。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">-</span> <span class="p">(</span><span class="bp">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nf">hitTest:</span><span class="p">(</span><span class="bp">CGPoint</span><span class="p">)</span><span class="nv">point</span> <span class="nf">withEvent:</span><span class="p">(</span><span class="bp">UIEvent</span> <span class="o">*</span><span class="p">)</span><span class="nv">event</span><span class="p">{</span>
-     <span class="k">for</span> <span class="p">(</span><span class="bp">UIView</span> <span class="o">*</span><span class="n">view</span> <span class="k">in</span> <span class="nb">self</span><span class="p">.</span><span class="n">subviews</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">if</span><span class="p">([</span><span class="n">view</span> <span class="nl">pointInside</span><span class="p">:</span><span class="n">point</span> <span class="nl">withEvent</span><span class="p">:</span><span class="n">event</span><span class="p">]){</span>
-              <span class="bp">UIView</span> <span class="o">*</span><span class="n">hitTestView</span> <span class="o">=</span> <span class="p">[</span><span class="n">view</span> <span class="nl">hitTest</span><span class="p">:</span><span class="n">point</span> <span class="nl">withEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
-             <span class="k">if</span><span class="p">(</span><span class="nb">nil</span> <span class="o">==</span> <span class="n">hitTestView</span><span class="p">){</span>
-                  <span class="k">return</span> <span class="n">view</span><span class="p">;</span>
-              <span class="p">}</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
-     <span class="k">return</span> <span class="nb">nil</span><span class="p">;</span>
- <span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-<p>找到点击发生的具体视图时，逆向按下图的顺序逐级寻找处理函数。</p>
-<p><img alt="response chain" src="/iOS/images/response_chain.png" /></p>
-<h1 id="_14">变量类型<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
-<h3 id="_15">程序内存模型<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p><img alt="memeory_layout" src="/iOS/images/memory_layout.png" /></p>
-<ul>
-<li>自动变量</li>
-<li>函数参数</li>
-<li>静态变量</li>
-<li>静态全局变量</li>
-<li>全局变量</li>
-</ul>
-<p>block里可以直接修改的是静态变量、静态全局变量和全局变量，默认对自动变量仅捕获其值， 所以不能直接修改，静态变量是以地址被捕获，所以可以修改，静态全局变量是因为在公共区，所以可以被block直接访问</p>
-<p>block 有三种，全局block，栈block和堆block，只有堆block会持有对象</p>
-<h1 id="_16">循环引用问题<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.cnblogs.com/wengzilin/p/4347974.html">https://www.cnblogs.com/wengzilin/p/4347974.html</a></p>
-<h1 id="kvckvoruntime">KVC、KVO与runtime<a class="headerlink" href="#kvckvoruntime" title="Permanent link">&para;</a></h1>
-<h1 id="_17">线程安全<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h1>
-<h3 id="_18">方式<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>@synchronized(lock) 互斥锁用于线程同步(图方便)</strong></li>
-<li>NSLock有trylock/lock和unlock这几个操作</li>
-<li>NSRecursiveLock实际上定义的是一个递归锁，这个锁可以被同一线程多次请求，而不会引起死锁。这主要是用在循环或递归操作中。</li>
-<li>NSConditionLock条件锁lock、unlock、lockWhenCondition、unlockWhenCondition</li>
-<li><strong>dispatch_semaphore就是信号量create\wait\signal(优先选择)</strong></li>
-<li>NSCondition同时具备互斥锁和信号量的功能lock/unlock/wait/signal</li>
-<li>pthread_mutex是C语言锁接口，不太容易使用</li>
-<li>OSSpinLock</li>
-</ul>
-<h1 id="nstimer">NSTimer<a class="headerlink" href="#nstimer" title="Permanent link">&para;</a></h1>
-<p><a href="https://blog.csdn.net/a2331046/article/details/50240635">https://blog.csdn.net/a2331046/article/details/50240635</a></p>
-<p>NSTimer不精确，会被线程阻塞影响，主程的RunLoop默认开启，其它线程的runLoop需要手动开启使Timer工作，哪里开启，哪里结束。
-循环引用问题</p>
-<h3 id="_19">相关问题<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
-<ul>
-<li>timer会retain指定timer回调方法的接收者，也就是target对象，以此保证定时任务能够完成</li>
-<li>一次性timer在任务执行完成后会自动invalidate,而无限重复性的timer由于一直有效，所以需要手动调用invalidate</li>
-<li>dealloc中调用[timer invalidate]不行，因为timer没有失效前，target对象引用计数不为0， dealloc不会被调动</li>
-<li>timer不是实时的，延迟程序与当前线程的执行情况相关，如果上一次定时任务被延迟，可能会和之后的定时事件合并为一个</li>
-<li>timer要添加到runloop中才会生效，自己alloc和init的timer需要加到runloop里面，同时启动runloop才能生效(还要注意runloop的运行模式是否正确)。所有的source都要加入到runloop中才能使用，timer是一种source</li>
-</ul>
-<h1 id="runloop">Runloop机制<a class="headerlink" href="#runloop" title="Permanent link">&para;</a></h1>
-<h1 id="_20">设计模式<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
-<h2 id="mvc">MVC<a class="headerlink" href="#mvc" title="Permanent link">&para;</a></h2>
-<h2 id="mvp">MVP<a class="headerlink" href="#mvp" title="Permanent link">&para;</a></h2>
-<p>模型和视图完全隔离开，逻辑都放在Presenter里面</p>
-<h2 id="mvvm">MVVM<a class="headerlink" href="#mvvm" title="Permanent link">&para;</a></h2>
-<p>ViewModel是輸入輸出的转换,与绑定机制联合威力更大, 兼容MVC，便于测试。OSX+CocoaBinding, iOS + ReactiveCocoa/RxSwift</p>
-<h2 id="viper">VIPER<a class="headerlink" href="#viper" title="Permanent link">&para;</a></h2>
-<p>View/Interactor/Presenter/Entity/Router</p>
-<p>易测试、理解、维护，可与CoreData联合使用</p>
-<h1 id="dlna">DLNA协议<a class="headerlink" href="#dlna" title="Permanent link">&para;</a></h1>
-<ul>
-<li>UPnP协议发现网络中的设备(服务、设备(UUID设备标识)、控制点)<ul>
-<li>自动获取IP</li>
-<li>自动公布自己可以提供的服务</li>
-<li>自动感知其他设备是否存在并获取它们所能提供的服务</li>
-</ul>
-</li>
-<li>UPnP DA 设备架构: 规定了如果获取IP、如何发现其它设备、发现后用什么方法了解设备功能、设备间如何发送控制消息和事件。<ul>
-<li>Device</li>
-<li>Services</li>
-<li>Controller Point</li>
-</ul>
-</li>
-<li>UPnP AV 音视频架构:<ul>
-<li>Controller Point</li>
-<li>Media Server</li>
-<li>Media Renderer</li>
-</ul>
-</li>
-</ul>
-<h1 id="_21">组件化方式<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.jianshu.com/p/59c2d2c4b737">https://www.jianshu.com/p/59c2d2c4b737</a></p>
-<p><a href="https://casatwy.com/modulization_in_action.html">https://casatwy.com/modulization_in_action.html</a></p>
-<h1 id="category-runtime">category 和 runtime<a class="headerlink" href="#category-runtime" title="Permanent link">&para;</a></h1>
-<ul>
-<li>category 和 主类中都有+load方法时，会先调用主类的+load后调用category的+load，多个category之间是按照编译顺序调用+load</li>
-<li>category 中不能添加实例变量，只能添中方法</li>
-<li>category 中动态添加关联对象是放在一个全局哈希表中，以关联内存地址为键，对象销毁时会检查自己有没有关联对象，有就除去哈希表中的条目</li>
-</ul>
-<h1 id="_22">性能优化<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
-<ul>
-<li>使用ARC</li>
-<li>View尽量不透明</li>
-<li>避免在UIImageView中调整图片大小(本地图片)，图络图片背景线程调整大小</li>
-<li>懒加载</li>
-<li>缓存数据</li>
-<li>适当使用autoreleasepool</li>
-<li>尽量避免时期格式转换，创建<code class="codehilite"><span class="n">NSDateFormatter</span></code>很费时间</li>
-</ul>
-<h2 id="_23">算法相关<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.zhihu.com/question/24964987">https://www.zhihu.com/question/24964987</a></p>
-<ul>
-<li>topK 问题</li>
-</ul>
-<h2 id="_24">崩溃率标准<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
-<p><img alt="crash rate" src="/iOS/images/crash_rate.jpg" /></p>
-<h1 id="_25">线程安全<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h1>
-<ul>
-<li>atomic所说的线程安全只是保证了getter和setter存取方法的线程安全，并不能保证整个对象是线程安全的</li>
-</ul>
-<h1 id="_26">腾讯面试<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h1>
+<h1 id="_4">腾讯面试<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
 <p>准备资料: <a href="http://www.cocoachina.com/bbs/read.php?tid=460991">http://www.cocoachina.com/bbs/read.php?tid=460991</a></p>
 <ul>
 <li><strong>周六 2018.03.17   17:30 知春路希格玛大厦B1篮球场 叶女士 17801077277   腾讯</strong></li>
 </ul>
 <p><img alt="review tencent" src="/iOS/images/review_tencent.jpg" /></p>
-<h2 id="_27">面试题<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<h2 id="_5">面试题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>问下面这段代码有什么问题？应该怎么修改？</p>
 <p><em>ViewController.h</em></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -401,14 +93,14 @@
 </pre></div>
 </td></tr></table>
 所以，并发时，调用不当，会多次调用target属性setter方法中的[_target release]，造成多次释放，进而崩溃。改成atomic属性。</p>
-<h3 id="_28">总结<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h3 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>DLNA的协议没有深刻理解</li>
 <li>播放器去耦合部分介绍有点苍白</li>
 <li>版本展现统计介绍有点笼统</li>
 <li>答题时表现的不够沉稳</li>
 </ul>
-<h1 id="_29">知乎<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h1>
+<h1 id="_7">知乎<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
 <p>准备资料：</p>
 <ul>
 <li><strong>周一 2018.03.19   10:00 海淀区学院路甲 5 号 768 创意园 A 座西区二通道 1002 室   王慧 17611252710   知乎</strong></li>
@@ -505,7 +197,7 @@
 </pre></div>
 </td></tr></table>
 
-<h3 id="_30">总结<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<h3 id="_8">总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>问了很多项目的事情，都是顺着项目考查基础知识点，问了组件化，初始化组件应该怎么实现。</li>
 <li>如何判断多个并发任务全部完成，及实现原理</li>
@@ -513,19 +205,19 @@
 <li>MVC、MVVM、MVP、VIPER</li>
 <li>怎样测试一个Model</li>
 </ul>
-<h1 id="_31">阿里文学<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h1>
+<h1 id="_9">阿里文学<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周二 2018.03.20  10:30 五道口优盛大厦D座16层A 王月琦  15732636310   阿里文学</strong></li>
 </ul>
 <p><img alt="review ali" src="/iOS/images/review_ali_literature.png" /></p>
-<h2 id="_32">准备资料<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h2 id="_10">准备资料<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>写了一个求二叉树最大深度的算法，递归调用</p>
-<h1 id="_33">今日头条<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h1>
+<h1 id="_11">今日头条<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周三 2018.03.21   18:45 北京市海淀区知春路63号中国卫星通信大厦A座7层 张轩悦  18708100119     今日头条</strong></li>
 </ul>
 <p><img alt="review daily" src="/iOS/images/review_daily.jpg" /></p>
-<h2 id="_34">面试问题<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<h2 id="_12">面试问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>全局断点就是异常抛出断点</p>
@@ -548,12 +240,12 @@
 <li>有没有看过第三方库,说说原理</li>
 <li>SDWebImageCache同时下载两个相同的URl时会重复下载吗？不会，会在Operations中查找是否已经有相同的下载操作了</li>
 </ul>
-<h1 id="_35">爱奇艺<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h1>
+<h1 id="_13">爱奇艺<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.22  14:00 中关村鼎好大厦A座7层  面试联系人：刘欧云（HRBP），电话：18511988412    爱奇艺</strong></li>
 </ul>
 <p><img alt="review aqiyi" src="/iOS/images/review_aqiyi.jpg" /></p>
-<h2 id="_36">过程<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<h2 id="_14">过程<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <ul>
 <li>一个找字符串中第一个只出现过一次的字符(哈希表+两次遍历)</li>
 <li>一个业务场景，说明实现思路</li>
@@ -561,23 +253,23 @@
 <li>启动时长优化</li>
 <li>崩溃率合理区间</li>
 </ul>
-<h1 id="_37">陌陌<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h1>
+<h1 id="_15">陌陌<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周五 2018.03.23  10:00 北京市朝阳区阜通东大街1号望京soho T2 B座20层  Amy 15210035422 陌陌</strong></li>
 </ul>
 <p><img alt="review momo" src="/iOS/images/review_momo.jpg" /></p>
-<h2 id="_38">面试内容<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h2>
+<h2 id="_16">面试内容<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <ul>
 <li>dispatch_sync/dispatch_async和同步队列、异步队列的不同组合时，系统分配线程的各种情况</li>
 <li>NSTimer的机制和释放时机，如果被retain会怎样</li>
 <li>dispatch_barrier/dispatch_group的应用方式</li>
 </ul>
-<h1 id="_39">滴滴<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h1>
+<h1 id="_17">滴滴<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周一 2018.03.26   10:00 北京市海淀区西北旺路文思海辉   沈悦 15094656466    滴滴</strong></li>
 </ul>
 <p><img alt="review didi" src="/iOS/images/review_didi.jpg" /></p>
-<h3 id="_40">面试经过<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<h3 id="_18">面试经过<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>KVO怎样保证addObserver和removeObserver成对儿调用(使用方法中的context参数作为标识，防止重复添加和重复移除)<a href="https://blog.csdn.net/klabcxy36897/article/details/51680423">https://blog.csdn.net/klabcxy36897/article/details/51680423</a></p>
@@ -636,19 +328,19 @@
 <li><strong>周二 2018.03.27   15:00  北京市 朝阳区 朝外SOHO，D座，1122室 常夕露  18610363605    蜻蜓FM</strong></li>
 </ul>
 <p><img alt="review qinting" src="/iOS/images/review_qinting.jpg" /></p>
-<h3 id="_41">过程<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<h3 id="_19">过程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <ul>
 <li>问了一下项目</li>
 <li>写一个旋转数组查找算法</li>
 <li>写quickSort、BFS、DFS, </li>
 <li>递归转循环<a href="https://www.cnblogs.com/coderkian/p/3758068.html">https://www.cnblogs.com/coderkian/p/3758068.html</a></li>
 </ul>
-<h1 id="_42">新浪微博<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h1>
+<h1 id="_20">新浪微博<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周三 2018.03.28   14:00 北京市海淀区西北旺东路10号院西区8号楼新浪总部大厦北门 王楚 18813016799 新浪微博</strong></li>
 </ul>
 <p><img alt="review sina" src="/iOS/images/review_sina.jpg" /></p>
-<h3 id="_43">过程<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
+<h3 id="_21">过程<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <ul>
 <li>先作笔试题</li>
 <li>NSRunloop保活,给runloop添加一下NSMachPort<AFNetwork></li>
@@ -662,11 +354,11 @@
 <img alt="crash collect" src="/iOS/images/crash_collection.png" /></li>
 <li>NSOperation自定义子类<a href="https://www.jianshu.com/p/4b1d77054b35">https://www.jianshu.com/p/4b1d77054b35</a></li>
 </ul>
-<h1 id="_44">美团<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h1>
+<h1 id="_22">美团<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.29   10:30 北京市朝阳区望京东路6号望京国际研发园FG座  杨喆   15600243362   自带简历  美团</strong></li>
 </ul>
-<h3 id="_45">三面问题准备<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<h3 id="_23">三面问题准备<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <ul>
 <li>topK问题</li>
 <li>红绿灯路口优化问题</li>
@@ -679,26 +371,27 @@
 <li><a href="https://blog.csdn.net/u010742414/article/details/78260938">https://blog.csdn.net/u010742414/article/details/78260938</a></li>
 <li>NSOperation的main方法调用后Operation会被移除，start方法在调用后，operation需要手动管理其释放</li>
 </ul>
-<h1 id="_46">百度视频<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h1>
+<h1 id="_24">百度视频<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.29   14:00 海淀区西北旺东路 文思海辉大厦 -百度视频办公区  魏博  13891924500   百度视频</strong></li>
 </ul>
 <p>百度视频给Offer不打算去了</p>
-<h1 id="_47">探探<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h1>
+<h1 id="_25">探探<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周五 2018.03.30   14:30 朝阳区光华路SOHO二期D座5-11 (1号线永安里地铁站B出口）cherry 18600536159 探探</strong></li>
 </ul>
-<h3 id="_48">过程<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h3>
+<h3 id="_26">过程<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
 <ul>
 <li>写一个LRUCache</li>
 </ul>
-<h1 id="_49">快手<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h1>
+<h1 id="_27">快手<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h1>
 <ul>
-<li><strong>周二 2018.04.03   14:00 北京市 海淀区 清华同方科技大厦B座12层   快手</strong></li>
-</ul>
-<p><img alt="review kuai shou" src="" /></p>
-<ul>
-<li>字符串旋转(左/右)</li>
+<li>
+<p><strong>周二 2018.04.03   14:00 北京市 海淀区 清华同方科技大厦B座12层   快手</strong></p>
+</li>
+<li>
+<p>字符串旋转(左/右)</p>
+</li>
 </ul>
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -756,7 +449,7 @@
 </pre></div>
 </td></tr></table>
 - 求两个有序数组的公共元素</p>
-<h1 id="_50">猿辅导<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h1>
+<h1 id="_28">猿辅导<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h1>
 <ul>
 <li>旋转打印矩阵
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -851,19 +544,19 @@
 </li>
 <li>拆分奇偶数双向链表结点为两个子链表</li>
 </ul>
-<h1 id="_51">百度多模搜索部<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h1>
+<h1 id="_29">百度多模搜索部<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周一 2018.04.09 14:00 百度科技园1号楼(北京海淀区西北旺百度科技园1号楼) 侯世杰 18600393412</strong></li>
 </ul>
-<h1 id="_52">快看漫画<a class="headerlink" href="#_52" title="Permanent link">&para;</a></h1>
+<h1 id="_30">快看漫画<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周二 2018.08.10 14:30 北京市朝阳区望京融科中心B座703  王燕飞  15010353996</strong></li>
 </ul>
 <h1 id="2019">2019年面试过程<a class="headerlink" href="#2019" title="Permanent link">&para;</a></h1>
-<h2 id="_53">探探网上笔试，牛客网<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h2>
+<h2 id="_31">探探网上笔试，牛客网<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
 <p>找出字符串中第一个不重复字符的下标，找不到返回<code class="codehilite"><span class="o">-</span><span class="mi">1</span></code>。例如："aabbcab", 返回<code class="codehilite"><span class="mi">4</span></code></p>
 <p><a href="https://blog.csdn.net/chuncanl/article/details/57952208">https://blog.csdn.net/chuncanl/article/details/57952208</a></p>
-<h2 id="_54">快陪练<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h2>
+<h2 id="_32">快陪练<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
 <p><img alt="快陪练" src="/iOS/images/review_kuaipeilian.png" /></p>
 <ul>
 <li>
@@ -880,11 +573,11 @@
 <li>视图绘制的整个过程，以及异步视图绘制的原理: AsyncDisplayKit</li>
 <li>编程实现n的阶乘</li>
 </ul>
-<h2 id="_55">乐信圣文<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h2>
+<h2 id="_33">乐信圣文<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>周五 2019.06.21 10:00 北京市海淀区西小口路66号东升科技园C7号楼202室</strong></li>
 </ul>
-<h2 id="_56">字节跳动<a class="headerlink" href="#_56" title="Permanent link">&para;</a></h2>
+<h2 id="_34">字节跳动<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>周三 2019.06.26 10:30:00 北京海淀区海淀大街27号中关村天使大厦5层 纪伟芳 15506012902</strong></li>
 </ul></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../../job/My Plan for finding Job/" title="校招求职" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">后退</span>校招求职</span></div></a><a href="../job-plan/" title="面试准备资料" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前进</span>面试准备资料</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight">Created by Wang Zhizhou</div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div><div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://github.com/wangzhizhou" class="md-footer-social__link fa fa-github"></a>  <a href="https://twitter.com/w_z_z_1991" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://linkedin.com/in/wangzhizhou" class="md-footer-social__link fa fa-linkedin"></a> </div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="../../javascripts/extra.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
