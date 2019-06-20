@@ -57,7 +57,7 @@ extra_css:
   - 'stylesheets/extra.css'
 
 extra:
-  disqus: 'jokerhub-blog'
+#   disqus: 'jokerhub-blog'
   social:
     - type: 'github'
       link: 'https://github.com/wangzhizhou'
