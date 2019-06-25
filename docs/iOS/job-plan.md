@@ -22,7 +22,6 @@ gcd掘金：https://juejin.im/post/5a90de68f265da4e9b592b40
 
 operation掘金：https://juejin.im/post/5a90de68f265da4e9b592b40
 
-
 # MRC和ARC下的属性和getter/setter写法
 
 ### MRC
@@ -119,6 +118,11 @@ IMP 是一个函数指针，这个被指向的函数包含一个接收消息的�
 +load先于main()被调用, dyld加载镜像时调用所有类的+load方法，+initialize是懒加载的，只有类被使用时才会被调用。
 
 <https://www.jianshu.com/p/eac6ed137e06>
+
+# 渲染过程
+
+<https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=400417748&idx=1&sn=0c5f6747dd192c5a0eea32bb4650c160&scene=0&key=d72a47206eca0ea943d25c26363871d345e3f5009bd0ce8f26f2120a544b6b3bcbcfe81559620caee1a9ea5ed654d8f9&ascene=0&uin=MjAyNzY1NTU%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.11.1+build(15B42)&version=11020201&pass_ticket=tzHHVrqCnktj8H4OEQz2FQg1FtUowQPk7zymt5mui1s%3D>
+
 
 
 # 内存管理
@@ -245,9 +249,15 @@ weak指针的使用涉及到Hash表的增删改查，有一定的性能开销.
 - 静态全局变量
 - 全局变量
 
+# Block原理
+
+<http://blog.devtang.com/2013/07/28/a-look-inside-blocks/>
+
 block里可以直接修改的是静态变量、静态全局变量和全局变量，默认对自动变量仅捕获其值， 所以不能直接修改，静态变量是以地址被捕获，所以可以修改，静态全局变量是因为在公共区，所以可以被block直接访问
 
 block 有三种，全局block，栈block和堆block，只有堆block会持有对象
+
+当block被赋值给__strong类型的对象或者block的成员变量时，编译器会自动调用block的copy方法
 
 # 循环引用问题
 
@@ -303,6 +313,12 @@ View/Interactor/Presenter/Entity/Router
 
 易测试、理解、维护，可与CoreData联合使用
 
+## 代理模式
+
+## 工厂模式
+
+## 单例模式
+
 
 # DLNA协议 
 
@@ -324,6 +340,10 @@ View/Interactor/Presenter/Entity/Router
 <https://www.jianshu.com/p/59c2d2c4b737>
 
 <https://casatwy.com/modulization_in_action.html>
+
+<https://www.cnblogs.com/fishbay/p/7216084.html>
+
+[CTMediator](https://github.com/casatwy/CTMediator)
 
 # category 和 runtime
 
@@ -354,3 +374,30 @@ View/Interactor/Presenter/Entity/Router
 # 线程安全
 
  - atomic所说的线程安全只是保证了getter和setter存取方法的线程安全，并不能保证整个对象是线程安全的
+
+# await/async
+
+<http://www.ruanyifeng.com/blog/2015/05/async.html>
+
+# Generator函数
+
+<http://www.ruanyifeng.com/blog/2015/04/generator.html>
+
+# SDWegImage、AFNetworking、AsyncDisplayKit、FLEX
+
+[SDWebImage](https://www.cnblogs.com/liuyang666/p/5288599.html)
+
+# 面向对象的设计原则
+
+<https://www.jianshu.com/p/7b4633ada135>
+
+![OOP](/iOS/images/OOP_principle.png)
+
+- 单一职责原则(Single Responsibility Principle)
+- 里氏替换原则(Liskov Substitution Principle)
+- 依赖倒置原则(Dependence Inversion Principle)
+- 接口隔离原则(Interface Segregation Principle)
+- 迪米特法则(Law of Demeter)
+- 开闭原则(Open Close Principle)
+
+

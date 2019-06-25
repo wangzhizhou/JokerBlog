@@ -75,6 +75,7 @@ nav:
         - 社招面试: "iOS/review.md"
         - 面试准备资料: "iOS/job-plan.md"
         - 离职: 'job/dimission.md'
+        - 事业: 'job/career.md'
     - 生活:
         - 支付宝集福: 'life/alipay-scan-fu-icon.md'
         - 北京租房: 'life/Renting in Beijing.md'
@@ -146,6 +147,7 @@ nav:
             - 线程编码指南: "iOS/TPG.md"
             - 并发编码指南: "iOS/CPG.md"
             - 设计模式: "iOS/design-pattern.md"
+            - 应用架构: "iOS/AppArch.md"
             - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
         - 乐理基础: 
