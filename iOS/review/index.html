@@ -1,4 +1,81 @@
-<!doctype html><html lang="zh" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="This is my personal blog"><link rel="canonical" href="http://blog.jokerhub.cn/iOS/review/"><meta name="author" content="wangzhizhou"><meta name="lang:clipboard.copy" content="复制"><meta name="lang:clipboard.copied" content="已复制"><meta name="lang:search.language" content="ja"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="没有找到符合条件的结果"><meta name="lang:search.result.one" content="找到 1 个符合条件的结果"><meta name="lang:search.result.other" content="# 个符合条件的结果"><meta name="lang:search.tokenizer" content="[\uff0c\u3002]+"><link rel="shortcut icon" href="../../img/favicon.ico"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>社招面试 - Joker Blog</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#4caf50"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono&display=swap"><style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="stylesheet" href="../../stylesheets/extra.css"><script>window.ga = window.ga || function() {
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This is my personal blog">
+      
+      
+        <link rel="canonical" href="http://blog.jokerhub.cn/iOS/review/">
+      
+      
+        <meta name="author" content="wangzhizhou">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>社招面试 - Joker Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
     (ga.q = ga.q || []).push(arguments)
   }
   ga.l = +new Date
@@ -17,19 +94,1847 @@
         }
       })
     }
-  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#_1" tabindex="1" class="md-skip">跳转至 </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-header-nav__button md-logo"><i class="md-icon"></i></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Joker Blog</span><span class="md-header-nav__topic">社招面试</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">键入以开始搜索</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">JokerBlog</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs md-tabs--active" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../.." title="主页" class="md-tabs__link">主页</a></li><li class="md-tabs__item"><a href="../../job/My Plan for finding Job/" title="工作" class="md-tabs__link md-tabs__link--active">工作</a></li><li class="md-tabs__item"><a href="../../life/alipay-scan-fu-icon/" title="生活" class="md-tabs__link">生活</a></li><li class="md-tabs__item"><a href="../../geek/wireguard/" title="Geek" class="md-tabs__link">Geek</a></li><li class="md-tabs__item"><a href="../../me/My Financial Planning/" title="关于我" class="md-tabs__link">关于我</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-nav__button md-logo"><i class="md-icon"></i></a>Joker Blog</label><div class="md-nav__source"><a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">JokerBlog</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1"><label class="md-nav__link" for="nav-1">主页</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-1">主页</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="简介" class="md-nav__link">简介</a></li><li class="md-nav__item"><a href="../../How I create this blog/" title="博客创建过程" class="md-nav__link">博客创建过程</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked><label class="md-nav__link" for="nav-2">工作</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">工作</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../job/My Plan for finding Job/" title="校招求职" class="md-nav__link">校招求职</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">社招面试</label><a href="./" title="社招面试" class="md-nav__link md-nav__link--active">社招面试</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">目录</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_2" title="面试前" class="md-nav__link">面试前</a></li><li class="md-nav__item"><a href="#_3" title="面试中" class="md-nav__link">面试中</a></li></ul></nav></li><li class="md-nav__item"><a href="../job-plan/" title="面试准备资料" class="md-nav__link">面试准备资料</a></li><li class="md-nav__item"><a href="../../job/dimission/" title="离职" class="md-nav__link">离职</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">生活</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">生活</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../life/alipay-scan-fu-icon/" title="支付宝集福" class="md-nav__link">支付宝集福</a></li><li class="md-nav__item"><a href="../../life/Renting in Beijing/" title="北京租房" class="md-nav__link">北京租房</a></li><li class="md-nav__item"><a href="../../life/Gu Bei Shui Zhen/" title="古北水镇游玩" class="md-nav__link">古北水镇游玩</a></li><li class="md-nav__item"><a href="../../life/WuZhen/" title="乌镇游玩" class="md-nav__link">乌镇游玩</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">Geek</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">Geek</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../geek/wireguard/" title="WireGuard" class="md-nav__link">WireGuard</a></li><li class="md-nav__item"><a href="../../geek/Git/" title="Git核心技能" class="md-nav__link">Git核心技能</a></li><li class="md-nav__item"><a href="../../geek/Network Simulator 2 Installation Guide for Ubuntu/" title="Ubuntu安装NS2网络模拟器" class="md-nav__link">Ubuntu安装NS2网络模拟器</a></li><li class="md-nav__item"><a href="../../geek/Learn STL In 30 Minutes/" title="30分钟掌握STL" class="md-nav__link">30分钟掌握STL</a></li><li class="md-nav__item"><a href="../../geek/Installation of Ubuntu 16.04 On UDisk/" title="U盘安装Ubuntu" class="md-nav__link">U盘安装Ubuntu</a></li><li class="md-nav__item"><a href="../../geek/Configure Git Server With Ubuntn and Apache 2/" title="搭建Git服务" class="md-nav__link">搭建Git服务</a></li><li class="md-nav__item"><a href="../../geek/User OpenCV to add watermark on a video/" title="OpenCV给视频添加水印" class="md-nav__link">OpenCV给视频添加水印</a></li><li class="md-nav__item"><a href="../../geek/Add Watermark on Video with OpenCV and FFmpeg/" title="OpenCV+FFmpeg给视频添加水印" class="md-nav__link">OpenCV+FFmpeg给视频添加水印</a></li><li class="md-nav__item"><a href="../../geek/Develop DLNA Using Platinum Library/" title="DLNA开发" class="md-nav__link">DLNA开发</a></li><li class="md-nav__item"><a href="../../geek/Nmap Basics/" title="Nmap基础" class="md-nav__link">Nmap基础</a></li><li class="md-nav__item"><a href="../../geek/Use GDB/" title="GDB使用" class="md-nav__link">GDB使用</a></li><li class="md-nav__item"><a href="../../geek/kotlin/" title="Kotlin学习" class="md-nav__link">Kotlin学习</a></li><li class="md-nav__item"><a href="../../geek/jupyterhub/" title="jupyterhub工具使用" class="md-nav__link">jupyterhub工具使用</a></li><li class="md-nav__item"><a href="../../geek/bluegogo-crack/" title="bluegogo破解" class="md-nav__link">bluegogo破解</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15"><label class="md-nav__link" for="nav-4-15">FFmpeg</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-15">FFmpeg</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../geek/FFmpeg and SDL tutorial 1/" title="FFmpeg教程" class="md-nav__link">FFmpeg教程</a></li><li class="md-nav__item"><a href="../../geek/FFmpeg compiled on MacOS/" title="Mac上编译FFmpeg" class="md-nav__link">Mac上编译FFmpeg</a></li><li class="md-nav__item"><a href="../../geek/FFmpeg version 3.1.4 example code/" title="FFmpeg示例代码学习" class="md-nav__link">FFmpeg示例代码学习</a></li><li class="md-nav__item"><a href="../../geek/Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg转码学习" class="md-nav__link">FFmpeg转码学习</a></li><li class="md-nav__item"><a href="../../geek/Convert MP4 to GIF With FFmpeg/" title="使用FFmpeg将MP4转成GIF图片" class="md-nav__link">使用FFmpeg将MP4转成GIF图片</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16"><label class="md-nav__link" for="nav-4-16">Jenkins</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-16">Jenkins</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../jenkins/guide/" title="导览" class="md-nav__link">导览</a></li><li class="md-nav__item"><a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">第一个管道</a></li><li class="md-nav__item"><a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">多步管道</a></li><li class="md-nav__item"><a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">定义执行环境</a></li><li class="md-nav__item"><a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">使用环境变量</a></li><li class="md-nav__item"><a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">记录测试结果</a></li><li class="md-nav__item"><a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">清理和通知</a></li><li class="md-nav__item"><a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">布署</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17"><label class="md-nav__link" for="nav-4-17">ReactiveX</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-17">ReactiveX</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../reactiveX/introduction/" title="介绍" class="md-nav__link">介绍</a></li><li class="md-nav__item"><a href="../../reactiveX/Observable/" title="可观察的" class="md-nav__link">可观察的</a></li><li class="md-nav__item"><a href="../../reactiveX/Operators/" title="运算符" class="md-nav__link">运算符</a></li><li class="md-nav__item"><a href="../../reactiveX/Single/" title="单事件可观察对象" class="md-nav__link">单事件可观察对象</a></li><li class="md-nav__item"><a href="../../reactiveX/Subject/" title="主题" class="md-nav__link">主题</a></li><li class="md-nav__item"><a href="../../reactiveX/Scheduler/" title="调度器" class="md-nav__link">调度器</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18"><label class="md-nav__link" for="nav-4-18">Docker</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-18">Docker</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../docker/start-learn/" title="简介" class="md-nav__link">简介</a></li><li class="md-nav__item"><a href="../../docker/Orientation/" title="定位" class="md-nav__link">定位</a></li><li class="md-nav__item"><a href="../../docker/Container/" title="容器" class="md-nav__link">容器</a></li><li class="md-nav__item"><a href="../../docker/Service/" title="服务" class="md-nav__link">服务</a></li><li class="md-nav__item"><a href="../../docker/Swarm/" title="机群" class="md-nav__link">机群</a></li><li class="md-nav__item"><a href="../../docker/Stack/" title="栈" class="md-nav__link">栈</a></li><li class="md-nav__item"><a href="../../docker/Deploy/" title="部署应用" class="md-nav__link">部署应用</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19"><label class="md-nav__link" for="nav-4-19">Nginx</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-19">Nginx</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">新手教程</a></li><li class="md-nav__item"><a href="../../nginx/application/" title="主要用途" class="md-nav__link">主要用途</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20" type="checkbox" id="nav-4-20"><label class="md-nav__link" for="nav-4-20">iOS</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-20">iOS</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../workflow/" title="工作流" class="md-nav__link">工作流</a></li><li class="md-nav__item"><a href="../XCode 9 CI/" title="持续集成" class="md-nav__link">持续集成</a></li><li class="md-nav__item"><a href="../swift4-notes/" title="Swift4" class="md-nav__link">Swift4</a></li><li class="md-nav__item"><a href="../swift5-notes/" title="Swift5" class="md-nav__link">Swift5</a></li><li class="md-nav__item"><a href="../../geek/swift on client and server/" title="Swift在客户端和服务端的使用" class="md-nav__link">Swift在客户端和服务端的使用</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-6" type="checkbox" id="nav-4-20-6"><label class="md-nav__link" for="nav-4-20-6">服务端Swift</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-20-6">服务端Swift</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../swift-on-server/[4]Swift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">第四章Swfit包管理器</a></li><li class="md-nav__item"><a href="../swift-on-server/[5]Writng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">第五章使用Kitura写ToDoList</a></li></ul></nav></li><li class="md-nav__item"><a href="../objc/" title="OC相关" class="md-nav__link">OC相关</a></li><li class="md-nav__item"><a href="../reverse/" title="逆向工程" class="md-nav__link">逆向工程</a></li><li class="md-nav__item"><a href="../optimization/" title="应用优化" class="md-nav__link">应用优化</a></li><li class="md-nav__item"><a href="../../geek/Optimizing App Startup Time/" title="优化应用启动时长" class="md-nav__link">优化应用启动时长</a></li><li class="md-nav__item"><a href="../sort/" title="十大排序算法" class="md-nav__link">十大排序算法</a></li><li class="md-nav__item"><a href="../runtime/" title="OC运行时编译" class="md-nav__link">OC运行时编译</a></li><li class="md-nav__item"><a href="../TPG/" title="线程编码指南" class="md-nav__link">线程编码指南</a></li><li class="md-nav__item"><a href="../CPG/" title="并发编码指南" class="md-nav__link">并发编码指南</a></li><li class="md-nav__item"><a href="../design-pattern/" title="设计模式" class="md-nav__link">设计模式</a></li><li class="md-nav__item"><a href="../TDD/" title="测试驱动开发" class="md-nav__link">测试驱动开发</a></li><li class="md-nav__item"><a href="../airdrop/" title="AirDrop社交" class="md-nav__link">AirDrop社交</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21" type="checkbox" id="nav-4-21"><label class="md-nav__link" for="nav-4-21">乐理基础</label><nav class="md-nav" data-md-component="collapsible" data-md-level="2"><label class="md-nav__title" for="nav-4-21">乐理基础</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-1" type="checkbox" id="nav-4-21-1"><label class="md-nav__link" for="nav-4-21-1">乐音</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-1">乐音</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/tones/Pitches and Clefs/" title="音高和谱号" class="md-nav__link">音高和谱号</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-2" type="checkbox" id="nav-4-21-2"><label class="md-nav__link" for="nav-4-21-2">节拍</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-2">节拍</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/rhythms/Note Values and Basic Notation/" title="Note Values and Basic Notation" class="md-nav__link">Note Values and Basic Notation</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-3" type="checkbox" id="nav-4-21-3"><label class="md-nav__link" for="nav-4-21-3">曲调</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-3">曲调</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">Melodies</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-4" type="checkbox" id="nav-4-21-4"><label class="md-nav__link" for="nav-4-21-4">伴奏</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-4">伴奏</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/accompanying/Transcribing What You Hear/" title="Transcribing What You Hear" class="md-nav__link">Transcribing What You Hear</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-5" type="checkbox" id="nav-4-21-5"><label class="md-nav__link" for="nav-4-21-5">修饰</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-5">修饰</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/embellishing/Harmony and Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">Harmony and Counterpoint</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-6" type="checkbox" id="nav-4-21-6"><label class="md-nav__link" for="nav-4-21-6">编曲</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-6">编曲</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/arranging/composing and arranging for voices and instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">Composing and arranging for voices and instruments</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-7" type="checkbox" id="nav-4-21-7"><label class="md-nav__link" for="nav-4-21-7">附录</label><nav class="md-nav" data-md-component="collapsible" data-md-level="3"><label class="md-nav__title" for="nav-4-21-7">附录</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">A</a></li></ul></nav></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">关于我</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">关于我</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../me/My Financial Planning/" title="理财" class="md-nav__link">理财</a></li><li class="md-nav__item"><a href="../../me/Life in Beijing/" title="人在北京" class="md-nav__link">人在北京</a></li><li class="md-nav__item"><a href="../../me/my hardware/" title="硬件" class="md-nav__link">硬件</a></li><li class="md-nav__item"><a href="../../me/Personal Pre-Work Record/" title="早起记录" class="md-nav__link">早起记录</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">目录</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_2" title="面试前" class="md-nav__link">面试前</a></li><li class="md-nav__item"><a href="#_3" title="面试中" class="md-nav__link">面试中</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/iOS/review.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a><h1 id="_1">整个招聘流程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Joker Blog
+            </span>
+            <span class="md-header-nav__topic">
+              
+                社招面试
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." title="主页" class="md-tabs__link">
+          主页
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../job/My Plan for finding Job/" title="工作" class="md-tabs__link md-tabs__link--active">
+          工作
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../life/alipay-scan-fu-icon/" title="生活" class="md-tabs__link">
+          生活
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../geek/wireguard/" title="Geek" class="md-tabs__link">
+          Geek
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../me/My Financial Planning/" title="关于我" class="md-tabs__link">
+          关于我
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Joker Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    JokerBlog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      主页
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        主页
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../How I create this blog/" title="博客创建过程" class="md-nav__link">
+      博客创建过程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      工作
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        工作
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job/My Plan for finding Job/" title="校招求职" class="md-nav__link">
+      校招求职
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        社招面试
+      </label>
+    
+    <a href="./" title="社招面试" class="md-nav__link md-nav__link--active">
+      社招面试
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="面试前" class="md-nav__link">
+    面试前
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="面试中" class="md-nav__link">
+    面试中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="面试中技术无关的高频问题" class="md-nav__link">
+    面试中技术无关的高频问题
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../job-plan/" title="面试准备资料" class="md-nav__link">
+      面试准备资料
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job/dimission/" title="离职" class="md-nav__link">
+      离职
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../job/career/" title="事业" class="md-nav__link">
+      事业
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      生活
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        生活
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/alipay-scan-fu-icon/" title="支付宝集福" class="md-nav__link">
+      支付宝集福
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Renting in Beijing/" title="北京租房" class="md-nav__link">
+      北京租房
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/Gu Bei Shui Zhen/" title="古北水镇游玩" class="md-nav__link">
+      古北水镇游玩
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../life/WuZhen/" title="乌镇游玩" class="md-nav__link">
+      乌镇游玩
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Geek
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Geek
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/wireguard/" title="WireGuard" class="md-nav__link">
+      WireGuard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Git/" title="Git核心技能" class="md-nav__link">
+      Git核心技能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Network Simulator 2 Installation Guide for Ubuntu/" title="Ubuntu安装NS2网络模拟器" class="md-nav__link">
+      Ubuntu安装NS2网络模拟器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Learn STL In 30 Minutes/" title="30分钟掌握STL" class="md-nav__link">
+      30分钟掌握STL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Installation of Ubuntu 16.04 On UDisk/" title="U盘安装Ubuntu" class="md-nav__link">
+      U盘安装Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Configure Git Server With Ubuntn and Apache 2/" title="搭建Git服务" class="md-nav__link">
+      搭建Git服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/User OpenCV to add watermark on a video/" title="OpenCV给视频添加水印" class="md-nav__link">
+      OpenCV给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Add Watermark on Video with OpenCV and FFmpeg/" title="OpenCV+FFmpeg给视频添加水印" class="md-nav__link">
+      OpenCV+FFmpeg给视频添加水印
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Develop DLNA Using Platinum Library/" title="DLNA开发" class="md-nav__link">
+      DLNA开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Nmap Basics/" title="Nmap基础" class="md-nav__link">
+      Nmap基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Use GDB/" title="GDB使用" class="md-nav__link">
+      GDB使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/kotlin/" title="Kotlin学习" class="md-nav__link">
+      Kotlin学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/jupyterhub/" title="jupyterhub工具使用" class="md-nav__link">
+      jupyterhub工具使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/bluegogo-crack/" title="bluegogo破解" class="md-nav__link">
+      bluegogo破解
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      FFmpeg
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        FFmpeg
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/FFmpeg and SDL tutorial 1/" title="FFmpeg教程" class="md-nav__link">
+      FFmpeg教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/FFmpeg compiled on MacOS/" title="Mac上编译FFmpeg" class="md-nav__link">
+      Mac上编译FFmpeg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/FFmpeg version 3.1.4 example code/" title="FFmpeg示例代码学习" class="md-nav__link">
+      FFmpeg示例代码学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Fmpeg 2.8.6 example code - transcoding/" title="FFmpeg转码学习" class="md-nav__link">
+      FFmpeg转码学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Convert MP4 to GIF With FFmpeg/" title="使用FFmpeg将MP4转成GIF图片" class="md-nav__link">
+      使用FFmpeg将MP4转成GIF图片
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Jenkins
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Jenkins
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/" title="导览" class="md-nav__link">
+      导览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">
+      第一个管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">
+      多步管道
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">
+      定义执行环境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">
+      使用环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">
+      记录测试结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">
+      清理和通知
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">
+      布署
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      ReactiveX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        ReactiveX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Observable/" title="可观察的" class="md-nav__link">
+      可观察的
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Operators/" title="运算符" class="md-nav__link">
+      运算符
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Single/" title="单事件可观察对象" class="md-nav__link">
+      单事件可观察对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Subject/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reactiveX/Scheduler/" title="调度器" class="md-nav__link">
+      调度器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/start-learn/" title="简介" class="md-nav__link">
+      简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Orientation/" title="定位" class="md-nav__link">
+      定位
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Container/" title="容器" class="md-nav__link">
+      容器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Service/" title="服务" class="md-nav__link">
+      服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Swarm/" title="机群" class="md-nav__link">
+      机群
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Stack/" title="栈" class="md-nav__link">
+      栈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/Deploy/" title="部署应用" class="md-nav__link">
+      部署应用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19">
+    
+    <label class="md-nav__link" for="nav-4-19">
+      Nginx
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-19">
+        Nginx
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">
+      新手教程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/application/" title="主要用途" class="md-nav__link">
+      主要用途
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20" type="checkbox" id="nav-4-20">
+    
+    <label class="md-nav__link" for="nav-4-20">
+      iOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-20">
+        iOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow/" title="工作流" class="md-nav__link">
+      工作流
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../XCode 9 CI/" title="持续集成" class="md-nav__link">
+      持续集成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift4-notes/" title="Swift4" class="md-nav__link">
+      Swift4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift5-notes/" title="Swift5" class="md-nav__link">
+      Swift5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/swift on client and server/" title="Swift在客户端和服务端的使用" class="md-nav__link">
+      Swift在客户端和服务端的使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-6" type="checkbox" id="nav-4-20-6">
+    
+    <label class="md-nav__link" for="nav-4-20-6">
+      服务端Swift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-20-6">
+        服务端Swift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift-on-server/[4]Swift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">
+      第四章Swfit包管理器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swift-on-server/[5]Writng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">
+      第五章使用Kitura写ToDoList
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../objc/" title="OC相关" class="md-nav__link">
+      OC相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reverse/" title="逆向工程" class="md-nav__link">
+      逆向工程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../optimization/" title="应用优化" class="md-nav__link">
+      应用优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../geek/Optimizing App Startup Time/" title="优化应用启动时长" class="md-nav__link">
+      优化应用启动时长
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sort/" title="十大排序算法" class="md-nav__link">
+      十大排序算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="OC运行时编译" class="md-nav__link">
+      OC运行时编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TPG/" title="线程编码指南" class="md-nav__link">
+      线程编码指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../CPG/" title="并发编码指南" class="md-nav__link">
+      并发编码指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../design-pattern/" title="设计模式" class="md-nav__link">
+      设计模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../AppArch/" title="应用架构" class="md-nav__link">
+      应用架构
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TDD/" title="测试驱动开发" class="md-nav__link">
+      测试驱动开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../airdrop/" title="AirDrop社交" class="md-nav__link">
+      AirDrop社交
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21" type="checkbox" id="nav-4-21">
+    
+    <label class="md-nav__link" for="nav-4-21">
+      乐理基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-21">
+        乐理基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-1" type="checkbox" id="nav-4-21-1">
+    
+    <label class="md-nav__link" for="nav-4-21-1">
+      乐音
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-1">
+        乐音
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tones/Pitches and Clefs/" title="音高和谱号" class="md-nav__link">
+      音高和谱号
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-2" type="checkbox" id="nav-4-21-2">
+    
+    <label class="md-nav__link" for="nav-4-21-2">
+      节拍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-2">
+        节拍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/rhythms/Note Values and Basic Notation/" title="Note Values and Basic Notation" class="md-nav__link">
+      Note Values and Basic Notation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-3" type="checkbox" id="nav-4-21-3">
+    
+    <label class="md-nav__link" for="nav-4-21-3">
+      曲调
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-3">
+        曲调
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">
+      Melodies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-4" type="checkbox" id="nav-4-21-4">
+    
+    <label class="md-nav__link" for="nav-4-21-4">
+      伴奏
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-4">
+        伴奏
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/accompanying/Transcribing What You Hear/" title="Transcribing What You Hear" class="md-nav__link">
+      Transcribing What You Hear
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-5" type="checkbox" id="nav-4-21-5">
+    
+    <label class="md-nav__link" for="nav-4-21-5">
+      修饰
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-5">
+        修饰
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/embellishing/Harmony and Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">
+      Harmony and Counterpoint
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-6" type="checkbox" id="nav-4-21-6">
+    
+    <label class="md-nav__link" for="nav-4-21-6">
+      编曲
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-6">
+        编曲
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/arranging/composing and arranging for voices and instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">
+      Composing and arranging for voices and instruments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21-7" type="checkbox" id="nav-4-21-7">
+    
+    <label class="md-nav__link" for="nav-4-21-7">
+      附录
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-21-7">
+        附录
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">
+      A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      关于我
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        关于我
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/My Financial Planning/" title="理财" class="md-nav__link">
+      理财
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Life in Beijing/" title="人在北京" class="md-nav__link">
+      人在北京
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/my hardware/" title="硬件" class="md-nav__link">
+      硬件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/Personal Pre-Work Record/" title="早起记录" class="md-nav__link">
+      早起记录
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="面试前" class="md-nav__link">
+    面试前
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="面试中" class="md-nav__link">
+    面试中
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="面试中技术无关的高频问题" class="md-nav__link">
+    面试中技术无关的高频问题
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/iOS/review.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="_1">整个招聘流程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><a href="http://www.woshipm.com/zhichang/526302.html">http://www.woshipm.com/zhichang/526302.html</a></p>
 <h2 id="_2">面试前<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><img alt="before review" src="/iOS/images/before_review.jpg" /></p>
 <h2 id="_3">面试中<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><img alt="on review" src="/iOS/images/on_review.jpg" /></p>
-<h1 id="_4">腾讯面试<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h2 id="_4">面试中技术无关的高频问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>离职的原因</li>
+<li>对自己的未来规划</li>
+<li>横向对比，自己有哪些优势</li>
+</ul>
+<h1 id="_5">腾讯面试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
 <p>准备资料: <a href="http://www.cocoachina.com/bbs/read.php?tid=460991">http://www.cocoachina.com/bbs/read.php?tid=460991</a></p>
 <ul>
 <li><strong>周六 2018.03.17   17:30 知春路希格玛大厦B1篮球场 叶女士 17801077277   腾讯</strong></li>
 </ul>
 <p><img alt="review tencent" src="/iOS/images/review_tencent.jpg" /></p>
-<h2 id="_5">面试题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">面试题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>问下面这段代码有什么问题？应该怎么修改？</p>
 <p><em>ViewController.h</em></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -93,14 +1998,14 @@
 </pre></div>
 </td></tr></table>
 所以，并发时，调用不当，会多次调用target属性setter方法中的[_target release]，造成多次释放，进而崩溃。改成atomic属性。</p>
-<h3 id="_6">总结<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">总结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>DLNA的协议没有深刻理解</li>
 <li>播放器去耦合部分介绍有点苍白</li>
 <li>版本展现统计介绍有点笼统</li>
 <li>答题时表现的不够沉稳</li>
 </ul>
-<h1 id="_7">知乎<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h1 id="_8">知乎<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <p>准备资料：</p>
 <ul>
 <li><strong>周一 2018.03.19   10:00 海淀区学院路甲 5 号 768 创意园 A 座西区二通道 1002 室   王慧 17611252710   知乎</strong></li>
@@ -197,7 +2102,7 @@
 </pre></div>
 </td></tr></table>
 
-<h3 id="_8">总结<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ul>
 <li>问了很多项目的事情，都是顺着项目考查基础知识点，问了组件化，初始化组件应该怎么实现。</li>
 <li>如何判断多个并发任务全部完成，及实现原理</li>
@@ -205,19 +2110,19 @@
 <li>MVC、MVVM、MVP、VIPER</li>
 <li>怎样测试一个Model</li>
 </ul>
-<h1 id="_9">阿里文学<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h1 id="_10">阿里文学<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周二 2018.03.20  10:30 五道口优盛大厦D座16层A 王月琦  15732636310   阿里文学</strong></li>
 </ul>
 <p><img alt="review ali" src="/iOS/images/review_ali_literature.png" /></p>
-<h2 id="_10">准备资料<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">准备资料<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>写了一个求二叉树最大深度的算法，递归调用</p>
-<h1 id="_11">今日头条<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h1 id="_12">今日头条<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周三 2018.03.21   18:45 北京市海淀区知春路63号中国卫星通信大厦A座7层 张轩悦  18708100119     今日头条</strong></li>
 </ul>
 <p><img alt="review daily" src="/iOS/images/review_daily.jpg" /></p>
-<h2 id="_12">面试问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_13">面试问题<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>全局断点就是异常抛出断点</p>
@@ -240,12 +2145,12 @@
 <li>有没有看过第三方库,说说原理</li>
 <li>SDWebImageCache同时下载两个相同的URl时会重复下载吗？不会，会在Operations中查找是否已经有相同的下载操作了</li>
 </ul>
-<h1 id="_13">爱奇艺<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
+<h1 id="_14">爱奇艺<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.22  14:00 中关村鼎好大厦A座7层  面试联系人：刘欧云（HRBP），电话：18511988412    爱奇艺</strong></li>
 </ul>
 <p><img alt="review aqiyi" src="/iOS/images/review_aqiyi.jpg" /></p>
-<h2 id="_14">过程<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_15">过程<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <ul>
 <li>一个找字符串中第一个只出现过一次的字符(哈希表+两次遍历)</li>
 <li>一个业务场景，说明实现思路</li>
@@ -253,23 +2158,23 @@
 <li>启动时长优化</li>
 <li>崩溃率合理区间</li>
 </ul>
-<h1 id="_15">陌陌<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
+<h1 id="_16">陌陌<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周五 2018.03.23  10:00 北京市朝阳区阜通东大街1号望京soho T2 B座20层  Amy 15210035422 陌陌</strong></li>
 </ul>
 <p><img alt="review momo" src="/iOS/images/review_momo.jpg" /></p>
-<h2 id="_16">面试内容<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h2 id="_17">面试内容<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <ul>
 <li>dispatch_sync/dispatch_async和同步队列、异步队列的不同组合时，系统分配线程的各种情况</li>
 <li>NSTimer的机制和释放时机，如果被retain会怎样</li>
 <li>dispatch_barrier/dispatch_group的应用方式</li>
 </ul>
-<h1 id="_17">滴滴<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h1>
+<h1 id="_18">滴滴<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周一 2018.03.26   10:00 北京市海淀区西北旺路文思海辉   沈悦 15094656466    滴滴</strong></li>
 </ul>
 <p><img alt="review didi" src="/iOS/images/review_didi.jpg" /></p>
-<h3 id="_18">面试经过<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_19">面试经过<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>KVO怎样保证addObserver和removeObserver成对儿调用(使用方法中的context参数作为标识，防止重复添加和重复移除)<a href="https://blog.csdn.net/klabcxy36897/article/details/51680423">https://blog.csdn.net/klabcxy36897/article/details/51680423</a></p>
@@ -328,19 +2233,19 @@
 <li><strong>周二 2018.03.27   15:00  北京市 朝阳区 朝外SOHO，D座，1122室 常夕露  18610363605    蜻蜓FM</strong></li>
 </ul>
 <p><img alt="review qinting" src="/iOS/images/review_qinting.jpg" /></p>
-<h3 id="_19">过程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h3 id="_20">过程<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <ul>
 <li>问了一下项目</li>
 <li>写一个旋转数组查找算法</li>
 <li>写quickSort、BFS、DFS, </li>
 <li>递归转循环<a href="https://www.cnblogs.com/coderkian/p/3758068.html">https://www.cnblogs.com/coderkian/p/3758068.html</a></li>
 </ul>
-<h1 id="_20">新浪微博<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
+<h1 id="_21">新浪微博<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周三 2018.03.28   14:00 北京市海淀区西北旺东路10号院西区8号楼新浪总部大厦北门 王楚 18813016799 新浪微博</strong></li>
 </ul>
 <p><img alt="review sina" src="/iOS/images/review_sina.jpg" /></p>
-<h3 id="_21">过程<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<h3 id="_22">过程<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
 <ul>
 <li>先作笔试题</li>
 <li>NSRunloop保活,给runloop添加一下NSMachPort<AFNetwork></li>
@@ -354,11 +2259,11 @@
 <img alt="crash collect" src="/iOS/images/crash_collection.png" /></li>
 <li>NSOperation自定义子类<a href="https://www.jianshu.com/p/4b1d77054b35">https://www.jianshu.com/p/4b1d77054b35</a></li>
 </ul>
-<h1 id="_22">美团<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
+<h1 id="_23">美团<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.29   10:30 北京市朝阳区望京东路6号望京国际研发园FG座  杨喆   15600243362   自带简历  美团</strong></li>
 </ul>
-<h3 id="_23">三面问题准备<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<h3 id="_24">三面问题准备<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
 <ul>
 <li>topK问题</li>
 <li>红绿灯路口优化问题</li>
@@ -371,20 +2276,20 @@
 <li><a href="https://blog.csdn.net/u010742414/article/details/78260938">https://blog.csdn.net/u010742414/article/details/78260938</a></li>
 <li>NSOperation的main方法调用后Operation会被移除，start方法在调用后，operation需要手动管理其释放</li>
 </ul>
-<h1 id="_24">百度视频<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h1>
+<h1 id="_25">百度视频<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周四 2018.03.29   14:00 海淀区西北旺东路 文思海辉大厦 -百度视频办公区  魏博  13891924500   百度视频</strong></li>
 </ul>
 <p>百度视频给Offer不打算去了</p>
-<h1 id="_25">探探<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h1>
+<h1 id="_26">探探<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周五 2018.03.30   14:30 朝阳区光华路SOHO二期D座5-11 (1号线永安里地铁站B出口）cherry 18600536159 探探</strong></li>
 </ul>
-<h3 id="_26">过程<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<h3 id="_27">过程<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
 <ul>
 <li>写一个LRUCache</li>
 </ul>
-<h1 id="_27">快手<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h1>
+<h1 id="_28">快手<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p><strong>周二 2018.04.03   14:00 北京市 海淀区 清华同方科技大厦B座12层   快手</strong></p>
@@ -449,7 +2354,7 @@
 </pre></div>
 </td></tr></table>
 - 求两个有序数组的公共元素</p>
-<h1 id="_28">猿辅导<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h1>
+<h1 id="_29">猿辅导<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h1>
 <ul>
 <li>旋转打印矩阵
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
@@ -544,19 +2449,19 @@
 </li>
 <li>拆分奇偶数双向链表结点为两个子链表</li>
 </ul>
-<h1 id="_29">百度多模搜索部<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h1>
+<h1 id="_30">百度多模搜索部<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周一 2018.04.09 14:00 百度科技园1号楼(北京海淀区西北旺百度科技园1号楼) 侯世杰 18600393412</strong></li>
 </ul>
-<h1 id="_30">快看漫画<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h1>
+<h1 id="_31">快看漫画<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>周二 2018.08.10 14:30 北京市朝阳区望京融科中心B座703  王燕飞  15010353996</strong></li>
 </ul>
 <h1 id="2019">2019年面试过程<a class="headerlink" href="#2019" title="Permanent link">&para;</a></h1>
-<h2 id="_31">探探网上笔试，牛客网<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<h2 id="_32">探探网上笔试，牛客网<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
 <p>找出字符串中第一个不重复字符的下标，找不到返回<code class="codehilite"><span class="o">-</span><span class="mi">1</span></code>。例如："aabbcab", 返回<code class="codehilite"><span class="mi">4</span></code></p>
 <p><a href="https://blog.csdn.net/chuncanl/article/details/57952208">https://blog.csdn.net/chuncanl/article/details/57952208</a></p>
-<h2 id="_32">快陪练<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h2 id="_33">快陪练<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
 <p><img alt="快陪练" src="/iOS/images/review_kuaipeilian.png" /></p>
 <ul>
 <li>
@@ -573,11 +2478,143 @@
 <li>视图绘制的整个过程，以及异步视图绘制的原理: AsyncDisplayKit</li>
 <li>编程实现n的阶乘</li>
 </ul>
-<h2 id="_33">乐信圣文<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
+<h2 id="_34">乐信圣文<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<p><img alt="乐信圣文" src="/iOS/images/review_lxsw.png" /></p>
 <ul>
-<li><strong>周五 2019.06.21 10:00 北京市海淀区西小口路66号东升科技园C7号楼202室</strong></li>
+<li>
+<p><strong>周五 2019.06.21 10:00 北京市海淀区西小口路66号东升科技园C7号楼202室</strong></p>
+</li>
+<li>
+<p>类成员定义时会有多个关键词修饰，说一下你知道的关键词和它们所起的作用。atomic/nonatomic/strong/weak/assign/readonly/write/getter/setter/copy</p>
+</li>
+<li>weak和assign关键字都不会增加成员的引用计数，它们之前有什么区别</li>
+<li>delegate/block/notification这三种通信机制分别适合使用在什么场景</li>
+<li>介绍一下所做的项目，有没有独立负责过一个项目或者功能模块，画一下项目或者模块结构图。</li>
+<li>有鸽子、马、飞机、火车四类实体，鸽子和飞机可以飞行，马和火车可以运输货物，鸽子和马都是动物，火车和飞机都是交通工具，使用面向对象的方式设计它们的类结构图</li>
+<li>工厂模式的作用是什么？</li>
+<li>应用内存结构：栈区、数据区、文本代码区、堆区</li>
+<li>觉得和同级别工程师比较，优势体现在哪里？</li>
+<li>对自己之后的规划是什么？想要如何成长？</li>
+<li>算法题：写一个阶乘的算法，使用递归。然后说说递归算法会有什么问题。会有栈溢出问题。</li>
+<li>上机题: 编写一个支持两个整数进行加、减、乘、除运算的计算器，考虑可扩展性。UI只需要一个表达式输入框和一个点击计算按钮，输入表达式后，点击计算按钮显示计算结果，不需要考虑错误处理，只需要实现基本功能，保证可扩展性。</li>
 </ul>
-<h2 id="_34">字节跳动<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<h2 id="_35">字节跳动<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>周三 2019.06.26 10:30:00 北京海淀区海淀大街27号中关村天使大厦5层 纪伟芳 15506012902</strong></li>
-</ul></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../../job/My Plan for finding Job/" title="校招求职" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">后退</span>校招求职</span></div></a><a href="../job-plan/" title="面试准备资料" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前进</span>面试准备资料</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight">Created by Wang Zhizhou</div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div><div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://github.com/wangzhizhou" class="md-footer-social__link fa fa-github"></a>  <a href="https://twitter.com/w_z_z_1991" class="md-footer-social__link fa fa-twitter"></a>  <a href="https://linkedin.com/in/wangzhizhou" class="md-footer-social__link fa fa-linkedin"></a> </div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="../../javascripts/extra.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
+</ul>
+<h2 id="_36">探探<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>周四 2019.06.27 14:00:00 北京市 朝阳区 光华路SOHO二期D座508室（5楼）李玥 15810075436</strong></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../job/My Plan for finding Job/" title="校招求职" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                校招求职
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../job-plan/" title="面试准备资料" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                面试准备资料
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Created by Wang Zhizhou
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/wangzhizhou" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/w_z_z_1991" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wangzhizhou" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
