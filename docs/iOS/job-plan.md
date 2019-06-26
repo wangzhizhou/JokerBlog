@@ -405,3 +405,9 @@ View/Interactor/Presenter/Entity/Router
 - 开闭原则(Open Close Principle)
 
 
+# 如何防止https被抓包
+
+- 使用HTTP1.1及以上方式的CONNECT方式发送请求
+- 检测网络请求是否通过代理进行发送，通过代理发送时就认为正在被抓包
+- 服务端在接收请求时校验客户证书
+- 客户端内置证书校验
