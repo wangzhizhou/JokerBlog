@@ -458,9 +458,48 @@ class Solution {
 - 算法题：写一个阶乘的算法，使用递归。然后说说递归算法会有什么问题。会有栈溢出问题。
 - 上机题: 编写一个支持两个整数进行加、减、乘、除运算的计算器，考虑可扩展性。UI只需要一个表达式输入框和一个点击计算按钮，输入表达式后，点击计算按钮显示计算结果，不需要考虑错误处理，只需要实现基本功能，保证可扩展性。
 
-## 字节跳动
+## 字节跳动-F线(房产方向)
+
+![今日头条F线](/iOS/images/review_bytedance_f.jpg)
 
 - **周三 2019.06.26 10:30:00 北京海淀区海淀大街27号中关村天使大厦5层 纪伟芳 15506012902**
+
+- delegate/block/notificatin这三种方式分别在什么场景下使用
+- objc调用一个方法的具体过程：objc_msgSend, 继承链方法查找后的三次兜底
+- 关联对象原理，如何定义关联对象，以及关联对象在什么时机被释放，怎么释放。
+- 使用分类扩展已经有类功能的原理
+- https的工作原理
+- charles抓包实际操作时过程，如果防止应用被抓包
+- git工作流中的常用一些基本指令操作是什么？git rebase的原理、代码回滚怎么操作、功能分支入主分支合并过程中的进行的操作
+- 有一个开发任务：下载四张图片，并把四张图片拼成一张大图后进行展示，如何实现？使用GCD多线程并发时，因为并发的任务中下载图片也是一个异步操作，如何处理这块. <https://www.jianshu.com/p/c35fa87905b6>
+- 算法题：如何获取链表的倒数第K个结点
+- mansory中 make_constrains、update_contrains以及remake_contrains分别怎么使用。
+- 衡量一个App的用户体验好坏的指标有哪些？
+- 如果要给一个页面做优化，你会从哪些方面着手？
+- block的工作原理，加不加__block用什么区别。在函数中声明的block是存储在栈区还是堆区。block类型的成员一般使用copy修饰，为什么要使用copy修饰，使用assign修饰会有什么问题。<https://www.jianshu.com/p/64125b5617a4>
+- 算法：一个整数数组内只有一个数字出现了一次，其它数字都出现两次，找到这个只出现一次的数字。
+- block在什么情况下会造成循环引用，一般为了避免循环引用，代码怎么处理？
+- 分情况说一下面两个函数执行时打印结果：
+
+```
+- (void) testGCDASync {
+    NSLog(@"A");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"B");
+        NSLog(@"%@",[NSThread currentThread]);
+    });
+    NSLog(@"C");
+}
+
+- (void) testGCDSync {
+    NSLog(@"A");
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"B");
+        NSLog(@"%@",[NSThread currentThread]);
+    });
+    NSLog(@"C");
+}
+```
 
 ## 探探
 

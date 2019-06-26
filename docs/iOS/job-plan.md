@@ -259,6 +259,10 @@ block 有三种，全局block，栈block和堆block，只有堆block会持有对
 
 当block被赋值给__strong类型的对象或者block的成员变量时，编译器会自动调用block的copy方法
 
+<https://www.jianshu.com/p/64125b5617a4>
+
+<https://blog.csdn.net/huanglinxiao/article/details/79490585>
+
 # 循环引用问题
 
 <https://www.cnblogs.com/wengzilin/p/4347974.html>
