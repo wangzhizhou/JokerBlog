@@ -411,3 +411,12 @@ View/Interactor/Presenter/Entity/Router
 - 检测网络请求是否通过代理进行发送，通过代理发送时就认为正在被抓包
 - 服务端在接收请求时校验客户证书
 - 客户端内置证书校验
+
+# 关于UI布局方面
+
+Flex Box布局
+
+Mansory自动布局
+
+Frame布局
+
