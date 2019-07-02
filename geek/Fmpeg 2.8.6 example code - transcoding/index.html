@@ -2010,7 +2010,7 @@
 这次的视频编码可以打开并正常编码了，可是音频部分又出现了问题，关于这个问题的解答可以看这个文章：
 <a href="http://www.tuicool.com/articles/NNNVv2z">http://www.tuicool.com/articles/NNNVv2z</a></p>
 <p>博主跟踪发现了困扰我许久的问题，在这里顺便感谢一下。</p>
-<h1 id="35issue2-mp4-0x7fbe86803e00-malformed-aac-bitstream-detected-use-the-audio-bitstream-filter-aac_adtstoasc-to-fix-it-bsfa-aac_adtstoasc-option-with-ffmpeg">#issue2 - [mp4 @ 0x7fbe86803e00] Malformed AAC bitstream detected: use the audio bitstream filter 'aac_adtstoasc' to fix it ('-bsf:a aac_adtstoasc' option with ffmpeg)<a class="headerlink" href="#35issue2-mp4-0x7fbe86803e00-malformed-aac-bitstream-detected-use-the-audio-bitstream-filter-aac_adtstoasc-to-fix-it-bsfa-aac_adtstoasc-option-with-ffmpeg" title="Permanent link">&para;</a></h1>
+<h1 id="35issue2-mp4-0x7fbe86803e00-malformed-aac-bitstream-detected-use-the-audio-bitstream-filter-aacadtstoasc-to-fix-it-bsfa-aacadtstoasc-option-with-ffmpeg">#issue2 - [mp4 @ 0x7fbe86803e00] Malformed AAC bitstream detected: use the audio bitstream filter 'aac<em>adtstoasc' to fix it ('-bsf:a aac</em>adtstoasc' option with ffmpeg)<a class="headerlink" href="#35issue2-mp4-0x7fbe86803e00-malformed-aac-bitstream-detected-use-the-audio-bitstream-filter-aacadtstoasc-to-fix-it-bsfa-aacadtstoasc-option-with-ffmpeg" title="Permanent link">&para;</a></h1>
 <p>这个问题在网上搜了好久，<code class="codehilite"><span class="n">stackoverflow</span></code>中提供了<a href="http://stackoverflow.com/questions/33147402/ffmpeg-malformed-aac-bitstream-detected-use-the-audio-bitstream-filter-aac-ad">一种方法</a>，可以使程序正常运行，但处理结果中只有音频被保留, 这显然不是我想要的。</p>
 <p>其实，只需要调整一下代码顺序就可以了。知道真相的我眼泪掉下来。</p>
 <h2 id="_2">解决方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -3250,7 +3250,7 @@
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

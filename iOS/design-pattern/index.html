@@ -1893,7 +1893,7 @@
 <p>UML是标准的类图描述方式，但平常开发中也用不到所有关于UML中的东西，所以我们只学习一些常用的表示方法，足够描述大多数设计模式。</p>
 <p>类图包含：类、协议、属性、方法、关系</p>
 <p>一个方框表示一个类，中间可以写类名</p>
-<p>一个向上的空心三角箭头表示**继承自**这种关系，指向父类，表示<code class="codehilite"><span class="k">is</span> <span class="n">a</span></code>的关系：<strong>子类(下边) is a 父类(上边)</strong></p>
+<p>一个向上的空心三角箭头表示<strong>继承自</strong>这种关系，指向父类，表示<code class="codehilite"><span class="k">is</span> <span class="n">a</span></code>的关系：<strong>子类(下边) is a 父类(上边)</strong></p>
 <p>一个向右的正常箭头表示属性关联，指向关联的属性，表示<code class="codehilite"><span class="n">has</span> <span class="n">a</span></code>的关系： <strong>类 has a 属性</strong>, 如果在箭头边上写<code class="codehilite"><span class="mi">1</span><span class="p">...</span><span class="o">*</span></code>, 则表示<code class="codehilite"><span class="n">has</span> <span class="n">one</span> <span class="k">or</span> <span class="n">many</span></code>的关系： <strong>类 has one or many 属性</strong>, 类名都是单数形式，关联是强引用</p>
 <p>用一个方框表示协议，但方框内的协议名称需要用<code class="codehilite"><span class="o">&lt;&lt;&gt;&gt;</span></code>来包裹，这样就和类区分开了</p>
 <p>使用向上的带用空心三角箭头的虚线表示对协议的实现/遵守关系：<strong>类(下边) implements or conforms to 协议</strong></p>
@@ -1919,7 +1919,7 @@
 <h2 id="_6">纪念模式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>纪念模式可以把一个对象存储/恢复，苹果的encoder和decoder就是这种模式</p>
 <p>这个模式有三个角色： 要存储、恢复的对象 、 记事本、 串行化系统</p>
-<p>这个模式可以用来实现**撤销/重作**功能， 这个功能在IDE中很常见</p>
+<p>这个模式可以用来实现<strong>撤销/重作</strong>功能， 这个功能在IDE中很常见</p>
 <h2 id="_7">观察者模式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h2 id="_8">构建者模式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
                 
@@ -2029,7 +2029,7 @@
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

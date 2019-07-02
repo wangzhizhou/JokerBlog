@@ -1880,7 +1880,7 @@
 <h1 id="arc-fobjc-arc">ARC - 自动引用计数(-fobjc-arc)<a class="headerlink" href="#arc-fobjc-arc" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p><code class="codehilite"><span class="n">id</span></code> 和 <code class="codehilite"><span class="n">void</span><span class="o">*</span></code> 等价，每一个对象指针都必须指定修饰词(__strong/__weak/__unsafe_unretained/__autoreleasing)中一个，默认为<code class="codehilite"><span class="n">__strong</span></code></p>
+<p><code class="codehilite"><span class="n">id</span></code> 和 <code class="codehilite"><span class="n">void</span><span class="o">*</span></code> 等价，每一个对象指针都必须指定修饰词(<strong>strong/</strong>weak/<strong>unsafe_unretained/</strong>autoreleasing)中一个，默认为<code class="codehilite"><span class="n">__strong</span></code></p>
 </li>
 <li>
 <p>使用<code class="codehilite"><span class="n">__strong</span></code>会产生循环引用的问题，所以有了<code class="codehilite"><span class="n">__weak</span></code>和<code class="codehilite"><span class="n">__unsafe_unretained</span></code></p>
@@ -1912,7 +1912,7 @@
 <tbody>
 <tr>
 <td align="center">assign</td>
-<td align="right">__unsafe_unretained</td>
+<td align="right">_<em>unsafe</em>unretained</td>
 </tr>
 <tr>
 <td align="center">copy</td>
@@ -1928,7 +1928,7 @@
 </tr>
 <tr>
 <td align="center">unsafe_unretained</td>
-<td align="right">__unsafe_unretained</td>
+<td align="right">_<em>unsafe</em>unretained</td>
 </tr>
 <tr>
 <td align="center">weak</td>
@@ -2057,7 +2057,7 @@
 </pre></div>
 </td></tr></table>
 
-<h4 id="dispatch_group_wait">dispatch_group_wait<a class="headerlink" href="#dispatch_group_wait" title="Permanent link">&para;</a></h4>
+<h4 id="dispatchgroupwait">dispatch<em>group</em>wait<a class="headerlink" href="#dispatchgroupwait" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2072,7 +2072,7 @@
 </pre></div>
 </td></tr></table>
 
-<h4 id="dispatch_barrier_async">dispatch_barrier_async<a class="headerlink" href="#dispatch_barrier_async" title="Permanent link">&para;</a></h4>
+<h4 id="dispatchbarrierasync">dispatch<em>barrier</em>async<a class="headerlink" href="#dispatchbarrierasync" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2110,7 +2110,7 @@
 </pre></div>
 </td></tr></table>
 
-<h4 id="dispatch_suspenddispatch_resume">dispatch_suspend/dispatch_resume<a class="headerlink" href="#dispatch_suspenddispatch_resume" title="Permanent link">&para;</a></h4>
+<h4 id="dispatchsuspenddispatchresume">dispatch<em>suspend/dispatch</em>resume<a class="headerlink" href="#dispatchsuspenddispatchresume" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">dispatch_suspend</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 <span class="n">dispatch_resume</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
@@ -2315,7 +2315,7 @@
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

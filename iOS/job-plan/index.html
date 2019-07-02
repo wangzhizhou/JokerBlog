@@ -2026,7 +2026,7 @@
 <p>post和转发在同一个线程中进行，与注册观察者所在的线程无关，必要时需要转发到不同线程</p>
 <h1 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h1>
 <p>Class 被定义为一个指向objc_class的结构体指针，表示一个类的类结构。</p>
-<p>Method是Runtime内部定义的方法,Class中定义有一个objc_method_list,链表都是objc_method类型的</p>
+<p>Method是Runtime内部定义的方法,Class中定义有一个objc<em>method</em>list,链表都是objc_method类型的</p>
 <p>SEL标示方法的名字/签名</p>
 <p>IMP 是一个函数指针，这个被指向的函数包含一个接收消息的对象id, 调用方法的选标 SEL，以及不定个数的方法参数，并返回一个id。也就是说IMP是消息最终调用的执行代码，是方法真正的实现代码 。我们可以像在Ｃ语言里面一样使用这个函数指针。</p>
 <p>+load先于main()被调用, dyld加载镜像时调用所有类的+load方法，+initialize是懒加载的，只有类被使用时才会被调用。</p>
@@ -2079,14 +2079,14 @@
 </ul>
 <h1 id="_8">信号量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <ul>
-<li>dispatch_semaphore_create(Init Count)/dispatch_semaphore_wait(-1)/dispatch_semaphore_signal(+1)</li>
+<li>dispatch<em>semaphore</em>create(Init Count)/dispatch<em>semaphore</em>wait(-1)/dispatch<em>semaphore</em>signal(+1)</li>
 <li>信号量为0时，线程阻塞直到信号量大于0</li>
 </ul>
 <h1 id="_9">锁机制<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <h1 id="weaknil">weak置nil原理<a class="headerlink" href="#weaknil" title="Permanent link">&para;</a></h1>
 <p>Runtime维护着一个Weak表，用于存储指向某个对象的所有Weak指针</p>
 <p>Weak表是Hash表，Key是所指对象的地址，Value是Weak指针地址的数组</p>
-<p>在对象被回收的时候，经过层层调用，会最终触发下面的方法将所有Weak指针的值设为nil。* runtime源码，objc-weak.m 的 arr_clear_deallocating 函数</p>
+<p>在对象被回收的时候，经过层层调用，会最终触发下面的方法将所有Weak指针的值设为nil。* runtime源码，objc-weak.m 的 arr<em>clear</em>deallocating 函数</p>
 <p>weak指针的使用涉及到Hash表的增删改查，有一定的性能开销.</p>
 <h1 id="_10">事件、响应链、事件传递、事件拦截<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
 <ul>
@@ -2095,7 +2095,7 @@
 <li>以上都没有响应使用forwardingTargetForSelector，转交响应目标</li>
 <li>还不行调用methodSignatureForSelector获得方法签名，调用forwardInvocation</li>
 </ul>
-<p>关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、_cmd，self代表方法调用者，_cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。</p>
+<p>关于生成签名的类型"v@:"解释一下。每一个方法会默认隐藏两个参数，self、<em>cmd，self代表方法调用者，</em>cmd代表这个方法的SEL，签名类型就是用来描述这个方法的返回值、参数的，v代表返回值为void，@表示self，:表示_cmd。</p>
 <h1 id="_11">响应链<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.cnblogs.com/Xylophone/p/7148037.html">https://www.cnblogs.com/Xylophone/p/7148037.html</a></p>
 <p>接收到手势点击后，响应UIWindows的hitTest，找到点击发生在具体哪一个子视图上。</p>
@@ -2370,7 +2370,7 @@
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

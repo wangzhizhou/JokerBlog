@@ -1952,8 +1952,8 @@
 </td></tr></table>
 
 <h4 id="_6">为什么简单选择排序是不稳定的?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>给定序列: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">3^1, 3^2, 1</span><script type="math/tex">3^1, 3^2, 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">3^1, 3^2, 1</span><script type="math/tex">3^1, 3^2, 1</script></span></script></span>
-排序后就变成: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">1, 3^2, 3^1</span><script type="math/tex">1, 3^2, 3^1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">1, 3^2, 3^1</span><script type="math/tex">1, 3^2, 3^1</script></span></script></span>
+<p>给定序列: \[3^1, 3^2, 1\]
+排序后就变成: \[1, 3^2, 3^1\]
 所以简单选择排序是不稳定的</p>
 <h2 id="_7">直接插入排序<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2007,7 +2007,7 @@
 <p>待排序序列: <strong>[<code class="codehilite"><span class="mi">83</span></code>, <code class="codehilite"><span class="mi">1</span></code>, <code class="codehilite"><span class="mi">67</span></code>, <code class="codehilite"><span class="mi">0</span></code>, <code class="codehilite"><span class="mi">84</span></code>, <code class="codehilite"><span class="mi">56</span></code>, <code class="codehilite"><span class="mi">9</span></code>, <code class="codehilite"><span class="mi">94</span></code>, <code class="codehilite"><span class="mi">22</span></code>, <code class="codehilite"><span class="mi">84</span></code>]</strong></p>
 <p>定义索引增量(步长)序列: <strong><code class="codehilite"><span class="mi">5</span></code>， <code class="codehilite"><span class="mi">3</span></code>， <code class="codehilite"><span class="mi">1</span></code></strong></p>
 <ul>
-<li>索引增量(步长)为 **<code class="codehilite"><span class="mi">5</span></code>**时，序列拆分为5个子序列，概念上如下图所示:</li>
+<li>索引增量(步长)为 <strong><code class="codehilite"><span class="mi">5</span></code></strong>时，序列拆分为5个子序列，概念上如下图所示:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -2037,7 +2037,7 @@
 <p>第一轮结束序列为：</p>
 <p><strong>[<code class="codehilite"><span class="mi">56</span></code>，<code class="codehilite"><span class="mi">1</span></code>，<code class="codehilite"><span class="mi">67</span></code>，<code class="codehilite"><span class="mi">0</span></code>，<code class="codehilite"><span class="mi">84</span></code>，<code class="codehilite"><span class="mi">83</span></code>，<code class="codehilite"><span class="mi">9</span></code>，<code class="codehilite"><span class="mi">94</span></code>，<code class="codehilite"><span class="mi">22</span></code>，<code class="codehilite"><span class="mi">84</span></code>]</strong></p>
 <ul>
-<li>增量(步长)为 **<code class="codehilite"><span class="mi">3</span></code>**时，再将上一步的结果序列拆分为3个子序列，如下:</li>
+<li>增量(步长)为 <strong><code class="codehilite"><span class="mi">3</span></code></strong>时，再将上一步的结果序列拆分为3个子序列，如下:</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -2059,7 +2059,7 @@
 <p>第二轮结束序列为：</p>
 <p><strong>[<code class="codehilite"><span class="mi">0</span></code>，<code class="codehilite"><span class="mi">1</span></code>，<code class="codehilite"><span class="mi">22</span></code>，<code class="codehilite"><span class="mi">9</span></code>，<code class="codehilite"><span class="mi">84</span></code>，<code class="codehilite"><span class="mi">67</span></code>，<code class="codehilite"><span class="mi">56</span></code>，<code class="codehilite"><span class="mi">94</span></code>，<code class="codehilite"><span class="mi">83</span></code>，<code class="codehilite"><span class="mi">84</span></code>]</strong></p>
 <ul>
-<li>增量(步长)为 **<code class="codehilite"><span class="mi">1</span></code>**时，再将上一步的结果序列拆分为1个子序列，如下:</li>
+<li>增量(步长)为 <strong><code class="codehilite"><span class="mi">1</span></code></strong>时，再将上一步的结果序列拆分为1个子序列，如下:</li>
 </ul>
 <p>对子序列使用插入排序后的结果:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="err">，</span><span class="mi">1</span><span class="err">，</span><span class="mi">9</span><span class="err">，</span><span class="mi">22</span><span class="err">，</span><span class="mi">56</span><span class="err">，</span><span class="mi">67</span><span class="err">，</span><span class="mi">83</span><span class="err">，</span><span class="mi">84</span><span class="err">，</span><span class="mi">84</span><span class="err">，</span><span class="mi">94</span><span class="p">]</span>
@@ -2125,24 +2125,16 @@
 </td></tr></table>
 
 <h4 id="_10">为什么希尔排序是不稳定的?<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>给定序列: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></script></span>
+<p>给定序列: \[3^1, 3^2, 3^3, 1\]
 增量序列定义为：<strong><code class="codehilite"><span class="mi">2</span></code>,<code class="codehilite"><span class="mi">1</span></code></strong></p>
-<p>增量为**<code class="codehilite"><span class="mi">2</span></code>**时,拆分成两个序列为:</p>
-<div>
-<div class="MathJax_Preview">[3^1,\quad,3^3,\quad]$$
-$$[\,\quad,3^2,\quad,1\ ]</div>
-<script type="math/tex; mode=display">[3^1,\quad,3^3,\quad]$$
-$$[\,\quad,3^2,\quad,1\ ]</script>
-</div>
+<p>增量为<strong><code class="codehilite"><span class="mi">2</span></code></strong>时,拆分成两个序列为:</p>
+<p>\[[3^1 ,\quad , 3^3 , \quad]\]
+\[[\,\quad ,3^2 , \quad , 1 ]\]</p>
 <p>分别对子序列进行插入排序:</p>
-<div>
-<div class="MathJax_Preview">[3^1,\quad,3^3,\quad]$$
-$$[\,\quad,1\ ,\quad,3^2]</div>
-<script type="math/tex; mode=display">[3^1,\quad,3^3,\quad]$$
-$$[\,\quad,1\ ,\quad,3^2]</script>
-</div>
-<p>排序后就变成: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">[3^1, 1, 3^3, 3^2]</span><script type="math/tex">[3^1, 1, 3^3, 3^2]</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">[3^1, 1, 3^3, 3^2]</span><script type="math/tex">[3^1, 1, 3^3, 3^2]</script></span></script></span></p>
-<p>增量为**<code class="codehilite"><span class="mi">1</span></code>**时，只有一个序列，插入排序后:<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">[1, 3^1, 3^3, 3^2]</span><script type="math/tex">[1, 3^1, 3^3, 3^2]</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">[1, 3^1, 3^3, 3^2]</span><script type="math/tex">[1, 3^1, 3^3, 3^2]</script></span></script></span></p>
+<p>\[[3^1 ,\quad,3^3,\quad]\]
+ \[[\,\quad,1 ,\quad,3^2]\]</p>
+<p>排序后就变成: \[[3^1, 1, 3^3, 3^2]\]</p>
+<p>增量为<strong><code class="codehilite"><span class="mi">1</span></code></strong>时，只有一个序列，插入排序后: \[[1, 3^1, 3^3, 3^2]\]</p>
 <p>所以希尔排序是不稳定的</p>
 <h2 id="_11">归并排序<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>和选择排序一样，不过表现更好，需要额外空间(Out-Place)，归并操作是一种有效的排序方法，也是一种稳定的排序方法，采用分治的思想，将子序列分别进行归并排序，再将有序的子序列合并为整体有序序列，完成排序任务</p>
@@ -2327,8 +2319,8 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 </td></tr></table>
 
 <h4 id="_13">为什么快速排序是不稳定的?<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p>还是给定序列: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></script></span>
-选第一个元素为基准值，进行一次分区后会变成: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">1, 3^1, 3^3, 3^2</span><script type="math/tex">1, 3^1, 3^3, 3^2</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">1, 3^1, 3^3, 3^2</span><script type="math/tex">1, 3^1, 3^3, 3^2</script></span></script></span></p>
+<p>还是给定序列: \[3^1, 3^2, 3^3, 1\]
+选第一个元素为基准值，进行一次分区后会变成: \[1, 3^1, 3^3, 3^2\]</p>
 <h2 id="_14">堆排序<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>利用堆这种数据结构设计的排序算法</p>
 <ul>
@@ -2336,10 +2328,10 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 <p><strong>描述:</strong> 将初始待排序序列构建成大顶堆(顶部的元素是整个堆中最大的一个)，此堆为初始的无序区；将堆顶元素(即最大值)与最后一个元素交换，此时得到新的无序区(除最后一个元素之外的其它所有元素)和新的有序区(最后一个，也就是最大的那个元素)。由于交换后新的堆顶可能违反大顶堆的性质，因此需要对当前无序区重新调整为最大堆，然后再次将堆顶元素与无序区最后一个元素交换，得到新的无序区和新的有序区(最大的两个元素)。不断重复此过程直到无序区元素个数为1，则整个排序过程完成。</p>
 </li>
 <li>
-<p><strong>用数组模拟堆结构(完全二叉树结构):**以下标</strong><code class="codehilite"><span class="mi">0</span></code>**作为完全二叉树根结点，可以发现子结点的下标满足关系: 
-<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">左子结点下标 = 2 * root + 1</span><script type="math/tex">左子结点下标 = 2 * root + 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">左子结点下标 = 2 * root + 1</span><script type="math/tex">左子结点下标 = 2 * root + 1</script></span></script></span> 
-<span><span class="MathJax_Preview"><span><span class="MathJax_Preview">右子结点下标 = 2 * root + 2</span><script type="math/tex">右子结点下标 = 2 * root + 2</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">右子结点下标 = 2 * root + 2</span><script type="math/tex">右子结点下标 = 2 * root + 2</script></span></script></span>
-所以就可以通过数组下标来模拟二叉树结点操作，进行模拟出堆的相关操作，完全二叉树最后一个非叶子结点的下标: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">floor(arr.count / 2) - 1</span><script type="math/tex">floor(arr.count / 2) - 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">floor(arr.count / 2) - 1</span><script type="math/tex">floor(arr.count / 2) - 1</script></span></script></span></p>
+<p><strong>用数组模拟堆结构(完全二叉树结构):</strong>以下标<strong><code class="codehilite"><span class="mi">0</span></code></strong>作为完全二叉树根结点，可以发现子结点的下标满足关系: 
+\[左子结点下标 = 2 * root + 1\]
+\[右子结点下标 = 2 * root + 2\]
+所以就可以通过数组下标来模拟二叉树结点操作，进行模拟出堆的相关操作，完全二叉树最后一个非叶子结点的下标: \[floor(arr.count / 2) - 1\]</p>
 </li>
 </ul>
 <p><img alt="heap sort" src="/iOS/images/heap_sort.gif" /></p>
@@ -2428,8 +2420,8 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
 </td></tr></table>
 
 <h4 id="_15">为什么堆排序是不稳定的?<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<p>还是给定序列: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">3^1, 3^2, 3^3, 1</span><script type="math/tex">3^1, 3^2, 3^3, 1</script></span></script></span></p>
-<p>进行堆排序后为变成: <span><span class="MathJax_Preview"><span><span class="MathJax_Preview">[1, 3^3, 3^2, 3^1]</span><script type="math/tex">[1, 3^3, 3^2, 3^1]</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">[1, 3^3, 3^2, 3^1]</span><script type="math/tex">[1, 3^3, 3^2, 3^1]</script></span></script></span></p>
+<p>还是给定序列: \[3^1, 3^2, 3^3, 1\]</p>
+<p>进行堆排序后为变成: \[[1, 3^3, 3^2, 3^1]\]</p>
 <h2 id="_16">计数排序<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>将序列元素作为键存入开辟的数组空间(Out-Place)中，是一种线性时间复杂度的算法，要求数据的取值有一定的范围，是一种稳定的算法</p>
 <ul>
@@ -2745,7 +2737,7 @@ $$[\,\quad,1\ ,\quad,3^2]</script>
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

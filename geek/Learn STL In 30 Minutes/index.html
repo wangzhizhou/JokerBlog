@@ -2173,7 +2173,7 @@ contact: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#97;&#114;&#121
 </td></tr></table>
 
 <h4 id="_19">使用<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p>replace()将[first, last]范围内的所有值为old_value的对象替换为new_value：</p>
+<p>replace()将[first, last]范围内的所有值为old<em>value的对象替换为new</em>value：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">replace</span><span class="p">(</span><span class="n">vdouble</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">vdouble</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">3.1415926</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
@@ -2407,7 +2407,7 @@ After find and copy
 </pre></div>
 </td></tr></table>
 
-<p>可以将front_inserter替换为back_inserter试试。</p>
+<p>可以将front<em>inserter替换为back</em>inserter试试。</p>
 <p>如果用find()去查找在列表中不存在的值，例如99。由于这时p将被设置为past-the-end值，最后的copy()函数将iArray的值附加到链表的后部。</p>
 <h3 id="_27">混合迭代器函数<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
 <p>在涉及到容器和算法的操作中，还有两个迭代器函数非常有用：</p>
@@ -2542,7 +2542,7 @@ After find and copy
 <p>所谓断言函数，就是返回bool值的函数。</p>
 </blockquote>
 <h3 id="_31">函数对象<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
-<p>除了给STL算法传递一个回调函数，你还可能需要传递一个类对象以便执行更复杂的操作。这样一个对象就叫做函数对象。实际上函数对象就是一个类，但它和回调函数一样可以被回调。例如，在函数对象每次被for_each()或find_if()函数调用时可以保留统计信息。函数对象是通过重载operator()()实现的。如果TanyClass定义了operator()()，那么就可以这么使用：</p>
+<p>除了给STL算法传递一个回调函数，你还可能需要传递一个类对象以便执行更复杂的操作。这样一个对象就叫做函数对象。实际上函数对象就是一个类，但它和回调函数一样可以被回调。例如，在函数对象每次被for<em>each()或find</em>if()函数调用时可以保留统计信息。函数对象是通过重载operator()()实现的。如果TanyClass定义了operator()()，那么就可以这么使用：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TanyClass</span> <span class="n">object</span><span class="p">;</span>
@@ -2783,7 +2783,7 @@ pointer_to_unary_function&lt;unsigned int, unsigned int&gt; <span class="nv">ptr
 </pre></div>
 </td></tr></table>
 
-<p>这儿使用STL的单目函数模板定义了一个变量ptr_RandInt, 并将地址初始化到我们的函数RandInt()。单目函数接受一个参数，并返回一个值。现在random_shuffle()可以如下调用:</p>
+<p>这儿使用STL的单目函数模板定义了一个变量ptr<em>RandInt, 并将地址初始化到我们的函数RandInt()。单目函数接受一个参数，并返回一个值。现在random</em>shuffle()可以如下调用:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">random_shuffle</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">ptr_RandInt</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
@@ -3135,7 +3135,7 @@ $ .<span class="o">/</span><span class="nv">a</span>.<span class="nv">out</span>
       
         <script src="../../javascripts/extra.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
