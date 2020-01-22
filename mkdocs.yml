@@ -137,6 +137,7 @@ nav:
             - 持续集成: "iOS/XCode 9 CI.md"
             - Swift4: "iOS/swift4-notes.md"
             - Swift5: "iOS/swift5-notes.md"
+            - Combine: "iOS/combine.md"
             - Swift在客户端和服务端的使用: 'geek/swift on client and server.md'
             - 服务端Swift:
                 - 第四章Swfit包管理器: "iOS/swift-on-server/[4]Swift-Package-Manager.md"
