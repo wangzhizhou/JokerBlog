@@ -154,6 +154,7 @@ nav:
             - 应用架构: "iOS/AppArch.md"
             - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
+            - Ruby语言基础: "iOS/ruby.md"
         - 乐理基础: 
             - 乐音:
                 - "music/theory/tones/Pitches and Clefs.md"
