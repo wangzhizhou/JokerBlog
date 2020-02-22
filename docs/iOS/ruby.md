@@ -388,3 +388,56 @@ student1 = Student.new("Jim", "Business", 2.6)
 student2 = Student.new("JOker", "Developer", 3)
 puts student1.has_honors
 ```
+
+## 继承
+
+```ruby
+class Object
+    def method()
+        puts "super class method called!"
+    end
+end
+
+class Chef <  Object
+end
+
+obj = Object.new()
+obj.method
+
+chef = Chef.new()
+chef.method
+```
+
+## 模块
+
+```ruby
+module Tools
+
+    def sayhi(name)
+        puts "Hello #{name}"
+    end
+
+    def saybye(name)
+        puts "bye #{name}"
+    end
+end
+
+include Tools
+
+Tools.sayhi("joker")
+Tools.saybye("joker")
+```
+
+```ruby
+require_relative "/relative/path/to/module.rb"
+include Tools
+
+Tools.sayhi("joker")
+Tools.saybye("joker")
+```
+
+## 交互式ruby(irb)
+
+```bash
+$ irb -v
+```
