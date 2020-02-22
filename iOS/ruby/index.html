@@ -1583,6 +1583,76 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    Case表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while 循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    For 循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    读文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    写文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    类和对象
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    类初始化方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    对象方法
+  </a>
+  
+</li>
+      
       
       
       
@@ -2063,6 +2133,76 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#case" class="md-nav__link">
+    Case表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while" class="md-nav__link">
+    while 循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    For 循环
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    读文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    写文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    错误处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    类和对象
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    类初始化方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    对象方法
+  </a>
+  
+</li>
+      
       
       
       
@@ -2395,6 +2535,290 @@
 <span class="k">end</span>
 
 <span class="nb">puts</span> <span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="case">Case表达式<a class="headerlink" href="#case" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_day_name</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+    <span class="n">day_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">case</span> <span class="n">day</span>
+    <span class="k">when</span> <span class="s2">&quot;mon&quot;</span>
+        <span class="n">day_name</span> <span class="o">=</span> <span class="s2">&quot;Monday&quot;</span>
+    <span class="k">when</span> <span class="s2">&quot;tue&quot;</span>
+        <span class="n">day_name</span> <span class="o">=</span> <span class="s2">&quot;Tuesday&quot;</span>
+    <span class="k">else</span>
+        <span class="n">day_name</span> <span class="o">=</span> <span class="s2">&quot;Invalid Arg&quot;</span>
+    <span class="k">end</span>
+
+    <span class="k">return</span> <span class="n">day_name</span>
+
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">get_day_name</span><span class="p">(</span><span class="s2">&quot;mon&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="while">while 循环<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+    <span class="nb">puts</span> <span class="n">index</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="for">For 循环<a class="headerlink" href="#for" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">friends</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;Kevin&quot;</span><span class="p">,</span> <span class="s2">&quot;Karen&quot;</span><span class="p">,</span> <span class="s2">&quot;Oscar&quot;</span><span class="p">,</span> <span class="s2">&quot;Angela&quot;</span><span class="p">,</span> <span class="s2">&quot;Andy&quot;</span><span class="o">]</span>
+
+<span class="k">for</span> <span class="n">friend</span> <span class="k">in</span> <span class="n">friends</span>
+    <span class="nb">puts</span> <span class="n">friend</span>
+<span class="k">end</span>
+
+<span class="n">friends</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">friend</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="n">friend</span>
+<span class="k">end</span>
+
+<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">1</span><span class="o">..</span><span class="mi">5</span>
+    <span class="nb">puts</span> <span class="n">friends</span><span class="o">[</span><span class="n">index</span><span class="o">]</span>
+<span class="k">end</span>
+
+<span class="mi">6</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">index</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="n">index</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_13">注释<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 行间注释</span>
+<span class="nb">puts</span> <span class="s2">&quot;Comments are fun&quot;</span> <span class="c1"># 行内注释</span>
+
+<span class="cm">=begin</span>
+<span class="cm">多行注释</span>
+<span class="cm">=end</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_14">读文件<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Joker</span>
+<span class="n">Alice</span>
+<span class="n">WangZhizhou</span>
+<span class="n">WangYuMin</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">include?</span> <span class="s2">&quot;Jim&quot;</span>
+    <span class="nb">puts</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># 读一行内容</span>
+    <span class="nb">puts</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># 读下一行内容</span>
+    <span class="nb">puts</span> <span class="n">file</span><span class="o">.</span><span class="n">readchar</span><span class="p">()</span> <span class="c1"># 读一个字符</span>
+    <span class="nb">puts</span> <span class="n">file</span><span class="o">.</span><span class="n">readchar</span><span class="p">()</span> <span class="c1"># 读下一个字符</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="k">in</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="nb">puts</span> <span class="n">line</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">content</span><span class="o">.</span><span class="n">read</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_15">写文件<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Oscar, Accounting&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_16">错误处理<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">begin</span>
+    <span class="n">lucky_number</span><span class="o">[</span><span class="s2">&quot;dog&quot;</span><span class="o">]</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">rescue</span> <span class="no">ZeroDivisionError</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Division by zero error&quot;</span>
+<span class="k">rescue</span> <span class="no">TypeError</span> <span class="o">=&gt;</span> <span class="n">e</span>
+    <span class="nb">puts</span> <span class="n">e</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_17">类和对象<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Book</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:pages</span>
+<span class="k">end</span>
+
+<span class="n">book1</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">book1</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Harry Potter&quot;</span>
+<span class="n">book1</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;JK Rowling&quot;</span>
+<span class="n">book1</span><span class="o">.</span><span class="n">pages</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">title</span>
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">pages</span>
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">author</span>
+
+<span class="n">book2</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">book2</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Lord of the rings&quot;</span>
+<span class="n">book2</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Tolkein&quot;</span>
+<span class="n">book2</span><span class="o">.</span><span class="n">pages</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="nb">puts</span> <span class="n">book2</span><span class="o">.</span><span class="n">author</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_18">类初始化方法<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Book</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:pages</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">,</span> <span class="n">pages</span><span class="p">)</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="vi">@pages</span> <span class="o">=</span> <span class="n">pages</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">book1</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;JK Rowling&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">title</span>
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">pages</span>
+<span class="nb">puts</span> <span class="n">book1</span><span class="o">.</span><span class="n">author</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="_19">对象方法<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Student</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:major</span><span class="p">,</span> <span class="ss">:gpa</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">major</span><span class="p">,</span> <span class="n">gpa</span><span class="p">)</span>
+        <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+        <span class="vi">@major</span> <span class="o">=</span> <span class="n">major</span>
+        <span class="vi">@gpa</span> <span class="o">=</span> <span class="n">gpa</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">has_honors</span><span class="p">()</span>
+        <span class="k">if</span> <span class="vi">@gpa</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">.</span><span class="mi">5</span>
+            <span class="k">return</span> <span class="kp">true</span>
+        <span class="k">end</span>
+        <span class="k">return</span> <span class="kp">false</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">student1</span> <span class="o">=</span> <span class="no">Student</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="s2">&quot;Business&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">.</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="no">Student</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;JOker&quot;</span><span class="p">,</span> <span class="s2">&quot;Developer&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">student1</span><span class="o">.</span><span class="n">has_honors</span>
 </pre></div>
 </td></tr></table>
                 
