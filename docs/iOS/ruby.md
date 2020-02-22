@@ -205,5 +205,186 @@ def max(num1, num2, num3)
 end
 
 puts max(1,2,3)
+
 ```
 
+## Case表达式
+
+```ruby
+def get_day_name(day)
+    day_name = ""
+
+    case day
+    when "mon"
+        day_name = "Monday"
+    when "tue"
+        day_name = "Tuesday"
+    else
+        day_name = "Invalid Arg"
+    end
+
+    return day_name
+
+end
+
+puts get_day_name("mon")
+```
+
+## while 循环
+
+```ruby
+index = 1
+while index <= 5
+    puts index
+    index += 1
+end
+```
+
+## For 循环
+
+```ruby
+friends = ["Kevin", "Karen", "Oscar", "Angela", "Andy"]
+
+for friend in friends
+    puts friend
+end
+
+friends.each do |friend|
+    puts friend
+end
+
+for index in 1..5
+    puts friends[index]
+end
+
+6.times do |index|
+    puts index
+end
+```
+
+## 注释
+
+```ruby
+
+# 行间注释
+puts "Comments are fun" # 行内注释
+
+=begin
+多行注释
+=end
+```
+
+## 读文件
+
+```txt
+Joker
+Alice
+WangZhizhou
+WangYuMin
+```
+
+```ruby
+File.open("file.txt", "r") do |file|
+    puts file.read().include? "Jim"
+    puts file.readline() # 读一行内容
+    puts file.readline() # 读下一行内容
+    puts file.readchar() # 读一个字符
+    puts file.readchar() # 读下一个字符
+
+    for line in file.readlines()
+        puts line
+    end
+end
+
+content = File.open("file.txt", "r")
+puts content.read
+
+```
+
+## 写文件
+
+```ruby
+File.open("file.txt", "a") do |file|
+    file.write("\nOscar, Accounting")
+end
+```
+
+## 错误处理
+
+```ruby
+begin
+    lucky_number["dog"]
+    num = 10 / 0
+rescue ZeroDivisionError
+    puts "Division by zero error"
+rescue TypeError => e
+    puts e
+end
+```
+
+## 类和对象
+
+```ruby
+class Book
+    attr_accessor :title, :author, :pages
+end
+
+book1 = Book.new()
+book1.title = "Harry Potter"
+book1.author = "JK Rowling"
+book1.pages = 40
+
+puts book1.title
+puts book1.pages
+puts book1.author
+
+book2 = Book.new()
+book2.title = "Lord of the rings"
+book2.author = "Tolkein"
+book2.pages = 500
+
+puts book2.author
+```
+
+## 类初始化方法
+
+```ruby
+class Book
+    attr_accessor :title, :author, :pages
+    def initialize(title, author, pages)
+        @title = title
+        @author = author
+        @pages = pages
+    end
+end
+
+book1 = Book.new("Harry Potter", "JK Rowling", 40)
+
+puts book1.title
+puts book1.pages
+puts book1.author
+```
+
+## 对象方法
+
+```ruby
+class Student
+    attr_accessor :name, :major, :gpa
+    def initialize(name, major, gpa)
+        @name = name
+        @major = major
+        @gpa = gpa
+    end
+
+    def has_honors()
+        if @gpa >= 2.5
+            return true
+        end
+        return false
+    end
+end
+
+student1 = Student.new("Jim", "Business", 2.6)
+student2 = Student.new("JOker", "Developer", 3)
+puts student1.has_honors
+```
