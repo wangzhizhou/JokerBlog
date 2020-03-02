@@ -96,7 +96,6 @@ nav:
         - DLNA开发: 'geek/Develop DLNA Using Platinum Library.md'
         - Nmap基础: 'geek/Nmap Basics.md'
         - GDB使用: 'geek/Use GDB.md'
-        - Kotlin学习: 'geek/kotlin.md'
         - jupyterhub工具使用: 'geek/jupyterhub.md'
         - bluegogo破解: 'geek/bluegogo-crack.md'
         - FFmpeg:
@@ -155,6 +154,8 @@ nav:
             - 测试驱动开发: "iOS/TDD.md"
             - AirDrop社交: "iOS/airdrop.md"
             - Ruby语言基础: "iOS/ruby.md"
+        - Android:
+            - kotlin语言基础: "Android/kotlin.md"
         - 乐理基础: 
             - 乐音:
                 - "music/theory/tones/Pitches and Clefs.md"
