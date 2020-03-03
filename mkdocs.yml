@@ -98,6 +98,7 @@ nav:
         - GDB使用: 'geek/Use GDB.md'
         - jupyterhub工具使用: 'geek/jupyterhub.md'
         - bluegogo破解: 'geek/bluegogo-crack.md'
+        - Go语言基础: 'geek/Go语言基础.md'
         - FFmpeg:
             - FFmpeg教程: 'geek/FFmpeg and SDL tutorial 1.md'
             - Mac上编译FFmpeg: 'geek/FFmpeg compiled on MacOS.md'
