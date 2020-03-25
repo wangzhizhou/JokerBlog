@@ -441,3 +441,7 @@ Tools.saybye("joker")
 ```bash
 $ irb -v
 ```
+
+## 开发环境隔离
+
+使用`[RVM](http://rvm.io)`

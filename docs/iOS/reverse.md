@@ -2,17 +2,41 @@
 
 苹果平台上逆向需要关闭系统完整性保护(SIP):
 
-恢复模式(`Command + R`)下命令行键入：
+重启进入恢复模式(`Command + R`)下命令行键入：
 
-```
+```bash
 csrutil disable; reboot
 ```
 
-# LLDB相关命令
+`csrutil` - Configure System Rule utility, 也就是配置系统规则的工具, 主要用来配置系统完整性保护规则。
 
-指定要高度的文件的路径
+## LLDB相关命令
 
+调试`Finder`
+
+```bash
+$ lldb -n Finder
+(lldb) process attach --name "Finder"
+Process 390 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP
+    frame #0: 0x00007fff69b9d25a libsystem_kernel.dylib`mach_msg_trap + 10
+libsystem_kernel.dylib`mach_msg_trap:
+->  0x7fff69b9d25a <+10>: retq   
+    0x7fff69b9d25b <+11>: nop    
+
+libsystem_kernel.dylib`mach_msg_overwrite_trap:
+    0x7fff69b9d25c <+0>:  movq   %rcx, %r10
+    0x7fff69b9d25f <+3>:  movl   $0x1000020, %eax          ; imm = 0x1000020 
+Target 0: (Finder) stopped.
+
+Executable module set to "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder".
+Architecture set to: x86_64h-apple-macosx-.
+(lldb) quit
 ```
+
+指定要调试的文件的路径
+
+```bash
 (lldb) file /Applications/Xcode.app/Contents/MacOS/Xcode
 
 或
@@ -20,17 +44,16 @@ csrutil disable; reboot
 $ lldb -f /Applications/Xcode.app/Contents/MacOS/Xcode
 ```
 
+启动要调试并指定标准错误(stderr)输出为`/dev/ttys027`, `e`就是`stderr`
 
-启动要调试并指定标准错误(stderr)输出为`/dev/ttys027`
-
-```
-(lldb) process launch -e /dev/ttys027 -- 
+```bash
+(lldb) process launch -e /dev/ttys027 --
 ```
 
 计算switf表达式
 
-```
-(lldb) ex -l swift -- import Foundation 
+```bash
+(lldb) ex -l swift -- import Foundation
 (lldb) ex -l swift -- import AppKit
 ```
 

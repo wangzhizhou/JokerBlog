@@ -128,3 +128,25 @@ go语言中的二元操作要类型一致。
 
 - `&^`这个是按位清空运算符：`a &^ b`等价于 `a AND (NOT b)`
 - 字符串不可变，可被转成字符数组
+
+### 常量
+
+```go
+package main
+
+import {
+    "fmt"
+}
+
+func main() {
+    const a int = 42
+    var b int = 27
+    fmt.Printf("%v, %T\n", a + b, a + b)
+}
+```
+
+### 数组
+
+```kotlin
+
+```
