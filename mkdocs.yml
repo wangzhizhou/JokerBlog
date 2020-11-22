@@ -62,11 +62,11 @@ extra_css:
 extra:
 #   disqus: 'jokerhub-blog'
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github'
       link: 'https://github.com/wangzhizhou'
-    - type: 'twitter'
+    - icon: 'fontawesome/brands/twitter'
       link: 'https://twitter.com/w_z_z_1991'
-    - type: 'linkedin'
+    - icon: 'fontawesome/brands/linkedin'
       link: 'https://linkedin.com/in/wangzhizhou'
 
 nav:
@@ -174,7 +174,7 @@ nav:
                 - "music/theory/appendixes/A.md"
     - 关于我: 
         - 理财: 'me/My Financial Planning.md'
-        # - 人在北京: 'me/Life in Beijing.md'
+        - 人在北京: 'me/Life in Beijing.md'
         - 硬件: 'me/my hardware.md'
         - 早起记录: 'me/Personal Pre-Work Record.md'
         - 存款计划: 'me/deposit scheme.md'
