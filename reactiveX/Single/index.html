@@ -1,16 +1,13 @@
 
-
-
-
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="This is my personal blog">
+      
       
       
         <link rel="canonical" href="http://blog.jokerhub.cn/reactiveX/Single/">
@@ -18,27 +15,8 @@
       
         <meta name="author" content="wangzhizhou">
       
-      
-        <meta name="lang:clipboard.copy" content="复制">
-      
-        <meta name="lang:clipboard.copied" content="已复制">
-      
-        <meta name="lang:search.language" content="ja">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
-      
-        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
-      
-        <meta name="lang:search.result.other" content="# 个符合条件的结果">
-      
-        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
-      
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
     
     
       
@@ -46,27 +24,26 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.21aed14c.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
-        <meta name="theme-color" content="#4caf50">
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
-    
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700%7CUbuntu+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+        <style>body,input{font-family:"Roboto Slab",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
@@ -74,101 +51,87 @@
     
       
         
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-36723568-3", "mkdocs.org")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-36723568-3","mkdocs.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="orange">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="orange">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#_1" tabindex="0" class="md-skip">
-        跳转至
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://blog.jokerhub.cn" title="Joker Blog" aria-label="Joker Blog" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Joker Blog
-            </span>
-            <span class="md-header-nav__topic">
-              
-                单事件可观察对象
-              
-            </span>
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-header-nav__button md-logo" aria-label="Joker Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Joker Blog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              单事件可观察对象
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            键入以开始搜索
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -176,148 +139,56 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     JokerBlog
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
 </header>
     
-    <div class="md-container">
-      
-        
+    <div class="md-container" data-md-component="container">
       
       
         
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
       
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../.." class="md-tabs__link">
-          主页
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../job/My%20Plan%20for%20finding%20Job/" class="md-tabs__link">
-          工作
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../life/alipay-scan-fu-icon/" class="md-tabs__link">
-          生活
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../geek/wireguard/" class="md-tabs__link md-tabs__link--active">
-          Geek
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../me/My%20Financial%20Planning/" class="md-tabs__link">
-          关于我
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-nav__button md-logo">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://blog.jokerhub.cn" title="Joker Blog" class="md-nav__button md-logo" aria-label="Joker Blog">
       
-        <i class="md-icon"></i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
     Joker Blog
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/wangzhizhou/JokerBlog/" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     JokerBlog
   </div>
@@ -333,13 +204,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       主页
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="主页" data-md-level="1">
       <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
         主页
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -351,7 +223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="简介" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       简介
     </a>
   </li>
@@ -363,7 +235,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../How%20I%20create%20this%20blog/" title="博客创建过程" class="md-nav__link">
+    <a href="../../How%20I%20create%20this%20blog/" class="md-nav__link">
       博客创建过程
     </a>
   </li>
@@ -381,13 +253,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       工作
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="工作" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
         工作
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -399,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job/My%20Plan%20for%20finding%20Job/" title="校招求职" class="md-nav__link">
+    <a href="../../job/My%20Plan%20for%20finding%20Job/" class="md-nav__link">
       校招求职
     </a>
   </li>
@@ -411,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/review/" title="社招面试" class="md-nav__link">
+    <a href="../../iOS/review/" class="md-nav__link">
       社招面试
     </a>
   </li>
@@ -423,7 +296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/job-plan/" title="面试准备资料" class="md-nav__link">
+    <a href="../../iOS/job-plan/" class="md-nav__link">
       面试准备资料
     </a>
   </li>
@@ -435,7 +308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job/dimission/" title="离职" class="md-nav__link">
+    <a href="../../job/dimission/" class="md-nav__link">
       离职
     </a>
   </li>
@@ -447,7 +320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../job/career/" title="事业" class="md-nav__link">
+    <a href="../../job/career/" class="md-nav__link">
       事业
     </a>
   </li>
@@ -465,13 +338,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     <label class="md-nav__link" for="nav-3">
       生活
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="生活" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
         生活
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -483,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../life/alipay-scan-fu-icon/" title="支付宝集福" class="md-nav__link">
+    <a href="../../life/alipay-scan-fu-icon/" class="md-nav__link">
       支付宝集福
     </a>
   </li>
@@ -495,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../life/Renting%20in%20Beijing/" title="北京租房" class="md-nav__link">
+    <a href="../../life/Renting%20in%20Beijing/" class="md-nav__link">
       北京租房
     </a>
   </li>
@@ -507,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../life/Gu%20Bei%20Shui%20Zhen/" title="古北水镇游玩" class="md-nav__link">
+    <a href="../../life/Gu%20Bei%20Shui%20Zhen/" class="md-nav__link">
       古北水镇游玩
     </a>
   </li>
@@ -519,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../life/WuZhen/" title="乌镇游玩" class="md-nav__link">
+    <a href="../../life/WuZhen/" class="md-nav__link">
       乌镇游玩
     </a>
   </li>
@@ -539,13 +413,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     <label class="md-nav__link" for="nav-4">
       Geek
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="Geek" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
         Geek
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -557,7 +432,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/wireguard/" title="WireGuard" class="md-nav__link">
+    <a href="../../geek/wireguard/" class="md-nav__link">
       WireGuard
     </a>
   </li>
@@ -569,7 +444,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Git/" title="Git核心技能" class="md-nav__link">
+    <a href="../../geek/Git/" class="md-nav__link">
       Git核心技能
     </a>
   </li>
@@ -581,7 +456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Network%20Simulator%202%20Installation%20Guide%20for%20Ubuntu/" title="Ubuntu安装NS2网络模拟器" class="md-nav__link">
+    <a href="../../geek/Network%20Simulator%202%20Installation%20Guide%20for%20Ubuntu/" class="md-nav__link">
       Ubuntu安装NS2网络模拟器
     </a>
   </li>
@@ -593,7 +468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Learn%20STL%20In%2030%20Minutes/" title="30分钟掌握STL" class="md-nav__link">
+    <a href="../../geek/Learn%20STL%20In%2030%20Minutes/" class="md-nav__link">
       30分钟掌握STL
     </a>
   </li>
@@ -605,7 +480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Installation%20of%20Ubuntu%2016.04%20On%20UDisk/" title="U盘安装Ubuntu" class="md-nav__link">
+    <a href="../../geek/Installation%20of%20Ubuntu%2016.04%20On%20UDisk/" class="md-nav__link">
       U盘安装Ubuntu
     </a>
   </li>
@@ -617,7 +492,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Configure%20Git%20Server%20With%20Ubuntn%20and%20Apache%202/" title="搭建Git服务" class="md-nav__link">
+    <a href="../../geek/Configure%20Git%20Server%20With%20Ubuntn%20and%20Apache%202/" class="md-nav__link">
       搭建Git服务
     </a>
   </li>
@@ -629,7 +504,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/User%20OpenCV%20to%20add%20watermark%20on%20a%20video/" title="OpenCV给视频添加水印" class="md-nav__link">
+    <a href="../../geek/User%20OpenCV%20to%20add%20watermark%20on%20a%20video/" class="md-nav__link">
       OpenCV给视频添加水印
     </a>
   </li>
@@ -641,7 +516,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Add%20Watermark%20on%20Video%20with%20OpenCV%20and%20FFmpeg/" title="OpenCV+FFmpeg给视频添加水印" class="md-nav__link">
+    <a href="../../geek/Add%20Watermark%20on%20Video%20with%20OpenCV%20and%20FFmpeg/" class="md-nav__link">
       OpenCV+FFmpeg给视频添加水印
     </a>
   </li>
@@ -653,7 +528,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Develop%20DLNA%20Using%20Platinum%20Library/" title="DLNA开发" class="md-nav__link">
+    <a href="../../geek/Develop%20DLNA%20Using%20Platinum%20Library/" class="md-nav__link">
       DLNA开发
     </a>
   </li>
@@ -665,7 +540,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Nmap%20Basics/" title="Nmap基础" class="md-nav__link">
+    <a href="../../geek/Nmap%20Basics/" class="md-nav__link">
       Nmap基础
     </a>
   </li>
@@ -677,7 +552,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Use%20GDB/" title="GDB使用" class="md-nav__link">
+    <a href="../../geek/Use%20GDB/" class="md-nav__link">
       GDB使用
     </a>
   </li>
@@ -689,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/jupyterhub/" title="jupyterhub工具使用" class="md-nav__link">
+    <a href="../../geek/jupyterhub/" class="md-nav__link">
       jupyterhub工具使用
     </a>
   </li>
@@ -701,7 +576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/bluegogo-crack/" title="bluegogo破解" class="md-nav__link">
+    <a href="../../geek/bluegogo-crack/" class="md-nav__link">
       bluegogo破解
     </a>
   </li>
@@ -713,7 +588,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" title="Go语言基础" class="md-nav__link">
+    <a href="../../geek/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="md-nav__link">
       Go语言基础
     </a>
   </li>
@@ -726,13 +601,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15" >
     <label class="md-nav__link" for="nav-4-15">
       FFmpeg
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="FFmpeg" data-md-level="2">
       <label class="md-nav__title" for="nav-4-15">
+        <span class="md-nav__icon md-icon"></span>
         FFmpeg
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -744,7 +620,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/FFmpeg%20and%20SDL%20tutorial%201/" title="FFmpeg教程" class="md-nav__link">
+    <a href="../../geek/FFmpeg%20and%20SDL%20tutorial%201/" class="md-nav__link">
       FFmpeg教程
     </a>
   </li>
@@ -756,7 +632,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/FFmpeg%20compiled%20on%20MacOS/" title="Mac上编译FFmpeg" class="md-nav__link">
+    <a href="../../geek/FFmpeg%20compiled%20on%20MacOS/" class="md-nav__link">
       Mac上编译FFmpeg
     </a>
   </li>
@@ -768,7 +644,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/FFmpeg%20version%203.1.4%20example%20code/" title="FFmpeg示例代码学习" class="md-nav__link">
+    <a href="../../geek/FFmpeg%20version%203.1.4%20example%20code/" class="md-nav__link">
       FFmpeg示例代码学习
     </a>
   </li>
@@ -780,7 +656,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Fmpeg%202.8.6%20example%20code%20-%20transcoding/" title="FFmpeg转码学习" class="md-nav__link">
+    <a href="../../geek/Fmpeg%202.8.6%20example%20code%20-%20transcoding/" class="md-nav__link">
       FFmpeg转码学习
     </a>
   </li>
@@ -792,7 +668,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Convert%20MP4%20to%20GIF%20With%20FFmpeg/" title="使用FFmpeg将MP4转成GIF图片" class="md-nav__link">
+    <a href="../../geek/Convert%20MP4%20to%20GIF%20With%20FFmpeg/" class="md-nav__link">
       使用FFmpeg将MP4转成GIF图片
     </a>
   </li>
@@ -810,13 +686,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16" >
     <label class="md-nav__link" for="nav-4-16">
       Jenkins
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Jenkins" data-md-level="2">
       <label class="md-nav__title" for="nav-4-16">
+        <span class="md-nav__icon md-icon"></span>
         Jenkins
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -828,7 +705,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/" title="导览" class="md-nav__link">
+    <a href="../../jenkins/guide/" class="md-nav__link">
       导览
     </a>
   </li>
@@ -840,7 +717,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/first-pipeline/" title="第一个管道" class="md-nav__link">
+    <a href="../../jenkins/guide/first-pipeline/" class="md-nav__link">
       第一个管道
     </a>
   </li>
@@ -852,7 +729,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/multiple-steps-pipeline/" title="多步管道" class="md-nav__link">
+    <a href="../../jenkins/guide/multiple-steps-pipeline/" class="md-nav__link">
       多步管道
     </a>
   </li>
@@ -864,7 +741,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/define-execution-environments/" title="定义执行环境" class="md-nav__link">
+    <a href="../../jenkins/guide/define-execution-environments/" class="md-nav__link">
       定义执行环境
     </a>
   </li>
@@ -876,7 +753,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/using-environment-variables/" title="使用环境变量" class="md-nav__link">
+    <a href="../../jenkins/guide/using-environment-variables/" class="md-nav__link">
       使用环境变量
     </a>
   </li>
@@ -888,7 +765,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" title="记录测试结果" class="md-nav__link">
+    <a href="../../jenkins/guide/recording-test-results-and-artifacts/" class="md-nav__link">
       记录测试结果
     </a>
   </li>
@@ -900,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/cleaning-up-and-notification/" title="清理和通知" class="md-nav__link">
+    <a href="../../jenkins/guide/cleaning-up-and-notification/" class="md-nav__link">
       清理和通知
     </a>
   </li>
@@ -912,7 +789,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jenkins/guide/deployment/" title="布署" class="md-nav__link">
+    <a href="../../jenkins/guide/deployment/" class="md-nav__link">
       布署
     </a>
   </li>
@@ -932,13 +809,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17" checked>
     <label class="md-nav__link" for="nav-4-17">
       ReactiveX
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="ReactiveX" data-md-level="2">
       <label class="md-nav__title" for="nav-4-17">
+        <span class="md-nav__icon md-icon"></span>
         ReactiveX
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -950,7 +828,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="介绍" class="md-nav__link">
+    <a href="../introduction/" class="md-nav__link">
       介绍
     </a>
   </li>
@@ -962,7 +840,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Observable/" title="可观察的" class="md-nav__link">
+    <a href="../Observable/" class="md-nav__link">
       可观察的
     </a>
   </li>
@@ -974,7 +852,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Operators/" title="运算符" class="md-nav__link">
+    <a href="../Operators/" class="md-nav__link">
       运算符
     </a>
   </li>
@@ -989,27 +867,31 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         单事件可观察对象
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="单事件可观察对象" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       单事件可观察对象
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1052,7 +934,7 @@
     delay
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="delay">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1107,7 +989,7 @@
     from
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="from">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1185,10 +1067,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -1202,7 +1080,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Subject/" title="主题" class="md-nav__link">
+    <a href="../Subject/" class="md-nav__link">
       主题
     </a>
   </li>
@@ -1214,7 +1092,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Scheduler/" title="调度器" class="md-nav__link">
+    <a href="../Scheduler/" class="md-nav__link">
       调度器
     </a>
   </li>
@@ -1232,13 +1110,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18" >
     <label class="md-nav__link" for="nav-4-18">
       Docker
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Docker" data-md-level="2">
       <label class="md-nav__title" for="nav-4-18">
+        <span class="md-nav__icon md-icon"></span>
         Docker
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1250,7 +1129,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/start-learn/" title="简介" class="md-nav__link">
+    <a href="../../docker/start-learn/" class="md-nav__link">
       简介
     </a>
   </li>
@@ -1262,7 +1141,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Orientation/" title="定位" class="md-nav__link">
+    <a href="../../docker/Orientation/" class="md-nav__link">
       定位
     </a>
   </li>
@@ -1274,7 +1153,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Container/" title="容器" class="md-nav__link">
+    <a href="../../docker/Container/" class="md-nav__link">
       容器
     </a>
   </li>
@@ -1286,7 +1165,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Service/" title="服务" class="md-nav__link">
+    <a href="../../docker/Service/" class="md-nav__link">
       服务
     </a>
   </li>
@@ -1298,7 +1177,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Swarm/" title="机群" class="md-nav__link">
+    <a href="../../docker/Swarm/" class="md-nav__link">
       机群
     </a>
   </li>
@@ -1310,7 +1189,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Stack/" title="栈" class="md-nav__link">
+    <a href="../../docker/Stack/" class="md-nav__link">
       栈
     </a>
   </li>
@@ -1322,7 +1201,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/Deploy/" title="部署应用" class="md-nav__link">
+    <a href="../../docker/Deploy/" class="md-nav__link">
       部署应用
     </a>
   </li>
@@ -1340,13 +1219,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-19" type="checkbox" id="nav-4-19" >
     <label class="md-nav__link" for="nav-4-19">
       Nginx
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Nginx" data-md-level="2">
       <label class="md-nav__title" for="nav-4-19">
+        <span class="md-nav__icon md-icon"></span>
         Nginx
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1358,7 +1238,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nginx/beginner-guide/" title="新手教程" class="md-nav__link">
+    <a href="../../nginx/beginner-guide/" class="md-nav__link">
       新手教程
     </a>
   </li>
@@ -1370,7 +1250,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nginx/application/" title="主要用途" class="md-nav__link">
+    <a href="../../nginx/application/" class="md-nav__link">
       主要用途
     </a>
   </li>
@@ -1388,13 +1268,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20" type="checkbox" id="nav-4-20">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-20" type="checkbox" id="nav-4-20" >
     <label class="md-nav__link" for="nav-4-20">
       iOS
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="iOS" data-md-level="2">
       <label class="md-nav__title" for="nav-4-20">
+        <span class="md-nav__icon md-icon"></span>
         iOS
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1406,7 +1287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/workflow/" title="工作流" class="md-nav__link">
+    <a href="../../iOS/workflow/" class="md-nav__link">
       工作流
     </a>
   </li>
@@ -1418,7 +1299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/XCode%209%20CI/" title="持续集成" class="md-nav__link">
+    <a href="../../iOS/XCode%209%20CI/" class="md-nav__link">
       持续集成
     </a>
   </li>
@@ -1430,7 +1311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/swift4-notes/" title="Swift4" class="md-nav__link">
+    <a href="../../iOS/swift4-notes/" class="md-nav__link">
       Swift4
     </a>
   </li>
@@ -1442,7 +1323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/swift5-notes/" title="Swift5" class="md-nav__link">
+    <a href="../../iOS/swift5-notes/" class="md-nav__link">
       Swift5
     </a>
   </li>
@@ -1454,7 +1335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/combine/" title="Combine" class="md-nav__link">
+    <a href="../../iOS/combine/" class="md-nav__link">
       Combine
     </a>
   </li>
@@ -1466,7 +1347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/swift%20on%20client%20and%20server/" title="Swift在客户端和服务端的使用" class="md-nav__link">
+    <a href="../../geek/swift%20on%20client%20and%20server/" class="md-nav__link">
       Swift在客户端和服务端的使用
     </a>
   </li>
@@ -1479,13 +1360,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-20-7" type="checkbox" id="nav-4-20-7">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-20-7" type="checkbox" id="nav-4-20-7" >
     <label class="md-nav__link" for="nav-4-20-7">
       服务端Swift
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="服务端Swift" data-md-level="3">
       <label class="md-nav__title" for="nav-4-20-7">
+        <span class="md-nav__icon md-icon"></span>
         服务端Swift
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1497,7 +1379,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/swift-on-server/%5B4%5DSwift-Package-Manager/" title="第四章Swfit包管理器" class="md-nav__link">
+    <a href="../../iOS/swift-on-server/%5B4%5DSwift-Package-Manager/" class="md-nav__link">
       第四章Swfit包管理器
     </a>
   </li>
@@ -1509,7 +1391,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/swift-on-server/%5B5%5DWritng-ToDoList-With-Kitura/" title="第五章使用Kitura写ToDoList" class="md-nav__link">
+    <a href="../../iOS/swift-on-server/%5B5%5DWritng-ToDoList-With-Kitura/" class="md-nav__link">
       第五章使用Kitura写ToDoList
     </a>
   </li>
@@ -1526,7 +1408,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/objc/" title="OC相关" class="md-nav__link">
+    <a href="../../iOS/objc/" class="md-nav__link">
       OC相关
     </a>
   </li>
@@ -1538,7 +1420,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/reverse/" title="逆向工程" class="md-nav__link">
+    <a href="../../iOS/reverse/" class="md-nav__link">
       逆向工程
     </a>
   </li>
@@ -1550,7 +1432,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/optimization/" title="应用优化" class="md-nav__link">
+    <a href="../../iOS/optimization/" class="md-nav__link">
       应用优化
     </a>
   </li>
@@ -1562,7 +1444,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../geek/Optimizing%20App%20Startup%20Time/" title="优化应用启动时长" class="md-nav__link">
+    <a href="../../geek/Optimizing%20App%20Startup%20Time/" class="md-nav__link">
       优化应用启动时长
     </a>
   </li>
@@ -1574,7 +1456,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/sort/" title="十大排序算法" class="md-nav__link">
+    <a href="../../iOS/sort/" class="md-nav__link">
       十大排序算法
     </a>
   </li>
@@ -1586,7 +1468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/runtime/" title="OC运行时编译" class="md-nav__link">
+    <a href="../../iOS/runtime/" class="md-nav__link">
       OC运行时编译
     </a>
   </li>
@@ -1598,7 +1480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/TPG/" title="线程编码指南" class="md-nav__link">
+    <a href="../../iOS/TPG/" class="md-nav__link">
       线程编码指南
     </a>
   </li>
@@ -1610,7 +1492,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/CPG/" title="并发编码指南" class="md-nav__link">
+    <a href="../../iOS/CPG/" class="md-nav__link">
       并发编码指南
     </a>
   </li>
@@ -1622,7 +1504,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/design-pattern/" title="设计模式" class="md-nav__link">
+    <a href="../../iOS/design-pattern/" class="md-nav__link">
       设计模式
     </a>
   </li>
@@ -1634,7 +1516,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/AppArch/" title="应用架构" class="md-nav__link">
+    <a href="../../iOS/AppArch/" class="md-nav__link">
       应用架构
     </a>
   </li>
@@ -1646,7 +1528,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/TDD/" title="测试驱动开发" class="md-nav__link">
+    <a href="../../iOS/TDD/" class="md-nav__link">
       测试驱动开发
     </a>
   </li>
@@ -1658,7 +1540,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/airdrop/" title="AirDrop社交" class="md-nav__link">
+    <a href="../../iOS/airdrop/" class="md-nav__link">
       AirDrop社交
     </a>
   </li>
@@ -1670,7 +1552,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../iOS/ruby/" title="Ruby语言基础" class="md-nav__link">
+    <a href="../../iOS/ruby/" class="md-nav__link">
       Ruby语言基础
     </a>
   </li>
@@ -1688,13 +1570,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-21" type="checkbox" id="nav-4-21">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-21" type="checkbox" id="nav-4-21" >
     <label class="md-nav__link" for="nav-4-21">
       Android
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="Android" data-md-level="2">
       <label class="md-nav__title" for="nav-4-21">
+        <span class="md-nav__icon md-icon"></span>
         Android
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1706,7 +1589,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Android/kotlin/" title="kotlin语言基础" class="md-nav__link">
+    <a href="../../Android/kotlin/" class="md-nav__link">
       kotlin语言基础
     </a>
   </li>
@@ -1724,13 +1607,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22" type="checkbox" id="nav-4-22">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22" type="checkbox" id="nav-4-22" >
     <label class="md-nav__link" for="nav-4-22">
       乐理基础
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+    <nav class="md-nav" aria-label="乐理基础" data-md-level="2">
       <label class="md-nav__title" for="nav-4-22">
+        <span class="md-nav__icon md-icon"></span>
         乐理基础
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1743,13 +1627,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-1" type="checkbox" id="nav-4-22-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-1" type="checkbox" id="nav-4-22-1" >
     <label class="md-nav__link" for="nav-4-22-1">
       乐音
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="乐音" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-1">
+        <span class="md-nav__icon md-icon"></span>
         乐音
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1761,7 +1646,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/tones/Pitches%20and%20Clefs/" title="音高和谱号" class="md-nav__link">
+    <a href="../../music/theory/tones/Pitches%20and%20Clefs/" class="md-nav__link">
       音高和谱号
     </a>
   </li>
@@ -1779,13 +1664,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-2" type="checkbox" id="nav-4-22-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-2" type="checkbox" id="nav-4-22-2" >
     <label class="md-nav__link" for="nav-4-22-2">
       节拍
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="节拍" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-2">
+        <span class="md-nav__icon md-icon"></span>
         节拍
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1797,7 +1683,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/rhythms/Note%20Values%20and%20Basic%20Notation/" title="Note Values and Basic Notation" class="md-nav__link">
+    <a href="../../music/theory/rhythms/Note%20Values%20and%20Basic%20Notation/" class="md-nav__link">
       Note Values and Basic Notation
     </a>
   </li>
@@ -1815,13 +1701,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-3" type="checkbox" id="nav-4-22-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-3" type="checkbox" id="nav-4-22-3" >
     <label class="md-nav__link" for="nav-4-22-3">
       曲调
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="曲调" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-3">
+        <span class="md-nav__icon md-icon"></span>
         曲调
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1833,7 +1720,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/tunes/Melodies/" title="Melodies" class="md-nav__link">
+    <a href="../../music/theory/tunes/Melodies/" class="md-nav__link">
       Melodies
     </a>
   </li>
@@ -1851,13 +1738,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-4" type="checkbox" id="nav-4-22-4">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-4" type="checkbox" id="nav-4-22-4" >
     <label class="md-nav__link" for="nav-4-22-4">
       伴奏
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="伴奏" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-4">
+        <span class="md-nav__icon md-icon"></span>
         伴奏
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1869,7 +1757,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/accompanying/Transcribing%20What%20You%20Hear/" title="Transcribing What You Hear" class="md-nav__link">
+    <a href="../../music/theory/accompanying/Transcribing%20What%20You%20Hear/" class="md-nav__link">
       Transcribing What You Hear
     </a>
   </li>
@@ -1887,13 +1775,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-5" type="checkbox" id="nav-4-22-5">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-5" type="checkbox" id="nav-4-22-5" >
     <label class="md-nav__link" for="nav-4-22-5">
       修饰
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="修饰" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-5">
+        <span class="md-nav__icon md-icon"></span>
         修饰
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1905,7 +1794,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/embellishing/Harmony%20and%20Counterpoint/" title="Harmony and Counterpoint" class="md-nav__link">
+    <a href="../../music/theory/embellishing/Harmony%20and%20Counterpoint/" class="md-nav__link">
       Harmony and Counterpoint
     </a>
   </li>
@@ -1923,13 +1812,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-6" type="checkbox" id="nav-4-22-6">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-6" type="checkbox" id="nav-4-22-6" >
     <label class="md-nav__link" for="nav-4-22-6">
       编曲
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="编曲" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-6">
+        <span class="md-nav__icon md-icon"></span>
         编曲
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1941,7 +1831,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/arranging/composing%20and%20arranging%20for%20voices%20and%20instruments/" title="Composing and arranging for voices and instruments" class="md-nav__link">
+    <a href="../../music/theory/arranging/composing%20and%20arranging%20for%20voices%20and%20instruments/" class="md-nav__link">
       Composing and arranging for voices and instruments
     </a>
   </li>
@@ -1959,13 +1849,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-22-7" type="checkbox" id="nav-4-22-7">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-22-7" type="checkbox" id="nav-4-22-7" >
     <label class="md-nav__link" for="nav-4-22-7">
       附录
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+    <nav class="md-nav" aria-label="附录" data-md-level="3">
       <label class="md-nav__title" for="nav-4-22-7">
+        <span class="md-nav__icon md-icon"></span>
         附录
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1977,7 +1868,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../music/theory/appendixes/A/" title="A" class="md-nav__link">
+    <a href="../../music/theory/appendixes/A/" class="md-nav__link">
       A
     </a>
   </li>
@@ -2005,13 +1896,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     <label class="md-nav__link" for="nav-5">
       关于我
+      <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="关于我" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
         关于我
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2023,7 +1915,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../me/My%20Financial%20Planning/" title="理财" class="md-nav__link">
+    <a href="../../me/My%20Financial%20Planning/" class="md-nav__link">
       理财
     </a>
   </li>
@@ -2035,7 +1927,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../me/Life%20in%20Beijing/" title="人在北京" class="md-nav__link">
+    <a href="../../me/Life%20in%20Beijing/" class="md-nav__link">
       人在北京
     </a>
   </li>
@@ -2047,7 +1939,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../me/my%20hardware/" title="硬件" class="md-nav__link">
+    <a href="../../me/my%20hardware/" class="md-nav__link">
       硬件
     </a>
   </li>
@@ -2059,8 +1951,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../me/Personal%20Pre-Work%20Record/" title="早起记录" class="md-nav__link">
+    <a href="../../me/Personal%20Pre-Work%20Record/" class="md-nav__link">
       早起记录
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../me/deposit%20scheme/" class="md-nav__link">
+      存款计划
     </a>
   </li>
 
@@ -2081,13 +1985,16 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -2130,7 +2037,7 @@
     delay
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="delay">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2185,7 +2092,7 @@
     from
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="from">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2263,10 +2170,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -2279,15 +2182,17 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/reactiveX/Single.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/wangzhizhou/JokerBlog/edit/master/docs/reactiveX/Single.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
-                <p><code class="codehilite"><span class="err">RxJava</span></code>及它派生的<code class="codehilite"><span class="err">RxGroovy</span></code>和<code class="codehilite"><span class="err">RxScala</span></code>发展了一种可观察对象的变体<code class="codehilite"><span class="err">单事件可观察对象</span></code>。</p>
-<p>单事件可观察对象也是一种可观察对象，不同之处在于，它不是发送一系列值，而是要么发出<code class="codehilite"><span class="err">一个值</span></code>，要么发出<code class="codehilite"><span class="err">一个错误通知</span></code>，没有其它的情况。</p>
-<p>由于单事件可观察对象的特殊性，我们在订阅它时不使用三个方法(<code class="codehilite"><span class="err">onNext</span></code>、<code class="codehilite"><span class="err">onError</span></code>、<code class="codehilite"><span class="err">onCompleted</span></code>)，只需要两个(<code class="codehilite"><span class="err">onSuccess</span></code>和<code class="codehilite"><span class="err">onError</span></code>)就可以了。</p>
+                <p><code>RxJava</code>及它派生的<code>RxGroovy</code>和<code>RxScala</code>发展了一种可观察对象的变体<code>单事件可观察对象</code>。</p>
+<p>单事件可观察对象也是一种可观察对象，不同之处在于，它不是发送一系列值，而是要么发出<code>一个值</code>，要么发出<code>一个错误通知</code>，没有其它的情况。</p>
+<p>由于单事件可观察对象的特殊性，我们在订阅它时不使用三个方法(<code>onNext</code>、<code>onError</code>、<code>onCompleted</code>)，只需要两个(<code>onSuccess</code>和<code>onError</code>)就可以了。</p>
 <ul>
-<li><code class="codehilite"><span class="err">onSuccess</span></code> - 单可观察对象所发出的唯一值时调用的方法，并把唯一值作为这个方法的参数传入。</li>
-<li><code class="codehilite"><span class="err">onError</span></code> - 单可观察对象发生错误时，将一个可抛出错误信息作为参数传给这个方法。</li>
+<li><code>onSuccess</code> - 单可观察对象所发出的唯一值时调用的方法，并把唯一值作为这个方法的参数传入。</li>
+<li><code>onError</code> - 单可观察对象发生错误时，将一个可抛出错误信息作为参数传给这个方法。</li>
 </ul>
 <p>这两个方法中只有一个会被调用并且只调用一次，一旦有一个方法被调用了，那么这个单可观察对象就失效了，整个订阅过程也就终止了。</p>
 <h1 id="_1">组合单事件可观察对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
@@ -2465,9 +2370,6 @@
 <h3 id="zipzipwith">zip和zipWith<a class="headerlink" href="#zipzipwith" title="Permanent link">&para;</a></h3>
 <p><img alt="zip-zipWith" src="/reactiveX/images/zip-zipWith.png" /></p>
                 
-                  
-                
-                
               
               
                 
@@ -2483,34 +2385,34 @@
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../Operators/" title="运算符" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../Operators/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
                 运算符
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../Subject/" title="主题" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../Subject/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
                 主题
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -2525,21 +2427,40 @@
             Created by Wang Zhizhou
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
+        Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
+          Material for MkDocs
+        </a>
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/wangzhizhou" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+      
+      
+        
+        
+      
+      <a href="https://github.com/wangzhizhou" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
     
-      <a href="https://twitter.com/w_z_z_1991" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/w_z_z_1991" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
     
-      <a href="https://linkedin.com/in/wangzhizhou" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+      
+      
+        
+        
+      
+      <a href="https://linkedin.com/in/wangzhizhou" target="_blank" rel="noopener" title="linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
     
   </div>
 
@@ -2549,26 +2470,18 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
-        
-        
-          
-          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
-          
-            
-              
-                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
-              
-            
-          
-          
-        
-      
-      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
         <script src="../../javascripts/extra.js"></script>
       
